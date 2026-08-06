@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "mode": "isolated_validation",
+  "production_changed": false,
+  "target_issue": 215,
+  "adjacent_issue": 214,
+  "missing_issue": 999,
+  "sites": [
+    {
+      "site_id": "hw-0108",
+      "site_name": "满堂红",
+      "url": "https://znnpwd.p42g1-zqmsb-jjrsfg.xyz:16677/",
+      "direction": "top"
+    },
+    {
+      "site_id": "hw-0111",
+      "site_name": "王中王",
+      "url": "https://dhqjbz.uxec9-jxs3h-fomubo.work:16677/",
+      "direction": "bottom"
+    },
+    {
+      "site_id": "hw-0115",
+      "site_name": "任我发",
+      "url": "https://oifsonk.e0h72-f6bxs-juqrkd.xyz:16677/",
+      "direction": "top"
+    },
+    {
+      "site_id": "hw-0163",
+      "site_name": "汉锺离",
+      "url": "https://ozfksr.8gd3h-8yo27-ttlqhq.xyz:16677/",
+      "direction": "top"
+    }
+  ],
+  "baseline_hashes": {
+    "config\\sites.json": "7777f8556290a9abdc3de9d1dfe53ef09e00af1cbe9257038698fdb2a136e42e",
+    "config\\parser_specs.json": "9bd94b4943d39c7965e5e8394fe24a1a38298123ef4c71e039f8893d60e5b888",
+    "recent_10_cache.json": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670"
+  }
+}

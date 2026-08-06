@@ -1,0 +1,259 @@
+{
+  "issues": [
+    211,
+    210,
+    209
+  ],
+  "results": {
+    "hw-0003": {
+      "name": "土地公",
+      "status": "error",
+      "reason": "FetchError: 网络请求失败：SSLError: HTTPSConnectionPool(host='sepfsazm.th2pfx-4s7mu-aafjnm.xyz', port=16677): Max retries exceeded with url: /topic/680720.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))"
+    },
+    "hw-0005": {
+      "name": "浪费衬衫",
+      "status": "unmatched",
+      "document_count": 2
+    },
+    "hw-0016": {
+      "name": "智能半波",
+      "status": "unmatched",
+      "document_count": 100
+    },
+    "hw-0022": {
+      "name": "凌杂米盐",
+      "status": "unmatched",
+      "document_count": 122
+    },
+    "hw-0045": {
+      "name": "雷锋第二版",
+      "status": "error",
+      "reason": "FetchError: 网络请求失败：SSLError: HTTPSConnectionPool(host='dvglkfp.mueyy-uiuci-vtqiod.work', port=16677): Max retries exceeded with url: /topic/227254.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))"
+    },
+    "hw-0046": {
+      "name": "雷锋第一版",
+      "status": "error",
+      "reason": "FetchError: 网络请求失败：SSLError: HTTPSConnectionPool(host='dvglkfp.mueyy-uiuci-vtqiod.work', port=16677): Max retries exceeded with url: /topic/205678.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))"
+    },
+    "hw-0048": {
+      "name": "甜酸苦辣",
+      "status": "error",
+      "reason": "FetchError: 网络请求失败：SSLError: HTTPSConnectionPool(host='jldzuea.0xkqd-q7ng5-boerfb.xyz', port=16677): Max retries exceeded with url: /topic/455527.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))"
+    },
+    "hw-0053": {
+      "name": "以以把第一版",
+      "status": "unmatched",
+      "document_count": 138
+    },
+    "hw-0059": {
+      "name": "浪女无家",
+      "status": "unmatched",
+      "document_count": 148
+    },
+    "hw-0062": {
+      "name": "蔡庆杀半波",
+      "status": "unmatched",
+      "document_count": 166
+    },
+    "hw-0070": {
+      "name": "公证处",
+      "status": "unmatched",
+      "document_count": 873
+    },
+    "hw-0078": {
+      "name": "财富榜啊了",
+      "status": "unmatched",
+      "document_count": 2
+    },
+    "hw-0079": {
+      "name": "熊错了",
+      "status": "unmatched",
+      "document_count": 2
+    },
+    "hw-0084": {
+      "name": "两全其美",
+      "status": "unmatched",
+      "document_count": 3765
+    },
+    "hw-0089": {
+      "name": "鸿运",
+      "status": "error",
+      "reason": "FetchError: 网络请求失败：SSLError: HTTPSConnectionPool(host='xia06.cosds.ahsccn.com', port=443): Max retries exceeded with url: /upload/script/07/c0c0fb5b832d0caf.js (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))"
+    },
+    "hw-0090": {
+      "name": "此曲已终",
+      "status": "unmatched",
+      "document_count": 797
+    },
+    "hw-0091": {
+      "name": "魔童",
+      "status": "error",
+      "reason": "FetchError: 网络请求失败：SSLError: HTTPSConnectionPool(host='bloynnbb.gzgli-koeq8-deouwc.xyz', port=16677): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))"
+    },
+    "hw-0097": {
+      "name": "天机老人",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0097",
+        "strategy": "scoped_line",
+        "direction": "top",
+        "anchors": [
+          "天机老人"
+        ],
+        "keywords": [
+          "绝杀一波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝]\\s*(?:波\\s*)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {}
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true
+        },
+        {
+          "issue": 210,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true
+        },
+        {
+          "issue": 209,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true
+        }
+      ],
+      "document_count": 7
+    },
+    "hw-0098": {
+      "name": "桂东仔",
+      "status": "unmatched",
+      "document_count": 3
+    },
+    "hw-0099": {
+      "name": "烟雨墨痕",
+      "status": "unmatched",
+      "document_count": 1
+    },
+    "hw-0103": {
+      "name": "开心果",
+      "status": "unmatched",
+      "document_count": 1236
+    },
+    "hw-0104": {
+      "name": "嗜此不疲",
+      "status": "unmatched",
+      "document_count": 159
+    },
+    "hw-0106": {
+      "name": "二肖四码",
+      "status": "unmatched",
+      "document_count": 125
+    },
+    "hw-0107": {
+      "name": "澳彩传奇",
+      "status": "unmatched",
+      "document_count": 2156
+    },
+    "hw-0108": {
+      "name": "满堂红",
+      "status": "unmatched",
+      "document_count": 1395
+    },
+    "hw-0109": {
+      "name": "赤兔",
+      "status": "unmatched",
+      "document_count": 4289
+    },
+    "hw-0111": {
+      "name": "王中王",
+      "status": "unmatched",
+      "document_count": 1415
+    },
+    "hw-0112": {
+      "name": "好彩网",
+      "status": "unmatched",
+      "document_count": 1450
+    },
+    "hw-0114": {
+      "name": "码头诗",
+      "status": "unmatched",
+      "document_count": 1118
+    },
+    "hw-0115": {
+      "name": "任我发",
+      "status": "unmatched",
+      "document_count": 945
+    },
+    "hw-0116": {
+      "name": "青龙阁",
+      "status": "unmatched",
+      "document_count": 813
+    },
+    "hw-0118": {
+      "name": "流合",
+      "status": "unmatched",
+      "document_count": 2252
+    },
+    "hw-0119": {
+      "name": "何仙姑",
+      "status": "unmatched",
+      "document_count": 1205
+    },
+    "hw-0120": {
+      "name": "全网最准",
+      "status": "unmatched",
+      "document_count": 34
+    },
+    "hw-0121": {
+      "name": "崇左女王",
+      "status": "unmatched",
+      "document_count": 1415
+    },
+    "hw-0122": {
+      "name": "不疯不野",
+      "status": "unmatched",
+      "document_count": 1
+    },
+    "hw-0123": {
+      "name": "人定胜天",
+      "status": "unmatched",
+      "document_count": 45
+    },
+    "hw-0124": {
+      "name": "百进不出",
+      "status": "unmatched",
+      "document_count": 4
+    },
+    "hw-0135": {
+      "name": "宇文凌霄",
+      "status": "unmatched",
+      "document_count": 144
+    },
+    "hw-0144": {
+      "name": "疾走如风",
+      "status": "unmatched",
+      "document_count": 284
+    },
+    "hw-0147": {
+      "name": "踏雪",
+      "status": "unmatched",
+      "document_count": 104
+    },
+    "hw-0163": {
+      "name": "汉锺离",
+      "status": "unmatched",
+      "document_count": 942
+    }
+  }
+}

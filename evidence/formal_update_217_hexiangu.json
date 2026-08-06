@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "phase": "formal_update",
+  "update_date": "2026-08-05",
+  "authorized_command": "开始正式更新",
+  "scope": {
+    "site_id": "hw-0119",
+    "site_name": "何仙姑",
+    "target_issue": 217,
+    "direction": "top"
+  },
+  "formal_change": {
+    "file": "config/parser_specs.json",
+    "before": {
+      "parser_id": "hw-0119:decoded_sibling:v2",
+      "strategy": "decoded_sibling",
+      "parser_version": "2",
+      "compact": true
+    },
+    "after": {
+      "parser_id": "hw-0119:combined_sibling:v3",
+      "strategy": "combined_sibling",
+      "parser_version": "3",
+      "compact": false
+    },
+    "reason": "217期及杀一肖位于decoded-77，杀半波蓝双位于同一父脚本的相邻decoded-78；正式旧解析器只合并锚点、不合并跨片段表格行"
+  },
+  "tdd": {
+    "regression_test": "tests/parser_contract/test_hexiangu_split_row_217.py",
+    "red_result": "4 failed, 2 passed, 2 subtests passed",
+    "green_result": "3 passed, 5 subtests passed"
+  },
+  "live_formal_run": {
+    "command_scope": "banbo.cli --period 217 --site-id hw-0119 --max-workers 1",
+    "document_count": 1138,
+    "passed": true,
+    "value": "蓝双",
+    "candidate_count": 1,
+    "boundary_issues": [217, 216, 215],
+    "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/776b02a81b88786a.js#decoded-77",
+    "parser_id": "hw-0119:combined_sibling:v3",
+    "run_id": "6fe02d5cda96497f98d391aa225b5253",
+    "success_output": "audit/formal_output_217/success/217期-半波.txt",
+    "success_output_text": "蓝双\\t何仙姑",
+    "failure_output_exists": false,
+    "audit_output": "audit/217.jsonl"
+  },
+  "live_boundary_matrix": [
+    {
+      "issue": 217,
+      "passed": true,
+      "value": "蓝双",
+      "boundary_issues": [217, 216, 215]
+    },
+    {
+      "issue": 216,
+      "passed": true,
+      "value": "蓝单",
+      "boundary_issues": [217, 216, 215]
+    },
+    {
+      "issue": 215,
+      "passed": true,
+      "value": "红单",
+      "boundary_issues": [217, 216, 215]
+    },
+    {
+      "issue": 214,
+      "passed": false,
+      "failure_code": "target_period_missing"
+    },
+    {
+      "issue": 999,
+      "passed": false,
+      "failure_code": "target_period_missing"
+    }
+  ],
+  "verification": {
+    "full_tests": "166 passed, 1 skipped, 183 subtests passed",
+    "python_compile": "passed",
+    "ruff": "passed",
+    "affected_parser_coverage_percent": 93.3,
+    "coverage_method": "Python standard-library trace",
+    "coverage_artifact": "audit/trace_coverage_hexiangu_217/banbo.parsers.combined_sibling.cover"
+  },
+  "storage": {
+    "cache_message": "未推进缓存：新期数必须全站成功",
+    "cache_hash_before": "2DBD8844E825FD92391C0DA8BCA027DD10B9A5147724782AE5A0DB8171AF4881",
+    "cache_hash_after": "2DBD8844E825FD92391C0DA8BCA027DD10B9A5147724782AE5A0DB8171AF4881",
+    "cache_unchanged": true,
+    "output_scope_note": "会话被用户锁定为项目文件夹唯一范围，因此正式单站输出写入项目内audit/formal_output_217，不访问范围外默认TXT目录"
+  },
+  "unchanged_conflict_site": {
+    "site_id": "hw-0141",
+    "site_name": "守株待兔",
+    "parser_id": "hw-0141:nearest_document:v1",
+    "changed": false,
+    "reason": "同一文章区块217期存在红波单与绿波单真实冲突，不允许修成成功"
+  },
+  "result": "formal_update_completed"
+}

@@ -1,0 +1,50 @@
+{
+  "mode": "independent_validation_followup",
+  "project": "杀半波_修复版2",
+  "target_issue": 216,
+  "direction": "top",
+  "url_or_domain_anchors_used": false,
+  "stable_anchor_strategy": {
+    "hw-0045": ["杀料榜"],
+    "hw-0046": ["杀料榜", "稳杀半波"],
+    "hw-0053": ["杀料贴"]
+  },
+  "results": {
+    "hw-0045": {
+      "site_name": "雷锋第二版",
+      "216": {"status": "passed", "value": "绿双"},
+      "215": {"status": "passed", "value": "绿单"},
+      "214": {"status": "passed", "value": "红单"},
+      "999": {"status": "failed", "code": "target_period_missing"},
+      "boundary_issues": [216, 215, 214],
+      "candidate_count": 1,
+      "same_record": true
+    },
+    "hw-0046": {
+      "site_name": "雷锋第一版",
+      "216": {"status": "passed", "value": "蓝双"},
+      "215": {"status": "passed", "value": "绿双"},
+      "214": {"status": "passed", "value": "红双"},
+      "999": {"status": "failed", "code": "target_period_missing"},
+      "boundary_issues": [216, 215, 214],
+      "candidate_count": 1,
+      "same_record": true
+    },
+    "hw-0053": {
+      "site_name": "以以把第一版",
+      "216": {"status": "passed", "value": "红单"},
+      "215": {"status": "passed", "value": "绿单"},
+      "214": {"status": "passed", "value": "蓝单"},
+      "999": {"status": "failed", "code": "target_period_missing"},
+      "boundary_issues": [216, 215, 214],
+      "candidate_count": 1,
+      "same_record": true
+    }
+  },
+  "formal_write_guard": {
+    "config_changed": false,
+    "cache_updated": false,
+    "official_txt_updated": false
+  },
+  "all_stable_anchor_experiments_passed": true
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "mode": "read_only_live_shadow",
+  "cache_write_performed": false,
+  "formal_txt_write_performed": false,
+  "periods": {
+    "211": {
+      "passed": 145,
+      "total": 163,
+      "failed": 18,
+      "failure_sites": [
+        "不疯不野",
+        "任我发",
+        "何仙姑",
+        "全网最准",
+        "公证处",
+        "宇文凌霄",
+        "崇左女王",
+        "开心果",
+        "汉锺离",
+        "烟雨墨痕",
+        "王中王",
+        "疾走如风",
+        "百进不出",
+        "码头诗",
+        "赤兔",
+        "铁算盘",
+        "魔童",
+        "鸿运"
+      ],
+      "failure_classes": {
+        "target_period_missing": 16,
+        "current_value_conflicts_with_cache": 2
+      }
+    },
+    "210": {
+      "passed": 120,
+      "total": 163,
+      "failed": 43,
+      "failure_classes": {
+        "target_period_missing": 42,
+        "current_value_conflicts_with_cache": 1
+      }
+    },
+    "209": {
+      "passed": 92,
+      "total": 163,
+      "failed": 71,
+      "failure_classes": {
+        "target_period_missing": 69,
+        "anchor_or_keyword_validation_failed": 1,
+        "current_value_conflicts_with_cache": 1
+      }
+    }
+  },
+  "interpretation": "没有历史快照的目标块缺失只标记为源站内容变更或历史解析待确认；当前值与缓存不一致时冻结，不自动覆盖。"
+}

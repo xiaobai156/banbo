@@ -1,0 +1,117 @@
+from __future__ import annotations
+
+import re
+from dataclasses import replace
+from typing import Sequence
+
+from banbo.domain.models import Document, ParseEvidence, SiteSpec
+
+from .history_block import HistoryBlockParser
+from .protocol import ParserSpec
+from .text import html_to_text
+
+
+class AnchorSegmentParser:
+    name = "anchor_segment"
+
+    def __init__(self, spec: ParserSpec) -> None:
+        self._spec = spec
+        self.version = spec.parser_version
+
+    def parse(
+        self,
+        site: SiteSpec,
+        documents: Sequence[Document],
+        target_issue: int,
+    ) -> tuple[ParseEvidence, ...]:
+        anchors = self._spec.anchors or site.anchors
+        max_anchor_span = max(
+            1, int(self._spec.options.get("max_anchor_span", 800))
+        )
+        max_issues = max(1, int(self._spec.options.get("max_issues", 13)))
+        issue_regex = re.compile(
+            self._spec.issue_pattern or site.issue_pattern,
+            re.IGNORECASE,
+        )
+        synthetic_documents: list[Document] = []
+        origins: dict[str, tuple[Document, int]] = {}
+
+        for document in documents:
+            text = html_to_text(document.content)
+            if not anchors:
+                continue
+            first_anchor = anchors[0]
+            for segment_index, match in enumerate(
+                re.finditer(re.escape(first_anchor), text, re.IGNORECASE)
+            ):
+                nearby_start = max(0, match.start() - max_anchor_span)
+                nearby_end = min(len(text), match.end() + max_anchor_span)
+                nearby = text[nearby_start:nearby_end]
+                if not all(
+                    re.search(re.escape(anchor), nearby, re.IGNORECASE)
+                    for anchor in anchors
+                ):
+                    continue
+                anchor_positions = [
+                    text.lower().find(anchor.lower(), nearby_start, nearby_end)
+                    for anchor in anchors
+                ]
+                if any(position < 0 for position in anchor_positions):
+                    continue
+                segment_start = min(anchor_positions)
+                issue_matches = list(issue_regex.finditer(text, segment_start))
+                if not issue_matches:
+                    continue
+                segment_end = (
+                    issue_matches[max_issues].start()
+                    if len(issue_matches) > max_issues
+                    else min(
+                        len(text),
+                        segment_start
+                        + int(self._spec.options.get("max_chars", 12000)),
+                    )
+                )
+                content = text[segment_start:segment_end]
+                synthetic_id = (
+                    f"{document.document_id}#anchor-segment-{segment_index}"
+                )
+                synthetic = Document(
+                    document_id=synthetic_id,
+                    source=document.source,
+                    source_url=f"{document.source_url}#anchor-segment-{segment_index}",
+                    order=document.order * 1000 + segment_index,
+                    content=content,
+                    record_id=document.record_id,
+                    fetched_at=document.fetched_at,
+                )
+                synthetic_documents.append(synthetic)
+                origins[synthetic_id] = (document, segment_start)
+        if not synthetic_documents:
+            return ()
+
+        options = dict(self._spec.options)
+        options["skip_document_anchor"] = True
+        delegate = HistoryBlockParser(
+            replace(
+                self._spec,
+                strategy="history_block",
+                options=options,
+            )
+        )
+        evidence = delegate.parse(site, synthetic_documents, target_issue)
+        restored: list[ParseEvidence] = []
+        for item in evidence:
+            original, segment_start = origins[item.document_id]
+            restored.append(
+                replace(
+                    item,
+                    document_id=original.document_id,
+                    document_source=original.source,
+                    document_order=original.order,
+                    parser_name=self.name,
+                    parser_version=self.version,
+                    anchors=anchors,
+                    source_offset=segment_start + item.source_offset,
+                )
+            )
+        return tuple(restored)

@@ -1,0 +1,536 @@
+{
+  "schema_version": 1,
+  "period": 215,
+  "formal_specs": true,
+  "output_written": false,
+  "checks": [
+    {
+      "site_id": "hw-0011",
+      "site_name": "龙行虎变",
+      "url": "https://vbxl5.gvgsf-5zmzm-ojxowu.xyz/topic/453439.html",
+      "direction": "bottom",
+      "passed": true,
+      "value": "蓝单",
+      "expected": "蓝单",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 106,
+      "boundary_issues": [
+        213,
+        214,
+        215
+      ],
+      "snippet": "215期:绝杀半波 蓝单 开00准"
+    },
+    {
+      "site_id": "hw-0013",
+      "site_name": "亘古还今",
+      "url": "https://x5meek.vh7fu-ehvdi-tpwoqt.work/topic/430710.html",
+      "direction": "top",
+      "passed": true,
+      "value": "绿单",
+      "expected": "绿单",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 133,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期 绝杀半波 绿波单 开:0000准↑"
+    },
+    {
+      "site_id": "hw-0031",
+      "site_name": "狼心狗行",
+      "url": "https://vhgswwe.7rdnv-4uc7h-yshpkm.xyz:16677/topic/447932.html",
+      "direction": "top",
+      "passed": true,
+      "value": "蓝双",
+      "expected": "蓝双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 184,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期: 绝杀半波 蓝双 开: 0000 准"
+    },
+    {
+      "site_id": "hw-0042",
+      "site_name": "老奇人",
+      "url": "https://wupxrz.v38cs-r7pwj-ozxbae.work:16633/topic/585898.html",
+      "direction": "top",
+      "passed": true,
+      "value": "红双",
+      "expected": "红双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 190,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期 绝杀半波 红波双 开000准"
+    },
+    {
+      "site_id": "hw-0047",
+      "site_name": "金牌谜语",
+      "url": "https://fszatrw.xhwqs-gffny-zzdfsq.work:16677/topic/273119.html",
+      "direction": "top",
+      "passed": true,
+      "value": "蓝双",
+      "expected": "蓝双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 161,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期: 必杀半波 蓝波双 開:0000准"
+    },
+    {
+      "site_id": "hw-0051",
+      "site_name": "水果奶奶",
+      "url": "https://ixvtdglw.6vjj7-nn2ip-kqudzz.xyz:16633/",
+      "direction": "top",
+      "passed": true,
+      "value": "蓝双",
+      "expected": "蓝双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1133,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期绝杀半波 蓝双 开 0000 准"
+    },
+    {
+      "site_id": "hw-0052",
+      "site_name": "刘半仙",
+      "url": "https://smnwgqcm.vkk2k-rpbnk-qtocig.xyz:16677/",
+      "direction": "top",
+      "passed": true,
+      "value": "绿单",
+      "expected": "绿单",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1037,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期 绝杀半波 绿单 开 0000准 第"
+    },
+    {
+      "site_id": "hw-0071",
+      "site_name": "蓝月亮",
+      "url": "https://zuymmv.k9lew-qbswr-jmnakh.xyz:16677/",
+      "direction": "top",
+      "passed": true,
+      "value": "蓝双",
+      "expected": "蓝双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 3483,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期 绝杀半波 蓝双蓝双 开: 0000准"
+    },
+    {
+      "site_id": "hw-0106",
+      "site_name": "二肖四码",
+      "url": "https://eudkyp.luqv0-yf46s-xrnpkz.xyz:16677/topic/324148.html",
+      "direction": "top",
+      "passed": false,
+      "value": null,
+      "expected": "红单",
+      "matches_expected": false,
+      "failure_code": "target_period_missing",
+      "failure_reason": "未找到215期专属证据",
+      "document_count": 124,
+      "boundary_issues": [],
+      "snippet": ""
+    },
+    {
+      "site_id": "hw-0107",
+      "site_name": "澳彩传奇",
+      "url": "https://rqvvaxwq.w30m7-xd23l-ebrbbj.xyz/",
+      "direction": "top",
+      "passed": true,
+      "value": "绿双",
+      "expected": "绿双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 2152,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期: ✦精杀半波✦ 绿双 开: 0000中"
+    },
+    {
+      "site_id": "hw-0110",
+      "site_name": "铁算盘",
+      "url": "https://tgjqwnvl.2hyb0-ocfse-borngs.xyz:16677/",
+      "direction": "top",
+      "passed": true,
+      "value": "蓝双",
+      "expected": "蓝双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 921,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期 杀特半波 蓝双 开?00中"
+    },
+    {
+      "site_id": "hw-0112",
+      "site_name": "好彩网",
+      "url": "https://qhfsrngx.x9mcp-vrrqh-dzqfro.xyz:16677/",
+      "direction": "top",
+      "passed": true,
+      "value": "蓝双",
+      "expected": "蓝双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1478,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期 : 绝杀半波 蓝双 开 ?00 准"
+    },
+    {
+      "site_id": "hw-0113",
+      "site_name": "玄机阁",
+      "url": "https://aqlvuvz.kkr58-ayern-biiohi.xyz:16677/",
+      "direction": "top",
+      "passed": true,
+      "value": "绿单",
+      "expected": "绿单",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 812,
+      "boundary_issues": [
+        215,
+        214,
+        212
+      ],
+      "snippet": "215期:绝杀半波 绿单 开:0000准"
+    },
+    {
+      "site_id": "hw-0121",
+      "site_name": "崇左女王",
+      "url": "https://yaaxgud.xg0eu-qjubd-yneksw.xyz:16677/",
+      "direction": "top",
+      "passed": true,
+      "value": "蓝单",
+      "expected": "蓝单",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1367,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期绝杀【蓝波单】开0000发214期绝杀【绿波单】开兔04发213期绝杀【绿波双】开猴35发"
+    },
+    {
+      "site_id": "hw-0035",
+      "site_name": "水秀山明",
+      "url": "https://pcfwjde.22zu6-81144-kdlkyf.xyz:16677/topic/436703.html",
+      "direction": "bottom",
+      "passed": true,
+      "value": "绿单",
+      "expected": "蓝双",
+      "matches_expected": false,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 172,
+      "boundary_issues": [
+        213,
+        214,
+        215
+      ],
+      "snippet": "212期绝杀半波->=绿波单准213期绝杀半波->=红波单错214期绝杀半波->=红波双准215期绝杀半波->=蓝波双准红单:01.07.13.19.23.29.35.45蓝单:03.09.15.25.31.37.41.47绿单:05.11.17.21.27.33.39.43.49红双:02.08.12.18.24.30.34.40.46蓝双:04.10.14.20.26.36.42.48绿双:06.16.22.28.32.38.44"
+    },
+    {
+      "site_id": "hw-0101",
+      "site_name": "贪生怕死",
+      "url": "https://fjjxlve.eclrc-7oqku-atxhrs.xyz:16677/topic/445667.html",
+      "direction": "bottom",
+      "passed": true,
+      "value": "绿单",
+      "expected": "蓝双",
+      "matches_expected": false,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 187,
+      "boundary_issues": [
+        213,
+        214,
+        215
+      ],
+      "snippet": "215期绝杀半波->=蓝波双准红单:01.07.13.19.23.29.35.45蓝单:03.09.15.25.31.37.41.47绿单:05.11.17.21.27.33.39.43.49红双:02.08.12.18.24.30.34.40.46蓝双:04.10.14.20.26.36.42.48绿双:06.16.22.28.32.38.44"
+    },
+    {
+      "site_id": "hw-0134",
+      "site_name": "不言不语",
+      "url": "https://msbqxti.zhx2n-7v5x3-ivdpud.xyz:16677/topic/678152.html",
+      "direction": "bottom",
+      "passed": true,
+      "value": "红单",
+      "expected": "红双",
+      "matches_expected": false,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 116,
+      "boundary_issues": [
+        213,
+        214,
+        215
+      ],
+      "snippet": "213期【绝杀半波】->蓝波单214期【绝杀半波】->红波单215期【绝杀半波】->红波双蓝单:03.09.15.25.31.37.41.47绿单:05.11.17.21.27.33.39.43.49红单:01.07.13.19.23.29.35.45红双:02.08.12.18.24.30.34.40.46蓝双:04.10.14.20.26.36.42.48绿双:06.16.22.28.32.38.44"
+    },
+    {
+      "site_id": "hw-0045",
+      "site_name": "雷锋第二版",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/227254.html",
+      "direction": "top",
+      "passed": true,
+      "value": "绿单",
+      "expected": "绿单",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 211,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "{word-wrap:break-word;}.topic-contenttable{width:100%!important}杀料榜215期【绝杀半波】26064c.com作者:26064c.com215期:ㄛ绝杀半波ㄛ【绿波单】开:0000准↑214期:ㄛ绝杀半波ㄛ【红波单】开:兔04准↑213期:ㄛ绝杀半波ㄛ【蓝波单】开:猴35准↑212期:ㄛ绝杀半波ㄛ【绿波单】开:牛06准↑"
+    },
+    {
+      "site_id": "hw-0046",
+      "site_name": "雷锋第一版",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/205678.html",
+      "direction": "top",
+      "passed": true,
+      "value": "绿双",
+      "expected": "绿双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 199,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "{word-wrap:break-word;}.topic-contenttable{width:100%!important}杀料榜215期【稳杀半波】26064c.com作者:26064c.com215期绝杀半波【绿波双】开:0000准214期绝杀半波【红波双】开:兔04准213期绝杀半波【红波单】开:猴35错212期绝杀半波【蓝波单】开:牛06准"
+    },
+    {
+      "site_id": "hw-0053",
+      "site_name": "以以把第一版",
+      "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/205339.html",
+      "direction": "top",
+      "passed": true,
+      "value": "绿单",
+      "expected": "绿单",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 138,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "d-wrap:break-word;}.topic-contenttable{width:100%!important}杀料贴215期:【绝杀半波】━118060c.com作者:118060c.com215期绝杀半波【绿波单】开:0000准214期绝杀半波【蓝波单】开:兔04准213期绝杀半波【蓝波双】开:猴35准212期绝杀半波【绿波双】开:牛06错"
+    },
+    {
+      "site_id": "hw-0089",
+      "site_name": "鸿运",
+      "url": "https://neciezht.h6r8g-z9l98-usthpy.xyz:16677/",
+      "direction": "top",
+      "passed": true,
+      "value": "红单",
+      "expected": "红单",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 2173,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "买港澳六合彩58倍就上鸿蒙娱乐城111.cc.dz_contenttabletd{word-break:break-all;}215期杀【红单】开0000准214期杀【蓝单】开兔04准"
+    },
+    {
+      "site_id": "hw-0090",
+      "site_name": "此曲已终",
+      "url": "https://buvwlreg.drr11-soh5x-jcaafg.xyz:16677/",
+      "direction": "top",
+      "passed": true,
+      "value": "红双",
+      "expected": "红双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 783,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期杀【红波双】开:?00√214期杀【绿波单】开:兔04√213期杀【蓝波双】开:猴35√212期杀【红波双】开:牛06√211期杀【蓝波双】开:马01√210期杀【绿波双】开:马49√208期杀【蓝波双】开:鼠19√207期杀【红波单】开:鼠31√206期杀【绿波双】开:猴47√205期杀"
+    },
+    {
+      "site_id": "hw-0091",
+      "site_name": "魔童",
+      "url": "https://bloynnbb.gzgli-koeq8-deouwc.xyz:16677/",
+      "direction": "top",
+      "passed": false,
+      "value": null,
+      "expected": "红双",
+      "matches_expected": false,
+      "failure_code": "anchor_missing",
+      "failure_reason": "专属锚点或关键词校验未通过",
+      "document_count": 1843,
+      "boundary_issues": [
+        215,
+        214,
+        208
+      ],
+      "snippet": "开奖结果215期《虎》《红双》《3尾》开:0000"
+    },
+    {
+      "site_id": "hw-0109",
+      "site_name": "赤兔",
+      "url": "https://zwpwuwq.fxnb4-uer1b-uftjcw.work:16677/#am",
+      "direction": "top",
+      "passed": false,
+      "value": null,
+      "expected": "红双",
+      "matches_expected": false,
+      "failure_code": "anchor_missing",
+      "failure_reason": "专属锚点或关键词校验未通过",
+      "document_count": 4320,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "杀一头开奖结果215期《兔》《红双》《2》《2》0000准"
+    },
+    {
+      "site_id": "hw-0114",
+      "site_name": "码头诗",
+      "url": "https://nrbzrzm.zxt0w-ug0p0-uktgvy.xyz:16677/",
+      "direction": "top",
+      "passed": false,
+      "value": null,
+      "expected": "绿双",
+      "matches_expected": false,
+      "failure_code": "anchor_missing",
+      "failure_reason": "专属锚点或关键词校验未通过",
+      "document_count": 1128,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "snippet": "215期《猴》《绿双》《8尾》开:00准214期《鼠》《绿单》"
+    },
+    {
+      "site_id": "hw-0119",
+      "site_name": "何仙姑",
+      "url": "https://fjjxlve.eclrc-7oqku-atxhrs.xyz:16677/",
+      "direction": "top",
+      "passed": false,
+      "value": null,
+      "expected": "红单",
+      "matches_expected": false,
+      "failure_code": "anchor_missing",
+      "failure_reason": "专属锚点或关键词校验未通过",
+      "document_count": 1157,
+      "boundary_issues": [
+        215,
+        214,
+        211
+      ],
+      "snippet": "杀一尾开奖结果215期《兔》《红单》《5尾》开:?00"
+    },
+    {
+      "site_id": "hw-0099",
+      "site_name": "烟雨墨痕",
+      "url": "https://fbgbfg.www27521c.com:8443/gsb/am81.html",
+      "direction": "bottom",
+      "passed": true,
+      "value": "蓝双",
+      "expected": "蓝双",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1,
+      "boundary_issues": [
+        214,
+        215,
+        216
+      ],
+      "snippet": ":猪08错210期绝杀半波[绿波双]开:马49准211期绝杀半波[蓝波双]开:马01准212期绝杀半波[红波单]开:牛06准213期绝杀半波[蓝波单]开:猴35准214期绝杀半波[红波双]开:兔04准215期绝杀半波[蓝波双]开:蛇14错216期绝杀半波[绿波单]开:?00准"
+    },
+    {
+      "site_id": "hw-0122",
+      "site_name": "不疯不野",
+      "url": "https://2.www39169b.com:888/gsbl/s12.html",
+      "direction": "bottom",
+      "passed": true,
+      "value": "红单",
+      "expected": "红单",
+      "matches_expected": true,
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1,
+      "boundary_issues": [
+        214,
+        215,
+        216
+      ],
+      "snippet": ":猪08准210期绝杀半波《红波单》开:马49准211期绝杀半波《绿波双》开:马01准212期绝杀半波《蓝波双》开:牛06准213期绝杀半波《红波单》开:猴35错214期绝杀半波《绿波双》开:兔04准215期绝杀半波《红波单》开:蛇14准216期绝杀半波《蓝波双》开:?00准说明:本论坛所提供的内容、资料、图片和资讯,只应用在合法的资料探讨,暂不适用于其它,外围和使用。特此声明!论坛免责声明:以上所有广告内容均为赞助商提供,本站不对其经营行为负责。浏览或使用者须自行承担有关责任,本网站恕不负责。【广"
+    }
+  ]
+}

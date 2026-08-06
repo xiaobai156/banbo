@@ -1,0 +1,217 @@
+    1: from __future__ import annotations
+       
+    1: import json
+    1: import re
+    1: from collections import defaultdict
+    1: from dataclasses import dataclass
+       
+    1: from banbo.application.single_period import default_document_provider
+    1: from banbo.cli import _load_runtime
+    1: from banbo.domain.models import Direction, Document
+    1: from banbo.domain.normalization import normalize_half_wave, normalize_text
+    1: from banbo.fetch.dynamic_records import extract_record_id
+    1: from banbo.parsers.boundary import select_directional_window
+    1: from banbo.parsers.text import html_to_text
+       
+       
+    1: SITE_ID = "hw-0141"
+    1: ARTICLE_ISSUE = 217
+    1: VALIDATION_ISSUES = (217, 216, 215, 214, 999)
+    1: _DECODED_SUFFIX = re.compile(r"#decoded-\d+$", re.IGNORECASE)
+       
+       
+    2: @dataclass(frozen=True)
+    1: class Candidate:
+    1:     issue: int
+    1:     value: str
+    1:     document: Document
+    1:     offset: int
+    1:     snippet: str
+       
+       
+    1: def _parent_source(document: Document) -> str:
+  284:     if _DECODED_SUFFIX.search(document.source_url):
+  274:         return _DECODED_SUFFIX.sub("", document.source_url)
+   10:     return f"{document.source_url}\0{document.document_id}"
+       
+       
+    1: def _article_documents(documents, site, spec):
+    1:     groups: dict[str, list[Document]] = defaultdict(list)
+  285:     for document in documents:
+  284:         groups[_parent_source(document)].append(document)
+       
+    1:     matches = []
+   19:     for parent_source, siblings in groups.items():
+  302:         ordered = tuple(sorted(siblings, key=lambda item: item.order))
+   18:         anchor_indexes = []
+  302:         for index, document in enumerate(ordered):
+  284:             text = normalize_text(html_to_text(document.content))
+                   if (
+  284:                 site.name in text
+    3:                 and f"{ARTICLE_ISSUE}期" in text
+    3:                 and any(keyword in text for keyword in spec.keywords)
+                   ):
+    1:                 anchor_indexes.append(index)
+   18:         if not anchor_indexes:
+   17:             continue
+    1:         start = min(anchor_indexes)
+    1:         end = None
+   49:         for index in range(start + 1, len(ordered)):
+   49:             text = normalize_text(html_to_text(ordered[index].content))
+                   if (
+   49:                 "context_switch" in ordered[index].content
+   48:                 or ("上一篇" in text and "下一篇" in text)
+                   ):
+    1:                 end = index
+    1:                 break
+    1:         if end is None:
+>>>>>>             raise RuntimeError("目标文章缺少上一篇/下一篇结束边界")
+    2:         matches.append(
+    1:             (
+    1:                 parent_source,
+    1:                 ordered[start:end],
+    1:                 ordered[start],
+    1:                 ordered[end],
+                   )
+               )
+    1:     if len(matches) != 1:
+>>>>>>         raise RuntimeError(f"目标文章边界必须唯一，实际{len(matches)}个")
+    1:     return matches[0]
+       
+       
+    1: def _collect_candidates(documents, site, spec) -> tuple[Candidate, ...]:
+    1:     issue_regex = re.compile(spec.issue_pattern)
+    1:     value_regex = re.compile(spec.value_pattern)
+    1:     candidates = []
+   50:     for document in documents:
+   49:         text = html_to_text(document.content)
+   49:         issue_matches = list(issue_regex.finditer(text))
+  520:         for index, issue_match in enumerate(issue_matches):
+  471:             issue_text = issue_match.groupdict().get("issue") or issue_match.group(0)
+  471:             issue_digits = re.search(r"\d{1,4}", issue_text)
+  471:             if issue_digits is None:
+>>>>>>                 continue
+  471:             segment_end = (
+  422:                 issue_matches[index + 1].start()
+  471:                 if index + 1 < len(issue_matches)
+   49:                 else len(text)
+                   )
+  471:             segment = text[issue_match.start():segment_end]
+  471:             normalized_segment = normalize_text(segment)
+ 9891:             keyword_matches = [
+ 1413:                 match
+  471:                 for keyword in spec.keywords
+ 2826:                 for match in re.finditer(re.escape(keyword), segment)
+                   ]
+  471:             if not keyword_matches:
+>>>>>>                 continue
+ 2355:             first_keyword_start = min(match.start() for match in keyword_matches)
+ 2826:             keyword_end = max(
+  471:                 match.end()
+  471:                 for match in keyword_matches
+ 1884:                 if match.start() == first_keyword_start
+                   )
+  941:             for value_match in value_regex.finditer(segment, keyword_end):
+  470:                 raw_value = (
+  470:                     value_match.groupdict().get("value") or value_match.group(0)
+                       )
+  470:                 value = normalize_half_wave(raw_value)
+  470:                 if value is None:
+>>>>>>                     continue
+  940:                 candidates.append(
+  940:                     Candidate(
+  470:                         issue=int(issue_digits.group(0)),
+  470:                         value=value,
+  470:                         document=document,
+  470:                         offset=issue_match.start() + value_match.start(),
+  470:                         snippet=normalized_segment[:180],
+                           )
+                       )
+    1:     return tuple(candidates)
+       
+       
+    1: def main() -> int:
+    1:     sites, specs, _ = _load_runtime()
+    1:     site = sites.get(SITE_ID)
+  111:     spec = next(item for item in specs if item.site_id == SITE_ID)
+    1:     if site.direction != Direction.BOTTOM or spec.direction != Direction.BOTTOM:
+>>>>>>         raise RuntimeError("守株待兔正式方向必须为bottom")
+    1:     fetched = default_document_provider(site, spec, ARTICLE_ISSUE)
+    2:     parent, article_documents, start_document, end_document = _article_documents(
+    1:         fetched.documents, site, spec
+           )
+    1:     candidates = _collect_candidates(article_documents, site, spec)
+    2:     window, boundary_issues = select_directional_window(
+    1:         candidates,
+  471:         issue_of=lambda candidate: candidate.issue,
+    1:         direction=site.direction,
+           )
+       
+    1:     cases = []
+    6:     for issue in VALIDATION_ISSUES:
+   25:         in_window = tuple(item for item in window if item.issue == issue)
+   13:         values = sorted({item.value for item in in_window})
+    5:         passed = len(values) == 1
+   10:         cases.append(
+    5:             {
+    5:                 "issue": issue,
+    5:                 "passed": passed,
+    5:                 "value": values[0] if passed else None,
+                       "failure": (
+    5:                     None
+    5:                     if passed
+                           else (
+>>>>>>                         "same_period_conflict"
+    2:                         if len(values) > 1
+    2:                         else "target_period_missing_or_outside_bottom_window"
+                           )
+                       ),
+                   }
+               )
+       
+  472:     target_all = [item for item in candidates if item.issue == ARTICLE_ISSUE]
+    1:     report = {
+    1:         "site_id": SITE_ID,
+    1:         "site_name": site.name,
+    1:         "url": site.url,
+    1:         "record_id": extract_record_id(site.url),
+    1:         "direction": site.direction.value,
+    1:         "document_count": len(fetched.documents),
+    1:         "parent_script": parent,
+    1:         "article_boundary": {
+    1:             "start_order": start_document.order,
+    1:             "start_url": start_document.source_url,
+    1:             "end_order_exclusive": end_document.order,
+    1:             "end_url_exclusive": end_document.source_url,
+               },
+    1:         "candidate_count": len(candidates),
+    1:         "boundary_issues": list(boundary_issues),
+    9:         "bottom_window": [
+    3:             {
+    3:                 "issue": item.issue,
+    3:                 "value": item.value,
+    3:                 "document_order": item.document.order,
+    3:                 "source_url": item.document.source_url,
+    3:                 "snippet": item.snippet,
+                   }
+    1:             for item in window
+               ],
+    7:         "target_all_diagnostics": [
+    2:             {
+    2:                 "issue": item.issue,
+    2:                 "value": item.value,
+    2:                 "document_order": item.document.order,
+    2:                 "source_url": item.document.source_url,
+    2:                 "inside_bottom_window": item in window,
+                   }
+    1:             for item in target_all
+               ],
+    1:         "cases": cases,
+           }
+    1:     print(json.dumps(report, ensure_ascii=False, indent=2))
+    2:     target_case = next(item for item in cases if item["issue"] == ARTICLE_ISSUE)
+    1:     return 0 if target_case["passed"] and target_case["value"] == "绿单" else 1
+       
+       
+    1: if __name__ == "__main__":
+    1:     raise SystemExit(main())

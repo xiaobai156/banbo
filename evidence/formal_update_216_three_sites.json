@@ -1,0 +1,65 @@
+{
+  "mode": "formal_update_scoped",
+  "project": "杀半波_修复版2",
+  "target_issue": 216,
+  "direction": "top",
+  "scope": ["hw-0045", "hw-0046", "hw-0053"],
+  "change": {
+    "type": "parser_spec_anchor_only",
+    "strategy": "existing decoded_sibling",
+    "url_or_domain_anchors_used": false,
+    "anchors": {
+      "hw-0045": ["杀料榜"],
+      "hw-0046": ["杀料榜", "稳杀半波"],
+      "hw-0053": ["杀料贴"]
+    }
+  },
+  "results": {
+    "hw-0045": {
+      "site_name": "雷锋第二版",
+      "216": {"status": "passed", "value": "绿双"},
+      "215": {"status": "passed", "value": "绿单"},
+      "214": {"status": "passed", "value": "红单"},
+      "999": {"status": "failed", "code": "target_period_missing"},
+      "boundary_issues": [216, 215, 214],
+      "candidate_count": 1,
+      "same_record": true
+    },
+    "hw-0046": {
+      "site_name": "雷锋第一版",
+      "216": {"status": "passed", "value": "蓝双"},
+      "215": {"status": "passed", "value": "绿双"},
+      "214": {"status": "passed", "value": "红双"},
+      "999": {"status": "failed", "code": "target_period_missing"},
+      "boundary_issues": [216, 215, 214],
+      "candidate_count": 1,
+      "same_record": true
+    },
+    "hw-0053": {
+      "site_name": "以以把第一版",
+      "216": {"status": "passed", "value": "红单"},
+      "215": {"status": "passed", "value": "绿单"},
+      "214": {"status": "passed", "value": "蓝单"},
+      "999": {"status": "failed", "code": "target_period_missing"},
+      "boundary_issues": [216, 215, 214],
+      "candidate_count": 1,
+      "same_record": true
+    }
+  },
+  "formal_write_guard": {
+    "parser_specs_changed": true,
+    "sites_config_changed": false,
+    "cache_updated": false,
+    "official_txt_updated": false,
+    "sites_sha256": "c96b9084b8dd256eac1cde0f3770bf82d608c5d4a074931950cf5696f9ba2b68",
+    "parser_specs_sha256": "d48ac2a90b1fab5a511ffd036a0459d8b561d40dc3a8a3bb62c8a2cd6641eeb9",
+    "cache_sha256": "2dbd8844e825fd92391c0da8bca027dd10b9a5147724782ae5a0db8171af4881"
+  },
+  "commands": [
+    "py -3 -m banbo.cli --period 216 --site-id hw-0045 --site-id hw-0046 --site-id hw-0053 --shadow --no-update-cache --max-workers 3",
+    "py -3 -m banbo.cli --period 215 --site-id hw-0045 --site-id hw-0046 --site-id hw-0053 --shadow --no-update-cache --max-workers 3",
+    "py -3 -m banbo.cli --period 214 --site-id hw-0045 --site-id hw-0046 --site-id hw-0053 --shadow --no-update-cache --max-workers 3",
+    "py -3 -m banbo.cli --period 999 --site-id hw-0045 --site-id hw-0046 --site-id hw-0053 --shadow --no-update-cache --max-workers 3"
+  ],
+  "all_target_experiments_passed": true
+}

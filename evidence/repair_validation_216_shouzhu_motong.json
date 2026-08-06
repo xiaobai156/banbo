@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "mode": "independent_validation",
+  "target_issue": 216,
+  "formal_files_untouched": true,
+  "sites": [
+    {
+      "site_id": "hw-0141",
+      "site_name": "守株待兔",
+      "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626099.html",
+      "direction": "bottom",
+      "current_spec": {
+        "strategy": "nearest_document",
+        "parser_id": "hw-0141:nearest_document:v1",
+        "anchors": ["守株待兔"],
+        "before_documents": 12,
+        "after_documents": 12,
+        "candidate_side": "both"
+      },
+      "formal_reproduction": {
+        "216": {
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "reason": "未找到216期专属证据"
+        },
+        "215": {
+          "passed": true,
+          "value": "蓝单",
+          "evidence_document_order": 88,
+          "boundary_issues": [213, 214, 215]
+        },
+        "214": {
+          "passed": true,
+          "value": "蓝双",
+          "evidence_document_order": 88,
+          "boundary_issues": [213, 214, 215]
+        },
+        "999": {
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "reason": "未找到999期专属证据"
+        }
+      },
+      "diagnosis": {
+        "title_anchor_document_orders": [77, 78],
+        "anchor_block_target_216": {
+          "value": "绿单",
+          "document_order": 89,
+          "document_issue_range": [216, 225],
+          "strict_bottom_window": [223, 224, 225],
+          "target_in_bottom_window": false
+        },
+        "unanchored_alternate_block": {
+          "value": "绿双",
+          "document_order": 125,
+          "boundary_issues": [214, 215, 216],
+          "rejected_reason": "该片段没有守株待兔标题锚点，且上下文切换到五谷丰登/一帆风顺；跨文章借锚点会把另一篇数据冒充守株待兔"
+        }
+      },
+      "validation_result": "blocked_by_live_document_boundary_and_cross_block_conflict",
+      "formal_update": "not_authorized_and_not_safe"
+    },
+    {
+      "site_id": "hw-0091",
+      "site_name": "魔童",
+      "url": "https://bloynnbb.gzgli-koeq8-deouwc.xyz:16677/",
+      "direction": "top",
+      "current_spec": {
+        "strategy": "decoded_sibling",
+        "parser_id": "hw-0091:decoded_sibling:v2",
+        "anchors": ["降世魔童", "综合绝杀"],
+        "patterns": ["(?<!\\d){issue}期[^期红绿蓝]{0,40}(?P<value>[红绿蓝](?:波)?[单双])"],
+        "anchor_mode": "all",
+        "compact": true
+      },
+      "formal_reproduction": {
+        "216": {
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "reason": "未找到216期专属证据"
+        },
+        "215": {
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "reason": "现有逐片段正则没有形成215期候选"
+        },
+        "214": {
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "reason": "现有逐片段正则没有形成214期候选"
+        },
+        "999": {
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "reason": "未找到999期专属证据"
+        }
+      },
+      "diagnosis": {
+        "stable_anchor_document_order": 1456,
+        "stable_anchors": ["降世魔童", "综合绝杀"],
+        "raw_table_first_rows": [
+          {"issue": 216, "value": "绿双"},
+          {"issue": 215, "value": "红双"},
+          {"issue": 214, "value": "红单"}
+        ],
+        "fragment_boundary": "216期在片段1457，半波值绿双在相邻片段1458；现有decoded_sibling逐片段解析，因此目标候选为空",
+        "text_combination_warning": "普通combined_sibling文本拼接会把同一行的开奖数字与下一期数字粘连，当前正则只保留216、211、207，顶部窗口因此错误变成[216,211,207]，不能作为正式修复"
+      },
+      "isolated_experimental_strategy": {
+        "strategy": "scoped_raw_table",
+        "anchor_scope": "同一脚本父来源内，从同时命中降世魔童和综合绝杀的标题片段开始拼接原始HTML表格",
+        "url_or_domain_anchors_used": false,
+        "window_size": 3,
+        "results": {
+          "216": {"passed": true, "value": "绿双", "window": [216, 215, 214]},
+          "215": {"passed": true, "value": "红双", "window": [216, 215, 214]},
+          "214": {"passed": true, "value": "红单", "window": [216, 215, 214]},
+          "999": {"passed": false, "reason": "目标期不在顶部三组窗口"}
+        }
+      },
+      "validation_result": "experimental_strategy_passed_isolated_only",
+      "formal_update": "等待开始正式更新"
+    }
+  ],
+  "commands": [
+    "py -3 -m banbo.cli --period 216 --site-id hw-0141 --site-id hw-0091 --shadow --no-update-cache --max-workers 2",
+    "py -3 -c <isolated live-document and raw-table validation>"
+  ],
+  "write_guards": {
+    "config/sites.json": "c96b9084b8dd256eac1cde0f3770bf82d608c5d4a074931950cf5696f9ba2b68",
+    "config/parser_specs.json": "d48ac2a90b1fab5a511ffd036a0459d8b561d40dc3a8a3bb62c8a2cd6641eeb9",
+    "recent_10_cache.json": "2dbd8844e825fd92391c0da8bca027dd10b9a5147724782ae5a0db8171af4881",
+    "formal_txts_checked": true
+  }
+}

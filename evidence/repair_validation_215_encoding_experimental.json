@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "mode": "isolated_utf8_first_experiment",
+  "production_changed": false,
+  "checks": [
+    {
+      "site_id": "hw-0099",
+      "site_name": "烟雨墨痕",
+      "url": "https://fbgbfg.www27521c.com:8443/gsb/am81.html",
+      "direction": "bottom",
+      "issue": 214,
+      "passed": true,
+      "value": "红双",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1,
+      "boundary_issues": [
+        213,
+        214,
+        215
+      ],
+      "source_url": "https://fbgbfg.www27521c.com:8443/gsb/am81.html",
+      "snippet": ":鼠19准209期绝杀半波[红波双]开:猪08错210期绝杀半波[绿波双]开:马49准211期绝杀半波[蓝波双]开:马01准212期绝杀半波[红波单]开:牛06准213期绝杀半波[蓝波单]开:猴35准214期绝杀半波[红波双]开:兔04准215期绝杀半波[蓝波双]开:?00准"
+    },
+    {
+      "site_id": "hw-0099",
+      "site_name": "烟雨墨痕",
+      "url": "https://fbgbfg.www27521c.com:8443/gsb/am81.html",
+      "direction": "bottom",
+      "issue": 215,
+      "passed": true,
+      "value": "蓝双",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1,
+      "boundary_issues": [
+        213,
+        214,
+        215
+      ],
+      "source_url": "https://fbgbfg.www27521c.com:8443/gsb/am81.html",
+      "snippet": ":猪08错210期绝杀半波[绿波双]开:马49准211期绝杀半波[蓝波双]开:马01准212期绝杀半波[红波单]开:牛06准213期绝杀半波[蓝波单]开:猴35准214期绝杀半波[红波双]开:兔04准215期绝杀半波[蓝波双]开:?00准"
+    },
+    {
+      "site_id": "hw-0099",
+      "site_name": "烟雨墨痕",
+      "url": "https://fbgbfg.www27521c.com:8443/gsb/am81.html",
+      "direction": "bottom",
+      "issue": 999,
+      "passed": false,
+      "value": null,
+      "failure_code": "target_period_missing",
+      "failure_reason": "未找到999期专属证据",
+      "document_count": 1,
+      "boundary_issues": [],
+      "source_url": "",
+      "snippet": ""
+    },
+    {
+      "site_id": "hw-0120",
+      "site_name": "全网最准",
+      "url": "https://88.62782d.com:1888/",
+      "direction": "top",
+      "issue": 214,
+      "passed": true,
+      "value": "蓝单",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 34,
+      "boundary_issues": [
+        216,
+        214,
+        213
+      ],
+      "source_url": "https://88.62782d.com:1888/",
+      "snippet": "头】27中26676636.com216期龙游天下【无措杀尾】80中76676595.com216期大圆满@【绝杀半波】132中12862782a.com『绝杀半波』第216期绝杀半波【绿双】开??第214期绝杀半波【蓝单】开04兔第213期绝杀半波【蓝单】开35猴第212期绝杀半波【绿单】开06牛第211期绝杀半波【绿单】开01马第208期绝杀半波【蓝单】开19鼠第207期绝杀半波【红双】开31鼠第206期绝杀半波【绿双】开47猴第205期绝杀半波【绿双】开03龙第204期绝杀半波【红单】开05"
+    },
+    {
+      "site_id": "hw-0120",
+      "site_name": "全网最准",
+      "url": "https://88.62782d.com:1888/",
+      "direction": "top",
+      "issue": 215,
+      "passed": false,
+      "value": null,
+      "failure_code": "target_period_missing",
+      "failure_reason": "未找到215期专属证据",
+      "document_count": 34,
+      "boundary_issues": [],
+      "source_url": "",
+      "snippet": ""
+    },
+    {
+      "site_id": "hw-0120",
+      "site_name": "全网最准",
+      "url": "https://88.62782d.com:1888/",
+      "direction": "top",
+      "issue": 999,
+      "passed": false,
+      "value": null,
+      "failure_code": "target_period_missing",
+      "failure_reason": "未找到999期专属证据",
+      "document_count": 34,
+      "boundary_issues": [],
+      "source_url": "",
+      "snippet": ""
+    },
+    {
+      "site_id": "hw-0122",
+      "site_name": "不疯不野",
+      "url": "https://2.www39169b.com:888/gsbl/s12.html",
+      "direction": "bottom",
+      "issue": 214,
+      "passed": true,
+      "value": "绿双",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1,
+      "boundary_issues": [
+        214,
+        215,
+        216
+      ],
+      "source_url": "https://2.www39169b.com:888/gsbl/s12.html",
+      "snippet": ":鼠19准209期绝杀半波《绿波双》开:猪08准210期绝杀半波《红波单》开:马49准211期绝杀半波《绿波双》开:马01准212期绝杀半波《蓝波双》开:牛06准213期绝杀半波《红波单》开:猴35错214期绝杀半波《绿波双》开:兔04准215期绝杀半波《红波单》开:蛇14准216期绝杀半波《蓝波双》开:?00准说明:本论坛所提供的内容、资料、图片和资讯,只应用在合法的资料探讨,暂不适用于其它,外围和使用。特此声明!论坛免责声明:以上所有广告内容均为赞助商提供,本站不对其经营行为负责。浏览或使用者须"
+    },
+    {
+      "site_id": "hw-0122",
+      "site_name": "不疯不野",
+      "url": "https://2.www39169b.com:888/gsbl/s12.html",
+      "direction": "bottom",
+      "issue": 215,
+      "passed": true,
+      "value": "红单",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1,
+      "boundary_issues": [
+        214,
+        215,
+        216
+      ],
+      "source_url": "https://2.www39169b.com:888/gsbl/s12.html",
+      "snippet": ":猪08准210期绝杀半波《红波单》开:马49准211期绝杀半波《绿波双》开:马01准212期绝杀半波《蓝波双》开:牛06准213期绝杀半波《红波单》开:猴35错214期绝杀半波《绿波双》开:兔04准215期绝杀半波《红波单》开:蛇14准216期绝杀半波《蓝波双》开:?00准说明:本论坛所提供的内容、资料、图片和资讯,只应用在合法的资料探讨,暂不适用于其它,外围和使用。特此声明!论坛免责声明:以上所有广告内容均为赞助商提供,本站不对其经营行为负责。浏览或使用者须自行承担有关责任,本网站恕不负责。【广"
+    },
+    {
+      "site_id": "hw-0122",
+      "site_name": "不疯不野",
+      "url": "https://2.www39169b.com:888/gsbl/s12.html",
+      "direction": "bottom",
+      "issue": 999,
+      "passed": false,
+      "value": null,
+      "failure_code": "target_period_missing",
+      "failure_reason": "未找到999期专属证据",
+      "document_count": 1,
+      "boundary_issues": [],
+      "source_url": "",
+      "snippet": ""
+    }
+  ]
+}

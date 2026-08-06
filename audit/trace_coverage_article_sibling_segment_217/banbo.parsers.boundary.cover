@@ -1,0 +1,42 @@
+    1: from __future__ import annotations
+       
+    1: from collections.abc import Callable, Sequence
+    1: from typing import TypeVar
+       
+    1: from banbo.domain.models import Direction
+       
+       
+    1: CandidateT = TypeVar("CandidateT")
+       
+       
+    1: def select_directional_window(
+           candidates: Sequence[CandidateT],
+           *,
+           issue_of: Callable[[CandidateT], int],
+           direction: Direction,
+    1:     window_size: int = 3,
+       ) -> tuple[tuple[CandidateT, ...], tuple[int, ...]]:
+    6:     if window_size != 3:
+>>>>>>         raise ValueError("半波方向窗口必须固定为3组")
+    6:     groups: list[list[CandidateT]] = []
+    6:     group_issues: list[int] = []
+   24:     for candidate in candidates:
+   18:         issue = issue_of(candidate)
+   18:         if not groups or group_issues[-1] != issue:
+   17:             groups.append([])
+   17:             group_issues.append(issue)
+   18:         groups[-1].append(candidate)
+    6:     selected_groups = (
+    6:         groups[-window_size:]
+    6:         if direction == Direction.BOTTOM
+>>>>>>         else groups[:window_size]
+           )
+    6:     selected_issues = (
+    6:         group_issues[-window_size:]
+    6:         if direction == Direction.BOTTOM
+>>>>>>         else group_issues[:window_size]
+           )
+    6:     return (
+   43:         tuple(candidate for group in selected_groups for candidate in group),
+    6:         tuple(selected_issues),
+           )

@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "mode": "formal_update_isolated_outputs",
+  "production_registered": true,
+  "formal_update_authorized": true,
+  "target_issue": 215,
+  "adjacent_issue": 214,
+  "missing_issue": 999,
+  "site_ids": [
+    "hw-0070",
+    "hw-0103",
+    "hw-0105",
+    "hw-0118"
+  ],
+  "parser_specs": {
+    "hw-0105": {
+      "parser_id": "hw-0105:combined_sibling:v1",
+      "strategy": "combined_sibling",
+      "direction": "bottom",
+      "anchors": [
+        "白蛇传",
+        "绝杀半波"
+      ],
+      "options": {
+        "compact": true,
+        "anchor_mode": "all",
+        "skip_keyword_check": true,
+        "window_size": 3
+      }
+    },
+    "hw-0118": {
+      "parser_id": "hw-0118:combined_sibling:v1",
+      "strategy": "combined_sibling",
+      "direction": "top",
+      "anchors": [
+        "流合",
+        "绝杀半波"
+      ],
+      "options": {
+        "compact": true,
+        "anchor_mode": "any",
+        "skip_keyword_check": true,
+        "window_size": 3
+      }
+    },
+    "hw-0070": {
+      "parser_id": "hw-0070:combined_sibling:v1",
+      "strategy": "combined_sibling",
+      "direction": "top",
+      "anchors": [
+        "澳门公证处",
+        "综合绝杀"
+      ],
+      "options": {
+        "compact": true,
+        "anchor_mode": "all",
+        "skip_keyword_check": true,
+        "window_size": 3
+      }
+    },
+    "hw-0103": {
+      "parser_id": "hw-0103:combined_sibling:v1",
+      "strategy": "combined_sibling",
+      "direction": "top",
+      "anchors": [
+        "综合绝杀"
+      ],
+      "options": {
+        "compact": true,
+        "anchor_mode": "all",
+        "skip_keyword_check": true,
+        "window_size": 3
+      }
+    }
+  },
+  "results": {
+    "215": [
+      {
+        "site_id": "hw-0070",
+        "site_name": "公证处",
+        "direction": "top",
+        "document_count": 844,
+        "request_url": "https://uhaxnrzx.q76gf-deec8-zqckeo.xyz:16677/",
+        "passed": true,
+        "value": "绿双",
+        "boundary_issues": [
+          215,
+          214,
+          213
+        ],
+        "candidate_count": 1,
+        "parser_id": "hw-0070:combined_sibling:v1",
+        "parser": "combined_sibling",
+        "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/2d723de1dd2d0762.js#decoded-89",
+        "snippet": "215期 龙 绿双 1尾 3头 开:0000准"
+      },
+      {
+        "site_id": "hw-0103",
+        "site_name": "开心果",
+        "direction": "top",
+        "document_count": 1244,
+        "request_url": "https://ykkpjdgv.d1ju4-kbfjr-zexdzd.xyz:16677/",
+        "passed": true,
+        "value": "蓝双",
+        "boundary_issues": [
+          215,
+          214,
+          213
+        ],
+        "candidate_count": 1,
+        "parser_id": "hw-0103:combined_sibling:v1",
+        "parser": "combined_sibling",
+        "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/97f1b569eba70649.js#decoded-40",
+        "snippet": "215期兔肖蓝双4尾0头开:?00⁣"
+      },
+      {
+        "site_id": "hw-0105",
+        "site_name": "白蛇传",
+        "direction": "bottom",
+        "document_count": 4313,
+        "request_url": "https://ocnrhq.du156-vb27w-tmhsed.xyz:16677/",
+        "passed": true,
+        "value": "蓝双",
+        "boundary_issues": [
+          213,
+          214,
+          215
+        ],
+        "candidate_count": 1,
+        "parser_id": "hw-0105:combined_sibling:v1",
+        "parser": "combined_sibling",
+        "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/d886860e10140193.js#decoded-348",
+        "snippet": "215期:绝杀半波- 蓝双开:?00准"
+      },
+      {
+        "site_id": "hw-0118",
+        "site_name": "流合",
+        "direction": "top",
+        "document_count": 2256,
+        "request_url": "https://pvxiftuf.yumkw-u4s81-hpytyz.work:16677/",
+        "passed": true,
+        "value": "红单",
+        "boundary_issues": [
+          215,
+          214,
+          213
+        ],
+        "candidate_count": 1,
+        "parser_id": "hw-0118:combined_sibling:v1",
+        "parser": "combined_sibling",
+        "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/52edb5034d8bfbd4.js#decoded-85",
+        "snippet": "215期稳杀半波 红单 开0000√"
+      }
+    ],
+    "214": [
+      {
+        "site_id": "hw-0070",
+        "site_name": "公证处",
+        "direction": "top",
+        "document_count": 844,
+        "request_url": "https://uhaxnrzx.q76gf-deec8-zqckeo.xyz:16677/",
+        "passed": true,
+        "value": "红单",
+        "boundary_issues": [
+          215,
+          214,
+          213
+        ],
+        "candidate_count": 1,
+        "parser_id": "hw-0070:combined_sibling:v1",
+        "parser": "combined_sibling",
+        "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/2d723de1dd2d0762.js#decoded-90",
+        "snippet": "214期 牛 红单 6尾 0头 开:兔04准"
+      },
+      {
+        "site_id": "hw-0103",
+        "site_name": "开心果",
+        "direction": "top",
+        "document_count": 1244,
+        "request_url": "https://ykkpjdgv.d1ju4-kbfjr-zexdzd.xyz:16677/",
+        "passed": true,
+        "value": "红单",
+        "boundary_issues": [
+          215,
+          214,
+          213
+        ],
+        "candidate_count": 1,
+        "parser_id": "hw-0103:combined_sibling:v1",
+        "parser": "combined_sibling",
+        "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/97f1b569eba70649.js#decoded-41",
+        "snippet": "214期猴肖红单5尾3头开:兔04⁣"
+      },
+      {
+        "site_id": "hw-0105",
+        "site_name": "白蛇传",
+        "direction": "bottom",
+        "document_count": 4313,
+        "request_url": "https://ocnrhq.du156-vb27w-tmhsed.xyz:16677/",
+        "passed": true,
+        "value": "绿双",
+        "boundary_issues": [
+          213,
+          214,
+          215
+        ],
+        "candidate_count": 1,
+        "parser_id": "hw-0105:combined_sibling:v1",
+        "parser": "combined_sibling",
+        "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/d886860e10140193.js#decoded-348",
+        "snippet": "214期:绝杀半波- 绿双开:兔04准"
+      },
+      {
+        "site_id": "hw-0118",
+        "site_name": "流合",
+        "direction": "top",
+        "document_count": 2256,
+        "request_url": "https://pvxiftuf.yumkw-u4s81-hpytyz.work:16677/",
+        "passed": true,
+        "value": "蓝单",
+        "boundary_issues": [
+          215,
+          214,
+          213
+        ],
+        "candidate_count": 1,
+        "parser_id": "hw-0118:combined_sibling:v1",
+        "parser": "combined_sibling",
+        "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/52edb5034d8bfbd4.js#decoded-85",
+        "snippet": "214期稳杀半波 蓝单 开兔04√"
+      }
+    ],
+    "999": [
+      {
+        "site_id": "hw-0070",
+        "site_name": "公证处",
+        "direction": "top",
+        "document_count": 844,
+        "request_url": "https://uhaxnrzx.q76gf-deec8-zqckeo.xyz:16677/",
+        "passed": false,
+        "failure_code": "target_period_missing",
+        "failure_reason": "未找到999期专属证据",
+        "candidate_count": 0
+      },
+      {
+        "site_id": "hw-0103",
+        "site_name": "开心果",
+        "direction": "top",
+        "document_count": 1244,
+        "request_url": "https://ykkpjdgv.d1ju4-kbfjr-zexdzd.xyz:16677/",
+        "passed": false,
+        "failure_code": "target_period_missing",
+        "failure_reason": "未找到999期专属证据",
+        "candidate_count": 0
+      },
+      {
+        "site_id": "hw-0105",
+        "site_name": "白蛇传",
+        "direction": "bottom",
+        "document_count": 4313,
+        "request_url": "https://ocnrhq.du156-vb27w-tmhsed.xyz:16677/",
+        "passed": false,
+        "failure_code": "target_period_missing",
+        "failure_reason": "未找到999期专属证据",
+        "candidate_count": 0
+      },
+      {
+        "site_id": "hw-0118",
+        "site_name": "流合",
+        "direction": "top",
+        "document_count": 2256,
+        "request_url": "https://pvxiftuf.yumkw-u4s81-hpytyz.work:16677/",
+        "passed": false,
+        "failure_code": "target_period_missing",
+        "failure_reason": "未找到999期专属证据",
+        "candidate_count": 0
+      }
+    ]
+  },
+  "outputs": {
+    "success_txt": "C:\\Users\\Administrator\\Desktop\\每天工具\\爬虫合集\\杀半波_修复版2\\evidence\\formal_update_four_sites_215\\success\\215期-半波.txt",
+    "success_sha256": "fae76a30af414107685bbc0c9530ef686303cd0f3f388c2d076b6d2c38bd9b57",
+    "failure_txt": "C:\\Users\\Administrator\\Desktop\\每天工具\\爬虫合集\\杀半波_修复版2\\evidence\\formal_update_four_sites_215\\failure\\215期-半波-失败.txt",
+    "failure_exists": false,
+    "audit_jsonl": "C:\\Users\\Administrator\\Desktop\\每天工具\\爬虫合集\\杀半波_修复版2\\evidence\\formal_update_four_sites_215\\audit\\215.jsonl",
+    "audit_sha256": "7bea62c81fa3d2a9af0251acb072d19a14d02a0cd45e5539ac6671827af2f63d",
+    "success_content": "绿双\t公证处\n蓝双\t开心果\n蓝双\t白蛇传\n红单\t流合\n\n215期排行\n排名\t内容\t数量\n1\t蓝双\t2\n2\t红单\t1\n3\t绿双\t1\n",
+    "failure_content": ""
+  },
+  "formal_hashes_before": {
+    "sites": "c96b9084b8dd256eac1cde0f3770bf82d608c5d4a074931950cf5696f9ba2b68",
+    "parser_specs": "5521d6837d6811d3ec0c26405889f137bd2ffbcbdf9e88a19ac0f26a3f124ac5",
+    "cache": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670",
+    "success_txt": "1de58b38ad9c069307069a5ea21b8df7ab6c2230bc3ad51029c00fabfc151aee",
+    "failure_txt": "c35cfa040fc5b35161517398c560057f1f242b90d9e59ccc8582a5450501021c"
+  },
+  "formal_hashes_after": {
+    "sites": "c96b9084b8dd256eac1cde0f3770bf82d608c5d4a074931950cf5696f9ba2b68",
+    "parser_specs": "5521d6837d6811d3ec0c26405889f137bd2ffbcbdf9e88a19ac0f26a3f124ac5",
+    "cache": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670",
+    "success_txt": "1de58b38ad9c069307069a5ea21b8df7ab6c2230bc3ad51029c00fabfc151aee",
+    "failure_txt": "c35cfa040fc5b35161517398c560057f1f242b90d9e59ccc8582a5450501021c"
+  },
+  "formal_files_unchanged_except_parser_specs": true,
+  "cache_updated": false,
+  "official_txt_updated": false,
+  "commands": [
+    "py -3 -m banbo.cli --period 215 --site-id hw-0070 --site-id hw-0103 --site-id hw-0105 --site-id hw-0118 --shadow --no-update-cache --max-workers 4",
+    "SinglePeriodRunner.run_many(period=215/214/999, site_ids=four, max_workers=4) with isolated output commit"
+  ]
+}

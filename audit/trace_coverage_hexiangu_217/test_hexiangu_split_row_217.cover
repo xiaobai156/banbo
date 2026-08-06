@@ -1,0 +1,100 @@
+    1: import json
+    1: import unittest
+    1: from pathlib import Path
+       
+    1: from banbo.application.single_period import build_site_spec
+    1: from banbo.domain import (
+           Document,
+           DocumentSource,
+           FailureCode,
+           ValidatedResult,
+           validate_evidence,
+       )
+    1: from banbo.parsers.combined_sibling import CombinedSiblingParser
+    1: from banbo.parsers.specs import parse_parser_specs
+    1: from banbo.storage.site_repository import SiteRepository
+       
+       
+    1: BASE_DIR = Path(__file__).resolve().parents[2]
+       
+       
+    1: def _document(order: int, suffix: int, content: str) -> Document:
+    8:     return Document(
+    4:         document_id=f"hexiangu-{order}",
+    4:         source=DocumentSource.SCRIPT,
+               source_url=(
+    8:             "https://xia01.cosds.ahsccn.com/upload/script/08/"
+    4:             f"hexiangu.js#decoded-{suffix}"
+               ),
+    4:         order=order,
+    4:         content=content,
+           )
+       
+       
+    2: class HexianguSplitRow217ContractTest(unittest.TestCase):
+    1:     @classmethod
+    1:     def setUpClass(cls) -> None:
+    1:         sites = SiteRepository.from_json(BASE_DIR / "config" / "sites.json")
+    2:         specs = parse_parser_specs(
+    2:             json.loads(
+    2:                 (BASE_DIR / "config" / "parser_specs.json").read_text(
+    1:                     encoding="utf-8"
+                       )
+                   )
+               )
+    1:         cls.site = sites.get("hw-0119")
+  156:         cls.spec = next(spec for spec in specs if spec.site_id == "hw-0119")
+    1:         cls.site_spec = build_site_spec(cls.site, cls.spec)
+    1:         cls.documents = (
+    1:             _document(0, 65, "<h2>绝杀专区 984440c.com</h2>"),
+    2:             _document(
+    1:                 1,
+    1:                 77,
+    1:                 "<tr><th>期数</th><th>杀一肖</th><th>杀半波</th>"
+                       "<th>杀一尾</th><th>开奖结果</th></tr>"
+                       "<tr><td>217期</td><td>《马》</td>",
+                   ),
+    2:             _document(
+    1:                 2,
+    1:                 78,
+    1:                 "<td>《蓝双》</td><td>《5尾》</td><td>开:?00</td></tr>"
+                       "<tr><td>216期</td><td>《猪》</td><td>《蓝单》</td>"
+                       "<td>《4尾》</td><td>开:马37</td></tr>",
+                   ),
+    2:             _document(
+    1:                 3,
+    1:                 79,
+    1:                 "<tr><td>215期</td><td>《兔》</td><td>《红单》</td>"
+                       "<td>《5尾》</td><td>开:蛇14</td></tr>"
+                       "<tr><td>214期</td><td>《鼠》</td><td>《绿双》</td></tr>",
+                   ),
+               )
+       
+    1:     def test_formal_spec_uses_spaced_combined_sibling_parser(self):
+    1:         self.assertEqual("combined_sibling", self.spec.strategy)
+    1:         self.assertFalse(self.spec.options["compact"])
+       
+    1:     def test_top_three_rows_parse_across_decoded_fragments(self):
+    1:         parser = CombinedSiblingParser(self.spec)
+    1:         expected = {217: "蓝双", 216: "蓝单", 215: "红单"}
+       
+    4:         for issue, value in expected.items():
+    6:             with self.subTest(issue=issue):
+    3:                 evidence = parser.parse(self.site_spec, self.documents, issue)
+    3:                 outcome = validate_evidence(self.site_spec, issue, evidence)
+    3:                 self.assertIsInstance(outcome, ValidatedResult)
+    3:                 self.assertEqual(value, outcome.value)
+    3:                 self.assertEqual((217, 216, 215), outcome.evidence.boundary_issues)
+       
+    1:     def test_out_of_window_and_missing_issues_stay_failed(self):
+    1:         parser = CombinedSiblingParser(self.spec)
+       
+    3:         for issue in (214, 999):
+    4:             with self.subTest(issue=issue):
+    2:                 evidence = parser.parse(self.site_spec, self.documents, issue)
+    2:                 outcome = validate_evidence(self.site_spec, issue, evidence)
+    2:                 self.assertEqual(FailureCode.TARGET_PERIOD_MISSING, outcome.code)
+       
+       
+    1: if __name__ == "__main__":
+>>>>>>     unittest.main()

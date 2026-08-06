@@ -1,0 +1,108 @@
+    1: from __future__ import annotations
+       
+    1: from dataclasses import dataclass, field
+    1: from enum import Enum
+    1: from typing import TypeAlias
+       
+    1: from .errors import FailureCode
+       
+       
+    2: class Direction(str, Enum):
+    1:     TOP = "top"
+    1:     BOTTOM = "bottom"
+       
+       
+    2: class DocumentSource(str, Enum):
+    1:     PAGE = "page"
+    1:     SCRIPT = "script"
+    1:     IFRAME = "iframe"
+    1:     API = "api"
+    1:     BROWSER = "browser"
+       
+       
+    2: @dataclass(frozen=True)
+    1: class SiteSpec:
+    1:     site_id: str
+    1:     name: str
+    1:     url: str
+    1:     direction: Direction
+    1:     strategy: str
+    1:     anchors: tuple[str, ...]
+    1:     parser_version: str
+    1:     before_documents: int = 0
+    1:     after_documents: int = 0
+    1:     target_only: bool = True
+    1:     record_id_pattern: str | None = None
+    1:     topic_id_pattern: str | None = None
+    1:     keywords: tuple[str, ...] = ("绝杀半波",)
+    1:     issue_pattern: str = r"(?P<issue>\d{1,4})期"
+    1:     value_pattern: str = (
+    1:         r"(?P<value>[红绿蓝](?:波)?[单双])"
+           )
+    1:     anchor_mode: str = "all"
+    1:     expected_record_id: str | None = None
+       
+       
+    2: @dataclass(frozen=True)
+    1: class Document:
+    1:     document_id: str
+    1:     source: DocumentSource
+    1:     source_url: str
+    1:     order: int
+    1:     content: str
+    1:     record_id: str | None = None
+    1:     fetched_at: str = ""
+       
+       
+    2: @dataclass(frozen=True)
+    1: class ParseEvidence:
+    1:     site_id: str
+    1:     target_issue: int
+    1:     value: str
+    1:     document_id: str
+    1:     document_source: DocumentSource
+    1:     document_order: int
+    1:     snippet: str
+    1:     parser_name: str
+    1:     parser_version: str
+    1:     direction: Direction
+    1:     anchor_passed: bool
+    1:     keyword_passed: bool
+    1:     same_record: bool
+    1:     record_id: str | None = None
+    1:     expected_record_id: str | None = None
+    1:     anchors: tuple[str, ...] = ()
+    1:     keywords: tuple[str, ...] = ()
+    1:     source_offset: int = 0
+    1:     candidate_count: int = 1
+    1:     conflict_values: tuple[str, ...] = ()
+    1:     boundary_issues: tuple[int, ...] = ()
+    1:     parser_id: str = ""
+    1:     source_url: str = ""
+    1:     block_id: str = ""
+    1:     block_start: int = 0
+    1:     block_end: int = 0
+    1:     document_relation: str = "same_document"
+       
+       
+    2: @dataclass(frozen=True)
+    1: class ValidatedResult:
+    1:     site_id: str
+    1:     site_name: str
+    1:     target_issue: int
+    1:     value: str
+    1:     direction: Direction
+    1:     evidence: ParseEvidence
+    1:     parser_version: str
+       
+       
+    2: @dataclass(frozen=True)
+    1: class FailureResult:
+    1:     site_id: str
+    1:     target_issue: int
+    1:     code: FailureCode
+    1:     message: str
+    1:     evidence: tuple[ParseEvidence, ...] = field(default_factory=tuple)
+       
+       
+    1: ValidationOutcome: TypeAlias = ValidatedResult | FailureResult

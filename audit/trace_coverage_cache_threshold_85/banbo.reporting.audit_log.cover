@@ -1,0 +1,76 @@
+    1: from __future__ import annotations
+       
+    1: import json
+    1: from datetime import datetime, timezone
+    1: from uuid import uuid4
+       
+    1: from banbo.domain.models import FailureResult, ValidatedResult
+       
+    1: from banbo.application.models import SiteRun
+       
+       
+    1: def audit_record(run: SiteRun, *, run_id: str) -> dict[str, object]:
+    3:     outcome = run.outcome
+    3:     evidence = (
+    3:         outcome.evidence
+    3:         if isinstance(outcome, ValidatedResult)
+>>>>>>         else (outcome.evidence[0] if outcome.evidence else None)
+           )
+   57:     return {
+    3:         "run_id": run_id,
+    3:         "site_id": run.site.site_id,
+    3:         "site_name": run.site.name,
+    3:         "target_issue": getattr(outcome, "target_issue", None),
+    3:         "direction": run.site.direction.value,
+    3:         "request_url": run.request_url or run.site.url,
+    3:         "document_count": run.document_count,
+    3:         "document_id": evidence.document_id if evidence else None,
+    3:         "document_source": evidence.document_source.value if evidence else None,
+    3:         "source_url": evidence.source_url if evidence else None,
+    3:         "article_id": evidence.record_id if evidence else None,
+    3:         "block_id": evidence.block_id if evidence else None,
+    3:         "block_start": evidence.block_start if evidence else None,
+    3:         "block_end": evidence.block_end if evidence else None,
+    3:         "document_relation": evidence.document_relation if evidence else None,
+    3:         "anchors": evidence.anchors if evidence else (),
+    3:         "keywords": evidence.keywords if evidence else (),
+    3:         "boundary_issues": evidence.boundary_issues if evidence else (),
+    3:         "conflict_values": evidence.conflict_values if evidence else (),
+    3:         "parser_id": evidence.parser_id if evidence else None,
+    3:         "parser": evidence.parser_name if evidence else None,
+    3:         "parser_version": evidence.parser_version if evidence else None,
+    3:         "candidate_count": evidence.candidate_count if evidence else 0,
+    3:         "value": outcome.value if isinstance(outcome, ValidatedResult) else None,
+    3:         "failure_code": outcome.code.value if isinstance(outcome, FailureResult) else None,
+    3:         "failure_reason": outcome.message if isinstance(outcome, FailureResult) else None,
+    3:         "elapsed_ms": run.elapsed_ms,
+    3:         "recorded_at": datetime.now(timezone.utc).isoformat(),
+           }
+       
+       
+    1: def render_audit_jsonl(
+           runs: list[SiteRun],
+           *,
+    1:     run_id: str | None = None,
+       ) -> str:
+    3:     identifier = run_id or uuid4().hex
+   15:     return "".join(
+    6:         json.dumps(audit_record(run, run_id=identifier), ensure_ascii=False)
+    3:         + "\n"
+    3:         for run in runs
+           )
+       
+       
+    1: def append_audit_jsonl(existing: str, addition: str) -> str:
+    3:     if existing and not existing.endswith("\n"):
+>>>>>>         raise ValueError("既有审计文件末尾不是完整JSONL记录")
+    3:     for line_number, line in enumerate(existing.splitlines(), start=1):
+>>>>>>         if not line.strip():
+>>>>>>             raise ValueError(f"既有审计文件包含空行：第{line_number}行")
+>>>>>>         try:
+>>>>>>             json.loads(line)
+>>>>>>         except json.JSONDecodeError as exc:
+>>>>>>             raise ValueError(
+>>>>>>                 f"既有审计文件包含无效JSON：第{line_number}行"
+>>>>>>             ) from exc
+    3:     return existing + addition

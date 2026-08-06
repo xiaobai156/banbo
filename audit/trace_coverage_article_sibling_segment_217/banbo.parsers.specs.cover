@@ -1,0 +1,186 @@
+    1: from __future__ import annotations
+       
+    1: import re
+       
+    1: from banbo.domain.models import Direction
+       
+    1: from .protocol import ParserSpec
+       
+       
+    2: class ParserSpecError(ValueError):
+    1:     pass
+       
+       
+    1: def _string_tuple(item: dict, key: str, index: int) -> tuple[str, ...]:
+  326:     value = item.get(key)
+  326:     if not isinstance(value, list) or not value:
+>>>>>>         raise ParserSpecError(f"specs[{index}].{key} 必须是非空数组")
+ 1495:     result = tuple(str(part).strip() for part in value)
+ 1495:     if any(not part for part in result):
+>>>>>>         raise ParserSpecError(f"specs[{index}].{key} 不能包含空值")
+  326:     return result
+       
+       
+    1: def _non_negative_int(item: dict, key: str, index: int) -> int:
+  326:     value = item.get(key)
+  326:     if not isinstance(value, int) or isinstance(value, bool) or value < 0:
+>>>>>>         raise ParserSpecError(f"specs[{index}].{key} 必须是非负整数")
+  326:     return value
+       
+       
+    1: def parse_parser_specs(payload: object) -> tuple[ParserSpec, ...]:
+    1:     if not isinstance(payload, dict) or payload.get("schema_version") != 1:
+>>>>>>         raise ParserSpecError("parser_specs schema_version 必须为1")
+    1:     raw_specs = payload.get("specs")
+    1:     if not isinstance(raw_specs, list):
+>>>>>>         raise ParserSpecError("parser_specs.specs 必须是数组")
+       
+    1:     specs: list[ParserSpec] = []
+    1:     seen_site_ids: set[str] = set()
+    1:     seen_parser_ids: set[str] = set()
+  164:     for index, item in enumerate(raw_specs):
+  163:         if not isinstance(item, dict):
+>>>>>>             raise ParserSpecError(f"specs[{index}] 必须是对象")
+  163:         site_id = str(item.get("site_id", "")).strip()
+  163:         parser_id = str(item.get("parser_id", "")).strip()
+  163:         strategy = str(item.get("strategy", "")).strip()
+  163:         parser_version = str(item.get("parser_version", "")).strip()
+  163:         if not site_id or not parser_id or not strategy or not parser_version:
+>>>>>>             raise ParserSpecError(
+>>>>>>                 f"specs[{index}] 缺少site_id、parser_id、strategy或parser_version"
+                   )
+  163:         if site_id in seen_site_ids:
+>>>>>>             raise ParserSpecError(f"site_id重复：{site_id}")
+  163:         seen_site_ids.add(site_id)
+  163:         if parser_id in seen_parser_ids:
+>>>>>>             raise ParserSpecError(f"parser_id重复：{parser_id}")
+  163:         seen_parser_ids.add(parser_id)
+  163:         try:
+  163:             direction = Direction(str(item.get("direction", "")))
+>>>>>>         except ValueError as exc:
+>>>>>>             raise ParserSpecError(
+>>>>>>                 f"specs[{index}].direction 必须是top或bottom"
+>>>>>>             ) from exc
+       
+  163:         issue_pattern = str(item.get("issue_pattern", "")).strip()
+  163:         value_pattern = str(item.get("value_pattern", "")).strip()
+  489:         for key, pattern in (
+  163:             ("issue_pattern", issue_pattern),
+  163:             ("value_pattern", value_pattern),
+               ):
+  326:             if not pattern:
+>>>>>>                 raise ParserSpecError(f"specs[{index}].{key} 不能为空")
+  326:             try:
+  326:                 re.compile(pattern)
+>>>>>>             except re.error as exc:
+>>>>>>                 raise ParserSpecError(
+>>>>>>                     f"specs[{index}].{key} 正则无效：{exc}"
+>>>>>>                 ) from exc
+       
+  489:         for key in ("record_id_pattern", "topic_id_pattern"):
+  326:             raw_pattern = item.get(key)
+  326:             if raw_pattern is None:
+  271:                 continue
+   55:             pattern = str(raw_pattern).strip()
+   55:             if not pattern:
+>>>>>>                 raise ParserSpecError(f"specs[{index}].{key} 不能为空")
+   55:             try:
+   55:                 compiled = re.compile(pattern)
+>>>>>>             except re.error as exc:
+>>>>>>                 raise ParserSpecError(
+>>>>>>                     f"specs[{index}].{key} 正则无效：{exc}"
+>>>>>>                 ) from exc
+   55:             if compiled.groups < 1:
+>>>>>>                 raise ParserSpecError(
+>>>>>>                     f"specs[{index}].{key} 必须包含记录ID捕获组"
+                       )
+       
+  163:         target_only = item.get("target_only")
+  163:         if not isinstance(target_only, bool):
+>>>>>>             raise ParserSpecError(
+>>>>>>                 f"specs[{index}].target_only 必须是布尔值"
+                   )
+  163:         options = item.get("options")
+  163:         if not isinstance(options, dict):
+>>>>>>             raise ParserSpecError(f"specs[{index}].options 必须是对象")
+  163:         if options.get("target_only_scope") is True:
+>>>>>>             raise ParserSpecError(
+>>>>>>                 f"specs[{index}].options.target_only_scope 禁止绕过方向窗口"
+                   )
+  163:         if "window_size" in options and options["window_size"] != 3:
+>>>>>>             raise ParserSpecError(
+>>>>>>                 f"specs[{index}].options.window_size 必须固定为3"
+                   )
+  163:         if strategy == "article_sibling_segment":
+    1:             end_markers = options.get("end_markers")
+    3:             if (
+    1:                 not isinstance(end_markers, list)
+    1:                 or not end_markers
+    7:                 or any(
+    2:                     not isinstance(marker, str) or not marker.strip()
+    1:                     for marker in end_markers
+                       )
+                   ):
+>>>>>>                 raise ParserSpecError(
+>>>>>>                     f"specs[{index}].options.end_markers 必须是非空字符串数组"
+                       )
+  163:         if strategy == "regex_line":
+   15:             patterns = options.get("patterns")
+   15:             if not isinstance(patterns, list) or not patterns:
+>>>>>>                 raise ParserSpecError(
+>>>>>>                     f"specs[{index}].options.patterns 必须是非空数组"
+                       )
+   49:             if any(str(pattern).count("{issue}") != 1 for pattern in patterns):
+>>>>>>                 raise ParserSpecError(
+>>>>>>                     f"specs[{index}].options.patterns 必须恰好包含一个{{issue}}"
+                       )
+  163:         if strategy == "dynamic_api":
+    3:             source = options.get("source")
+    3:             if not isinstance(source, dict):
+>>>>>>                 raise ParserSpecError(
+>>>>>>                     f"specs[{index}].options.source 必须是动态来源对象"
+                       )
+    3:             kind = str(source.get("kind", "")).strip()
+    3:             user_id = str(source.get("user_id", "")).strip()
+    3:             topic = str(source.get("topic", "")).strip()
+    3:             if kind not in {"forums", "references"}:
+>>>>>>                 raise ParserSpecError(
+>>>>>>                     f"specs[{index}].options.source.kind 无效"
+                       )
+    3:             if not user_id or not topic:
+>>>>>>                 raise ParserSpecError(
+>>>>>>                     f"specs[{index}].options.source 缺少user_id或topic"
+                       )
+       
+  326:         specs.append(
+  326:             ParserSpec(
+  163:                 site_id=site_id,
+  163:                 strategy=strategy,
+  163:                 parser_version=parser_version,
+  163:                 parser_id=parser_id,
+  163:                 direction=direction,
+  163:                 anchors=_string_tuple(item, "anchors", index),
+  163:                 keywords=_string_tuple(item, "keywords", index),
+  163:                 issue_pattern=issue_pattern,
+  163:                 value_pattern=value_pattern,
+  326:                 before_documents=_non_negative_int(
+  163:                     item, "before_documents", index
+                       ),
+  326:                 after_documents=_non_negative_int(
+  163:                     item, "after_documents", index
+                       ),
+  163:                 target_only=target_only,
+                       record_id_pattern=(
+  163:                     None
+  163:                     if item.get("record_id_pattern") is None
+>>>>>>                     else str(item["record_id_pattern"])
+                       ),
+                       topic_id_pattern=(
+  108:                     None
+  163:                     if item.get("topic_id_pattern") is None
+   55:                     else str(item["topic_id_pattern"])
+                       ),
+  163:                 options=dict(options),
+                   )
+               )
+    1:     return tuple(specs)

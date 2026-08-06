@@ -1,0 +1,61 @@
+{
+  "authorization_scope": "用户本轮明确：特例添加",
+  "scope": [
+    "本次允许四个指定站点进入正式配置",
+    "本次放宽不足10期历史门槛",
+    "实时期数、方向、精确标题、文章ID、同文档和值校验仍然保留"
+  ],
+  "source": "https://a.ttss.vip/list.aspx?id=79&page=1",
+  "target_issue": 218,
+  "sites": [
+    {
+      "site_id": "hw-0164",
+      "name": "绿树成荫",
+      "article_url": "https://a.ttss.vip/article.aspx?id=972334",
+      "article_id": "972334",
+      "list_pages": 9,
+      "value": "绿单",
+      "valid_history_count": 8,
+      "valid_issues": [218, 217, 216, 214, 213, 212, 211, 209],
+      "missing_issues_in_observed_range": [215, 210, 208, 207, 206]
+    },
+    {
+      "site_id": "hw-0165",
+      "name": "熙熙攘攘",
+      "article_url": "https://a.ttss.vip/article.aspx?id=972370",
+      "article_id": "972370",
+      "list_pages": 7,
+      "value": "蓝双",
+      "valid_history_count": 3,
+      "valid_issues": [218, 217, 215],
+      "missing_issues_in_observed_range": [216]
+    },
+    {
+      "site_id": "hw-0166",
+      "name": "叛逆时代",
+      "article_url": "https://a.ttss.vip/article.aspx?id=972445",
+      "article_id": "972445",
+      "list_pages": 2,
+      "value": "红单",
+      "valid_history_count": 11,
+      "valid_issues": [218, 217, 216, 215, 214, 213, 211, 209, 207, 206, 205],
+      "missing_issues_in_observed_range": [212, 210, 208]
+    },
+    {
+      "site_id": "hw-0167",
+      "name": "六合宝典特殊",
+      "article_url": "https://a.ttss.vip/article.aspx?id=972461",
+      "article_id": "972461",
+      "list_pages": 1,
+      "value": "绿单",
+      "valid_history_count": 20,
+      "valid_issues": [218, 216, 215, 214, 213, 210, 209, 207, 205, 204, 203, 202, 201, 200, 199, 198, 197, 196, 195, 194],
+      "missing_issues_in_observed_range": [217, 212, 211, 208, 206]
+    }
+  ],
+  "duplicate_check_before_special_add": {
+    "formal_cache_rows_with_values": 0,
+    "status": "not_completed",
+    "decision": "overridden_by_user_special_add"
+  }
+}

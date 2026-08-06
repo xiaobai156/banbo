@@ -1,0 +1,965 @@
+{
+  "schema_version": 1,
+  "mode": "isolated_validation",
+  "production_changed": false,
+  "formal_update_authorized": false,
+  "network_real_snapshot": true,
+  "target_issue": 215,
+  "adjacent_issue": 214,
+  "missing_issue": 999,
+  "generated_at": "2026-08-03T17:16:24.630777+00:00",
+  "baseline_hashes": {
+    "config/sites.json": "c96b9084b8dd256eac1cde0f3770bf82d608c5d4a074931950cf5696f9ba2b68",
+    "config/parser_specs.json": "4725b5683e0a7714bfccd33a252c2e24564c08007f009ceca2a770e67a1e8189",
+    "recent_10_cache.json": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670"
+  },
+  "sites": [
+    {
+      "site_id": "hw-0070",
+      "site_name": "公证处",
+      "url": "https://uhaxnrzx.q76gf-deec8-zqckeo.xyz:16677/",
+      "configured_direction": "top",
+      "formal_parser": {
+        "parser_id": "hw-0070:table:v1",
+        "strategy": "table",
+        "result_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        }
+      },
+      "experimental_parser": {
+        "parser_id": "hw-0070:combined_sibling:exp-1:top",
+        "strategy": "combined_sibling",
+        "version": "exp-1",
+        "anchors": [
+          "澳门公证处",
+          "综合绝杀"
+        ],
+        "anchor_mode": "all",
+        "skip_keyword_check": true,
+        "document_count": 844,
+        "matching_parent_groups": [
+          {
+            "parent_source": "https://xia06.cosds.ahsccn.com/upload/script/08/2d723de1dd2d0762.js",
+            "fragment_count": 49,
+            "first_order": 489
+          }
+        ],
+        "target_215": {
+          "passed": true,
+          "candidate_count": 1,
+          "evidence": [
+            {
+              "value": "绿双",
+              "document_id": "script:5dd4016b9db1f5672297",
+              "document_source": "script",
+              "document_order": 509,
+              "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/2d723de1dd2d0762.js#decoded-89",
+              "document_relation": "declared_neighbor_window",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "candidate_count": 1,
+              "conflict_values": [
+                "绿双"
+              ],
+              "anchors": [
+                "澳门公证处",
+                "综合绝杀"
+              ],
+              "keywords": [],
+              "anchor_passed": true,
+              "keyword_passed": true,
+              "same_record": true,
+              "snippet": "215期 龙 绿双 1尾 3头 开:0000准"
+            }
+          ],
+          "value": "绿双",
+          "failure_code": null,
+          "failure_reason": null
+        },
+        "adjacent_214": {
+          "passed": true,
+          "candidate_count": 1,
+          "evidence": [
+            {
+              "value": "红单",
+              "document_id": "script:db4b1632b3ade11dc3f3",
+              "document_source": "script",
+              "document_order": 510,
+              "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/2d723de1dd2d0762.js#decoded-90",
+              "document_relation": "declared_neighbor_window",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "candidate_count": 1,
+              "conflict_values": [
+                "红单"
+              ],
+              "anchors": [
+                "澳门公证处",
+                "综合绝杀"
+              ],
+              "keywords": [],
+              "anchor_passed": true,
+              "keyword_passed": true,
+              "same_record": true,
+              "snippet": "214期 牛 红单 6尾 0头 开:兔04准"
+            }
+          ],
+          "value": "红单",
+          "failure_code": null,
+          "failure_reason": null
+        },
+        "missing_999": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据"
+        },
+        "reverse_direction_215": {
+          "direction": "bottom",
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "wrong_section_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "wrong_field_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "same_period_conflict_215": {
+          "passed": false,
+          "candidate_count": 2,
+          "value": null,
+          "failure_code": "same_period_conflict",
+          "failure_reason": "同期存在多个不同半波结果",
+          "evidence": [
+            {
+              "value": "绿双",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "conflict_values": [
+                "红单",
+                "绿双"
+              ],
+              "document_order": 0,
+              "source_url": "https://fixture.invalid/hw-0070.js#decoded-1",
+              "snippet": "215期绝杀半波 绿双 开0000准澳门公证处综合绝杀"
+            },
+            {
+              "value": "红单",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "conflict_values": [
+                "红单",
+                "绿双"
+              ],
+              "document_order": 1,
+              "source_url": "https://fixture.invalid/hw-0070.js#decoded-2",
+              "snippet": "215期绝杀半波 红单 开0000准澳门公证处综合绝杀"
+            }
+          ],
+          "fixture": "same_parent_duplicate_215_with_distinct_value"
+        },
+        "cross_group_anchor_check": null
+      },
+      "expected_value_from_user_evidence": "绿双"
+    },
+    {
+      "site_id": "hw-0103",
+      "site_name": "开心果",
+      "url": "https://ykkpjdgv.d1ju4-kbfjr-zexdzd.xyz:16677/",
+      "configured_direction": "top",
+      "formal_parser": {
+        "parser_id": "hw-0103:table:v1",
+        "strategy": "table",
+        "result_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        }
+      },
+      "experimental_parser": {
+        "parser_id": "hw-0103:combined_sibling:exp-2:top",
+        "strategy": "combined_sibling",
+        "version": "exp-1",
+        "anchors": [
+          "综合绝杀"
+        ],
+        "anchor_mode": "all",
+        "skip_keyword_check": true,
+        "document_count": 1244,
+        "matching_parent_groups": [
+          {
+            "parent_source": "https://xia01.cosds.ahsccn.com/upload/script/08/97f1b569eba70649.js",
+            "fragment_count": 70,
+            "first_order": 889
+          }
+        ],
+        "target_215": {
+          "passed": true,
+          "candidate_count": 1,
+          "evidence": [
+            {
+              "value": "蓝双",
+              "document_id": "script:ca903b3a559d037d7ae8",
+              "document_source": "script",
+              "document_order": 916,
+              "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/97f1b569eba70649.js#decoded-40",
+              "document_relation": "declared_neighbor_window",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "candidate_count": 1,
+              "conflict_values": [
+                "蓝双"
+              ],
+              "anchors": [
+                "综合绝杀"
+              ],
+              "keywords": [],
+              "anchor_passed": true,
+              "keyword_passed": true,
+              "same_record": true,
+              "snippet": "215期兔肖蓝双4尾0头开:?00⁣"
+            }
+          ],
+          "value": "蓝双",
+          "failure_code": null,
+          "failure_reason": null
+        },
+        "adjacent_214": {
+          "passed": true,
+          "candidate_count": 1,
+          "evidence": [
+            {
+              "value": "红单",
+              "document_id": "script:e090c8ef707d4381883d",
+              "document_source": "script",
+              "document_order": 917,
+              "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/97f1b569eba70649.js#decoded-41",
+              "document_relation": "declared_neighbor_window",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "candidate_count": 1,
+              "conflict_values": [
+                "红单"
+              ],
+              "anchors": [
+                "综合绝杀"
+              ],
+              "keywords": [],
+              "anchor_passed": true,
+              "keyword_passed": true,
+              "same_record": true,
+              "snippet": "214期猴肖红单5尾3头开:兔04⁣"
+            }
+          ],
+          "value": "红单",
+          "failure_code": null,
+          "failure_reason": null
+        },
+        "missing_999": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据"
+        },
+        "reverse_direction_215": {
+          "direction": "bottom",
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "wrong_section_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "wrong_field_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "same_period_conflict_215": {
+          "passed": false,
+          "candidate_count": 2,
+          "value": null,
+          "failure_code": "same_period_conflict",
+          "failure_reason": "同期存在多个不同半波结果",
+          "evidence": [
+            {
+              "value": "蓝双",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "conflict_values": [
+                "红单",
+                "蓝双"
+              ],
+              "document_order": 0,
+              "source_url": "https://fixture.invalid/hw-0103.js#decoded-1",
+              "snippet": "215期绝杀半波 蓝双 开0000准综合绝杀"
+            },
+            {
+              "value": "红单",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "conflict_values": [
+                "红单",
+                "蓝双"
+              ],
+              "document_order": 1,
+              "source_url": "https://fixture.invalid/hw-0103.js#decoded-2",
+              "snippet": "215期绝杀半波 红单 开0000准综合绝杀"
+            }
+          ],
+          "fixture": "same_parent_duplicate_215_with_distinct_value"
+        },
+        "cross_group_anchor_check": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        }
+      },
+      "expected_value_from_user_evidence": "蓝双"
+    },
+    {
+      "site_id": "hw-0105",
+      "site_name": "白蛇传",
+      "url": "https://ocnrhq.du156-vb27w-tmhsed.xyz:16677/",
+      "configured_direction": "bottom",
+      "formal_parser": {
+        "parser_id": "hw-0105:title_neighbor:v1",
+        "strategy": "title_neighbor",
+        "result_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        }
+      },
+      "experimental_parser": {
+        "parser_id": "hw-0105:combined_sibling:exp-1:bottom",
+        "strategy": "combined_sibling",
+        "version": "exp-1",
+        "anchors": [
+          "白蛇传",
+          "绝杀半波"
+        ],
+        "anchor_mode": "all",
+        "skip_keyword_check": true,
+        "document_count": 4313,
+        "matching_parent_groups": [
+          {
+            "parent_source": "https://xia04.cosds.ahsccn.com/upload/script/08/d886860e10140193.js",
+            "fragment_count": 391,
+            "first_order": 2189
+          }
+        ],
+        "target_215": {
+          "passed": true,
+          "candidate_count": 1,
+          "evidence": [
+            {
+              "value": "蓝双",
+              "document_id": "script:ca18ba350c14b865adf5",
+              "document_source": "script",
+              "document_order": 2511,
+              "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/d886860e10140193.js#decoded-348",
+              "document_relation": "declared_neighbor_window",
+              "boundary_issues": [
+                213,
+                214,
+                215
+              ],
+              "candidate_count": 1,
+              "conflict_values": [
+                "蓝双"
+              ],
+              "anchors": [
+                "白蛇传",
+                "绝杀半波"
+              ],
+              "keywords": [],
+              "anchor_passed": true,
+              "keyword_passed": true,
+              "same_record": true,
+              "snippet": "215期:绝杀半波- 蓝双开:?00准"
+            }
+          ],
+          "value": "蓝双",
+          "failure_code": null,
+          "failure_reason": null
+        },
+        "adjacent_214": {
+          "passed": true,
+          "candidate_count": 1,
+          "evidence": [
+            {
+              "value": "绿双",
+              "document_id": "script:ca18ba350c14b865adf5",
+              "document_source": "script",
+              "document_order": 2511,
+              "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/d886860e10140193.js#decoded-348",
+              "document_relation": "declared_neighbor_window",
+              "boundary_issues": [
+                213,
+                214,
+                215
+              ],
+              "candidate_count": 1,
+              "conflict_values": [
+                "绿双"
+              ],
+              "anchors": [
+                "白蛇传",
+                "绝杀半波"
+              ],
+              "keywords": [],
+              "anchor_passed": true,
+              "keyword_passed": true,
+              "same_record": true,
+              "snippet": "214期:绝杀半波- 绿双开:兔04准"
+            }
+          ],
+          "value": "绿双",
+          "failure_code": null,
+          "failure_reason": null
+        },
+        "missing_999": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据"
+        },
+        "reverse_direction_215": {
+          "direction": "top",
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "wrong_section_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "wrong_field_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "same_period_conflict_215": {
+          "passed": false,
+          "candidate_count": 2,
+          "value": null,
+          "failure_code": "same_period_conflict",
+          "failure_reason": "同期存在多个不同半波结果",
+          "evidence": [
+            {
+              "value": "蓝双",
+              "boundary_issues": [
+                213,
+                214,
+                215
+              ],
+              "conflict_values": [
+                "红单",
+                "蓝双"
+              ],
+              "document_order": 2,
+              "source_url": "https://fixture.invalid/hw-0105.js#decoded-3",
+              "snippet": "215期绝杀半波 蓝双 开0000准白蛇传绝杀半波"
+            },
+            {
+              "value": "红单",
+              "boundary_issues": [
+                213,
+                214,
+                215
+              ],
+              "conflict_values": [
+                "红单",
+                "蓝双"
+              ],
+              "document_order": 3,
+              "source_url": "https://fixture.invalid/hw-0105.js#decoded-4",
+              "snippet": "215期绝杀半波 红单 开0000准"
+            }
+          ],
+          "fixture": "same_parent_duplicate_215_with_distinct_value"
+        },
+        "cross_group_anchor_check": null
+      },
+      "expected_value_from_user_evidence": "蓝双"
+    },
+    {
+      "site_id": "hw-0118",
+      "site_name": "流合",
+      "url": "https://pvxiftuf.yumkw-u4s81-hpytyz.work:16677/",
+      "configured_direction": "top",
+      "formal_parser": {
+        "parser_id": "hw-0118:regex_line:v1",
+        "strategy": "regex_line",
+        "result_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        }
+      },
+      "experimental_parser": {
+        "parser_id": "hw-0118:combined_sibling:exp-1:top",
+        "strategy": "combined_sibling",
+        "version": "exp-1",
+        "anchors": [
+          "流合",
+          "绝杀半波"
+        ],
+        "anchor_mode": "any",
+        "skip_keyword_check": true,
+        "document_count": 2256,
+        "matching_parent_groups": [
+          {
+            "parent_source": "https://xia03.cosds.ahsccn.com/upload/script/08/52edb5034d8bfbd4.js",
+            "fragment_count": 139,
+            "first_order": 1024
+          }
+        ],
+        "target_215": {
+          "passed": true,
+          "candidate_count": 1,
+          "evidence": [
+            {
+              "value": "红单",
+              "document_id": "script:a68e10c8f09c620a7d13",
+              "document_source": "script",
+              "document_order": 1107,
+              "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/52edb5034d8bfbd4.js#decoded-85",
+              "document_relation": "declared_neighbor_window",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "candidate_count": 1,
+              "conflict_values": [
+                "红单"
+              ],
+              "anchors": [
+                "流合",
+                "绝杀半波"
+              ],
+              "keywords": [],
+              "anchor_passed": true,
+              "keyword_passed": true,
+              "same_record": true,
+              "snippet": "215期稳杀半波 红单 开0000√"
+            }
+          ],
+          "value": "红单",
+          "failure_code": null,
+          "failure_reason": null
+        },
+        "adjacent_214": {
+          "passed": true,
+          "candidate_count": 1,
+          "evidence": [
+            {
+              "value": "蓝单",
+              "document_id": "script:a68e10c8f09c620a7d13",
+              "document_source": "script",
+              "document_order": 1107,
+              "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/52edb5034d8bfbd4.js#decoded-85",
+              "document_relation": "declared_neighbor_window",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "candidate_count": 1,
+              "conflict_values": [
+                "蓝单"
+              ],
+              "anchors": [
+                "流合",
+                "绝杀半波"
+              ],
+              "keywords": [],
+              "anchor_passed": true,
+              "keyword_passed": true,
+              "same_record": true,
+              "snippet": "214期稳杀半波 蓝单 开兔04√"
+            }
+          ],
+          "value": "蓝单",
+          "failure_code": null,
+          "failure_reason": null
+        },
+        "missing_999": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据"
+        },
+        "reverse_direction_215": {
+          "direction": "bottom",
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "wrong_section_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "wrong_field_215": {
+          "passed": false,
+          "candidate_count": 0,
+          "evidence": [],
+          "value": null,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到215期专属证据"
+        },
+        "same_period_conflict_215": {
+          "passed": false,
+          "candidate_count": 2,
+          "value": null,
+          "failure_code": "same_period_conflict",
+          "failure_reason": "同期存在多个不同半波结果",
+          "evidence": [
+            {
+              "value": "红单",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "conflict_values": [
+                "红单",
+                "蓝双"
+              ],
+              "document_order": 0,
+              "source_url": "https://fixture.invalid/hw-0118.js#decoded-1",
+              "snippet": "215期绝杀半波 红单 开0000准流合绝杀半波"
+            },
+            {
+              "value": "蓝双",
+              "boundary_issues": [
+                215,
+                214,
+                213
+              ],
+              "conflict_values": [
+                "红单",
+                "蓝双"
+              ],
+              "document_order": 1,
+              "source_url": "https://fixture.invalid/hw-0118.js#decoded-2",
+              "snippet": "215期绝杀半波 蓝双 开0000准流合绝杀半波"
+            }
+          ],
+          "fixture": "same_parent_duplicate_215_with_distinct_value"
+        },
+        "cross_group_anchor_check": null
+      },
+      "expected_value_from_user_evidence": "红单"
+    }
+  ],
+  "commands": [
+    "in-memory default_document_provider + formal registry reproduction",
+    "in-memory combined_sibling experimental validation for 215/214/999 and reverse direction",
+    "py -3 -m banbo.cli --period 215 --site-id hw-0070 --site-id hw-0103 --site-id hw-0105 --site-id hw-0118 --shadow --no-update-cache --max-workers 4"
+  ],
+  "formal_hashes_after": {
+    "config/sites.json": "c96b9084b8dd256eac1cde0f3770bf82d608c5d4a074931950cf5696f9ba2b68",
+    "config/parser_specs.json": "4725b5683e0a7714bfccd33a252c2e24564c08007f009ceca2a770e67a1e8189",
+    "recent_10_cache.json": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670"
+  },
+  "formal_output_hashes_before": {
+    "success_txt": "1de58b38ad9c069307069a5ea21b8df7ab6c2230bc3ad51029c00fabfc151aee",
+    "failure_txt": "c35cfa040fc5b35161517398c560057f1f242b90d9e59ccc8582a5450501021c"
+  },
+  "formal_output_hashes_after": {
+    "success_txt": "1de58b38ad9c069307069a5ea21b8df7ab6c2230bc3ad51029c00fabfc151aee",
+    "failure_txt": "c35cfa040fc5b35161517398c560057f1f242b90d9e59ccc8582a5450501021c"
+  },
+  "formal_files_unchanged": true,
+  "all_target_experiments_passed": true,
+  "synthetic_conflict_checks": [
+    {
+      "site_id": "hw-0070",
+      "failure_code": "same_period_conflict",
+      "candidate_values": [
+        "红单",
+        "绿双"
+      ],
+      "payload": {
+        "passed": false,
+        "candidate_count": 2,
+        "value": null,
+        "failure_code": "same_period_conflict",
+        "failure_reason": "同期存在多个不同半波结果",
+        "evidence": [
+          {
+            "value": "绿双",
+            "boundary_issues": [
+              215,
+              214,
+              213
+            ],
+            "conflict_values": [
+              "红单",
+              "绿双"
+            ],
+            "document_order": 0,
+            "source_url": "https://fixture.invalid/hw-0070.js#decoded-1",
+            "snippet": "215期绝杀半波 绿双 开0000准澳门公证处综合绝杀"
+          },
+          {
+            "value": "红单",
+            "boundary_issues": [
+              215,
+              214,
+              213
+            ],
+            "conflict_values": [
+              "红单",
+              "绿双"
+            ],
+            "document_order": 1,
+            "source_url": "https://fixture.invalid/hw-0070.js#decoded-2",
+            "snippet": "215期绝杀半波 红单 开0000准澳门公证处综合绝杀"
+          }
+        ],
+        "fixture": "same_parent_duplicate_215_with_distinct_value"
+      }
+    },
+    {
+      "site_id": "hw-0103",
+      "failure_code": "same_period_conflict",
+      "candidate_values": [
+        "红单",
+        "蓝双"
+      ],
+      "payload": {
+        "passed": false,
+        "candidate_count": 2,
+        "value": null,
+        "failure_code": "same_period_conflict",
+        "failure_reason": "同期存在多个不同半波结果",
+        "evidence": [
+          {
+            "value": "蓝双",
+            "boundary_issues": [
+              215,
+              214,
+              213
+            ],
+            "conflict_values": [
+              "红单",
+              "蓝双"
+            ],
+            "document_order": 0,
+            "source_url": "https://fixture.invalid/hw-0103.js#decoded-1",
+            "snippet": "215期绝杀半波 蓝双 开0000准综合绝杀"
+          },
+          {
+            "value": "红单",
+            "boundary_issues": [
+              215,
+              214,
+              213
+            ],
+            "conflict_values": [
+              "红单",
+              "蓝双"
+            ],
+            "document_order": 1,
+            "source_url": "https://fixture.invalid/hw-0103.js#decoded-2",
+            "snippet": "215期绝杀半波 红单 开0000准综合绝杀"
+          }
+        ],
+        "fixture": "same_parent_duplicate_215_with_distinct_value"
+      }
+    },
+    {
+      "site_id": "hw-0105",
+      "failure_code": "same_period_conflict",
+      "candidate_values": [
+        "红单",
+        "蓝双"
+      ],
+      "payload": {
+        "passed": false,
+        "candidate_count": 2,
+        "value": null,
+        "failure_code": "same_period_conflict",
+        "failure_reason": "同期存在多个不同半波结果",
+        "evidence": [
+          {
+            "value": "蓝双",
+            "boundary_issues": [
+              213,
+              214,
+              215
+            ],
+            "conflict_values": [
+              "红单",
+              "蓝双"
+            ],
+            "document_order": 2,
+            "source_url": "https://fixture.invalid/hw-0105.js#decoded-3",
+            "snippet": "215期绝杀半波 蓝双 开0000准白蛇传绝杀半波"
+          },
+          {
+            "value": "红单",
+            "boundary_issues": [
+              213,
+              214,
+              215
+            ],
+            "conflict_values": [
+              "红单",
+              "蓝双"
+            ],
+            "document_order": 3,
+            "source_url": "https://fixture.invalid/hw-0105.js#decoded-4",
+            "snippet": "215期绝杀半波 红单 开0000准"
+          }
+        ],
+        "fixture": "same_parent_duplicate_215_with_distinct_value"
+      }
+    },
+    {
+      "site_id": "hw-0118",
+      "failure_code": "same_period_conflict",
+      "candidate_values": [
+        "红单",
+        "蓝双"
+      ],
+      "payload": {
+        "passed": false,
+        "candidate_count": 2,
+        "value": null,
+        "failure_code": "same_period_conflict",
+        "failure_reason": "同期存在多个不同半波结果",
+        "evidence": [
+          {
+            "value": "红单",
+            "boundary_issues": [
+              215,
+              214,
+              213
+            ],
+            "conflict_values": [
+              "红单",
+              "蓝双"
+            ],
+            "document_order": 0,
+            "source_url": "https://fixture.invalid/hw-0118.js#decoded-1",
+            "snippet": "215期绝杀半波 红单 开0000准流合绝杀半波"
+          },
+          {
+            "value": "蓝双",
+            "boundary_issues": [
+              215,
+              214,
+              213
+            ],
+            "conflict_values": [
+              "红单",
+              "蓝双"
+            ],
+            "document_order": 1,
+            "source_url": "https://fixture.invalid/hw-0118.js#decoded-2",
+            "snippet": "215期绝杀半波 蓝双 开0000准流合绝杀半波"
+          }
+        ],
+        "fixture": "same_parent_duplicate_215_with_distinct_value"
+      }
+    }
+  ],
+  "synthetic_conflict_checks_passed": true
+}

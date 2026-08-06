@@ -1,0 +1,294 @@
+    1: from __future__ import annotations
+       
+    1: import re
+    1: import unicodedata
+    1: from collections import defaultdict
+    1: from dataclasses import replace
+    1: from typing import Sequence
+       
+    1: from banbo.domain.models import Document, ParseEvidence, SiteSpec
+    1: from .history_block import HistoryBlockParser
+    1: from .protocol import ParserSpec
+    1: from .regex_line import RegexLineParser
+    1: from .text import html_to_text
+       
+       
+    1: _DECODED_SUFFIX = re.compile(r"#decoded-\d+$", re.IGNORECASE)
+       
+       
+    2: class CombinedSiblingParser:
+    1:     """Parse rows split across sibling decoded fragments."""
+       
+    1:     name = "combined_sibling"
+       
+    1:     def __init__(self, spec: ParserSpec) -> None:
+    7:         self._spec = spec
+    7:         self.version = spec.parser_version
+       
+    1:     def parse(
+               self,
+               site: SiteSpec,
+               documents: Sequence[Document],
+               target_issue: int,
+           ) -> tuple[ParseEvidence, ...]:
+   11:         groups: dict[str, list[Document]] = defaultdict(list)
+   53:         for document in documents:
+   42:             groups[self._parent_source(document)].append(document)
+       
+   11:         anchors = self._spec.anchors or site.anchors
+   33:         anchor_mode = str(
+   11:             self._spec.options.get("anchor_mode", site.anchor_mode)
+   11:         ).casefold()
+   22:         anchor_same_document = bool(
+   11:             self._spec.options.get("anchor_same_document", False)
+               )
+   11:         compact = bool(self._spec.options.get("compact", False))
+   11:         delegate = self._delegate()
+   22:         delegate_site = replace(
+   11:             site,
+   11:             anchors=(),
+                   keywords=(
+   11:                 ()
+   11:                 if self._spec.options.get("skip_keyword_check", False)
+>>>>>>                 else site.keywords
+                   ),
+               )
+   11:         evidence: list[ParseEvidence] = []
+   11:         seen: set[tuple[str, int, str]] = set()
+       
+   23:         for siblings in groups.values():
+   54:             ordered = tuple(sorted(siblings, key=lambda item: item.order))
+   12:             combined, ranges = self._combine(ordered, compact)
+   24:             delegate_content, delegate_offsets = self._delegate_content(
+   12:                 combined, compact
+                   )
+   74:             normalized_anchors = tuple(
+   31:                 self._searchable(anchor, compact) for anchor in anchors
+                   )
+   12:             searchable_combined = self._searchable(combined, compact)
+   43:             matches = [anchor in searchable_combined for anchor in normalized_anchors]
+   12:             if anchor_same_document and anchors:
+    4:                 anchor_passed = any(
+    2:                     self._document_has_anchor(
+    1:                         document,
+    1:                         normalized_anchors,
+    1:                         anchor_mode,
+    1:                         compact,
+                           )
+    1:                     for document in ordered
+                       )
+                   else:
+   11:                 anchor_passed = (
+   22:                     not anchors
+   11:                     or (anchor_mode == "all" and all(matches))
+    2:                     or (anchor_mode != "all" and any(matches))
+                       )
+   12:             if not anchor_passed:
+    2:                 continue
+       
+   20:             synthetic = replace(
+   10:                 ordered[0],
+   10:                 document_id=f"{ordered[0].document_id}:combined",
+   10:                 content=delegate_content,
+                   )
+   28:             for item in delegate.parse(
+   10:                 delegate_site,
+   10:                 (synthetic,),
+   10:                 target_issue,
+                   ):
+   16:                 combined_offset = self._to_combined_offset(
+    8:                     item.source_offset, delegate_offsets
+                       )
+    8:                 mapped = self._map_offset(combined_offset, ranges)
+    8:                 if mapped is None:
+>>>>>>                     continue
+    8:                 candidate, local_offset = mapped
+    8:                 key = (candidate.document_id, local_offset, item.value)
+    8:                 if key in seen:
+>>>>>>                     continue
+    8:                 seen.add(key)
+  101:                 anchor_documents = tuple(
+   13:                     document
+    8:                     for document in ordered
+   64:                     if self._document_has_anchor(
+   32:                         document,
+   32:                         anchors,
+   32:                         "any",
+   32:                         compact,
+                           )
+                       )
+   16:                 same_document = self._document_has_anchor(
+    8:                     candidate,
+    8:                     anchors,
+    8:                     anchor_mode,
+    8:                     compact,
+                       )
+   16:                 evidence.append(
+   16:                     replace(
+    8:                         item,
+    8:                         document_id=candidate.document_id,
+    8:                         document_source=candidate.source,
+    8:                         document_order=candidate.order,
+    8:                         source_offset=local_offset,
+    8:                         parser_name=self.name,
+    8:                         parser_version=self.version,
+    8:                         anchor_passed=True,
+   32:                         same_record=any(
+    8:                             self._same_record(candidate, anchor, site)
+    8:                             for anchor in anchor_documents
+                               ),
+    8:                         record_id=candidate.record_id,
+    8:                         expected_record_id=site.expected_record_id,
+    8:                         source_url=candidate.source_url,
+                               document_relation=(
+    8:                             "same_document"
+    8:                             if same_document
+    8:                             else "declared_neighbor_window"
+                               ),
+    8:                         anchors=anchors,
+                           )
+                       )
+   11:         return tuple(evidence)
+       
+    1:     def _delegate(self):
+   22:         skip_keywords = bool(
+   11:             self._spec.options.get("skip_keyword_check", False)
+               )
+   11:         if self._spec.options.get("patterns"):
+   14:             return RegexLineParser(
+   14:                 replace(
+    7:                     self._spec,
+    7:                     strategy="regex_line",
+    7:                     anchors=(),
+    7:                     keywords=() if skip_keywords else self._spec.keywords,
+                       )
+                   )
+    8:         return HistoryBlockParser(
+    8:             replace(
+    4:                 self._spec,
+    4:                 strategy="history_block",
+    4:                 anchors=(),
+    4:                 keywords=() if skip_keywords else self._spec.keywords,
+   12:                 options={
+    4:                     **self._spec.options,
+    4:                     "skip_document_anchor": True,
+                       },
+                   )
+               )
+       
+    1:     @staticmethod
+    1:     def _combine(
+               documents: Sequence[Document],
+               compact: bool,
+           ) -> tuple[str, tuple[tuple[int, int, Document], ...]]:
+   12:         parts: list[str] = []
+   12:         ranges: list[tuple[int, int, Document]] = []
+   12:         offset = 0
+   54:         for index, document in enumerate(documents):
+   42:             if index:
+                       # Keep compact fragments non-adjacent so a trailing digit in
+                       # one decoded fragment cannot fuse with the next fragment's
+                       # period (for example ``开兔04`` + ``213期`` -> ``4213期``).
+   30:                 separator = "\u2063" if compact else " "
+   30:                 parts.append(separator)
+   30:                 offset += len(separator)
+   84:             part = CombinedSiblingParser._searchable(
+   42:                 html_to_text(document.content), compact
+                   )
+   42:             start = offset
+   42:             parts.append(part)
+   42:             offset += len(part)
+   42:             ranges.append((start, offset, document))
+   12:         return "".join(parts), tuple(ranges)
+       
+    1:     @staticmethod
+    1:     def _delegate_content(
+               combined: str,
+               compact: bool,
+           ) -> tuple[str, tuple[int, ...]]:
+               """Remove fragment markers between text tokens, retain numeric guards."""
+   12:         if not compact:
+    5:             return combined, tuple(range(len(combined)))
+    7:         output: list[str] = []
+    7:         offsets: list[int] = []
+    7:         marker = "\u2063"
+  272:         for index, char in enumerate(combined):
+  265:             if char == marker:
+   15:                 previous = combined[index - 1] if index else ""
+   15:                 following = (
+   15:                     combined[index + 1] if index + 1 < len(combined) else ""
+                       )
+                       # A marker between digits protects separate values such as
+                       # ``开兔04`` + ``213期``.  Markers between text tokens are
+                       # removed so ``马`` + ``蓝单`` remains one history row.
+   15:                 if previous.isdigit() and following.isdigit():
+>>>>>>                     output.append(char)
+>>>>>>                     offsets.append(index)
+   15:                 continue
+  250:             output.append(char)
+  250:             offsets.append(index)
+    7:         return "".join(output), tuple(offsets)
+       
+    1:     @staticmethod
+    1:     def _to_combined_offset(
+               offset: int,
+               delegate_offsets: Sequence[int],
+           ) -> int:
+    8:         if not delegate_offsets:
+>>>>>>             return offset
+    8:         if offset < len(delegate_offsets):
+    8:             return delegate_offsets[offset]
+>>>>>>         return delegate_offsets[-1] + 1
+       
+    1:     @staticmethod
+    1:     def _map_offset(
+               offset: int,
+               ranges: Sequence[tuple[int, int, Document]],
+           ) -> tuple[Document, int] | None:
+   24:         for start, end, document in ranges:
+   24:             if start <= offset < end:
+    8:                 return document, offset - start
+>>>>>>         return None
+       
+    1:     @staticmethod
+    1:     def _searchable(value: str, compact: bool) -> str:
+  181:         normalized = unicodedata.normalize("NFKC", value or "")
+  181:         if compact:
+  121:             return re.sub(r"\s+", "", normalized)
+   60:         return re.sub(r"\s+", " ", normalized).strip()
+       
+    1:     @classmethod
+    1:     def _document_has_anchor(
+               cls,
+               document: Document,
+               anchors: tuple[str, ...],
+               anchor_mode: str,
+               compact: bool,
+           ) -> bool:
+   41:         if not anchors:
+>>>>>>             return True
+   41:         text = cls._searchable(html_to_text(document.content), compact)
+  149:         matches = [cls._searchable(anchor, compact) in text for anchor in anchors]
+   41:         return all(matches) if anchor_mode == "all" else any(matches)
+       
+    1:     @staticmethod
+    1:     def _same_record(
+               candidate: Document,
+               anchor: Document,
+               site: SiteSpec,
+           ) -> bool:
+    8:         if site.expected_record_id is not None:
+>>>>>>             return (
+>>>>>>                 candidate.record_id == site.expected_record_id
+>>>>>>                 and anchor.record_id == site.expected_record_id
+                   )
+    8:         if candidate.record_id is None and anchor.record_id is None:
+    8:             return True
+>>>>>>         return candidate.record_id == anchor.record_id
+       
+    1:     @staticmethod
+    1:     def _parent_source(document: Document) -> str:
+   42:         source_url = document.source_url
+   42:         if _DECODED_SUFFIX.search(source_url):
+   42:             return _DECODED_SUFFIX.sub("", source_url)
+>>>>>>         return f"{source_url}\0{document.document_id}"

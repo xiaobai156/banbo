@@ -1,0 +1,165 @@
+    1: from __future__ import annotations
+       
+    1: from collections.abc import Iterable
+       
+    1: from .errors import FailureCode
+    1: from .models import (
+           FailureResult,
+           ParseEvidence,
+           SiteSpec,
+           ValidatedResult,
+           ValidationOutcome,
+       )
+    1: from .normalization import normalize_half_wave
+       
+       
+    1: def _failure(
+           site: SiteSpec,
+           target_issue: int,
+           code: FailureCode,
+           message: str,
+           evidence: Iterable[ParseEvidence],
+       ) -> FailureResult:
+    8:     return FailureResult(
+    4:         site_id=site.site_id,
+    4:         target_issue=target_issue,
+    4:         code=code,
+    4:         message=message,
+    4:         evidence=tuple(evidence),
+           )
+       
+       
+    1: def validate_evidence(
+           site: SiteSpec,
+           target_issue: int,
+           evidence: Iterable[ParseEvidence],
+       ) -> ValidationOutcome:
+    7:     evidence_items = tuple(evidence)
+   19:     if any(item.site_id != site.site_id for item in evidence_items):
+>>>>>>         return _failure(
+>>>>>>             site,
+>>>>>>             target_issue,
+>>>>>>             FailureCode.INTERNAL_ERROR,
+>>>>>>             "解析器返回了其它站点证据",
+>>>>>>             evidence_items,
+               )
+   26:     target_evidence = tuple(
+   12:         item for item in evidence_items if item.target_issue == target_issue
+           )
+    7:     if not target_evidence:
+    6:         return _failure(
+    3:             site,
+    3:             target_issue,
+    3:             FailureCode.TARGET_PERIOD_MISSING,
+    3:             f"未找到{target_issue}期专属证据",
+    3:             (),
+               )
+       
+   22:     if any(
+   10:         not item.boundary_issues
+    5:         or len(item.boundary_issues) > 3
+    5:         or target_issue not in item.boundary_issues
+    4:         for item in target_evidence
+           ):
+>>>>>>         return _failure(
+>>>>>>             site,
+>>>>>>             target_issue,
+>>>>>>             FailureCode.DIRECTION_WINDOW_INVALID,
+>>>>>>             "目标期不在严格顶部前三组或尾部后三组窗口内",
+>>>>>>             target_evidence,
+               )
+       
+   22:     if any(
+    5:         not item.anchor_passed or not item.keyword_passed
+    4:         for item in target_evidence
+           ):
+>>>>>>         return _failure(
+>>>>>>             site,
+>>>>>>             target_issue,
+>>>>>>             FailureCode.ANCHOR_MISSING,
+>>>>>>             "专属锚点或关键词校验未通过",
+>>>>>>             target_evidence,
+               )
+       
+   13:     if any(item.direction != site.direction for item in target_evidence):
+>>>>>>         return _failure(
+>>>>>>             site,
+>>>>>>             target_issue,
+>>>>>>             FailureCode.DIRECTION_MISMATCH,
+>>>>>>             "候选位置方向与站点配置不一致",
+>>>>>>             target_evidence,
+               )
+       
+   13:     if any(not item.same_record for item in target_evidence):
+>>>>>>         return _failure(
+>>>>>>             site,
+>>>>>>             target_issue,
+>>>>>>             FailureCode.DOCUMENT_BOUNDARY_MISMATCH,
+>>>>>>             "标题与正文不属于同一记录或文档边界",
+>>>>>>             target_evidence,
+               )
+       
+    4:     allowed_relations = {
+               "same_document",
+               "record_id",
+               "declared_neighbor_window",
+               "declared_nearest_document",
+               "declared_split_document",
+           }
+   13:     if any(item.document_relation not in allowed_relations for item in target_evidence):
+>>>>>>         return _failure(
+>>>>>>             site,
+>>>>>>             target_issue,
+>>>>>>             FailureCode.DOCUMENT_BOUNDARY_MISMATCH,
+>>>>>>             "文档关联关系未登记，拒绝跨文档拼接",
+>>>>>>             target_evidence,
+               )
+       
+   22:     if any(
+    5:         item.expected_record_id is not None
+>>>>>>         and item.record_id != item.expected_record_id
+    4:         for item in target_evidence
+           ):
+>>>>>>         return _failure(
+>>>>>>             site,
+>>>>>>             target_issue,
+>>>>>>             FailureCode.RECORD_ID_MISMATCH,
+>>>>>>             "URL记录ID与实际正文记录ID不一致",
+>>>>>>             target_evidence,
+               )
+       
+   22:     normalized_values = tuple(
+    9:         normalize_half_wave(item.value) for item in target_evidence
+           )
+   13:     if any(value is None for value in normalized_values):
+>>>>>>         return _failure(
+>>>>>>             site,
+>>>>>>             target_issue,
+>>>>>>             FailureCode.FIELD_INVALID,
+>>>>>>             "半波字段格式无效",
+>>>>>>             target_evidence,
+               )
+       
+    4:     unique_values = set(normalized_values)
+    4:     if len(unique_values) != 1:
+    2:         return _failure(
+    1:             site,
+    1:             target_issue,
+    1:             FailureCode.SAME_PERIOD_CONFLICT,
+    1:             "同期存在多个不同半波结果",
+    1:             target_evidence,
+               )
+       
+    6:     chosen = min(
+    3:         target_evidence,
+    6:         key=lambda item: (item.document_order, item.document_id),
+           )
+    6:     return ValidatedResult(
+    3:         site_id=site.site_id,
+    3:         site_name=site.name,
+    3:         target_issue=target_issue,
+    3:         value=next(iter(unique_values)),
+    3:         direction=site.direction,
+    3:         evidence=chosen,
+    3:         parser_version=chosen.parser_version,
+           )

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "phase": "formal_update",
+  "update_date": "2026-08-05",
+  "site_id": "hw-0141",
+  "site_name": "守株待兔",
+  "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626099.html",
+  "record_id": "626099",
+  "target_issue": 217,
+  "direction": "bottom",
+  "authorization": "开始正式更新守株待兔217",
+  "change_scope": {
+    "new_parser": "banbo/parsers/article_sibling_segment.py",
+    "registered_strategy": "article_sibling_segment",
+    "migrated_site_only": "hw-0141",
+    "parser_before": "hw-0141:nearest_document:v1",
+    "parser_after": "hw-0141:article_sibling_segment:v2",
+    "end_markers": [
+      "上一篇",
+      "下一篇"
+    ],
+    "direction_window_size": 3
+  },
+  "decision": {
+    "boundary_issues": [
+      215,
+      216,
+      217
+    ],
+    "target_value": "绿单",
+    "earlier_217_value": "红单",
+    "earlier_217_inside_bottom_window": false,
+    "same_period_conflict": false
+  },
+  "tdd": {
+    "red": "ModuleNotFoundError: banbo.parsers.article_sibling_segment",
+    "green": "15 passed in article parser and registry tests",
+    "formal_contract_tests": "tests/unit/test_article_sibling_segment_parser.py"
+  },
+  "verification": {
+    "formal_parser_tests": "8 passed",
+    "full_tests": "179 passed, 1 skipped, 183 subtests passed",
+    "python_compile": "passed",
+    "ruff": "passed",
+    "new_parser_trace_coverage_percent": 95.63,
+    "coverage_file": "audit/trace_coverage_article_sibling_segment_217/banbo.parsers.article_sibling_segment.cover"
+  },
+  "live_formal_run": {
+    "success_count": 1,
+    "failure_count": 0,
+    "document_count": 284,
+    "parser_id": "hw-0141:article_sibling_segment:v2",
+    "value": "绿单",
+    "boundary_issues": [
+      215,
+      216,
+      217
+    ],
+    "success_output": "audit/formal_output_217_shouzhudaitu/success/217期-半波.txt",
+    "failure_output_count": 0,
+    "audit_run_id": "56415cce453f48898ace7d01f37d7d23"
+  },
+  "live_matrix": [
+    {
+      "issue": 217,
+      "status": "success",
+      "value": "绿单"
+    },
+    {
+      "issue": 216,
+      "status": "success",
+      "value": "绿双"
+    },
+    {
+      "issue": 215,
+      "status": "success",
+      "value": "红双"
+    },
+    {
+      "issue": 214,
+      "status": "target_period_missing"
+    },
+    {
+      "issue": 999,
+      "status": "target_period_missing"
+    }
+  ],
+  "formal_file_hashes": {
+    "config/parser_specs.json_before": "39E975BB81674D17278C37695589FD1CD72BA9FF16DC9F650C52FA9E827013ED",
+    "config/parser_specs.json_after": "F934ECC7FE5B9130D93F913945BA89887750BBD5639EE013EC7496817D02362F",
+    "recent_10_cache.json_before": "2DBD8844E825FD92391C0DA8BCA027DD10B9A5147724782AE5A0DB8171AF4881",
+    "recent_10_cache.json_after": "2DBD8844E825FD92391C0DA8BCA027DD10B9A5147724782AE5A0DB8171AF4881",
+    "config/sites.json": "C96B9084B8DD256EAC1CDE0F3770BF82D608C5D4A074931950CF5696F9BA2B68",
+    "config/repair_cases.json": "504C998FB4553A3FA205262032547D00ACFE7029C056BDC59583693462F755DA",
+    "config/site_structure_profiles.json": "833189A4AC0BA24226F5F4A24467B472BA031764A3648C4918738BD04042E8E8"
+  },
+  "cache_update": {
+    "status": "not_advanced",
+    "reason": "新期数必须全站成功",
+    "formal_cache_unchanged": true
+  },
+  "result": "formal_update_completed"
+}

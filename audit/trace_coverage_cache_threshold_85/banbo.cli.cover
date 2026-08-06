@@ -1,0 +1,247 @@
+    1: from __future__ import annotations
+       
+    1: import argparse
+    1: import json
+    1: from pathlib import Path
+    1: from uuid import uuid4
+       
+    1: from banbo.application import SinglePeriodRunner
+    1: from banbo.domain import ValidatedResult
+    1: from banbo.parsers import build_default_registry, parse_parser_specs
+    1: from banbo.reporting import (
+           ConsoleProgress,
+           append_audit_jsonl,
+           render_audit_jsonl,
+           render_failure_report,
+           render_success_report,
+       )
+    1: from banbo.storage import (
+           RecentCacheRepository,
+           SiteRepository,
+           commit_files,
+           read_text_snapshot,
+           render_json,
+       )
+       
+       
+    1: BASE_DIR = Path(__file__).resolve().parents[1]
+    2: DEFAULT_SUCCESS_DIR = Path(
+    1:     r"C:\Users\Administrator\Desktop\每天工具\爬虫合集\七类数据统一归纳"
+       )
+    2: DEFAULT_FAILURE_DIR = Path(
+    1:     r"C:\Users\Administrator\Desktop\每天工具\爬虫合集\七类数据统一归纳失败"
+       )
+    1: DEFAULT_CACHE_PATH = BASE_DIR / "recent_10_cache.json"
+       
+       
+    2: class RuntimeConfigurationError(ValueError):
+    1:     pass
+       
+       
+    1: def _parser() -> argparse.ArgumentParser:
+    4:     parser = argparse.ArgumentParser(description="杀半波解耦版严格入口")
+    4:     parser.add_argument("--period", type=int, help="指定单期，例如211")
+    4:     parser.add_argument("--site-id", action="append", dest="site_ids")
+    4:     parser.add_argument("--max-workers", type=int, default=8)
+    4:     parser.add_argument("--no-update-cache", action="store_true")
+    4:     parser.add_argument("--shadow", action="store_true")
+    4:     parser.add_argument("--success-dir", type=Path, default=DEFAULT_SUCCESS_DIR)
+    4:     parser.add_argument("--failure-dir", type=Path, default=DEFAULT_FAILURE_DIR)
+    4:     parser.add_argument("--cache", type=Path, default=DEFAULT_CACHE_PATH)
+    4:     return parser
+       
+       
+    1: def _validate_runtime_configuration(sites: SiteRepository, specs: list) -> None:
+    7:     site_ids = {site.site_id for site in sites.all()}
+    6:     spec_ids = {spec.site_id for spec in specs}
+    2:     missing_specs = sorted(site_ids - spec_ids)
+    2:     extra_specs = sorted(spec_ids - site_ids)
+    2:     if missing_specs or extra_specs:
+    1:         details: list[str] = []
+    1:         if missing_specs:
+    1:             details.append("缺少解析规格：" + ",".join(missing_specs))
+    1:         if extra_specs:
+>>>>>>             details.append("存在未登记站点解析规格：" + ",".join(extra_specs))
+    1:         raise RuntimeConfigurationError("；".join(details))
+       
+    3:     sites_by_id = {site.site_id: site for site in sites.all()}
+    1:     for spec in specs:
+    1:         site = sites_by_id[spec.site_id]
+    1:         if spec.direction != site.direction:
+    2:             raise RuntimeConfigurationError(
+    1:                 f"站点与解析规格方向不一致：{spec.site_id}"
+                   )
+       
+       
+    1: def _load_runtime() -> tuple[SiteRepository, list, object]:
+>>>>>>     sites = SiteRepository.from_json(BASE_DIR / "config" / "sites.json")
+>>>>>>     specs = parse_parser_specs(
+>>>>>>         json.loads(
+>>>>>>             (BASE_DIR / "config" / "parser_specs.json").read_text(
+>>>>>>                 encoding="utf-8"
+                   )
+               )
+           )
+>>>>>>     _validate_runtime_configuration(sites, list(specs))
+>>>>>>     registry = build_default_registry()
+>>>>>>     for spec in specs:
+>>>>>>         registry.bind(spec)
+>>>>>>     return sites, specs, registry
+       
+       
+    1: def _period_from_args(value: int | None) -> int:
+    8:     if value is not None:
+    6:         if value <= 0:
+    1:             raise ValueError("期数必须是正整数")
+    5:         return value
+    2:     entered = input("请输入期数，例如211：").strip()
+    2:     period = int(entered)
+    2:     if period <= 0:
+    1:         raise ValueError("期数必须是正整数")
+    1:     return period
+       
+       
+    1: def _prepare_cache_update(
+           cache_path: Path,
+           sites: SiteRepository,
+           period: int,
+           runs,
+           *,
+           run_id: str,
+       ) -> tuple[str, dict | None, str | None]:
+    7:     repository = RecentCacheRepository(cache_path)
+  604:     successful = [
+  386:         run.outcome for run in runs if isinstance(run.outcome, ValidatedResult)
+           ]
+  221:     names = {site.site_id: site.name for site in sites.all()}
+   14:     cache_snapshot = repository.load_snapshot(
+    7:         expected_site_count=len(sites.all()),
+    7:         expected_site_names=names.values(),
+           )
+    7:     cache = cache_snapshot.payload
+   28:     if period in {int(issue) for issue in cache["issues"]}:
+    2:         if not successful:
+    1:             return "未补充缓存：本轮没有成功结果", None, None
+    1:         return (
+    1:             "补充已有缓存期",
+    2:             repository.prepare_existing_period(
+    1:                 successful,
+    1:                 site_names_by_id=names,
+    1:                 target_issue=period,
+    1:                 run_id=run_id,
+    1:                 base_payload=cache,
+    1:                 expected_site_count=len(sites.all()),
+    1:                 expected_site_names=names.values(),
+                   ),
+    1:             cache_snapshot.digest,
+               )
+    5:     site_count = len(sites.all())
+    5:     if len(runs) != site_count:
+    1:         return "未推进缓存：必须执行完整全站任务", None, None
+    4:     success_count = len(successful)
+    4:     success_rate = success_count * 100 / site_count
+    4:     if success_count * 100 <= site_count * 85:
+    2:         return (
+    8:             "未推进缓存："
+    2:             f"成功率{success_rate:.2f}%未超过85%"
+    4:             f"（{success_count}/{site_count}）",
+    2:             None,
+    2:             None,
+               )
+    2:     return (
+    6:         f"推进缓存新期：成功率{success_rate:.2f}%"
+    4:         f"（{success_count}/{site_count}）",
+    4:         repository.prepare_advance_complete_period(
+  168:             [run.outcome for run in runs],
+    2:             site_names_by_id=names,
+    2:             target_issue=period,
+    2:             expected_site_count=site_count,
+    2:             run_id=run_id,
+    2:             base_payload=cache,
+    2:             expected_site_names=names.values(),
+               ),
+    2:         cache_snapshot.digest,
+           )
+       
+       
+    1: def main(argv: list[str] | None = None) -> int:
+    4:     args = _parser().parse_args(argv)
+    4:     period = _period_from_args(args.period)
+    4:     sites, specs, registry = _load_runtime()
+    4:     runner = SinglePeriodRunner(sites, specs, registry)
+    4:     progress = ConsoleProgress()
+    4:     try:
+    8:         runs = runner.run_many(
+    4:             period,
+    4:             site_ids=args.site_ids,
+    4:             max_workers=args.max_workers,
+    4:             progress_callback=progress,
+               )
+           finally:
+    4:         progress.finish()
+    4:     run_id = uuid4().hex
+    4:     if not args.shadow:
+    3:         success_path = args.success_dir / f"{period}期-半波.txt"
+    3:         failure_path = args.failure_dir / f"{period}期-半波-失败.txt"
+    3:         audit_path = BASE_DIR / "audit" / f"{period}.jsonl"
+    3:         previous_audit, audit_digest = read_text_snapshot(audit_path)
+    3:         operations: dict[Path, str | None] = {
+    3:             success_path: render_success_report(period, runs),
+    3:             failure_path: render_failure_report(period, runs) or None,
+    6:             audit_path: append_audit_jsonl(
+    3:                 previous_audit,
+    3:                 render_audit_jsonl(runs, run_id=run_id),
+                   ),
+               }
+   27:         operation_paths = [
+   12:             path.resolve(strict=False) for path in operations
+               ]
+    3:         if not args.no_update_cache:
+    3:             operation_paths.append(args.cache.resolve(strict=False))
+    3:         try:
+    3:             if len(operation_paths) != len(set(operation_paths)):
+>>>>>>                 raise ValueError("正式输出、审计和缓存路径不能重合")
+    6:             commit_files(
+    3:                 operations,
+    3:                 expected_digests={audit_path: audit_digest},
+                   )
+>>>>>>         except Exception as exc:
+>>>>>>             print(f"提交失败：{type(exc).__name__}: {exc}")
+>>>>>>             return 2
+       
+    3:         if args.no_update_cache:
+>>>>>>             cache_message = "按参数跳过缓存"
+               else:
+    3:             try:
+    6:                 cache_message, updated_cache, cache_digest = _prepare_cache_update(
+    3:                     args.cache,
+    3:                     sites,
+    3:                     period,
+    3:                     runs,
+    3:                     run_id=run_id,
+                       )
+    2:                 if updated_cache is not None:
+    2:                     expected_digests = (
+>>>>>>                         {args.cache: cache_digest}
+    2:                         if cache_digest is not None
+    2:                         else None
+                           )
+    4:                     commit_files(
+    2:                         {args.cache: render_json(updated_cache)},
+    2:                         backup_paths={args.cache},
+    2:                         expected_digests=expected_digests,
+                           )
+    2:             except Exception as exc:
+    2:                 cache_message = (
+    2:                     f"缓存更新未完成：{type(exc).__name__}: {exc}"
+                       )
+           else:
+    1:         cache_message = "影子模式：未写入正式输出和缓存"
+   12:     successes = sum(run.succeeded for run in runs)
+    4:     print(f"完成：成功 {successes}，失败 {len(runs) - successes}")
+    4:     print(cache_message)
+    4:     return 0 if successes == len(runs) else 1
+       
+       
+    1: if __name__ == "__main__":
+>>>>>>     raise SystemExit(main())

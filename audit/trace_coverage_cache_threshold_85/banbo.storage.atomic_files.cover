@@ -1,0 +1,249 @@
+    1: from __future__ import annotations
+       
+    1: import json
+    1: import hashlib
+    1: import os
+    1: import shutil
+    1: import time
+    1: import uuid
+    1: from collections.abc import Mapping
+    1: from contextlib import ExitStack, contextmanager
+    1: from pathlib import Path
+    1: from typing import Callable, Iterator
+       
+       
+    2: class LockTimeoutError(TimeoutError):
+    1:     pass
+       
+       
+    2: class ConcurrentModificationError(RuntimeError):
+    1:     pass
+       
+       
+    1: _UNSET = object()
+       
+       
+    1: def file_digest(path: str | Path) -> str | None:
+    5:     target = Path(path)
+    5:     if not target.exists():
+    2:         return None
+    3:     return hashlib.sha256(target.read_bytes()).hexdigest()
+       
+       
+    1: def read_text_snapshot(path: str | Path) -> tuple[str, str | None]:
+    3:     target = Path(path)
+    3:     if not target.exists():
+    3:         return "", None
+>>>>>>     raw = target.read_bytes()
+>>>>>>     return raw.decode("utf-8-sig"), hashlib.sha256(raw).hexdigest()
+       
+       
+    1: def _process_alive(pid: int) -> bool:
+    2:     if os.name == "nt":
+    2:         import ctypes
+       
+    2:         process_query_limited_information = 0x1000
+    4:         handle = ctypes.windll.kernel32.OpenProcess(
+    2:             process_query_limited_information,
+    2:             False,
+    2:             pid,
+               )
+    2:         if not handle:
+    1:             return False
+    1:         ctypes.windll.kernel32.CloseHandle(handle)
+    1:         return True
+>>>>>>     try:
+>>>>>>         os.kill(pid, 0)
+>>>>>>     except ProcessLookupError:
+>>>>>>         return False
+>>>>>>     except PermissionError:
+>>>>>>         return True
+>>>>>>     except OSError:
+>>>>>>         return False
+>>>>>>     return True
+       
+       
+    1: def _remove_stale_lock(path: Path) -> bool:
+    2:     try:
+    2:         owner = path.read_text(encoding="ascii").strip()
+    2:         pid = int(owner)
+>>>>>>     except (FileNotFoundError, OSError, ValueError):
+>>>>>>         return False
+    2:     if _process_alive(pid):
+    1:         return False
+    1:     try:
+    1:         path.unlink()
+>>>>>>     except FileNotFoundError:
+>>>>>>         return True
+    1:     return True
+       
+       
+    1: @contextmanager
+    1: def file_lock(
+           lock_path: str | Path,
+           *,
+    1:     timeout: float = 10.0,
+    1:     poll_interval: float = 0.05,
+       ) -> Iterator[None]:
+   19:     path = Path(lock_path)
+   19:     path.parent.mkdir(parents=True, exist_ok=True)
+   19:     deadline = time.monotonic() + timeout
+   19:     descriptor: int | None = None
+   38:     while descriptor is None:
+   20:         try:
+   40:             descriptor = os.open(
+   20:                 path,
+   20:                 os.O_CREAT | os.O_EXCL | os.O_WRONLY,
+                   )
+   18:             os.write(descriptor, str(os.getpid()).encode("ascii"))
+   18:             os.fsync(descriptor)
+    2:         except FileExistsError:
+    2:             if _remove_stale_lock(path):
+    1:                 continue
+    1:             if time.monotonic() >= deadline:
+    1:                 raise LockTimeoutError(f"文件锁超时：{path}")
+>>>>>>             time.sleep(poll_interval)
+   18:     try:
+   18:         yield
+           finally:
+   18:         os.close(descriptor)
+   18:         try:
+   18:             path.unlink()
+>>>>>>         except FileNotFoundError:
+>>>>>>             pass
+       
+       
+    1: def atomic_write_text(
+           path: str | Path,
+           content: str,
+           *,
+    1:     backup: bool = True,
+    1:     lock_timeout: float = 10.0,
+    1:     expected_digest: str | None | object = _UNSET,
+       ) -> None:
+    8:     commit_files(
+    4:         {Path(path): content},
+    4:         backup_paths={Path(path)} if backup else set(),
+    4:         lock_timeout=lock_timeout,
+               expected_digests=(
+    2:             {Path(path): expected_digest}
+    4:             if expected_digest is not _UNSET
+    2:             else None
+               ),
+           )
+       
+       
+    1: def render_json(payload: object) -> str:
+    4:     return json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+       
+       
+    1: def commit_files(
+           operations: Mapping[str | Path, str | None],
+           *,
+    1:     backup_paths: set[str | Path] | None = None,
+    1:     expected_digests: Mapping[str | Path, str | None] | None = None,
+    1:     lock_timeout: float = 10.0,
+    1:     replace_func: Callable[[str | Path, str | Path], None] = os.replace,
+       ) -> None:
+   29:     normalized = {Path(path): content for path, content in operations.items()}
+    8:     if not normalized:
+>>>>>>         return
+   21:     targets = sorted(normalized, key=lambda path: str(path).casefold())
+   20:     backup_targets = {Path(path) for path in (backup_paths or set())}
+   34:     expected = {
+   13:         Path(path): digest for path, digest in (expected_digests or {}).items()
+           }
+    8:     unknown_expected = set(expected) - set(targets)
+    8:     if unknown_expected:
+>>>>>>         raise ValueError("并发校验路径必须同时出现在提交操作中")
+    8:     rollback_snapshots: dict[Path, Path | None] = {}
+    8:     temporary_files: dict[Path, Path] = {}
+   16:     with ExitStack() as stack:
+   21:         for target in targets:
+   26:             stack.enter_context(
+   26:                 file_lock(
+   13:                     target.with_name(f".{target.name}.lock"),
+   13:                     timeout=lock_timeout,
+                       )
+                   )
+    8:         try:
+   12:             for target, expected_digest in expected.items():
+    5:                 actual_digest = file_digest(target)
+    5:                 if actual_digest != expected_digest:
+    2:                     raise ConcurrentModificationError(
+    1:                         f"文件在读取后已变化，拒绝覆盖：{target}"
+                           )
+   19:             for target in targets:
+   12:                 target.parent.mkdir(parents=True, exist_ok=True)
+   12:                 if target.exists():
+   10:                     snapshot = target.with_name(
+    5:                         f".{target.name}.{uuid.uuid4().hex}.rollback"
+                           )
+    5:                     shutil.copy2(target, snapshot)
+    5:                     rollback_snapshots[target] = snapshot
+                       else:
+    7:                     rollback_snapshots[target] = None
+   12:                 content = normalized[target]
+   12:                 if content is not None:
+   20:                     temporary = target.with_name(
+   10:                         f".{target.name}.{uuid.uuid4().hex}.tmp"
+                           )
+   30:                     with temporary.open(
+   10:                         "w", encoding="utf-8", newline="\n"
+   10:                     ) as handle:
+   10:                         handle.write(content)
+   10:                         handle.flush()
+   10:                         os.fsync(handle.fileno())
+   10:                     temporary_files[target] = temporary
+       
+   11:             for target in backup_targets & set(targets):
+    4:                 if target.exists():
+    3:                     shutil.copy2(target, target.with_suffix(target.suffix + ".bak"))
+       
+   18:             for target in targets:
+   12:                 content = normalized[target]
+   12:                 if content is None:
+    2:                     try:
+    2:                         target.unlink()
+    2:                     except FileNotFoundError:
+    2:                         pass
+                       else:
+   10:                     replace_func(temporary_files[target], target)
+    2:         except Exception:
+    5:             for target in reversed(targets):
+    3:                 if target not in rollback_snapshots:
+    1:                     continue
+    2:                 snapshot = rollback_snapshots.get(target)
+    2:                 try:
+    2:                     if snapshot is not None and snapshot.exists():
+    2:                         replace_func(snapshot, target)
+>>>>>>                     elif target.exists():
+>>>>>>                         target.unlink()
+>>>>>>                 except OSError:
+>>>>>>                     pass
+    2:             raise
+               finally:
+   30:             for temporary in (*temporary_files.values(), *rollback_snapshots.values()):
+   22:                 if temporary is None:
+    7:                     continue
+   15:                 try:
+   15:                     temporary.unlink()
+   11:                 except FileNotFoundError:
+   11:                     pass
+       
+       
+    1: def atomic_write_json(
+           path: str | Path,
+           payload: object,
+           *,
+    1:     backup: bool = True,
+    1:     lock_timeout: float = 10.0,
+    1:     expected_digest: str | None | object = _UNSET,
+       ) -> None:
+    4:     atomic_write_text(
+    2:         path,
+    2:         render_json(payload),
+    2:         backup=backup,
+    2:         lock_timeout=lock_timeout,
+    2:         expected_digest=expected_digest,
+           )

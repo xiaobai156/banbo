@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "phase": "independent_validation",
+  "validation_date": "2026-08-05",
+  "site_id": "hw-0141",
+  "site_name": "守株待兔",
+  "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626099.html",
+  "record_id": "626099",
+  "target_issue": 217,
+  "direction": "bottom",
+  "formal_update_authorized": false,
+  "formal_files_untouched": true,
+  "corrected_decision_order": [
+    "确认URL记录和守株待兔文章标题",
+    "以标题起点和上一篇/下一篇导航锁定同一文章边界",
+    "按原始文档顺序收集文章内全部有效精杀半波候选",
+    "先应用bottom后三组",
+    "只在bottom窗口内检查目标期唯一性和冲突"
+  ],
+  "live_source": {
+    "document_count": 284,
+    "matching_article_count": 1,
+    "article_heading": "杀肖区 217期: 守株待兔「精杀半波」",
+    "author": "守株待兔 发表于 08月04日 22:40:49",
+    "article_boundary": {
+      "start_order": 77,
+      "start_decoded_suffix": 18,
+      "end_order_exclusive": 126,
+      "end_decoded_suffix_exclusive": 67,
+      "end_anchor": "上一篇/下一篇"
+    },
+    "candidate_count": 470,
+    "rotating_parent_scripts_observed": [
+      "https://xia04.cosds.ahsccn.com/upload/script/08/cc9978317bed7d7d.js",
+      "https://xia04.cosds.ahsccn.com/upload/script/08/797fa9182e6f894a.js",
+      "https://xia02.cosds.ahsccn.com/upload/script/08/3e853cd706f470cd.js"
+    ],
+    "structure_stable_across_fetches": true
+  },
+  "bottom_window": [
+    {
+      "issue": 215,
+      "value": "红双",
+      "document_order": 125,
+      "decoded_suffix": 66
+    },
+    {
+      "issue": 216,
+      "value": "绿双",
+      "document_order": 125,
+      "decoded_suffix": 66
+    },
+    {
+      "issue": 217,
+      "value": "绿单",
+      "document_order": 125,
+      "decoded_suffix": 66,
+      "snippet": "217期 精杀半波 绿波单 开:0000准"
+    }
+  ],
+  "out_of_window_diagnostics": [
+    {
+      "issue": 217,
+      "value": "红单",
+      "document_order": 89,
+      "decoded_suffix": 30,
+      "snippet": "217期 精杀半波 红波单 开:猴46准",
+      "inside_bottom_window": false,
+      "participates_in_final_conflict_check": false
+    }
+  ],
+  "validation_cases": [
+    {
+      "issue": 217,
+      "passed": true,
+      "value": "绿单"
+    },
+    {
+      "issue": 216,
+      "passed": true,
+      "value": "绿双"
+    },
+    {
+      "issue": 215,
+      "passed": true,
+      "value": "红双"
+    },
+    {
+      "issue": 214,
+      "passed": false,
+      "reason": "outside_bottom_window"
+    },
+    {
+      "issue": 999,
+      "passed": false,
+      "reason": "target_period_missing"
+    }
+  ],
+  "negative_scenarios": {
+    "earlier_same_issue_outside_bottom_window": "passed",
+    "navigation_after_article_excluded": "passed",
+    "cross_parent_anchor_borrowing_rejected": "passed",
+    "wrong_field_before_half_wave_keyword_ignored": "passed",
+    "two_values_inside_bottom_window_preserve_conflict": "passed"
+  },
+  "isolated_artifacts": {
+    "validator": "audit/validate_shouzhudaitu_bottom_217.py",
+    "tests": "audit/test_validate_shouzhudaitu_bottom_217.py",
+    "coverage": "audit/trace_coverage_shouzhudaitu_217_live/audit.validate_shouzhudaitu_bottom_217.cover"
+  },
+  "verification": {
+    "isolated_tests": "5 passed",
+    "full_tests": "171 passed, 1 skipped, 183 subtests passed",
+    "python_compile": "passed",
+    "ruff": "passed",
+    "isolated_validator_coverage_percent": 95.93
+  },
+  "formal_file_hashes_before_and_after": {
+    "recent_10_cache.json": "2DBD8844E825FD92391C0DA8BCA027DD10B9A5147724782AE5A0DB8171AF4881",
+    "config/sites.json": "C96B9084B8DD256EAC1CDE0F3770BF82D608C5D4A074931950CF5696F9BA2B68",
+    "config/parser_specs.json": "39E975BB81674D17278C37695589FD1CD72BA9FF16DC9F650C52FA9E827013ED",
+    "config/repair_cases.json": "504C998FB4553A3FA205262032547D00ACFE7029C056BDC59583693462F755DA",
+    "config/site_structure_profiles.json": "833189A4AC0BA24226F5F4A24467B472BA031764A3648C4918738BD04042E8E8"
+  },
+  "validation_result": "independent_validation_passed",
+  "validated_value": "绿单",
+  "formal_update": "pending_explicit_authorization"
+}

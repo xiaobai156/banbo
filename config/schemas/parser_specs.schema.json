@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "specs"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "specs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "site_id",
+          "parser_id",
+          "strategy",
+          "direction",
+          "anchors",
+          "keywords",
+          "issue_pattern",
+          "value_pattern",
+          "before_documents",
+          "after_documents",
+          "target_only",
+          "record_id_pattern",
+          "topic_id_pattern",
+          "parser_version",
+          "options"
+        ],
+        "properties": {
+          "site_id": {"type": "string", "minLength": 1},
+          "parser_id": {"type": "string", "minLength": 1},
+          "strategy": {"type": "string", "minLength": 1},
+          "direction": {"enum": ["top", "bottom"]},
+          "anchors": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1
+          },
+          "keywords": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1
+          },
+          "issue_pattern": {"type": "string", "minLength": 1},
+          "value_pattern": {"type": "string", "minLength": 1},
+          "before_documents": {"type": "integer", "minimum": 0},
+          "after_documents": {"type": "integer", "minimum": 0},
+          "target_only": {"type": "boolean"},
+          "record_id_pattern": {"type": ["string", "null"]},
+          "topic_id_pattern": {"type": ["string", "null"]},
+          "parser_version": {"type": "string", "minLength": 1},
+          "options": {"type": "object"}
+        }
+      }
+    }
+  }
+}

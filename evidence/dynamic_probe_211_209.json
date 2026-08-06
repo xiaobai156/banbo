@@ -1,0 +1,173 @@
+{
+  "issues": [
+    211,
+    210,
+    209
+  ],
+  "results": {
+    "hw-0005": {
+      "name": "浪费衬衫",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0005",
+        "strategy": "dynamic_api",
+        "direction": "top",
+        "anchors": [
+          "绝杀半波"
+        ],
+        "keywords": [
+          "绝杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "source": {
+            "kind": "forums",
+            "user_id": "4032",
+            "topic": "绝杀半波",
+            "sub_topic": null
+          }
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "record_id": "15711815"
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "record_id": "15703855"
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "record_id": "15699030"
+        }
+      ]
+    },
+    "hw-0078": {
+      "name": "财富榜啊了",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0078",
+        "strategy": "dynamic_api",
+        "direction": "top",
+        "anchors": [
+          "财富榜",
+          "绝杀半波"
+        ],
+        "keywords": [
+          "绝杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "source": {
+            "kind": "references",
+            "user_id": "11993",
+            "topic": "财富榜",
+            "sub_topic": "绝杀半波"
+          }
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "record_id": "15713171"
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "record_id": "15703514"
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "record_id": "15698909"
+        }
+      ]
+    },
+    "hw-0079": {
+      "name": "熊错了",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0079",
+        "strategy": "dynamic_api",
+        "direction": "top",
+        "anchors": [
+          "熊出没",
+          "绝杀半波"
+        ],
+        "keywords": [
+          "绝杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "source": {
+            "kind": "references",
+            "user_id": "11968",
+            "topic": "熊出没",
+            "sub_topic": "绝杀半波"
+          }
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "record_id": "15711378"
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "record_id": "15703926"
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "record_id": "15698223"
+        }
+      ]
+    }
+  }
+}

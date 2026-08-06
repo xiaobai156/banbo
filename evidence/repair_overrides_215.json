@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "status": "isolated_experiment_only",
+  "parser": "experimental_decoded_sibling (not registered in production registry)",
+  "target_issue": 215,
+  "adjacent_issue": 214,
+  "missing_issue": 999,
+  "overrides": [
+    {
+      "site_id": "hw-0011",
+      "expected_215": "蓝单",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0013",
+      "expected_215": "绿单",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0031",
+      "expected_215": "蓝双",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0042",
+      "expected_215": "红双",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0047",
+      "expected_215": "蓝双",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0051",
+      "expected_215": "蓝双",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0052",
+      "expected_215": "绿单",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0071",
+      "expected_215": "蓝双",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0105",
+      "expected_215": "红双",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0106",
+      "expected_215": "红单",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0107",
+      "expected_215": "绿双",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0110",
+      "expected_215": "蓝双",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0112",
+      "expected_215": "蓝双",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0113",
+      "expected_215": "绿单",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0121",
+      "expected_215": "蓝单",
+      "mode": "history"
+    },
+    {
+      "site_id": "hw-0035",
+      "expected_215": "蓝双",
+      "mode": "pattern",
+      "pattern": "half_wave"
+    },
+    {
+      "site_id": "hw-0101",
+      "expected_215": "蓝双",
+      "mode": "pattern",
+      "pattern": "half_wave"
+    },
+    {
+      "site_id": "hw-0134",
+      "expected_215": "红双",
+      "mode": "pattern",
+      "pattern": "half_wave"
+    },
+    {
+      "site_id": "hw-0045",
+      "expected_215": "绿单",
+      "mode": "pattern",
+      "anchors": [
+        "杀料榜",
+        "26064c.com"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "pattern": "half_wave"
+    },
+    {
+      "site_id": "hw-0046",
+      "expected_215": "绿双",
+      "mode": "pattern",
+      "anchors": [
+        "杀料榜",
+        "26064c.com",
+        "稳杀半波"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "pattern": "half_wave"
+    },
+    {
+      "site_id": "hw-0053",
+      "expected_215": "绿单",
+      "mode": "pattern",
+      "anchors": [
+        "杀料贴",
+        "118060c.com"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "pattern": "half_wave"
+    },
+    {
+      "site_id": "hw-0089",
+      "expected_215": "红单",
+      "mode": "pattern",
+      "anchors": [
+        "澳门鸿运",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "杀"
+      ],
+      "pattern": "kill"
+    },
+    {
+      "site_id": "hw-0090",
+      "expected_215": "红双",
+      "mode": "pattern",
+      "anchors": [
+        "此曲已终",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "杀"
+      ],
+      "pattern": "kill"
+    },
+    {
+      "site_id": "hw-0091",
+      "expected_215": "红双",
+      "mode": "pattern",
+      "anchors": [
+        "降世魔童",
+        "综合绝杀"
+      ],
+      "keywords": [],
+      "pattern": "issue_value"
+    },
+    {
+      "site_id": "hw-0109",
+      "expected_215": "红双",
+      "mode": "pattern",
+      "anchors": [
+        "澳门赤兔",
+        "综合绝杀"
+      ],
+      "keywords": [],
+      "pattern": "issue_value"
+    },
+    {
+      "site_id": "hw-0111",
+      "expected_215": "蓝双",
+      "mode": "pattern",
+      "anchors": [
+        "王中王",
+        "禁半波"
+      ],
+      "keywords": [],
+      "pattern": "issue_value"
+    },
+    {
+      "site_id": "hw-0114",
+      "expected_215": "绿双",
+      "mode": "pattern",
+      "anchors": [
+        "澳门码头诗",
+        "综合杀料"
+      ],
+      "keywords": [],
+      "pattern": "issue_value"
+    },
+    {
+      "site_id": "hw-0115",
+      "expected_215": "绿单",
+      "mode": "pattern",
+      "anchors": [
+        "任我发",
+        "禁特区"
+      ],
+      "keywords": [
+        "禁半波"
+      ],
+      "pattern": "half_wave"
+    },
+    {
+      "site_id": "hw-0119",
+      "expected_215": "红单",
+      "mode": "pattern",
+      "anchors": [
+        "绝杀专区"
+      ],
+      "keywords": [],
+      "pattern": "issue_value"
+    },
+    {
+      "site_id": "hw-0163",
+      "expected_215": "红单",
+      "mode": "pattern",
+      "anchors": [
+        "汉锺离",
+        "综合绝杀"
+      ],
+      "keywords": [],
+      "pattern": "issue_value"
+    }
+  ]
+}

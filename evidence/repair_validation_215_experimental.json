@@ -1,0 +1,1309 @@
+{
+  "schema_version": 1,
+  "mode": "isolated_experiment",
+  "production_registered": false,
+  "cases": [
+    {
+      "site_id": "hw-0011",
+      "site_name": "龙行虎变",
+      "url": "https://vbxl5.gvgsf-5zmzm-ojxowu.xyz/topic/453439.html",
+      "direction": "bottom",
+      "expected_215": "蓝单",
+      "accepted": true,
+      "document_count": 106,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝单",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "215期:绝杀半波 蓝单 开00准",
+          "document_id": "script:1967184c03f3fac1f282",
+          "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/117570ba58f64d30.js#decoded-10"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "绿双",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "214期:绝杀半波 绿双 开兔04准",
+          "document_id": "script:70f30389c7d5be32534d",
+          "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/117570ba58f64d30.js#decoded-9"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0013",
+      "site_name": "亘古还今",
+      "url": "https://x5meek.vh7fu-ehvdi-tpwoqt.work/topic/430710.html",
+      "direction": "top",
+      "expected_215": "绿单",
+      "accepted": true,
+      "document_count": 133,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "绿单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期 绝杀半波 绿波单 开:0000准↑",
+          "document_id": "script:b58b7529b215382da264",
+          "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/fe2d7664bc2f7509.js#decoded-2"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期 绝杀半波 红波单 开:兔04准↑",
+          "document_id": "script:be69b591dfe3696ea7b7",
+          "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/fe2d7664bc2f7509.js#decoded-3"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0031",
+      "site_name": "狼心狗行",
+      "url": "https://vhgswwe.7rdnv-4uc7h-yshpkm.xyz:16677/topic/447932.html",
+      "direction": "top",
+      "expected_215": "蓝双",
+      "accepted": true,
+      "document_count": 184,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期: 绝杀半波 蓝双 开: 0000 准",
+          "document_id": "script:7f26b957655fd6b47054",
+          "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/922652558d6561b6.js#decoded-7"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期: 绝杀半波 红单 开: 兔04 准",
+          "document_id": "script:7f26b957655fd6b47054",
+          "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/922652558d6561b6.js#decoded-7"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0042",
+      "site_name": "老奇人",
+      "url": "https://wupxrz.v38cs-r7pwj-ozxbae.work:16633/topic/585898.html",
+      "direction": "top",
+      "expected_215": "红双",
+      "accepted": true,
+      "document_count": 190,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "红双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期 绝杀半波 红波双 开000准",
+          "document_id": "script:087ac532e4c2e1126f81",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/173695d74d94d1b2.js#decoded-8"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期 绝杀半波 蓝波双 开兔04错",
+          "document_id": "script:087ac532e4c2e1126f81",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/173695d74d94d1b2.js#decoded-8"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0047",
+      "site_name": "金牌谜语",
+      "url": "https://fszatrw.xhwqs-gffny-zzdfsq.work:16677/topic/273119.html",
+      "direction": "top",
+      "expected_215": "蓝双",
+      "accepted": true,
+      "document_count": 161,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期: 必杀半波 蓝波双 開:0000准",
+          "document_id": "script:0d476f158de890bb3515",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/971075b32fd98909.js#decoded-20"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "绿双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期: 必杀半波 绿波双 開:兔04准",
+          "document_id": "script:0d476f158de890bb3515",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/971075b32fd98909.js#decoded-20"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0051",
+      "site_name": "水果奶奶",
+      "url": "https://ixvtdglw.6vjj7-nn2ip-kqudzz.xyz:16633/",
+      "direction": "top",
+      "expected_215": "蓝双",
+      "accepted": true,
+      "document_count": 1133,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期绝杀半波 蓝双 开 0000 准",
+          "document_id": "script:b89b04dee05ea2e18299",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/948659bb0fb612b9.js#decoded-2"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期绝杀半波 红双 开 兔04 准 第",
+          "document_id": "script:d49eb81186b05cc8835d",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/948659bb0fb612b9.js#decoded-3"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0052",
+      "site_name": "刘半仙",
+      "url": "https://smnwgqcm.vkk2k-rpbnk-qtocig.xyz:16677/",
+      "direction": "top",
+      "expected_215": "绿单",
+      "accepted": true,
+      "document_count": 1037,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "绿单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期 绝杀半波 绿单 开 0000准 第",
+          "document_id": "script:78c3faeca0b3335b496c",
+          "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/31c6944893b1228a.js#decoded-38"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期 绝杀半波 蓝双 开 兔04错",
+          "document_id": "script:78c3faeca0b3335b496c",
+          "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/31c6944893b1228a.js#decoded-38"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0071",
+      "site_name": "蓝月亮",
+      "url": "https://zuymmv.k9lew-qbswr-jmnakh.xyz:16677/",
+      "direction": "top",
+      "expected_215": "蓝双",
+      "accepted": true,
+      "document_count": 3483,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期 绝杀半波 蓝双蓝双 开: 0000准",
+          "document_id": "script:9566fbe6370a6941a3b6",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/c00676e81ba2c93f.js#decoded-77"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "蓝单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期 绝杀半波 蓝单蓝单 开: 兔04准",
+          "document_id": "script:30410cc8b3fe7e638237",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/c00676e81ba2c93f.js#decoded-78"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0105",
+      "site_name": "白蛇传",
+      "url": "https://ocnrhq.du156-vb27w-tmhsed.xyz:16677/",
+      "direction": "bottom",
+      "expected_215": "红双",
+      "accepted": false,
+      "document_count": 4336,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "215期: 绝杀半波 - 蓝双 开:?00准",
+          "document_id": "script:e17377189a8b1d2ead9b",
+          "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/45eceae5e6c71374.js#decoded-349"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "绿双",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "214期: 绝杀半波 - 绿双 开:兔04 准",
+          "document_id": "script:e17377189a8b1d2ead9b",
+          "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/45eceae5e6c71374.js#decoded-349"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0106",
+      "site_name": "二肖四码",
+      "url": "https://eudkyp.luqv0-yf46s-xrnpkz.xyz:16677/topic/324148.html",
+      "direction": "top",
+      "expected_215": "红单",
+      "accepted": true,
+      "document_count": 124,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期:杀 2头双 红单 开 0000 准",
+          "document_id": "script:56b1f9f9faa695b06dd0",
+          "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/05bdcd02cdab8142.js#decoded-17"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期:杀 4头单 蓝双 开 兔04 错",
+          "document_id": "script:56b1f9f9faa695b06dd0",
+          "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/05bdcd02cdab8142.js#decoded-17"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0107",
+      "site_name": "澳彩传奇",
+      "url": "https://rqvvaxwq.w30m7-xd23l-ebrbbj.xyz/",
+      "direction": "top",
+      "expected_215": "绿双",
+      "accepted": true,
+      "document_count": 2152,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "绿双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期: ✦精杀半波✦ 绿双 开: 0000中",
+          "document_id": "script:f4684506af15f9e7f75f",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/34756b31f9cd3770.js#decoded-17"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期: ✦精杀半波✦ 红双 开: 兔04中",
+          "document_id": "script:95ab169fbca50b3bb4bc",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/34756b31f9cd3770.js#decoded-18"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0110",
+      "site_name": "铁算盘",
+      "url": "https://tgjqwnvl.2hyb0-ocfse-borngs.xyz:16677/",
+      "direction": "top",
+      "expected_215": "蓝双",
+      "accepted": true,
+      "document_count": 921,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期 杀特半波 蓝双 开?00中",
+          "document_id": "script:f61be2c5f99242c541cc",
+          "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/1c121ac80104f6eb.js#decoded-3"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期 杀特半波 红单 开兔04中",
+          "document_id": "script:f61be2c5f99242c541cc",
+          "source_url": "https://xia04.cosds.ahsccn.com/upload/script/08/1c121ac80104f6eb.js#decoded-3"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0112",
+      "site_name": "好彩网",
+      "url": "https://qhfsrngx.x9mcp-vrrqh-dzqfro.xyz:16677/",
+      "direction": "top",
+      "expected_215": "蓝双",
+      "accepted": true,
+      "document_count": 1478,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期 : 绝杀半波 蓝双 开 ?00 准",
+          "document_id": "script:578070599cf3d7abe4eb",
+          "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/25b5ae2dafec17e4.js#decoded-9"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期 : 绝杀半波 红单 开 兔04 准",
+          "document_id": "script:f0e0d4ce92b475b11120",
+          "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/25b5ae2dafec17e4.js#decoded-10"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0113",
+      "site_name": "玄机阁",
+      "url": "https://aqlvuvz.kkr58-ayern-biiohi.xyz:16677/",
+      "direction": "top",
+      "expected_215": "绿单",
+      "accepted": true,
+      "document_count": 812,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "绿单",
+          "boundary_issues": [
+            215,
+            214,
+            212
+          ],
+          "snippet": "215期:绝杀半波 绿单 开:0000准",
+          "document_id": "script:cb82568a84f76e0ab42b",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/58762a1a338d3839.js#decoded-8"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "绿双",
+          "boundary_issues": [
+            215,
+            214,
+            212
+          ],
+          "snippet": "214期:绝杀半波 绿双 开:兔04准",
+          "document_id": "script:cb82568a84f76e0ab42b",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/58762a1a338d3839.js#decoded-8"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0121",
+      "site_name": "崇左女王",
+      "url": "https://yaaxgud.xg0eu-qjubd-yneksw.xyz:16677/",
+      "direction": "top",
+      "expected_215": "蓝单",
+      "accepted": true,
+      "document_count": 1367,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期 绝杀 蓝波单 开 0000 发",
+          "document_id": "script:4f8b34c5723cf04098b3",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/dcd3eec9042d1b61.js#decoded-80"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "绿单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期 绝杀 绿波单 开 兔04 发",
+          "document_id": "script:4f8b34c5723cf04098b3",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/dcd3eec9042d1b61.js#decoded-80"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0035",
+      "site_name": "水秀山明",
+      "url": "https://pcfwjde.22zu6-81144-kdlkyf.xyz:16677/topic/436703.html",
+      "direction": "bottom",
+      "expected_215": "蓝双",
+      "accepted": true,
+      "document_count": 172,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "212期绝杀半波->=绿波单准213期绝杀半波->=红波单错214期绝杀半波->=红波双准215期绝杀半波->=蓝波双准红单:01.07.13.19.23.29.35.45蓝单:03.09.15.25.31.37.41.47绿单:05.11.17.21.27.33.39.43.49红双:02.08.12.18.24.30.34.40.46蓝双:04.10.14.20.26.36.42.48绿双:",
+          "document_id": "script:b320162b5cc54aa85298",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/136ac3e43915b49c.js#decoded-19"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红双",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "212期绝杀半波->=绿波单准213期绝杀半波->=红波单错214期绝杀半波->=红波双准215期绝杀半波->=蓝波双准红单:01.07.13.19.23.29.35.45蓝单:03.09.15.25.31.37.41.47绿单:05.11.17.21.27.33.39.43.49红双:02.08.12.18.24.30.34.40.46蓝双:04.10.14.20",
+          "document_id": "script:b320162b5cc54aa85298",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/136ac3e43915b49c.js#decoded-19"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0101",
+      "site_name": "贪生怕死",
+      "url": "https://fjjxlve.eclrc-7oqku-atxhrs.xyz:16677/topic/445667.html",
+      "direction": "bottom",
+      "expected_215": "蓝双",
+      "accepted": true,
+      "document_count": 187,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "215期绝杀半波->=蓝波双准红单:01.07.13.19.23.29.35.45蓝单:03.09.15.25.31.37.41.47绿单:05.11.17.21.27.33.39.43.49红双:02.08.12.18.24.30.34.40.46蓝双:04.10.14.20.26.36.42.48绿双:",
+          "document_id": "script:588de1aaa1c8002fc68f",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/b1b10cc08a550270.js#decoded-47"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "杀半波->=红波双准208期绝杀半波->=绿波双准209期绝杀半波->=红波双错210期绝杀半波->=红波单准211期绝杀半波->=红波双准212期绝杀半波->=蓝波双准213期绝杀半波->=绿波单准214期绝杀半波->=红波单准",
+          "document_id": "script:ab83ac0bfe64278a900a",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/b1b10cc08a550270.js#decoded-46"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0134",
+      "site_name": "不言不语",
+      "url": "https://msbqxti.zhx2n-7v5x3-ivdpud.xyz:16677/topic/678152.html",
+      "direction": "bottom",
+      "expected_215": "红双",
+      "accepted": true,
+      "document_count": 116,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "红双",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "213期【绝杀半波】->蓝波单214期【绝杀半波】->红波单215期【绝杀半波】->红波双蓝单:03.09.15.25.31.37.41.47绿单:05.11.17.21.27.33.39.43.49红单:01.07.13.19.23.29.35.45红双:02.08.12.18.24.30.34.40.46蓝双:04.10.14.20.26.36.42.48绿双:0",
+          "document_id": "script:65904a6703bf36dff57b",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/43896af9b9ffe1a2.js#decoded-42"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            213,
+            214,
+            215
+          ],
+          "snippet": "213期【绝杀半波】->蓝波单214期【绝杀半波】->红波单215期【绝杀半波】->红波双蓝单:03.09.15.25.31.37.41.47绿单:05.11.17.21.27.33.39.43.49红单:01.07.13.19.23.29.35.45红双:02.08.12.18.24.30.34.40.46蓝双:04.10.14.20.",
+          "document_id": "script:65904a6703bf36dff57b",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/43896af9b9ffe1a2.js#decoded-42"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0045",
+      "site_name": "雷锋第二版",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/227254.html",
+      "direction": "top",
+      "expected_215": "绿单",
+      "accepted": true,
+      "document_count": 211,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "绿单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "{word-wrap:break-word;}.topic-contenttable{width:100%!important}杀料榜215期【绝杀半波】26064c.com作者:26064c.com215期:ㄛ绝杀半波ㄛ【绿波单】开:0000准↑214期:ㄛ绝杀半波ㄛ【红波单】开:兔04准↑213期:ㄛ绝杀半波ㄛ【蓝波单】开:猴35准↑212期:ㄛ绝杀半波ㄛ【绿波单】开:牛06准↑",
+          "document_id": "script:9969c48e7f55b21f8e7b",
+          "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/f5eecd940ce3668b.js#decoded-1"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "topic-contenttable{width:100%!important}杀料榜215期【绝杀半波】26064c.com作者:26064c.com215期:ㄛ绝杀半波ㄛ【绿波单】开:0000准↑214期:ㄛ绝杀半波ㄛ【红波单】开:兔04准↑213期:ㄛ绝杀半波ㄛ【蓝波单】开:猴35准↑212期:ㄛ绝杀半波ㄛ【绿波单】开:牛06准↑",
+          "document_id": "script:9969c48e7f55b21f8e7b",
+          "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/f5eecd940ce3668b.js#decoded-1"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0046",
+      "site_name": "雷锋第一版",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/205678.html",
+      "direction": "top",
+      "expected_215": "绿双",
+      "accepted": true,
+      "document_count": 199,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "绿双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "{word-wrap:break-word;}.topic-contenttable{width:100%!important}杀料榜215期【稳杀半波】26064c.com作者:26064c.com215期绝杀半波【绿波双】开:0000准214期绝杀半波【红波双】开:兔04准213期绝杀半波【红波单】开:猴35错212期绝杀半波【蓝波单】开:牛06准",
+          "document_id": "script:f1d9d6d5668b558b9a4b",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/2a2ef9e096acbfcc.js#decoded-1"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "d;}.topic-contenttable{width:100%!important}杀料榜215期【稳杀半波】26064c.com作者:26064c.com215期绝杀半波【绿波双】开:0000准214期绝杀半波【红波双】开:兔04准213期绝杀半波【红波单】开:猴35错212期绝杀半波【蓝波单】开:牛06准",
+          "document_id": "script:f1d9d6d5668b558b9a4b",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/2a2ef9e096acbfcc.js#decoded-1"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0053",
+      "site_name": "以以把第一版",
+      "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/205339.html",
+      "direction": "top",
+      "expected_215": "绿单",
+      "accepted": true,
+      "document_count": 138,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "绿单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "d-wrap:break-word;}.topic-contenttable{width:100%!important}杀料贴215期:【绝杀半波】━118060c.com作者:118060c.com215期绝杀半波【绿波单】开:0000准214期绝杀半波【蓝波单】开:兔04准213期绝杀半波【蓝波双】开:猴35准212期绝杀半波【绿波双】开:牛06错",
+          "document_id": "script:2cb52c62cb3708588f43",
+          "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/7c66af7b38ba2485.js#decoded-1"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "蓝单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "topic-contenttable{width:100%!important}杀料贴215期:【绝杀半波】━118060c.com作者:118060c.com215期绝杀半波【绿波单】开:0000准214期绝杀半波【蓝波单】开:兔04准213期绝杀半波【蓝波双】开:猴35准212期绝杀半波【绿波双】开:牛06错",
+          "document_id": "script:2cb52c62cb3708588f43",
+          "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/7c66af7b38ba2485.js#decoded-1"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0089",
+      "site_name": "鸿运",
+      "url": "https://neciezht.h6r8g-z9l98-usthpy.xyz:16677/",
+      "direction": "top",
+      "expected_215": "红单",
+      "accepted": true,
+      "document_count": 2173,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "买港澳六合彩58倍就上鸿蒙娱乐城111.cc.dz_contenttabletd{word-break:break-all;}215期杀【红单】开0000准214期杀【蓝单】开兔04准",
+          "document_id": "script:ab5eb8eaf57cc33c0e42",
+          "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/ca4c04794f913c7e.js#decoded-146"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "蓝单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "买港澳六合彩58倍就上鸿蒙娱乐城111.cc.dz_contenttabletd{word-break:break-all;}215期杀【红单】开0000准214期杀【蓝单】开兔04准",
+          "document_id": "script:ab5eb8eaf57cc33c0e42",
+          "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/ca4c04794f913c7e.js#decoded-146"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0090",
+      "site_name": "此曲已终",
+      "url": "https://buvwlreg.drr11-soh5x-jcaafg.xyz:16677/",
+      "direction": "top",
+      "expected_215": "红双",
+      "accepted": true,
+      "document_count": 783,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "红双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期杀【红波双】开:?00√214期杀【绿波单】开:兔04√213期杀【蓝波双】开:猴35√212期杀【红波双】开:牛06√211期杀【蓝波双】开:马01√210期杀【绿波双】开:马49√208期杀【蓝波双】开:鼠19√207期杀【红波单】开:鼠31√206期杀【绿波双】开:猴47√205期杀",
+          "document_id": "script:80a49574176f8fe49f0a",
+          "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/05faf0c6422cec0e.js#decoded-23"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "绿单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期杀【红波双】开:?00√214期杀【绿波单】开:兔04√213期杀【蓝波双】开:猴35√212期杀【红波双】开:牛06√211期杀【蓝波双】开:马01√210期杀【绿波双】开:马49√208期杀【蓝波双】开:鼠19√207期杀【红波单】开:鼠31√206期杀【绿波双】开:猴47√205期杀【蓝波双】开:龙03√",
+          "document_id": "script:80a49574176f8fe49f0a",
+          "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/05faf0c6422cec0e.js#decoded-23"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0091",
+      "site_name": "魔童",
+      "url": "https://bloynnbb.gzgli-koeq8-deouwc.xyz:16677/",
+      "direction": "top",
+      "expected_215": "红双",
+      "accepted": true,
+      "document_count": 1843,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "红双",
+          "boundary_issues": [
+            215,
+            214,
+            208
+          ],
+          "snippet": "开奖结果215期《虎》《红双》《3尾》开:0000",
+          "document_id": "script:6111c714c098d862a35a",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/58fcf8b004d57b42.js#decoded-22"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            208
+          ],
+          "snippet": "214期《羊》《红单》《9尾》开:兔04211期《蛇》《蓝双》",
+          "document_id": "script:dba38f8e47d46803f963",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/58fcf8b004d57b42.js#decoded-23"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0109",
+      "site_name": "赤兔",
+      "url": "https://zwpwuwq.fxnb4-uer1b-uftjcw.work:16677/#am",
+      "direction": "top",
+      "expected_215": "红双",
+      "accepted": true,
+      "document_count": 4320,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "红双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "杀一头开奖结果215期《兔》《红双》《2》《2》0000准",
+          "document_id": "script:2f1d11e0eb458f433d53",
+          "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/00c00a51b53516da.js#decoded-64"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "214期《虎》《红单》《3》《0》兔04准",
+          "document_id": "script:e77bf6caec90af475c6e",
+          "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/00c00a51b53516da.js#decoded-65"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0111",
+      "site_name": "王中王",
+      "url": "https://dhqjbz.uxec9-jxs3h-fomubo.work:16677/",
+      "direction": "bottom",
+      "expected_215": "蓝双",
+      "accepted": false,
+      "document_count": 1413,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "蓝双",
+          "boundary_issues": [
+            212,
+            213,
+            215
+          ],
+          "snippet": "羊肖红波单6尾4头开兔04准215期猪肖蓝波双",
+          "document_id": "script:7651ba9a65a0c647f8aa",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/d5293860fee6a7c1.js#decoded-31"
+        },
+        {
+          "issue": 214,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到214期专属证据",
+          "evidence_count": 0
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0114",
+      "site_name": "码头诗",
+      "url": "https://nrbzrzm.zxt0w-ug0p0-uktgvy.xyz:16677/",
+      "direction": "top",
+      "expected_215": "绿双",
+      "accepted": true,
+      "document_count": 1128,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "绿双",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期《猴》《绿双》《8尾》开:00准214期《鼠》《绿单》",
+          "document_id": "script:d5c6bc55b8fdc756b482",
+          "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/a0b9c903413e2721.js#decoded-15"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "绿单",
+          "boundary_issues": [
+            215,
+            214,
+            213
+          ],
+          "snippet": "215期《猴》《绿双》《8尾》开:00准214期《鼠》《绿单》",
+          "document_id": "script:d5c6bc55b8fdc756b482",
+          "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/a0b9c903413e2721.js#decoded-15"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0115",
+      "site_name": "任我发",
+      "url": "https://oifsonk.e0h72-f6bxs-juqrkd.xyz:16677/",
+      "direction": "top",
+      "expected_215": "绿单",
+      "accepted": false,
+      "document_count": 960,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "绿单",
+          "boundary_issues": [
+            215,
+            203,
+            202
+          ],
+          "snippet": "215期【澳门任我发】570090c.com禁一肖(羊)特开:?00准禁半波(绿单)特开:?00准",
+          "document_id": "script:a33982b55f168275c5ca",
+          "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/69d73e816f942830.js#decoded-69"
+        },
+        {
+          "issue": 214,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到214期专属证据",
+          "evidence_count": 0
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0119",
+      "site_name": "何仙姑",
+      "url": "https://fjjxlve.eclrc-7oqku-atxhrs.xyz:16677/",
+      "direction": "top",
+      "expected_215": "红单",
+      "accepted": true,
+      "document_count": 1157,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            214,
+            211
+          ],
+          "snippet": "杀一尾开奖结果215期《兔》《红单》《5尾》开:?00",
+          "document_id": "script:fc73f9bcaad1e714e885",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/2a9d2d519b66083b.js#decoded-94"
+        },
+        {
+          "issue": 214,
+          "passed": true,
+          "value": "绿双",
+          "boundary_issues": [
+            215,
+            214,
+            211
+          ],
+          "snippet": "214期《鼠》《绿双》《6尾》开:兔04213期《牛》",
+          "document_id": "script:2171f7fefccf541cd17c",
+          "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/2a9d2d519b66083b.js#decoded-95"
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0163",
+      "site_name": "汉锺离",
+      "url": "https://ozfksr.8gd3h-8yo27-ttlqhq.xyz:16677/",
+      "direction": "top",
+      "expected_215": "红单",
+      "accepted": false,
+      "document_count": 949,
+      "checks": [
+        {
+          "issue": 215,
+          "passed": true,
+          "value": "红单",
+          "boundary_issues": [
+            215,
+            212,
+            208
+          ],
+          "snippet": "215期鼠红单4尾开000214期马",
+          "document_id": "script:e094f57169beb93aa485",
+          "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/71bdc700fc856a02.js#decoded-34"
+        },
+        {
+          "issue": 214,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到214期专属证据",
+          "evidence_count": 0
+        },
+        {
+          "issue": 999,
+          "passed": false,
+          "failure_code": "target_period_missing",
+          "failure_reason": "未找到999期专属证据",
+          "evidence_count": 0
+        }
+      ]
+    }
+  ]
+}

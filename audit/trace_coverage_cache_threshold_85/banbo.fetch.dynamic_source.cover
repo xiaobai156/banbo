@@ -1,0 +1,104 @@
+    1: from __future__ import annotations
+       
+    1: import json
+    1: from dataclasses import dataclass
+    1: from urllib.parse import urlparse
+       
+    1: from banbo.domain.models import Document, DocumentSource
+    1: from banbo.domain.normalization import normalize_text
+       
+       
+    2: class DynamicSourceError(RuntimeError):
+    1:     pass
+       
+       
+    2: @dataclass(frozen=True)
+    1: class DynamicSourceSpec:
+    1:     kind: str
+    1:     user_id: str
+    1:     topic: str
+    1:     sub_topic: str | None = None
+       
+       
+    1: def _base_url(entry_url: str) -> str:
+>>>>>>     parsed = urlparse(entry_url)
+>>>>>>     return f"{parsed.scheme}://{parsed.netloc}"
+       
+       
+    1: def _matches(record: dict, target_issue: int, spec: DynamicSourceSpec) -> bool:
+>>>>>>     if str(record.get("user_id")) != str(spec.user_id):
+>>>>>>         return False
+>>>>>>     try:
+>>>>>>         draw = int(record.get("draw"))
+>>>>>>     except (TypeError, ValueError):
+>>>>>>         return False
+>>>>>>     if draw != target_issue:
+>>>>>>         return False
+>>>>>>     if normalize_text(str(record.get("topic", ""))) != normalize_text(spec.topic):
+>>>>>>         return False
+>>>>>>     if spec.sub_topic is not None and normalize_text(
+>>>>>>         str(record.get("sub_topic", ""))
+>>>>>>     ) != normalize_text(spec.sub_topic):
+>>>>>>         return False
+>>>>>>     return bool(record.get("id"))
+       
+       
+    1: def fetch_dynamic_document(
+           client,
+           entry_url: str,
+           target_issue: int,
+           spec: DynamicSourceSpec,
+       ) -> Document:
+>>>>>>     if spec.kind not in {"forums", "references"}:
+>>>>>>         raise DynamicSourceError(f"动态来源类型不支持：{spec.kind}")
+>>>>>>     base_url = _base_url(entry_url)
+>>>>>>     list_url = (
+>>>>>>         f"{base_url}/api/v1/users/{spec.user_id}/{spec.kind}?per_page=100"
+           )
+>>>>>>     response = client.fetch_text(list_url, required_origin=entry_url)
+>>>>>>     try:
+>>>>>>         records = json.loads(response.text)
+>>>>>>     except json.JSONDecodeError as exc:
+>>>>>>         raise DynamicSourceError("动态聚合接口不是有效JSON") from exc
+>>>>>>     if not isinstance(records, list):
+>>>>>>         raise DynamicSourceError("动态聚合接口不是记录列表")
+>>>>>>     matches = [
+>>>>>>         record
+>>>>>>         for record in records
+>>>>>>         if isinstance(record, dict) and _matches(record, target_issue, spec)
+           ]
+>>>>>>     if not matches:
+>>>>>>         raise DynamicSourceError("没有唯一目标记录")
+>>>>>>     if len(matches) > 1:
+>>>>>>         raise DynamicSourceError("动态聚合接口出现多个目标记录")
+       
+>>>>>>     selected = matches[0]
+>>>>>>     record_id = str(selected["id"])
+>>>>>>     detail_url = f"{base_url}/api/v1/forums/{record_id}"
+>>>>>>     detail_response = client.fetch_text(detail_url, required_origin=entry_url)
+>>>>>>     try:
+>>>>>>         detail = json.loads(detail_response.text)
+>>>>>>     except json.JSONDecodeError as exc:
+>>>>>>         raise DynamicSourceError("动态详情接口不是有效JSON") from exc
+>>>>>>     if not isinstance(detail, dict):
+>>>>>>         raise DynamicSourceError("动态详情接口目标记录不是对象")
+>>>>>>     if str(detail.get("id")) != record_id:
+>>>>>>         raise DynamicSourceError("动态详情记录ID校验失败")
+>>>>>>     if not _matches(detail, target_issue, spec):
+>>>>>>         raise DynamicSourceError("动态详情记录元数据校验失败")
+       
+>>>>>>     pieces = []
+>>>>>>     for key in ("topic", "sub_topic", "title", "content", "body"):
+>>>>>>         value = detail.get(key)
+>>>>>>         if isinstance(value, str) and value.strip():
+>>>>>>             pieces.append(value)
+>>>>>>     if not pieces:
+>>>>>>         raise DynamicSourceError("动态详情记录没有正文")
+>>>>>>     return Document(
+>>>>>>         document_id=f"api:{spec.user_id}:{record_id}",
+>>>>>>         source=DocumentSource.API,
+>>>>>>         source_url=detail_url,
+>>>>>>         order=0,
+>>>>>>         content="\n".join(pieces),
+>>>>>>         record_id=record_id,
+           )

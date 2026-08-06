@@ -1,0 +1,1216 @@
+{
+  "schema": 1,
+  "description": "杀半波重复检测最近10期基准数据；由每日指定期抓取自动覆盖更新。",
+  "updated_at": "2026-08-05T17:07:39.8653331+00:00",
+  "window_size": 10,
+  "issues": [
+    211,
+    210,
+    209,
+    208,
+    207,
+    206,
+    205,
+    204,
+    203,
+    202
+  ],
+  "sites": [
+    {
+      "name": "曲湮浮安",
+      "url": "https://qwpapph.el7s4-pbxnj-aemcbt.work:16677/topic/554809.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "真龙天子",
+      "url": "https://e7rzi6.t5ti5-at6k5-fugxpa.work/topic/206536.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "土地公",
+      "url": "https://sepfsazm.th2pfx-4s7mu-aafjnm.xyz:16677/topic/680720.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "片言一字",
+      "url": "https://sepfsazm.th2pfx-4s7mu-aafjnm.xyz:16677/topic/680713.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "浪费衬衫",
+      "url": "https://qvuuqqs.8imf7-hteuh-ylwuqv.xyz/#/users/4032",
+      "pick": "top",
+      "second_click": true,
+      "values": {}
+    },
+    {
+      "name": "梨花飞雪",
+      "url": "https://otmglgaa.uf9twc-9v7sa-ccysbk.xyz:16677/topic/247269.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "我把我灌",
+      "url": "https://otmglgaa.uf9twc-9v7sa-ccysbk.xyz:16677/topic/247253.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "咔啦嘟熊",
+      "url": "https://otmglgaa.uf9twc-9v7sa-ccysbk.xyz:16677/topic/247346.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "无迹可求",
+      "url": "https://vkrquo.xfbmz-7znxx-miaoej.xyz:16677/topic/220527.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "人走茶凉",
+      "url": "https://vkrquo.xfbmz-7znxx-miaoej.xyz:16677/topic/157553.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "龙行虎变",
+      "url": "https://vbxl5.gvgsf-5zmzm-ojxowu.xyz/topic/453439.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "仲孙凛和",
+      "url": "https://3ghqx.evs71-kia2b-gshsdc.xyz/topic/217028.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "亘古还今",
+      "url": "https://x5meek.vh7fu-ehvdi-tpwoqt.work/topic/430710.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "感恩戴德",
+      "url": "https://myvvqq.g25n3-cpae1-psslpy.work/topic/485604.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "不再回忆",
+      "url": "https://kjqba.ipvrs-9mw2c-wdnuvo.work/topic/172512.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "智能半波",
+      "url": "https://jjlachsn.4fk3e-i2rpf-vgknlh.work:16677/topic/653510.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "繁华恶梦",
+      "url": "https://jogavu.6bl6s-ilo1w-yfnvvl.work:16677/topic/678628.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "念卿抚琴",
+      "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314214.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "冷言冷语",
+      "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314313.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "力拔山河",
+      "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314297.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "两只老虎",
+      "url": "https://111.246004.com:9066/Article.Aspx?ListId=247&id=53525",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "凌杂米盐",
+      "url": "https://sadoleu.rznla-fgwyr-nzqalp.xyz:16677/topic/656863.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "威尊命贱",
+      "url": "https://eqyyanu.4rfyf-h2bx5-oxsbom.xyz:16677/topic/465507.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "至交契友",
+      "url": "https://4m6dz.r1wvw-qncts-admwen.xyz/topic/225395.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "六合宝典",
+      "url": "https://77.575363b.com:1888/art_zhuanqu/7646.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "颠勺大师",
+      "url": "https://kqfmnjht.ip6et-0zvu7-gpqkrf.work:16677/topic/239834.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "马首是瞻",
+      "url": "https://aq14f.2gdkh-2qrjm-hxaxji.xyz/topic/192044.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "网站37",
+      "url": "https://gxixcfq.4hxms-k65ek-jsvqzm.xyz:16677/topic/276928.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "摸爬滚打",
+      "url": "https://fhrtnoy.10cus-ki4mn-mlcyap.xyz:16677/topic/447367.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "枪打天下",
+      "url": "https://zopeuze.1fjlt-g1hbj-hykofq.xyz:16677/topic/448452.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "狼心狗行",
+      "url": "https://vhgswwe.7rdnv-4uc7h-yshpkm.xyz:16677/topic/447932.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "可想而知",
+      "url": "https://kulipur.l5paz-a0o8v-uozmmd.xyz:16677/topic/435511.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "车载斗量",
+      "url": "https://narnesm.in79o-is98f-mncjoh.xyz:16677/topic/462942.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "就是财富",
+      "url": "https://narnesm.in79o-is98f-mncjoh.xyz:16677/topic/438166.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "水秀山明",
+      "url": "https://pcfwjde.22zu6-81144-kdlkyf.xyz:16677/topic/436703.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "不痒不痛",
+      "url": "https://fptnapl.o7l2d-gr6ew-tvgvep.xyz:16677/topic/349657.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "聪明能干",
+      "url": "https://rmrcjqk.6ln2t-46k8t-kuthoe.xyz:16677/topic/267374.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "走马观花",
+      "url": "https://cpvqejp.avdja-la48l-xnsdva.xyz:16677/topic/336889.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "果不其然",
+      "url": "https://cxmdjok.8wtwc-boven-glylvt.xyz:16677/topic/437748.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "日积月累",
+      "url": "https://flirclg.d9n5a-2i9au-ezvqgb.xyz:16677/topic/479148.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "龙聚天下",
+      "url": "https://wupxrz.v38cs-r7pwj-ozxbae.work:16633/topic/453085.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "老奇人",
+      "url": "https://wupxrz.v38cs-r7pwj-ozxbae.work:16633/topic/585898.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "无力回天",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/495302.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "侯宝林侯",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/792953.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "雷锋第二版",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/227254.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "雷锋第一版",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/205678.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "金牌谜语",
+      "url": "https://fszatrw.xhwqs-gffny-zzdfsq.work:16677/topic/273119.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "甜酸苦辣",
+      "url": "https://jldzuea.0xkqd-q7ng5-boerfb.xyz:16677/topic/455527.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "锦衣师卫",
+      "url": "https://whsbrmz.qclrc-4mk42-vnxbyg.work:16677/topic/248015.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "一清二白",
+      "url": "https://itctnet.v1gae-gdh9n-ifqlce.xyz:16677/topic/287374.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "水果奶奶",
+      "url": "https://ixvtdglw.6vjj7-nn2ip-kqudzz.xyz:16633/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "刘半仙",
+      "url": "https://smnwgqcm.vkk2k-rpbnk-qtocig.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "以以把第一版",
+      "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/205339.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "是是非非",
+      "url": "https://bucgnuda.sbsrh-yvu62-jrtrcm.xyz:16633/topic/256275.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "百事通",
+      "url": "https://bucgnuda.sbsrh-yvu62-jrtrcm.xyz:16633/topic/256807.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "麻醉坑穴",
+      "url": "https://e7rzi6.vkzoy-tj5wf-umxqmx.work/topic/617732.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "古井无波",
+      "url": "https://xxn08n.a5vqo-qeg9n-shammd.work/topic/207229.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "高谈大论",
+      "url": "https://kjqba.s8hvq-ssvup-eladiw.xyz/topic/216094.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "浪女无家",
+      "url": "https://riyigxyt.e0tnb-692ww-xpgxma.xyz:16677/topic/445602.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "同心一德",
+      "url": "https://gboqrz.95k9b-ipxmw-nrfzlt.work/topic/227461.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "火烧火燎",
+      "url": "https://qzpwvvvb.a3qgk-l2h5k-opahdg.xyz:16677/topic/254748.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "蔡庆杀半波",
+      "url": "https://qzpwvvvb.a3qgk-l2h5k-opahdg.xyz:16677/topic/254822.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "三仙财富",
+      "url": "https://zuxrvs.e3bs4-882rq-pzqtze.xyz/topic/767339.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "声动梁尘",
+      "url": "https://t59nd.syfu4-2t30y-wvhqtb.xyz/topic/244735.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "豕分蛇断",
+      "url": "https://t59nd.syfu4-2t30y-wvhqtb.xyz/topic/236725.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "不能做人",
+      "url": "https://tcwsqrno.ril3o-7ghui-hiepuc.work:16633/topic/205692.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "大梁皇帝",
+      "url": "https://qwpapph.el7s4-pbxnj-aemcbt.work:16677/topic/557462.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "赛马会",
+      "url": "https://ugtzszfp.ldpiz-8xhrd-wpkjkn.xyz:16677/topic/589493.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "钱能通神",
+      "url": "https://wcgizxbj.3ty7h-vgx9b-jymfyw.xyz:16677/topic/249391.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "公证处",
+      "url": "https://uhaxnrzx.q76gf-deec8-zqckeo.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "蓝月亮",
+      "url": "https://zuymmv.k9lew-qbswr-jmnakh.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "持之以恒",
+      "url": "https://fllxjy.m5jln-8kxct-vzvvzq.xyz:16677/topic/312219.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "滥杀无辜",
+      "url": "https://klnizc.u0jd0-wv6xw-vkufqf.xyz:16677/topic/282338.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "完事五一",
+      "url": "https://xuknerw.fu5qv-a7f7o-nxmebt.work:16633/topic/553701.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "出口成章",
+      "url": "https://vmfvzmh.7jh1y-qgjk8-lavfxb.work:16677/topic/782063.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "各抒己见",
+      "url": "https://dtnjpph.1p0w8-q5dks-oxbahg.xyz:16677/topic/450455.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "远赴相思",
+      "url": "https://sgxozo.4b5jw-x2zou-ukbybu.xyz:16677/topic/267719.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "财富榜啊了",
+      "url": "https://qvuuqqs.8imf7-hteuh-ylwuqv.xyz/#/users/11993",
+      "pick": "top",
+      "second_click": true,
+      "values": {}
+    },
+    {
+      "name": "熊错了",
+      "url": "https://qvuuqqs.8imf7-hteuh-ylwuqv.xyz/#/users/11968",
+      "pick": "top",
+      "second_click": true,
+      "values": {}
+    },
+    {
+      "name": "北船余香",
+      "url": "https://mfhfepu.ow55j-i5hbb-icetss.xyz/topic/768616.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "白虎",
+      "url": "https://mkhomxq.gqmpb-vuxji-pfnheu.work:16677/topic/510810.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "高山清水",
+      "url": "https://ykeejph.z9koz-18xjn-pvglgy.xyz:16677/topic/682103.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "恋恋不舍",
+      "url": "https://ykeejph.z9koz-18xjn-pvglgy.xyz:16677/topic/682117.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "两全其美",
+      "url": "https://uixhmfb.1fxgs-oj4yy-fzfkdw.work:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "神机",
+      "url": "https://wxaxdfc.523mo-z7mla-owjdon.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "赏心悦目",
+      "url": "https://zamcrqr.fm9cq-0fw8z-rmobjv.xyz:16677/topic/457674.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "贼眉鼠眼",
+      "url": "https://ligubwb.088f5-qeep5-dzoswv.xyz:16677/topic/446752.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "天上地下",
+      "url": "https://eqnwieh.cql9m-h1s6c-jefajg.xyz:16677/",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "鸿运",
+      "url": "https://neciezht.h6r8g-z9l98-usthpy.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "此曲已终",
+      "url": "https://buvwlreg.drr11-soh5x-jcaafg.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "魔童",
+      "url": "https://bloynnbb.gzgli-koeq8-deouwc.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "魔童第二",
+      "url": "https://bloynnbb.gzgli-koeq8-deouwc.xyz:16677/topic/698764.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "勇往直前",
+      "url": "https://bzdolgna.0115r-u1nk5-zioots.xyz:16677/topic/459941.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "彩民书籍",
+      "url": "https://ymqmvj.7md3q-rm157-wcvhte.work:16677/topic/567179.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "半推半就",
+      "url": "https://buvwlreg.drr11-soh5x-jcaafg.xyz:16677/topic/543270.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "抬眉见雪",
+      "url": "https://cwdcaqzn.7mj0h-75k3q-cbuvqb.work:16677/topic/206911.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "天机老人",
+      "url": "https://mm.737799b.com:1888/art_gsb/8161",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "桂东仔",
+      "url": "https://aa.838797b.com:1888/art_zhuanqu/115.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "烟雨墨痕",
+      "url": "https://fbgbfg.www27521c.com:8443/gsb/am81.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "丢六度路",
+      "url": "https://fhktrabu.zbfrm-uzct1-pmycbu.xyz:16677/topic/469067.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "贪生怕死",
+      "url": "https://fjjxlve.eclrc-7oqku-atxhrs.xyz:16677/topic/445667.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "七上八下",
+      "url": "https://wmdhoki.6su07-7lpw6-gudkzl.xyz:16677/topic/727532.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "开心果",
+      "url": "https://ykkpjdgv.d1ju4-kbfjr-zexdzd.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "嗜此不疲",
+      "url": "https://ylogqyol.5cn5d-gjibo-wiycut.xyz:16677/topic/328416.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "白蛇传",
+      "url": "https://ocnrhq.du156-vb27w-tmhsed.xyz:16677/",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "二肖四码",
+      "url": "https://eudkyp.luqv0-yf46s-xrnpkz.xyz:16677/topic/324148.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "澳彩传奇",
+      "url": "https://rqvvaxwq.w30m7-xd23l-ebrbbj.xyz/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "满堂红",
+      "url": "https://znnpwd.p42g1-zqmsb-jjrsfg.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "赤兔",
+      "url": "https://zwpwuwq.fxnb4-uer1b-uftjcw.work:16677/#am",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "铁算盘",
+      "url": "https://tgjqwnvl.2hyb0-ocfse-borngs.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "王中王",
+      "url": "https://dhqjbz.uxec9-jxs3h-fomubo.work:16677/",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "好彩网",
+      "url": "https://qhfsrngx.x9mcp-vrrqh-dzqfro.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "玄机阁",
+      "url": "https://aqlvuvz.kkr58-ayern-biiohi.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "码头诗",
+      "url": "https://nrbzrzm.zxt0w-ug0p0-uktgvy.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "任我发",
+      "url": "https://oifsonk.e0h72-f6bxs-juqrkd.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "青龙阁",
+      "url": "https://jlfmmv.39r0v-b8894-seqcii.xyz:16677/",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "独家原创",
+      "url": "https://mm.737799b.com:1888/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "流合",
+      "url": "https://pvxiftuf.yumkw-u4s81-hpytyz.work:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "何仙姑",
+      "url": "https://fjjxlve.eclrc-7oqku-atxhrs.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "全网最准",
+      "url": "https://88.62782d.com:1888/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "崇左女王",
+      "url": "https://yaaxgud.xg0eu-qjubd-yneksw.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "不疯不野",
+      "url": "https://2.www39169b.com:888/gsbl/s12.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "人定胜天",
+      "url": "https://qdufkx.sjb5z-pi4k6-jlhnig.xyz:16677/topic/798099.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "百进不出",
+      "url": "https://bb.62782b.com:1888/bbs/7984",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "欲擒故纵",
+      "url": "https://kxhnibht.49x6o-xyonh-swqkpv.xyz:16677/topic/263500.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "手工教授",
+      "url": "https://wrbavfzg.e0fjk-5tc7b-mqquzq.work:16677/topic/390576.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "长亭旧雪",
+      "url": "https://yqjfwqsc.1dayz-aetgp-kbjidr.xyz:16677/topic/682032.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "心灯照字",
+      "url": "https://yqjfwqsc.1dayz-aetgp-kbjidr.xyz:16677/topic/682025.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "私相授受",
+      "url": "https://yqjfwqsc.1dayz-aetgp-kbjidr.xyz:16677/topic/677638.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "逍遥法外",
+      "url": "https://993345.com/gsb.aspx?id=029",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "行尸走肉",
+      "url": "https://993345.com/gsb1.aspx?id=1614",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "发硎新试",
+      "url": "https://gjyzpnkx.1r42a-pilbo-hfynxw.xyz:16677/topic/680684.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "入木三分",
+      "url": "https://ykeejph.z9koz-18xjn-pvglgy.xyz:16677/topic/682095.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "不言不语",
+      "url": "https://msbqxti.zhx2n-7v5x3-ivdpud.xyz:16677/topic/678152.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "宇文凌霄",
+      "url": "https://msbqxti.zhx2n-7v5x3-ivdpud.xyz:16677/topic/682739.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "饭碗主人",
+      "url": "https://shuqhbq.654o7-lyreu-rzcudi.xyz:16677/topic/280943.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "怡然自乐",
+      "url": "https://xoxtpupt.bvptr-i3mv8-pbjxin.work:17455/topic/456578.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "低调的堆",
+      "url": "https://izohrvun.cukiv-d0q06-rjqwno.work:16677/topic/205516.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "优雅公园",
+      "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626066.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "囫囵吞枣",
+      "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/625995.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "守株待兔",
+      "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626099.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "一帆风顺",
+      "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626028.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "风波亭里",
+      "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/625514.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "疾走如风",
+      "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626098.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "起死回生",
+      "url": "https://kxhnibht.49x6o-xyonh-swqkpv.xyz:16677/topic/263562.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "浅若夏沫",
+      "url": "https://sadoleu.rznla-fgwyr-nzqalp.xyz:16677/topic/287645.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "踏雪",
+      "url": "https://ntvjzt.gau41-qu6jy-sotyug.work:16677/topic/309381.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "孤岛危机",
+      "url": "https://dhqjbz.uxec9-jxs3h-fomubo.work:16677/topic/250668.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "王者九点网",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/401344.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "一叶报秋",
+      "url": "https://myvvqq.s5ted-33ykj-wzpmmi.work/topic/461347.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "以以把第二版",
+      "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/453549.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "以以把第三版",
+      "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/225467.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "测试脚本",
+      "url": "https://bbuueerm.pxcma-jyfok-mvduyw.xyz:16633/topic/455280.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "被发徒跣",
+      "url": "https://xuknerw.fu5qv-a7f7o-nxmebt.work:16633/topic/272861.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "老鼠报",
+      "url": "https://hnzbrzl.2n783-iuaof-dczvqm.xyz/topic/764810.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "超然绝俗",
+      "url": "https://cmytbvkv.wf5r4-blal7-rwlkrd.xyz:16677/topic/224335.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "斗转星移",
+      "url": "https://sgxozo.4b5jw-x2zou-ukbybu.xyz:16677/topic/481107.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "破釜沈舟",
+      "url": "https://thjbggpr.vx4fc-7o9fm-yopnxv.work:16677/topic/212221.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "切中时弊",
+      "url": "https://ryfbdty.p4a53-f1hew-diwcrg.xyz:16677/topic/224165.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "清清爽爽",
+      "url": "https://oifsonk.e0h72-f6bxs-juqrkd.xyz:16677/topic/450976.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "大圆满",
+      "url": "https://rgtnfweg.4qnp3-wmf88-gaewaj.xyz:16677/topic/544490.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "沙漠之舟",
+      "url": "https://pbihleo.n2t9e-qcqhn-arwwct.xyz:16677/topic/463118.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "汉锺离",
+      "url": "https://ozfksr.8gd3h-8yo27-ttlqhq.xyz:16677/",
+      "pick": "top",
+      "second_click": false,
+      "values": {}
+    },
+    {
+      "name": "绿树成荫",
+      "url": "https://a.ttss.vip/list.aspx?id=79&page=1",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "211": "蓝单",
+        "209": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "熙熙攘攘",
+      "url": "https://a.ttss.vip/list.aspx?id=79&page=1",
+      "pick": "top",
+      "second_click": false,
+      "values": {},
+      "failures": {}
+    },
+    {
+      "name": "叛逆时代",
+      "url": "https://a.ttss.vip/list.aspx?id=79&page=1",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "211": "绿双",
+        "209": "蓝双",
+        "207": "绿双",
+        "206": "红单",
+        "205": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "六合宝典特殊",
+      "url": "https://a.ttss.vip/list.aspx?id=79&page=1",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "210": "蓝单",
+        "209": "红单",
+        "207": "绿单",
+        "205": "绿单",
+        "204": "蓝单",
+        "203": "绿单",
+        "202": "红单"
+      },
+      "failures": {}
+    }
+  ],
+  "parser_versions": {
+    "hw-0164": "1",
+    "hw-0165": "1",
+    "hw-0166": "1",
+    "hw-0167": "1"
+  }
+}

@@ -1,0 +1,286 @@
+    1: from __future__ import annotations
+       
+    1: import hashlib
+    1: from dataclasses import dataclass
+    1: from html.parser import HTMLParser
+    1: from urllib.parse import urljoin, urlparse
+       
+    1: from banbo.domain.models import Document, DocumentSource
+       
+    1: from .decoding import decode_embedded_text
+    1: from .dynamic_records import RecordBoundaryError, extract_record_id
+    1: from .http_client import HttpClient
+       
+       
+    2: @dataclass(frozen=True)
+    1: class DiscoveryOptions:
+    1:     fetch_scripts: bool = True
+    1:     fetch_iframes: bool = True
+    1:     allow_cross_origin: bool = False
+    1:     additional_requests: tuple["DocumentRequest", ...] = ()
+    1:     render_browser: bool = False
+    1:     allowed_external_hosts: tuple[str, ...] = ()
+    1:     script_path_markers: tuple[str, ...] = ()
+       
+       
+    2: @dataclass(frozen=True)
+    1: class DocumentRequest:
+    1:     source: DocumentSource
+    1:     url: str
+    1:     record_id: str | None = None
+       
+       
+    2: @dataclass(frozen=True)
+    1: class _EmbeddedReference:
+    1:     source: DocumentSource
+    1:     value: str
+    1:     inline: bool
+       
+       
+    2: class _ReferenceParser(HTMLParser):
+    1:     def __init__(self) -> None:
+    1:         super().__init__(convert_charrefs=True)
+    1:         self.references: list[_EmbeddedReference] = []
+    1:         self._inline_script_parts: list[str] | None = None
+       
+    1:     def handle_starttag(self, tag: str, attrs) -> None:
+  127:         attributes = {str(key).lower(): value for key, value in attrs}
+   35:         lowered = tag.lower()
+   35:         if lowered == "script":
+   13:             source = attributes.get("src")
+   13:             if source:
+   22:                 self.references.append(
+   11:                     _EmbeddedReference(DocumentSource.SCRIPT, str(source), False)
+                       )
+                   else:
+    2:                 self._inline_script_parts = []
+   22:         elif lowered == "iframe" and attributes.get("src"):
+    2:             self.references.append(
+    2:                 _EmbeddedReference(
+    1:                     DocumentSource.IFRAME,
+    1:                     str(attributes["src"]),
+    1:                     False,
+                       )
+                   )
+       
+    1:     def handle_data(self, data: str) -> None:
+   38:         if self._inline_script_parts is not None:
+    2:             self._inline_script_parts.append(data)
+       
+    1:     def handle_endtag(self, tag: str) -> None:
+   21:         if tag.lower() != "script" or self._inline_script_parts is None:
+   19:             return
+    2:         content = "".join(self._inline_script_parts).strip()
+    2:         if content:
+    4:             self.references.append(
+    2:                 _EmbeddedReference(DocumentSource.SCRIPT, content, True)
+                   )
+    2:         self._inline_script_parts = None
+       
+       
+    1: def _same_origin(left: str, right: str) -> bool:
+   12:     left_url = urlparse(left)
+   12:     right_url = urlparse(right)
+   24:     return (
+   12:         left_url.scheme.lower(),
+   12:         left_url.netloc.lower(),
+   12:     ) == (
+   12:         right_url.scheme.lower(),
+   12:         right_url.netloc.lower(),
+           )
+       
+       
+    1: def _document_id(source: DocumentSource, source_url: str, content: str) -> str:
+  852:     digest = hashlib.sha256(
+  568:         f"{source.value}\0{source_url}\0{content}".encode(
+  284:             "utf-8", errors="replace"
+               )
+  284:     ).hexdigest()[:20]
+  284:     return f"{source.value}:{digest}"
+       
+       
+    2: class DocumentDiscoverer:
+    1:     def __init__(self, client: HttpClient, *, browser_client=None) -> None:
+    1:         self._client = client
+    1:         self._browser_client = browser_client
+       
+    1:     def discover(
+               self,
+               entry_url: str,
+               *,
+    1:         options: DiscoveryOptions | None = None,
+    1:         record_id_pattern: str | None = None,
+           ) -> tuple[Document, ...]:
+    1:         options = options or DiscoveryOptions()
+    1:         page = self._client.fetch_text(entry_url)
+    1:         entry_record_id = (
+    1:             None
+    1:             if record_id_pattern is None
+>>>>>>             else extract_record_id(entry_url, record_id_pattern)
+               )
+    1:         if record_id_pattern is not None and entry_record_id is None:
+>>>>>>             raise RecordBoundaryError("入口URL未找到专属记录ID")
+    1:         final_record_id = (
+    1:             None
+    1:             if record_id_pattern is None
+>>>>>>             else extract_record_id(page.final_url, record_id_pattern)
+               )
+               if (
+    1:             record_id_pattern is not None
+>>>>>>             and final_record_id != entry_record_id
+               ):
+>>>>>>             raise RecordBoundaryError("页面跳转后记录ID发生变化")
+    1:         documents: list[Document] = []
+    1:         seen_fingerprints: set[str] = set()
+       
+    1:         def append_document(
+                   source: DocumentSource,
+                   source_url: str,
+                   content: str,
+    1:             record_id: str | None = None,
+               ) -> None:
+  897:             fingerprint = hashlib.sha256(
+  299:                 content.encode("utf-8", errors="replace")
+  299:             ).hexdigest()
+  299:             if fingerprint in seen_fingerprints:
+   15:                 return
+  284:             seen_fingerprints.add(fingerprint)
+  568:             documents.append(
+  568:                 Document(
+  284:                     document_id=_document_id(source, source_url, content),
+  284:                     source=source,
+  284:                     source_url=source_url,
+  284:                     order=len(documents),
+  284:                     content=content,
+  284:                     record_id=record_id,
+                       )
+                   )
+       
+    1:         def append_with_decoded(
+                   source: DocumentSource,
+                   source_url: str,
+                   content: str,
+    1:             record_id: str | None = None,
+               ) -> None:
+   10:             append_document(source, source_url, content, record_id)
+  309:             for index, decoded in enumerate(
+   10:                 decode_embedded_text(content),
+   10:                 start=1,
+                   ):
+  578:                 append_document(
+  289:                     source,
+  289:                     f"{source_url}#decoded-{index}",
+  289:                     decoded,
+  289:                     record_id,
+                       )
+       
+    2:         append_with_decoded(
+    1:             DocumentSource.PAGE,
+    1:             page.final_url,
+    1:             page.text,
+    1:             entry_record_id,
+               )
+    1:         parser = _ReferenceParser()
+    1:         parser.feed(page.text)
+       
+    1:         seen_urls = {page.final_url}
+    1:         inline_index = 0
+   15:         for reference in parser.references:
+   14:             if reference.source == DocumentSource.SCRIPT and not options.fetch_scripts:
+>>>>>>                 continue
+   14:             if reference.source == DocumentSource.IFRAME and not options.fetch_iframes:
+>>>>>>                 continue
+   14:             if reference.inline:
+    2:                 inline_index += 1
+    2:                 source_url = f"{page.final_url}#inline-script-{inline_index}"
+    2:                 content = reference.value
+                   else:
+   12:                 source_url = urljoin(page.final_url, reference.value)
+   12:                 same_origin = _same_origin(page.final_url, source_url)
+  180:                 allowed_hosts = {
+   84:                     host.casefold() for host in options.allowed_external_hosts
+                       }
+   12:                 source_host = (urlparse(source_url).hostname or "").casefold()
+   12:                 allowed_external = source_host in allowed_hosts
+   35:                 if not options.allow_cross_origin and not (
+   23:                     same_origin or allowed_external
+                       ):
+>>>>>>                     continue
+                       if (
+   34:                     reference.source == DocumentSource.SCRIPT
+   11:                     and options.script_path_markers
+   69:                     and not any(
+   21:                         marker.casefold() in source_url.casefold()
+   11:                         for marker in options.script_path_markers
+                           )
+                       ):
+    5:                     continue
+    7:                 if source_url in seen_urls:
+>>>>>>                     continue
+    7:                 seen_urls.add(source_url)
+   14:                 response = self._client.fetch_text(
+    7:                     source_url,
+    7:                     required_origin=None if options.allow_cross_origin else source_url,
+                       )
+    7:                 source_url = response.final_url
+    7:                 content = response.text
+       
+   18:             append_with_decoded(
+    9:                 reference.source,
+    9:                 source_url,
+    9:                 content,
+                       (
+    9:                     None
+    9:                     if record_id_pattern is None
+>>>>>>                     else extract_record_id(source_url, record_id_pattern)
+                       ),
+                   )
+       
+    1:         for request in options.additional_requests:
+>>>>>>             if request.source not in {
+>>>>>>                 DocumentSource.API,
+>>>>>>                 DocumentSource.SCRIPT,
+>>>>>>                 DocumentSource.IFRAME,
+                   }:
+>>>>>>                 raise ValueError(
+>>>>>>                     f"附加文档来源不受支持：{request.source.value}"
+                       )
+>>>>>>             request_url = urljoin(page.final_url, request.url)
+>>>>>>             if (
+>>>>>>                 not options.allow_cross_origin
+>>>>>>                 and not _same_origin(page.final_url, request_url)
+                   ):
+>>>>>>                 continue
+>>>>>>             response = self._client.fetch_text(
+>>>>>>                 request_url,
+>>>>>>                 required_origin=None
+>>>>>>                 if options.allow_cross_origin
+>>>>>>                 else page.final_url,
+                   )
+>>>>>>             append_with_decoded(
+>>>>>>                 request.source,
+>>>>>>                 response.final_url,
+>>>>>>                 response.text,
+>>>>>>                 request.record_id
+                       or (
+>>>>>>                     None
+>>>>>>                     if record_id_pattern is None
+>>>>>>                     else extract_record_id(response.final_url, record_id_pattern)
+                       ),
+                   )
+       
+    1:         if options.render_browser:
+>>>>>>             if self._browser_client is None:
+>>>>>>                 raise RuntimeError("未配置浏览器文档客户端")
+>>>>>>             browser = self._browser_client.fetch_text(page.final_url)
+>>>>>>             append_with_decoded(
+>>>>>>                 DocumentSource.BROWSER,
+>>>>>>                 browser.final_url,
+>>>>>>                 browser.text,
+                       (
+>>>>>>                     None
+>>>>>>                     if record_id_pattern is None
+>>>>>>                     else extract_record_id(browser.final_url, record_id_pattern)
+                       ),
+                   )
+    1:         return tuple(documents)

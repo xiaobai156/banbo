@@ -1,0 +1,77 @@
+from __future__ import annotations
+
+from urllib.parse import urlparse
+
+from .http_client import FetchError, FetchResponse
+
+
+def _origin(url: str) -> tuple[str, str]:
+    parsed = urlparse(url)
+    return parsed.scheme.lower(), parsed.netloc.lower()
+
+
+class BrowserClient:
+    def __init__(
+        self,
+        *,
+        timeout: float = 20,
+        verify_ssl: bool = True,
+        max_response_bytes: int = 8 * 1024 * 1024,
+    ) -> None:
+        self._timeout = timeout
+        self._verify_ssl = verify_ssl
+        self._max_response_bytes = max_response_bytes
+
+    def fetch_text(self, url: str) -> FetchResponse:
+        try:
+            from playwright.sync_api import sync_playwright
+        except ImportError as exc:
+            raise FetchError("playwright not available") from exc
+
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(headless=True)
+            try:
+                context = browser.new_context(
+                    ignore_https_errors=not self._verify_ssl,
+                    locale="zh-CN",
+                )
+                page = context.new_page()
+                response = page.goto(
+                    url,
+                    wait_until="domcontentloaded",
+                    timeout=max(1, int(self._timeout * 1000)),
+                )
+                if response is None:
+                    raise FetchError(f"浏览器无响应：{url}")
+                if not 200 <= int(response.status) < 400:
+                    raise FetchError(
+                        f"浏览器HTTP请求失败：{response.status} {url}"
+                    )
+                final_url = page.url
+                if _origin(final_url) != _origin(url):
+                    raise FetchError(f"浏览器响应跳转到其它源：{final_url}")
+                if (
+                    urlparse(url).scheme.lower() == "https"
+                    and urlparse(final_url).scheme.lower() == "http"
+                ):
+                    raise FetchError(f"禁止HTTPS降级跳转：{final_url}")
+                html_text = page.content()
+                try:
+                    body_text = page.locator("body").inner_text(
+                        timeout=max(1, int(self._timeout * 1000))
+                    )
+                except Exception:
+                    body_text = ""
+                text = "\n".join(
+                    value for value in (html_text, body_text) if value
+                )
+                if len(text.encode("utf-8", errors="replace")) > self._max_response_bytes:
+                    raise FetchError(f"浏览器响应内容超过大小限制：{final_url}")
+                return FetchResponse(
+                    requested_url=url,
+                    final_url=final_url,
+                    status_code=int(response.status),
+                    text=text,
+                )
+            finally:
+                browser.close()

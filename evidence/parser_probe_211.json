@@ -1,0 +1,334 @@
+{
+  "issue": 211,
+  "results": {
+    "hw-0003": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 97,
+      "name": "土地公"
+    },
+    "hw-0016": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 100,
+      "name": "智能半波"
+    },
+    "hw-0022": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 122,
+      "name": "凌杂米盐"
+    },
+    "hw-0045": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 210,
+      "name": "雷锋第二版"
+    },
+    "hw-0046": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 199,
+      "name": "雷锋第一版"
+    },
+    "hw-0048": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 226,
+      "name": "甜酸苦辣"
+    },
+    "hw-0053": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 138,
+      "name": "以以把第一版"
+    },
+    "hw-0059": {
+      "status": "matched",
+      "spec": {
+        "site_id": "hw-0059",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "浪女无家"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 4,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "proof": {
+        "value": "蓝单",
+        "document_id": "script:00ccc42cb8270d499bfe",
+        "document_order": 17,
+        "snippet": "211期绝杀半波 蓝波单 开马01 准"
+      },
+      "document_count": 148,
+      "name": "浪女无家"
+    },
+    "hw-0062": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 166,
+      "name": "蔡庆杀半波"
+    },
+    "hw-0070": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 845,
+      "name": "公证处"
+    },
+    "hw-0084": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 3733,
+      "name": "两全其美"
+    },
+    "hw-0089": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 2213,
+      "name": "鸿运"
+    },
+    "hw-0090": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 792,
+      "name": "此曲已终"
+    },
+    "hw-0091": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 1790,
+      "name": "魔童"
+    },
+    "hw-0098": {
+      "status": "matched",
+      "spec": {
+        "site_id": "hw-0098",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "桂东仔"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "proof": {
+        "value": "绿双",
+        "document_id": "page:1e719adea8e444f24195",
+        "document_order": 0,
+        "snippet": "211期: 桂东仔 绝杀半波 绿双 开01马准"
+      },
+      "document_count": 3,
+      "name": "桂东仔"
+    },
+    "hw-0099": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 1,
+      "name": "烟雨墨痕"
+    },
+    "hw-0103": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 1208,
+      "name": "开心果"
+    },
+    "hw-0104": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 160,
+      "name": "嗜此不疲"
+    },
+    "hw-0106": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 124,
+      "name": "二肖四码"
+    },
+    "hw-0107": {
+      "status": "matched",
+      "spec": {
+        "site_id": "hw-0107",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "澳彩传奇"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 2,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "proof": {
+        "value": "绿双",
+        "document_id": "script:232a1bad1a087d644883",
+        "document_order": 1433,
+        "snippet": "211期: ✦精杀半波✦ 绿双 开: 马01中"
+      },
+      "document_count": 2154,
+      "name": "澳彩传奇"
+    },
+    "hw-0109": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 4294,
+      "name": "赤兔"
+    },
+    "hw-0111": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 1427,
+      "name": "王中王"
+    },
+    "hw-0112": {
+      "status": "matched",
+      "spec": {
+        "site_id": "hw-0112",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "好彩网"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "proof": {
+        "value": "绿单",
+        "document_id": "script:6ebf931dddc579aec5a3",
+        "document_order": 1144,
+        "snippet": "211期 : 绝杀半波 绿单 开 马01 准"
+      },
+      "document_count": 1455,
+      "name": "好彩网"
+    },
+    "hw-0114": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 1098,
+      "name": "码头诗"
+    },
+    "hw-0115": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 938,
+      "name": "任我发"
+    },
+    "hw-0119": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 1185,
+      "name": "何仙姑"
+    },
+    "hw-0120": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 34,
+      "name": "全网最准"
+    },
+    "hw-0121": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 1319,
+      "name": "崇左女王"
+    },
+    "hw-0122": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 1,
+      "name": "不疯不野"
+    },
+    "hw-0124": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 4,
+      "name": "百进不出"
+    },
+    "hw-0135": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 145,
+      "name": "宇文凌霄"
+    },
+    "hw-0144": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 284,
+      "name": "疾走如风"
+    },
+    "hw-0147": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 105,
+      "name": "踏雪"
+    },
+    "hw-0163": {
+      "status": "unmatched",
+      "reason": "没有严格标准策略命中",
+      "document_count": 953,
+      "name": "汉锺离"
+    }
+  }
+}

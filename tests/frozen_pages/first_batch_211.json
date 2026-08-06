@@ -1,0 +1,93 @@
+{
+  "issue": 211,
+  "cases": [
+    {
+      "site_id": "hw-0025",
+      "name": "六合宝典",
+      "url": "https://77.575363b.com:1888/art_zhuanqu/7646.html",
+      "expected": "蓝双",
+      "same_document": true,
+      "content": "六合宝典575363.com 212期:六合宝典中特资料【杀半波大公开】【绿双】开??准 211期:【杀半波大公开】【蓝双】开01马准 210期:【杀半波大公开】【蓝双】开49马准"
+    },
+    {
+      "site_id": "hw-0032",
+      "name": "可想而知",
+      "url": "https://kulipur.l5paz-a0o8v-uozmmd.xyz:16677/topic/435511.html",
+      "expected": "绿双",
+      "anchor_content": "211期:频果报论坛【绝杀半波】长期免费",
+      "data_content": "210期【绝杀半波】（绿波单）开马49错 211期【绝杀半波】（绿波双）开0000准",
+      "data_offset": 9
+    },
+    {
+      "site_id": "hw-0093",
+      "name": "勇往直前",
+      "url": "https://bzdolgna.0115r-u1nk5-zioots.xyz:16677/topic/459941.html",
+      "expected": "红双",
+      "anchor_content": "211期:勇往直前【绝杀半波】提高速度,减少浏览流量",
+      "data_content": "208期绝杀半波【蓝单】开鼠19准 209期绝杀半波【绿单】开猪08准 210期绝杀半波【绿双】开马49准 211期绝杀半波【红双】开0000准",
+      "data_offset": 5
+    },
+    {
+      "site_id": "hw-0146",
+      "name": "浅若夏沫",
+      "url": "https://sadoleu.rznla-fgwyr-nzqalp.xyz:16677/topic/287645.html",
+      "expected": "红双",
+      "anchor_content": "浅若夏沫 发表于 07月29日 23:04:53",
+      "data_content": "211期：杀半波（红波双）开00准 210期：杀半波（绿波单）开马49错 209期：杀半波（蓝波单）开猪08准",
+      "data_offset": 1
+    },
+    {
+      "site_id": "hw-0151",
+      "name": "以以把第二版",
+      "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/453549.html",
+      "expected": "绿单",
+      "anchor_content": "高手贴 212期：[绝杀半波]━118060f.com 作者:118060f.com",
+      "data_content": "211期:◆绝杀半波◆【绿单】开马01准 212期:◆绝杀半波◆【绿双】开？00准",
+      "data_offset": 9
+    },
+    {
+      "site_id": "hw-0152",
+      "name": "以以把第三版",
+      "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/225467.html",
+      "expected": "绿单",
+      "same_document": true,
+      "content": "杀料贴 211期:【精杀半波】━118060f.com 作者:118060f.com 211期：必杀半波【绿单】开0000对 210期：必杀半波【红双】开马49对 209期：必杀半波【红单】开猪08对"
+    },
+    {
+      "site_id": "hw-0157",
+      "name": "斗转星移",
+      "url": "https://sgxozo.4b5jw-x2zou-ukbybu.xyz:16677/topic/481107.html",
+      "expected": "蓝双",
+      "anchor_content": "斗转星移 发表于 07月30日 10:21:48 096期【绝杀半波】",
+      "data_content": "207期【绝杀半波】（绿波单）开鼠31准 208期【绝杀半波】（绿波双）开鼠19准 209期【绝杀半波】（绿波单）开猪08准 210期【绝杀半波】（蓝波单）开马49准 211期【绝杀半波】（蓝波双）开？00准",
+      "data_offset": 12
+    },
+    {
+      "site_id": "hw-0159",
+      "name": "切中时弊",
+      "url": "https://ryfbdty.p4a53-f1hew-diwcrg.xyz:16677/topic/224165.html",
+      "expected": "绿单",
+      "anchor_content": "特料帖 211期:【绝杀半波】作者:切中时弊",
+      "data_content": "209期：绝杀半波（蓝单）开猪08准 210期：绝杀半波（红单）开马49准 211期：绝杀半波（绿单）开0000准",
+      "data_offset": 35
+    },
+    {
+      "site_id": "hw-0162",
+      "name": "沙漠之舟",
+      "url": "https://pbihleo.n2t9e-qcqhn-arwwct.xyz:16677/topic/463118.html",
+      "expected": "红双",
+      "anchor_content": "沙漠之舟 发表于 07月30日 11:30:51",
+      "data_content": "211期绝杀半波【红双】开0000准 210期绝杀半波【绿单】开马49错 209期绝杀半波【蓝双】开猪08准",
+      "data_offset": 1
+    },
+    {
+      "site_id": "hw-0158",
+      "name": "破釜沈舟",
+      "url": "https://thjbggpr.vx4fc-7o9fm-yopnxv.work:16677/topic/212221.html",
+      "expected": "红双",
+      "anchor_content": "高手贴 211期【绝杀半波】已公开 作者:破釜沈舟",
+      "data_content": "205期:◆绝杀半波◆【绿单】开龙03准 206期:◆绝杀半波◆【蓝单】开猴47错 207期:◆绝杀半波◆【蓝双】开鼠31准 208期:◆绝杀半波◆【红单】开鼠19错 209期:◆绝杀半波◆【蓝单】开猪08准 210期:◆绝杀半波◆【绿单】开马49错 211期:◆绝杀半波◆【红双】开？00准",
+      "data_offset": 14
+    }
+  ]
+}

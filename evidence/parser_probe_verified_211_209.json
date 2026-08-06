@@ -1,0 +1,3317 @@
+{
+  "issues": [
+    211,
+    210,
+    209
+  ],
+  "results": {
+    "hw-0001": {
+      "name": "曲湮浮安",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0001",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "曲湮浮安"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 154
+    },
+    "hw-0003": {
+      "name": "土地公",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0003",
+        "strategy": "split_document",
+        "direction": "top",
+        "anchors": [
+          "土地公"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 64,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {}
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 97
+    },
+    "hw-0008": {
+      "name": "咔啦嘟熊",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0008",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "咔啦嘟熊"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 154
+    },
+    "hw-0011": {
+      "name": "龙行虎变",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0011",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "龙行虎变"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 8,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 105
+    },
+    "hw-0014": {
+      "name": "感恩戴德",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0014",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "感恩戴德"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 32,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 135
+    },
+    "hw-0015": {
+      "name": "不再回忆",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0015",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "不再回忆"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 20,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 101
+    },
+    "hw-0018": {
+      "name": "念卿抚琴",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0018",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "念卿抚琴"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 145
+    },
+    "hw-0023": {
+      "name": "威尊命贱",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0023",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "威尊命贱"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 116
+    },
+    "hw-0024": {
+      "name": "至交契友",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0024",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "至交契友"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 16,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 127
+    },
+    "hw-0026": {
+      "name": "颠勺大师",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0026",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "颠勺大师"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 64,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 124
+    },
+    "hw-0028": {
+      "name": "网站37",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0028",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "七零八落【稳杀半波】"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 2,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 147
+    },
+    "hw-0030": {
+      "name": "枪打天下",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0030",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "枪打天下"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 224
+    },
+    "hw-0033": {
+      "name": "车载斗量",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0033",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "车载斗量"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 227
+    },
+    "hw-0034": {
+      "name": "就是财富",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0034",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "就是财富"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 233
+    },
+    "hw-0035": {
+      "name": "水秀山明",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0035",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "水秀山明"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 16,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 171
+    },
+    "hw-0036": {
+      "name": "不痒不痛",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0036",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "不痒不痛"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿双",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 220
+    },
+    "hw-0037": {
+      "name": "聪明能干",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0037",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "聪明能干"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 8,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 224
+    },
+    "hw-0038": {
+      "name": "走马观花",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0038",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "走马观花"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 153
+    },
+    "hw-0041": {
+      "name": "龙聚天下",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0041",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "龙聚天下"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 2,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 186
+    },
+    "hw-0042": {
+      "name": "老奇人",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0042",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "老奇人"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 2,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 190
+    },
+    "hw-0047": {
+      "name": "金牌谜语",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0047",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "金牌谜语"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 8,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 161
+    },
+    "hw-0050": {
+      "name": "一清二白",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0050",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "一清二白"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 16,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 102
+    },
+    "hw-0051": {
+      "name": "水果奶奶",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0051",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "水果奶奶"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 1133
+    },
+    "hw-0052": {
+      "name": "刘半仙",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0052",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "刘半仙"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 4,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 1024
+    },
+    "hw-0054": {
+      "name": "是是非非",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0054",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "是是非非"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 155
+    },
+    "hw-0055": {
+      "name": "百事通",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0055",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "百事通"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 32,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 158
+    },
+    "hw-0056": {
+      "name": "麻醉坑穴",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0056",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "麻醉坑穴"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 55,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 208
+    },
+    "hw-0057": {
+      "name": "古井无波",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0057",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "古井无波"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 144
+    },
+    "hw-0061": {
+      "name": "火烧火燎",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0061",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "火烧火燎"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 2,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 182
+    },
+    "hw-0063": {
+      "name": "三仙财富",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0063",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "三仙财富"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 8,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 313
+    },
+    "hw-0064": {
+      "name": "声动梁尘",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0064",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "声动梁尘"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 117
+    },
+    "hw-0065": {
+      "name": "豕分蛇断",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0065",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "豕分蛇断"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 16,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 111
+    },
+    "hw-0067": {
+      "name": "大梁皇帝",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0067",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "大梁皇帝"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 168
+    },
+    "hw-0068": {
+      "name": "赛马会",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0068",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "赛马会"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 32,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 50
+    },
+    "hw-0071": {
+      "name": "蓝月亮",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0071",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "蓝月亮"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 2,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 3531
+    },
+    "hw-0072": {
+      "name": "持之以恒",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0072",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "持之以恒"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 125
+    },
+    "hw-0073": {
+      "name": "滥杀无辜",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0073",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "滥杀无辜"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 101
+    },
+    "hw-0077": {
+      "name": "远赴相思",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0077",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "远赴相思"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 4,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 123
+    },
+    "hw-0080": {
+      "name": "北船余香",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0080",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "北船余香"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 10,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 318
+    },
+    "hw-0081": {
+      "name": "白虎",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0081",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "白虎"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 8,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 616
+    },
+    "hw-0082": {
+      "name": "高山清水",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0082",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "高山清水"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 98
+    },
+    "hw-0083": {
+      "name": "恋恋不舍",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0083",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "恋恋不舍"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 20,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 113
+    },
+    "hw-0085": {
+      "name": "神机",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0085",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "神机"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 4,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 1000
+    },
+    "hw-0086": {
+      "name": "赏心悦目",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0086",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "赏心悦目"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 117
+    },
+    "hw-0087": {
+      "name": "贼眉鼠眼",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0087",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "贼眉鼠眼"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红双",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 182
+    },
+    "hw-0088": {
+      "name": "天上地下",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0088",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "天上地下"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 759
+    },
+    "hw-0092": {
+      "name": "魔童第二",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0092",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "绝杀帖"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        },
+        {
+          "issue": 209,
+          "expected": "蓝单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 62
+    },
+    "hw-0094": {
+      "name": "彩民书籍",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0094",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "彩民书籍"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 16,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 130
+    },
+    "hw-0098": {
+      "name": "桂东仔",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0098",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "桂东仔"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 3
+    },
+    "hw-0100": {
+      "name": "丢六度路",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0100",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "丢六度路"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 32,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 275
+    },
+    "hw-0102": {
+      "name": "七上八下",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0102",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "七上八下"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 163
+    },
+    "hw-0105": {
+      "name": "白蛇传",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0105",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "白蛇传"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 4253
+    },
+    "hw-0107": {
+      "name": "澳彩传奇",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0107",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "澳彩传奇"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "绿双",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 2156
+    },
+    "hw-0112": {
+      "name": "好彩网",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0112",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "好彩网"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 1450
+    },
+    "hw-0113": {
+      "name": "玄机阁",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0113",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "玄机阁"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 1,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝单",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 834
+    },
+    "hw-0117": {
+      "name": "独家原创",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0117",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "独家原创"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 13
+    },
+    "hw-0130": {
+      "name": "逍遥法外",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0130",
+        "strategy": "history_block",
+        "direction": "bottom",
+        "anchors": [
+          "逍遥法外"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "红双",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 1
+    },
+    "hw-0131": {
+      "name": "行尸走肉",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0131",
+        "strategy": "history_block",
+        "direction": "bottom",
+        "anchors": [
+          "行尸走肉"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": null,
+          "passed": false,
+          "failure_code": "target_period_missing"
+        }
+      ],
+      "document_count": 1
+    },
+    "hw-0141": {
+      "name": "守株待兔",
+      "status": "rejected",
+      "spec": {
+        "site_id": "hw-0141",
+        "strategy": "title_neighbor",
+        "direction": "bottom",
+        "anchors": [
+          "守株待兔"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 64,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "绿单",
+          "actual": "绿单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "红单",
+          "passed": false,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "红双",
+          "passed": false,
+          "failure_code": null
+        }
+      ],
+      "document_count": 283
+    },
+    "hw-0154": {
+      "name": "被发徒跣",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0154",
+        "strategy": "anchor_segment",
+        "direction": "top",
+        "anchors": [
+          "被发徒跣"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 0,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "max_issues": 13,
+          "window_size": 3
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红双",
+          "actual": "红双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "绿双",
+          "actual": "绿双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 175
+    },
+    "hw-0155": {
+      "name": "老鼠报",
+      "status": "verified",
+      "spec": {
+        "site_id": "hw-0155",
+        "strategy": "title_neighbor",
+        "direction": "top",
+        "anchors": [
+          "老鼠报"
+        ],
+        "keywords": [
+          "绝杀半波",
+          "杀半波",
+          "稳杀半波",
+          "精杀半波",
+          "必杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,4})期",
+        "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+        "before_documents": 0,
+        "after_documents": 8,
+        "target_only": true,
+        "record_id_pattern": null,
+        "topic_id_pattern": null,
+        "parser_version": "1",
+        "options": {
+          "window_size": 5
+        }
+      },
+      "comparisons": [
+        {
+          "issue": 211,
+          "expected": "红单",
+          "actual": "红单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 210,
+          "expected": "蓝单",
+          "actual": "蓝单",
+          "passed": true,
+          "failure_code": null
+        },
+        {
+          "issue": 209,
+          "expected": "蓝双",
+          "actual": "蓝双",
+          "passed": true,
+          "failure_code": null
+        }
+      ],
+      "document_count": 328
+    }
+  }
+}

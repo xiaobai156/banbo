@@ -1,0 +1,110 @@
+{
+  "mode": "independent_validation",
+  "project": "杀半波_修复版2",
+  "target_issue": 216,
+  "direction": "top",
+  "scope": [
+    "hw-0045",
+    "hw-0046",
+    "hw-0053"
+  ],
+  "root_cause": {
+    "class": "anchor_missing",
+    "summary": "正式解析规格中的站点域名锚点为 c.com，实时页面实际使用 d.com；锚点模式为 all，导致专属 decoded_sibling 解析器在候选解析前拒绝整组文档。",
+    "parser_change_needed": false,
+    "minimum_fix": "仅修正三个站点的专属 anchors，不扩大 top 窗口，不改解析器代码。"
+  },
+  "sites": [
+    {
+      "site_id": "hw-0045",
+      "site_name": "雷锋第二版",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/227254.html",
+      "configured_direction": "top",
+      "configured_anchors": ["杀料榜", "26064c.com"],
+      "observed_anchors": ["杀料榜", "26064d.com"],
+      "experimental_anchors": ["杀料榜", "26064d.com"],
+      "production_reproduction": {
+        "status": "failed",
+        "code": "target_period_missing",
+        "message": "未找到216期专属证据",
+        "document_count": 211
+      },
+      "experimental_results": {
+        "216": {"status": "passed", "value": "绿双"},
+        "215": {"status": "passed", "value": "绿单"},
+        "214": {"status": "passed", "value": "红单"},
+        "999": {"status": "failed", "code": "target_period_missing"}
+      },
+      "boundary_issues": [216, 215, 214],
+      "candidate_count": 1,
+      "same_record": true,
+      "source_document_id": "script:5a0809fbc38364ea2287",
+      "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/a525e03e33cd3680.js#decoded-1"
+    },
+    {
+      "site_id": "hw-0046",
+      "site_name": "雷锋第一版",
+      "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/205678.html",
+      "configured_direction": "top",
+      "configured_anchors": ["杀料榜", "26064c.com", "稳杀半波"],
+      "observed_anchors": ["杀料榜", "26064d.com", "稳杀半波"],
+      "experimental_anchors": ["杀料榜", "26064d.com", "稳杀半波"],
+      "production_reproduction": {
+        "status": "failed",
+        "code": "target_period_missing",
+        "message": "未找到216期专属证据",
+        "document_count": 198
+      },
+      "experimental_results": {
+        "216": {"status": "passed", "value": "蓝双"},
+        "215": {"status": "passed", "value": "绿双"},
+        "214": {"status": "passed", "value": "红双"},
+        "999": {"status": "failed", "code": "target_period_missing"}
+      },
+      "boundary_issues": [216, 215, 214],
+      "candidate_count": 1,
+      "same_record": true,
+      "source_document_id": "script:ac09ec306dfa0438411d",
+      "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/2720c21052d3c0e8.js#decoded-1"
+    },
+    {
+      "site_id": "hw-0053",
+      "site_name": "以以把第一版",
+      "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/205339.html",
+      "configured_direction": "top",
+      "configured_anchors": ["杀料贴", "118060c.com"],
+      "observed_anchors": ["杀料贴", "118060d.com"],
+      "experimental_anchors": ["杀料贴", "118060d.com"],
+      "production_reproduction": {
+        "status": "failed",
+        "code": "target_period_missing",
+        "message": "未找到216期专属证据",
+        "document_count": 139
+      },
+      "experimental_results": {
+        "216": {"status": "passed", "value": "红单"},
+        "215": {"status": "passed", "value": "绿单"},
+        "214": {"status": "passed", "value": "蓝单"},
+        "999": {"status": "failed", "code": "target_period_missing"}
+      },
+      "boundary_issues": [216, 215, 214],
+      "candidate_count": 1,
+      "same_record": true,
+      "source_document_id": "script:2c79420ac6f7f02dc0ef",
+      "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/3cd8a72a25958764.js#decoded-1"
+    }
+  ],
+  "formal_write_guard": {
+    "config_changed": false,
+    "cache_updated": false,
+    "official_txt_updated": false,
+    "sites_sha256": "c96b9084b8dd256eac1cde0f3770bf82d608c5d4a074931950cf5696f9ba2b68",
+    "parser_specs_sha256": "5521d6837d6811d3ec0c26405889f137bd2ffbcbdf9e88a19ac0f26a3f124ac5",
+    "cache_sha256": "2dbd8844e825fd92391c0da8bca027dd10b9a5147724782ae5a0db8171af4881"
+  },
+  "commands": [
+    "py -3 -m banbo.cli --period 216 --site-id hw-0045 --site-id hw-0046 --site-id hw-0053 --shadow --no-update-cache --max-workers 3",
+    "隔离替换 anchors 后，对 216、215、214 和明确不存在的 999 期执行 decoded_sibling + 统一校验"
+  ],
+  "all_target_experiments_passed": true
+}

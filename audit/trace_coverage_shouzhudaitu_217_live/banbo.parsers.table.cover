@@ -1,0 +1,172 @@
+    1: from __future__ import annotations
+       
+    1: import re
+    1: from dataclasses import dataclass
+    1: from html.parser import HTMLParser
+    1: from typing import Sequence
+       
+    1: from banbo.domain.models import (
+           Document,
+           ParseEvidence,
+           SiteSpec,
+       )
+    1: from banbo.domain.normalization import normalize_half_wave, normalize_text
+       
+    1: from .protocol import ParserSpec
+    1: from .boundary import select_directional_window
+       
+       
+    2: class _TableHTMLParser(HTMLParser):
+    1:     def __init__(self) -> None:
+>>>>>>         super().__init__(convert_charrefs=True)
+>>>>>>         self.rows: list[str] = []
+>>>>>>         self._row_parts: list[str] | None = None
+>>>>>>         self._cell_parts: list[str] | None = None
+       
+    1:     def handle_starttag(self, tag: str, attrs) -> None:
+>>>>>>         lowered = tag.lower()
+>>>>>>         if lowered == "tr":
+>>>>>>             self._row_parts = []
+>>>>>>         elif lowered in {"td", "th"} and self._row_parts is not None:
+>>>>>>             self._cell_parts = []
+       
+    1:     def handle_data(self, data: str) -> None:
+>>>>>>         if self._cell_parts is not None:
+>>>>>>             self._cell_parts.append(data)
+       
+    1:     def handle_endtag(self, tag: str) -> None:
+>>>>>>         lowered = tag.lower()
+>>>>>>         if lowered in {"td", "th"} and self._cell_parts is not None:
+>>>>>>             if self._row_parts is not None:
+>>>>>>                 self._row_parts.append("".join(self._cell_parts))
+>>>>>>             self._cell_parts = None
+>>>>>>         elif lowered == "tr" and self._row_parts is not None:
+>>>>>>             row = " | ".join(self._row_parts).strip()
+>>>>>>             if row:
+>>>>>>                 self.rows.append(row)
+>>>>>>             self._row_parts = None
+>>>>>>             self._cell_parts = None
+       
+       
+    2: @dataclass(frozen=True)
+    1: class _RowCandidate:
+    1:     issue: int
+    1:     value: str
+    1:     document: Document
+    1:     row_index: int
+    1:     snippet: str
+       
+       
+    2: class TableParser:
+    1:     name = "table"
+       
+    1:     def __init__(self, spec: ParserSpec) -> None:
+>>>>>>         self._spec = spec
+>>>>>>         self.version = spec.parser_version
+       
+    1:     def parse(
+               self,
+               site: SiteSpec,
+               documents: Sequence[Document],
+               target_issue: int,
+           ) -> tuple[ParseEvidence, ...]:
+>>>>>>         anchors = self._spec.anchors or site.anchors
+>>>>>>         keywords = self._spec.keywords or site.keywords
+>>>>>>         issue_regex = re.compile(
+>>>>>>             self._spec.issue_pattern or site.issue_pattern,
+>>>>>>             re.IGNORECASE,
+               )
+>>>>>>         value_regex = re.compile(
+>>>>>>             self._spec.value_pattern or site.value_pattern,
+>>>>>>             re.IGNORECASE,
+               )
+>>>>>>         candidates: list[_RowCandidate] = []
+>>>>>>         for document in documents:
+>>>>>>             normalized_document = normalize_text(document.content)
+>>>>>>             if anchors and not all(
+>>>>>>                 normalize_text(anchor) in normalized_document
+>>>>>>                 for anchor in anchors
+                   ):
+>>>>>>                 continue
+>>>>>>             parser = _TableHTMLParser()
+>>>>>>             parser.feed(document.content)
+>>>>>>             for row_index, row in enumerate(parser.rows):
+>>>>>>                 normalized_row = normalize_text(row)
+>>>>>>                 issue_match = issue_regex.search(row)
+>>>>>>                 if issue_match is None:
+>>>>>>                     continue
+>>>>>>                 issue_text = (
+>>>>>>                     issue_match.groupdict().get("issue")
+>>>>>>                     or issue_match.group(0)
+                       )
+>>>>>>                 issue_digits = re.search(r"\d{1,4}", issue_text)
+>>>>>>                 if issue_digits is None:
+>>>>>>                     continue
+>>>>>>                 issue = int(issue_digits.group(0))
+>>>>>>                 if keywords and not any(
+>>>>>>                     normalize_text(keyword) in normalized_row
+>>>>>>                     for keyword in keywords
+                       ):
+>>>>>>                     continue
+>>>>>>                 for value_match in value_regex.finditer(row):
+>>>>>>                     raw_value = (
+>>>>>>                         value_match.groupdict().get("value")
+>>>>>>                         or value_match.group(0)
+                           )
+>>>>>>                     value = normalize_half_wave(raw_value)
+>>>>>>                     if value is None:
+>>>>>>                         continue
+>>>>>>                     candidates.append(
+>>>>>>                         _RowCandidate(
+>>>>>>                             issue=issue,
+>>>>>>                             value=value,
+>>>>>>                             document=document,
+>>>>>>                             row_index=row_index,
+>>>>>>                             snippet=normalized_row,
+                               )
+                           )
+>>>>>>         candidates.sort(
+>>>>>>             key=lambda item: (item.document.order, item.row_index)
+               )
+>>>>>>         boundary, boundary_issues = select_directional_window(
+>>>>>>             candidates,
+>>>>>>             issue_of=lambda candidate: candidate.issue,
+>>>>>>             direction=site.direction,
+               )
+>>>>>>         target_candidates = [
+>>>>>>             candidate for candidate in boundary if candidate.issue == target_issue
+               ]
+>>>>>>         if not target_candidates:
+>>>>>>             return ()
+>>>>>>         conflict_values = tuple(
+>>>>>>             sorted({candidate.value for candidate in target_candidates})
+               )
+>>>>>>         return tuple(
+>>>>>>             ParseEvidence(
+>>>>>>                 site_id=site.site_id,
+>>>>>>                 target_issue=candidate.issue,
+>>>>>>                 value=candidate.value,
+>>>>>>                 document_id=candidate.document.document_id,
+>>>>>>                 document_source=candidate.document.source,
+>>>>>>                 document_order=candidate.document.order,
+>>>>>>                 snippet=candidate.snippet,
+>>>>>>                 parser_name=self.name,
+>>>>>>                 parser_version=self.version,
+>>>>>>                 direction=site.direction,
+>>>>>>                 anchor_passed=True,
+>>>>>>                 keyword_passed=True,
+                       same_record=(
+>>>>>>                     site.expected_record_id is None
+>>>>>>                     or candidate.document.record_id == site.expected_record_id
+                       ),
+>>>>>>                 record_id=candidate.document.record_id,
+>>>>>>                 expected_record_id=site.expected_record_id,
+>>>>>>                 anchors=anchors,
+>>>>>>                 keywords=keywords,
+>>>>>>                 source_offset=candidate.row_index,
+>>>>>>                 candidate_count=len(target_candidates),
+>>>>>>                 conflict_values=conflict_values,
+>>>>>>                 boundary_issues=boundary_issues,
+                   )
+>>>>>>             for candidate in target_candidates
+               )

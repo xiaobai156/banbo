@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "mode": "formal_direction_update",
+  "scope": "四站 bottom -> top",
+  "updated_sites": [
+    {
+      "site_id": "hw-0004",
+      "name": "片言一字",
+      "direction": "top"
+    },
+    {
+      "site_id": "hw-0019",
+      "name": "冷言冷语",
+      "direction": "top"
+    },
+    {
+      "site_id": "hw-0020",
+      "name": "力拔山河",
+      "direction": "top"
+    },
+    {
+      "site_id": "hw-0049",
+      "name": "锦衣师卫",
+      "direction": "top"
+    }
+  ],
+  "checks_215_214": [
+    {
+      "site_id": "hw-0004",
+      "name": "片言一字",
+      "url": "https://sepfsazm.th2pfx-4s7mu-aafjnm.xyz:16677/topic/680713.html",
+      "direction": "top",
+      "issue": 215,
+      "value": "蓝双",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/f54e135971015f7a.js#decoded-14",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0004",
+      "name": "片言一字",
+      "url": "https://sepfsazm.th2pfx-4s7mu-aafjnm.xyz:16677/topic/680713.html",
+      "direction": "top",
+      "issue": 214,
+      "value": "红单",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/f54e135971015f7a.js#decoded-14",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0019",
+      "name": "冷言冷语",
+      "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314313.html",
+      "direction": "top",
+      "issue": 215,
+      "value": "蓝双",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/8fc645e329f09eef.js#decoded-18",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0019",
+      "name": "冷言冷语",
+      "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314313.html",
+      "direction": "top",
+      "issue": 214,
+      "value": "红单",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/8fc645e329f09eef.js#decoded-18",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0020",
+      "name": "力拔山河",
+      "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314297.html",
+      "direction": "top",
+      "issue": 215,
+      "value": "蓝双",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/0583c16d5be131b4.js#decoded-18",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0020",
+      "name": "力拔山河",
+      "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314297.html",
+      "direction": "top",
+      "issue": 214,
+      "value": "红单",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/0583c16d5be131b4.js#decoded-18",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0049",
+      "name": "锦衣师卫",
+      "url": "https://whsbrmz.qclrc-4mk42-vnxbyg.work:16677/topic/248015.html",
+      "direction": "top",
+      "issue": 215,
+      "value": "红双",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/a08dda2517d76ec9.js#decoded-13",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0049",
+      "name": "锦衣师卫",
+      "url": "https://whsbrmz.qclrc-4mk42-vnxbyg.work:16677/topic/248015.html",
+      "direction": "top",
+      "issue": 214,
+      "value": "绿双",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia03.cosds.ahsccn.com/upload/script/08/a08dda2517d76ec9.js#decoded-13",
+      "candidate_count": 1,
+      "conflict_values": []
+    }
+  ],
+  "missing_period_check": {
+    "issue": 999,
+    "sites": [
+      "hw-0004",
+      "hw-0019",
+      "hw-0020",
+      "hw-0049"
+    ],
+    "failure_code": "target_period_missing",
+    "success_written": false
+  },
+  "cache_pick_current": {
+    "片言一字": "bottom",
+    "冷言冷语": "bottom",
+    "力拔山河": "bottom",
+    "锦衣师卫": "bottom"
+  },
+  "cache_rebuild_required": true,
+  "formal_outputs_written": false,
+  "hashes_before": {
+    "config\\sites.json": "7777f8556290a9abdc3de9d1dfe53ef09e00af1cbe9257038698fdb2a136e42e",
+    "config\\parser_specs.json": "d92480ff6cca253d720800675e727e9b5e3926cff14a4264f1c2d7eb3c10e185",
+    "recent_10_cache.json": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670"
+  },
+  "hashes_after": {
+    "config\\sites.json": "c96b9084b8dd256eac1cde0f3770bf82d608c5d4a074931950cf5696f9ba2b68",
+    "config\\parser_specs.json": "4725b5683e0a7714bfccd33a252c2e24564c08007f009ceca2a770e67a1e8189",
+    "recent_10_cache.json": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670"
+  },
+  "cache_unchanged": true,
+  "other_site_config_unchanged_not_recomputed": true,
+  "tests": {
+    "pytest": "155 passed, 1 skipped, 178 subtests passed",
+    "ruff": "passed",
+    "compileall": "passed"
+  },
+  "all_checks_passed": true
+}

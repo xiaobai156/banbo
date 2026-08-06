@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "mode": "formal_update",
+  "production_registered": true,
+  "formal_strategy": "combined_sibling",
+  "formal_update_scope": "仅四个已独立验证站点；未更新其它站点、缓存或正式输出",
+  "updated_sites": [
+    {
+      "site_id": "hw-0108",
+      "name": "满堂红",
+      "direction": "top",
+      "anchors": [
+        "澳门 满堂 红",
+        "稳杀半波"
+      ],
+      "parser_id": "hw-0108:combined_sibling:v1"
+    },
+    {
+      "site_id": "hw-0111",
+      "name": "王中王",
+      "direction": "bottom",
+      "anchors": [
+        "王中王",
+        "禁半波"
+      ],
+      "parser_id": "hw-0111:combined_sibling:v1"
+    },
+    {
+      "site_id": "hw-0115",
+      "name": "任我发",
+      "direction": "top",
+      "anchors": [
+        "任我发",
+        "禁特区"
+      ],
+      "parser_id": "hw-0115:combined_sibling:v1"
+    },
+    {
+      "site_id": "hw-0163",
+      "name": "汉锺离",
+      "direction": "top",
+      "anchors": [
+        "汉锺离",
+        "综合绝杀"
+      ],
+      "parser_id": "hw-0163:combined_sibling:v1"
+    }
+  ],
+  "checks_215_214": [
+    {
+      "site_id": "hw-0108",
+      "site_name": "满堂红",
+      "direction": "top",
+      "issue": 215,
+      "value": "蓝单",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/98fa16c5c4b14b2e.js#decoded-15",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0108",
+      "site_name": "满堂红",
+      "direction": "top",
+      "issue": 214,
+      "value": "蓝双",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/98fa16c5c4b14b2e.js#decoded-15",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0111",
+      "site_name": "王中王",
+      "direction": "bottom",
+      "issue": 215,
+      "value": "蓝双",
+      "window": [
+        213,
+        214,
+        215
+      ],
+      "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/d5293860fee6a7c1.js#decoded-31",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0111",
+      "site_name": "王中王",
+      "direction": "bottom",
+      "issue": 214,
+      "value": "红单",
+      "window": [
+        213,
+        214,
+        215
+      ],
+      "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/d5293860fee6a7c1.js#decoded-31",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0115",
+      "site_name": "任我发",
+      "direction": "top",
+      "issue": 215,
+      "value": "绿单",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/69d73e816f942830.js#decoded-69",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0115",
+      "site_name": "任我发",
+      "direction": "top",
+      "issue": 214,
+      "value": "绿双",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/69d73e816f942830.js#decoded-70",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0163",
+      "site_name": "汉锺离",
+      "direction": "top",
+      "issue": 215,
+      "value": "红单",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/71bdc700fc856a02.js#decoded-34",
+      "candidate_count": 1,
+      "conflict_values": []
+    },
+    {
+      "site_id": "hw-0163",
+      "site_name": "汉锺离",
+      "direction": "top",
+      "issue": 214,
+      "value": "蓝单",
+      "window": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/71bdc700fc856a02.js#decoded-35",
+      "candidate_count": 1,
+      "conflict_values": []
+    }
+  ],
+  "missing_period_check": {
+    "issue": 999,
+    "sites": [
+      "hw-0108",
+      "hw-0111",
+      "hw-0115",
+      "hw-0163"
+    ],
+    "failure_code": "target_period_missing",
+    "failure_reason": "未找到999期专属证据",
+    "success_written": false
+  },
+  "failure_output_sample": "失败 满堂红 https://znnpwd.p42g1-zqmsb-jjrsfg.xyz:16677/ 方向: top 期数: 999 阶段: 指定期数校验 原因: 未找到999期专属证据",
+  "commands": [
+    "py -3 -m banbo.cli --period 215 --site-id <site> --shadow --no-update-cache --max-workers 1",
+    "py -3 -m banbo.cli --period 214 --site-id hw-0108 --site-id hw-0111 --site-id hw-0115 --site-id hw-0163 --shadow --no-update-cache --max-workers 4",
+    "py -3 -m banbo.cli --period 999 --site-id hw-0108 --site-id hw-0111 --site-id hw-0115 --site-id hw-0163 --shadow --no-update-cache --max-workers 4",
+    "py -3 -m pytest -q",
+    "py -3 -m ruff check banbo tests",
+    "py -3 -m compileall -q banbo tests",
+    "py -3 -m coverage run --source=banbo -m pytest -q; py -3 -m coverage report -m banbo/parsers/combined_sibling.py"
+  ],
+  "tests": {
+    "pytest": "155 passed, 1 skipped, 178 subtests passed",
+    "ruff": "passed",
+    "compileall": "passed",
+    "combined_sibling_coverage": "90%"
+  },
+  "hashes_before": {
+    "config\\sites.json": "7777f8556290a9abdc3de9d1dfe53ef09e00af1cbe9257038698fdb2a136e42e",
+    "config\\parser_specs.json": "9bd94b4943d39c7965e5e8394fe24a1a38298123ef4c71e039f8893d60e5b888",
+    "recent_10_cache.json": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670"
+  },
+  "hashes_after": {
+    "config\\sites.json": "7777f8556290a9abdc3de9d1dfe53ef09e00af1cbe9257038698fdb2a136e42e",
+    "config\\parser_specs.json": "d92480ff6cca253d720800675e727e9b5e3926cff14a4264f1c2d7eb3c10e185",
+    "recent_10_cache.json": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670"
+  },
+  "sites_json_unchanged": true,
+  "cache_unchanged": true,
+  "parser_specs_changed": true,
+  "formal_outputs_written": false,
+  "all_formal_checks_passed": true,
+  "files_changed": [
+    "banbo/parsers/combined_sibling.py",
+    "banbo/parsers/registry.py",
+    "config/parser_specs.json",
+    "tests/unit/test_combined_sibling.py"
+  ],
+  "dedicated_parser": true,
+  "rendered_failure_output_verified": true,
+  "formal_outputs_note": "四站范围验证使用shadow/内存渲染，未用部分站点结果覆盖正式全站TXT；正式缓存保持不变。"
+}

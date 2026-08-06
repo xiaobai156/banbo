@@ -1,0 +1,53 @@
+    1: from __future__ import annotations
+       
+    1: import html
+    1: import re
+    1: import unicodedata
+       
+       
+    2: ALLOWED_HALF_WAVE_VALUES = frozenset(
+    1:     {
+               "红单",
+               "红双",
+               "绿单",
+               "绿双",
+               "蓝单",
+               "蓝双",
+           }
+       )
+       
+    2: _WRAPPER_TRANSLATION = str.maketrans(
+   19:     {
+    1:         "【": " ",
+    1:         "】": " ",
+    1:         "[": " ",
+    1:         "]": " ",
+    1:         "（": " ",
+    1:         "）": " ",
+    1:         "(": " ",
+    1:         ")": " ",
+    1:         "《": " ",
+    1:         "》": " ",
+    1:         "〈": " ",
+    1:         "〉": " ",
+    1:         "<": " ",
+    1:         ">": " ",
+    1:         "『": " ",
+    1:         "』": " ",
+    1:         "「": " ",
+    1:         "」": " ",
+           }
+       )
+       
+       
+    1: def normalize_text(value: str) -> str:
+   59:     normalized = unicodedata.normalize("NFKC", html.unescape(value or ""))
+   59:     normalized = normalized.translate(_WRAPPER_TRANSLATION)
+   59:     return re.sub(r"\s+", " ", normalized).strip()
+       
+       
+    1: def normalize_half_wave(value: str) -> str | None:
+   14:     normalized = normalize_text(value).replace(" ", "").replace("波", "")
+   14:     if normalized in ALLOWED_HALF_WAVE_VALUES:
+   14:         return normalized
+>>>>>>     return None

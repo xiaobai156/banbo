@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "source_failure_file": "C:\\Users\\Administrator\\Desktop\\每天工具\\数据系列\\七类数据统一归纳失败\\215期-半波-失败.txt",
+  "authorized_scope": "215期失败TXT内40个站点（龙行虎变已包含）",
+  "baseline_sha256": {
+    "failure_txt": "0F04604AF83DA42ED57D7A227CDE69DE7928D205F3C90297341C9C66EC8FC0AA",
+    "success_txt": "127FE39ECD8C3C20B891CD88A680BEE026D337F5ADC8A61DC830856E8F9D7F17",
+    "sites_json": "7777F8556290A9ABDC3DE9D1DFE53EF09E00AF1CBE9257038698FDB2A136E42E",
+    "parser_specs_json": "E9D1B7E858CA6BEE3D33D25FFBCBEFB8FD8D75A5EC25F4B41746B5E2135581A6",
+    "recent_10_cache_json": "72B3FAC3EC0FF1A178F25F37CEA7B3FC4B9D48AEDDC395943868C261186A6670"
+  },
+  "cases": [
+    {
+      "site_id": "hw-0004",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0011",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0013",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0019",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0020",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0031",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0035",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0042",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0045",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0046",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0047",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0049",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0051",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0052",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0053",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0070",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0071",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0089",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0090",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0091",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0099",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0101",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0103",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0105",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0106",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0107",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0108",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0109",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0110",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0111",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0112",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0113",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0114",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0115",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0119",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0120",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0121",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0122",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0134",
+      "issue": 215
+    },
+    {
+      "site_id": "hw-0163",
+      "issue": 215
+    }
+  ]
+}

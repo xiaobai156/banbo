@@ -1,0 +1,120 @@
+    1: import unittest
+    1: from types import SimpleNamespace
+       
+    1: from audit.validate_shouzhudaitu_bottom_217 import (
+           _article_documents,
+           _collect_candidates,
+       )
+    1: from banbo.domain import Direction, Document, DocumentSource
+    1: from banbo.parsers.boundary import select_directional_window
+       
+       
+    1: def _document(order, suffix, content, *, parent="article.js"):
+   34:     return Document(
+   17:         document_id=f"doc-{parent}-{suffix}",
+   17:         source=DocumentSource.SCRIPT,
+   17:         source_url=f"https://data.test/{parent}#decoded-{suffix}",
+   17:         order=order,
+   17:         content=content,
+           )
+       
+       
+    1: SITE = SimpleNamespace(name="守株待兔")
+    2: SPEC = SimpleNamespace(
+    1:     keywords=("精杀半波", "半波"),
+    1:     issue_pattern=r"(?P<issue>\d{1,4})期",
+    1:     value_pattern=r"(?P<value>[红绿蓝]\s*(?:波\s*)?[单双])",
+       )
+       
+       
+    2: class ShouzhudaituBottom217ValidationTest(unittest.TestCase):
+    1:     def _window(self, documents):
+    4:         _, article, _, _ = _article_documents(documents, SITE, SPEC)
+    4:         candidates = _collect_candidates(article, SITE, SPEC)
+   12:         return candidates, select_directional_window(
+    4:             candidates,
+   18:             issue_of=lambda candidate: candidate.issue,
+    4:             direction=Direction.BOTTOM,
+    4:         )[0]
+       
+    1:     def test_bottom_window_excludes_earlier_same_issue(self):
+    1:         documents = (
+    1:             _document(0, 18, "217期: 守株待兔 精杀半波"),
+    1:             _document(1, 30, "217期 精杀半波 红单 开:猴46准"),
+    2:             _document(
+    1:                 2,
+    1:                 66,
+    1:                 "215期 精杀半波 红双 216期 精杀半波 绿双 "
+                       "217期 精杀半波 绿单",
+                   ),
+    1:             _document(3, 67, "context_switch 上一篇 下一篇"),
+               )
+       
+    1:         candidates, window = self._window(documents)
+       
+    6:         self.assertEqual([217, 215, 216, 217], [item.issue for item in candidates])
+    5:         self.assertEqual([215, 216, 217], [item.issue for item in window])
+    5:         self.assertEqual(["绿单"], [item.value for item in window if item.issue == 217])
+       
+    1:     def test_navigation_end_excludes_next_article(self):
+    1:         documents = (
+    1:             _document(0, 18, "217期: 守株待兔 精杀半波"),
+    1:             _document(1, 66, "215期 精杀半波 红双 216期 精杀半波 绿双 217期 精杀半波 绿单"),
+    1:             _document(2, 67, "context_switch 上一篇 下一篇"),
+    1:             _document(3, 68, "217期 精杀半波 蓝双"),
+               )
+       
+    1:         candidates, window = self._window(documents)
+       
+    5:         self.assertNotIn("蓝双", [item.value for item in candidates])
+    5:         self.assertEqual("绿单", [item.value for item in window if item.issue == 217][0])
+       
+    1:     def test_anchor_cannot_be_borrowed_across_parent_scripts(self):
+    1:         documents = (
+    1:             _document(0, 18, "217期: 守株待兔 精杀半波", parent="title.js"),
+    1:             _document(1, 19, "context_switch 上一篇 下一篇", parent="title.js"),
+    1:             _document(2, 1, "217期 精杀半波 蓝双", parent="other.js"),
+               )
+       
+    1:         _, article, _, _ = _article_documents(documents, SITE, SPEC)
+       
+    1:         self.assertEqual((), _collect_candidates(article, SITE, SPEC))
+       
+    1:     def test_wrong_field_before_half_wave_keyword_is_ignored(self):
+    1:         documents = (
+    1:             _document(0, 18, "217期: 守株待兔 精杀半波"),
+    2:             _document(
+    1:                 1,
+    1:                 66,
+    1:                 "215期 精杀半波 红双 216期 精杀半波 绿双 "
+                       "217期 杀一肖 红单 精杀半波 绿单",
+                   ),
+    1:             _document(2, 67, "context_switch 上一篇 下一篇"),
+               )
+       
+    1:         _, window = self._window(documents)
+       
+    5:         self.assertEqual(["绿单"], [item.value for item in window if item.issue == 217])
+       
+    1:     def test_two_values_after_keyword_remain_window_conflict(self):
+    1:         documents = (
+    1:             _document(0, 18, "217期: 守株待兔 精杀半波"),
+    2:             _document(
+    1:                 1,
+    1:                 66,
+    1:                 "215期 精杀半波 红双 216期 精杀半波 绿双 "
+                       "217期 精杀半波 红单 精杀半波 绿单",
+                   ),
+    1:             _document(2, 67, "context_switch 上一篇 下一篇"),
+               )
+       
+    1:         _, window = self._window(documents)
+       
+    2:         self.assertEqual(
+    1:             {"红单", "绿单"},
+    6:             {item.value for item in window if item.issue == 217},
+               )
+       
+       
+    1: if __name__ == "__main__":
+>>>>>>     unittest.main()

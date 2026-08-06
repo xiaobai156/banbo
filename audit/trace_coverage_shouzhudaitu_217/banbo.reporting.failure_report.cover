@@ -1,0 +1,94 @@
+    1: from __future__ import annotations
+       
+    1: from pathlib import Path
+       
+    1: from banbo.domain import FailureCode
+    1: from banbo.domain.models import FailureResult
+       
+    1: from banbo.application.models import SiteRun
+    1: from banbo.application.multi_period import MultiPeriodSiteResult
+    1: from banbo.storage.atomic_files import commit_files
+       
+       
+    1: _FAILURE_STAGES = {
+    1:     FailureCode.NETWORK_ERROR: "网络请求",
+    1:     FailureCode.SSL_ERROR: "网络请求",
+    1:     FailureCode.HTTP_ERROR: "网络请求",
+    1:     FailureCode.TARGET_PERIOD_MISSING: "指定期数校验",
+    1:     FailureCode.DIRECTION_MISMATCH: "指定期数校验",
+    1:     FailureCode.DIRECTION_WINDOW_INVALID: "指定期数校验",
+    1:     FailureCode.ANCHOR_MISSING: "目标定位",
+    1:     FailureCode.RECORD_ID_MISMATCH: "目标定位",
+    1:     FailureCode.DOCUMENT_BOUNDARY_MISMATCH: "目标定位",
+    1:     FailureCode.PARSER_SPEC_MISSING: "目标定位",
+    1:     FailureCode.FIELD_INVALID: "数据校验",
+    1:     FailureCode.SAME_PERIOD_CONFLICT: "数据校验",
+    1:     FailureCode.ADAPTIVE_MATCH_REJECTED: "自适应校验",
+    1:     FailureCode.INTERNAL_ERROR: "抓取/解析",
+    1:     FailureCode.MULTI_PERIOD_FAILED: "多期汇总",
+       }
+       
+       
+    1: def _failure_reason(failure: FailureResult) -> str:
+>>>>>>     message = " ".join(failure.message.split())
+>>>>>>     prefix = "新版流程异常："
+>>>>>>     if failure.code == FailureCode.INTERNAL_ERROR and message.startswith(prefix):
+>>>>>>         return f"抓取/解析失败({message[len(prefix):].strip()})"
+>>>>>>     return message
+       
+       
+    1: def _format_failure_line(run: SiteRun) -> str:
+>>>>>>     failure = run.outcome
+>>>>>>     if not isinstance(failure, FailureResult):
+>>>>>>         raise TypeError("只能格式化失败结果")
+>>>>>>     return (
+>>>>>>         f"失败 {run.site.name} {run.site.url} "
+>>>>>>         f"方向: {run.site.direction.value} 期数: {failure.target_issue} "
+>>>>>>         f"阶段: {_FAILURE_STAGES[failure.code]} "
+>>>>>>         f"原因: {_failure_reason(failure)}"
+           )
+       
+       
+    1: def render_failure_report(period: int, runs: list[SiteRun]) -> str:
+>>>>>>     blocks: list[str] = []
+>>>>>>     for run in runs:
+>>>>>>         if not isinstance(run.outcome, FailureResult):
+>>>>>>             continue
+>>>>>>         blocks.append(_format_failure_line(run))
+>>>>>>     if not blocks:
+>>>>>>         return ""
+>>>>>>     return "\n\n".join(blocks) + "\n"
+       
+       
+    1: def write_failure_report(
+           path: str | Path,
+           period: int,
+           runs: list[SiteRun],
+       ) -> bool:
+>>>>>>     content = render_failure_report(period, runs)
+>>>>>>     target = Path(path)
+>>>>>>     commit_files({target: content or None})
+>>>>>>     return bool(content)
+       
+       
+    1: def render_multi_failure_report(
+           results: tuple[MultiPeriodSiteResult, ...],
+       ) -> str:
+>>>>>>     blocks: list[str] = []
+>>>>>>     for result in results:
+>>>>>>         if result.failure is None or not result.periods:
+>>>>>>             continue
+>>>>>>         for run in result.periods:
+>>>>>>             if isinstance(run.outcome, FailureResult):
+>>>>>>                 blocks.append(_format_failure_line(run))
+>>>>>>     return "\n\n".join(blocks) + ("\n" if blocks else "")
+       
+       
+    1: def write_multi_failure_report(
+           path: str | Path,
+           results: tuple[MultiPeriodSiteResult, ...],
+       ) -> bool:
+>>>>>>     content = render_multi_failure_report(results)
+>>>>>>     target = Path(path)
+>>>>>>     commit_files({target: content or None})
+>>>>>>     return bool(content)

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "issues": [
+    211,
+    210,
+    209
+  ],
+  "cache_write_performed": false,
+  "sites": [
+    {
+      "site_id": "hw-0005",
+      "site_name": "浪费衬衫",
+      "url": "https://qvuuqqs.8imf7-hteuh-ylwuqv.xyz/#/users/4032",
+      "interface_article_count": 100,
+      "records": [
+        {
+          "issue": 211,
+          "value": "绿单",
+          "record_id": "15711815",
+          "unique_id_match": true,
+          "cache_value": "绿单"
+        },
+        {
+          "issue": 210,
+          "value": "蓝双",
+          "record_id": "15703855",
+          "unique_id_match": true,
+          "cache_value": "蓝双"
+        },
+        {
+          "issue": 209,
+          "value": "红单",
+          "record_id": "15699030",
+          "unique_id_match": true,
+          "cache_value": "红单"
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0078",
+      "site_name": "财富榜啊了",
+      "url": "https://qvuuqqs.8imf7-hteuh-ylwuqv.xyz/#/users/11993",
+      "interface_article_count": 100,
+      "records": [
+        {
+          "issue": 211,
+          "value": "红双",
+          "record_id": "15713171",
+          "unique_id_match": true,
+          "cache_value": "红双"
+        },
+        {
+          "issue": 210,
+          "value": "绿单",
+          "record_id": "15703514",
+          "unique_id_match": true,
+          "cache_value": "绿单"
+        },
+        {
+          "issue": 209,
+          "value": "红单",
+          "record_id": "15698909",
+          "unique_id_match": true,
+          "cache_value": "红单"
+        }
+      ]
+    },
+    {
+      "site_id": "hw-0079",
+      "site_name": "熊错了",
+      "url": "https://qvuuqqs.8imf7-hteuh-ylwuqv.xyz/#/users/11968",
+      "interface_article_count": 100,
+      "records": [
+        {
+          "issue": 211,
+          "value": "绿双",
+          "record_id": "15711378",
+          "unique_id_match": true,
+          "cache_value": "绿双"
+        },
+        {
+          "issue": 210,
+          "value": "蓝双",
+          "record_id": "15703926",
+          "unique_id_match": true,
+          "cache_value": "蓝双"
+        },
+        {
+          "issue": 209,
+          "value": "蓝双",
+          "record_id": "15698223",
+          "unique_id_match": true,
+          "cache_value": "蓝双"
+        }
+      ]
+    }
+  ],
+  "conclusion": "9次真实校验均按接口列表复合条件锁定唯一记录，再请求详情并按ID复核；未发现缓存冲突。"
+}

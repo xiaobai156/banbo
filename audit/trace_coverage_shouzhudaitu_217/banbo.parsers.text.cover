@@ -1,0 +1,10 @@
+    1: from __future__ import annotations
+       
+    1: import html
+    1: import re
+       
+       
+    1: def html_to_text(content: str) -> str:
+   37:     unescaped = html.unescape(content or "")
+   37:     without_tags = re.sub(r"<[^>]+>", "\n", unescaped)
+   37:     return without_tags.replace("\r\n", "\n").replace("\r", "\n")

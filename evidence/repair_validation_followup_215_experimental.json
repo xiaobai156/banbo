@@ -1,0 +1,424 @@
+{
+  "schema_version": 2,
+  "mode": "isolated_validation",
+  "production_registered": false,
+  "formal_update_authorized": false,
+  "network_real_snapshot": true,
+  "target_issue": 215,
+  "adjacent_issue": 214,
+  "missing_issue": 999,
+  "generated_at": "2026-08-03T16:07:30.738042+00:00",
+  "baseline_hashes": {
+    "config\\sites.json": "7777f8556290a9abdc3de9d1dfe53ef09e00af1cbe9257038698fdb2a136e42e",
+    "config\\parser_specs.json": "9bd94b4943d39c7965e5e8394fe24a1a38298123ef4c71e039f8893d60e5b888",
+    "recent_10_cache.json": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670"
+  },
+  "formal_hashes_after": {
+    "config\\sites.json": "7777f8556290a9abdc3de9d1dfe53ef09e00af1cbe9257038698fdb2a136e42e",
+    "config\\parser_specs.json": "9bd94b4943d39c7965e5e8394fe24a1a38298123ef4c71e039f8893d60e5b888",
+    "recent_10_cache.json": "72b3fac3ec0ff1a178f25f37cea7b3fc4b9d48aeddc395943868c261186a6670"
+  },
+  "formal_files_unchanged": true,
+  "experimental_parser": {
+    "strategy": "experimental_combined_sibling",
+    "version": "exp-3",
+    "source_grouping": "same parent script URL; decoded sibling fragments only",
+    "compact_marker": "U+2063 between fragments; removed between text tokens, retained between adjacent digits",
+    "sites": {
+      "hw-0108": {
+        "anchors": [
+          "澳门 满堂 红",
+          "稳杀半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,3})期",
+        "options": {
+          "patterns": [
+            "(?P<_issue>\\d{1,3})期[^期]{0,80}稳杀半波[^期]{0,20}[【\\[(（『「<]?\\s*(?P<value>[红绿蓝](?:波)?[单双])"
+          ],
+          "compact": true,
+          "anchor_mode": "all",
+          "anchor_same_document": true,
+          "skip_keyword_check": true
+        }
+      },
+      "hw-0111": {
+        "anchors": [
+          "王中王",
+          "禁半波"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,3})期",
+        "options": {
+          "compact": true,
+          "anchor_mode": "all",
+          "skip_keyword_check": true
+        }
+      },
+      "hw-0115": {
+        "anchors": [
+          "任我发",
+          "禁特区"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,3})期",
+        "options": {
+          "patterns": [
+            "(?P<_issue>\\d{1,3})期[^期]{0,100}(?:禁|绝杀)半波[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
+          ],
+          "compact": true,
+          "anchor_mode": "all",
+          "skip_keyword_check": true
+        }
+      },
+      "hw-0163": {
+        "anchors": [
+          "汉锺离",
+          "综合绝杀"
+        ],
+        "issue_pattern": "(?P<issue>\\d{1,3})期",
+        "options": {
+          "compact": true,
+          "anchor_mode": "all",
+          "skip_keyword_check": true
+        }
+      }
+    }
+  },
+  "checks": [
+    {
+      "site_id": "hw-0108",
+      "site_name": "满堂红",
+      "url": "https://znnpwd.p42g1-zqmsb-jjrsfg.xyz:16677/",
+      "issue": 215,
+      "direction": "top",
+      "expected_value": "蓝单",
+      "expected_failure_code": null,
+      "passed": true,
+      "actual_value": "蓝单",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1288,
+      "candidate_count": 1,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/98fa16c5c4b14b2e.js#decoded-15",
+      "document_id": "script:0f12e3082513abe1f703",
+      "document_relation": "declared_neighbor_window",
+      "anchor_passed": true,
+      "keyword_passed": true,
+      "same_record": true,
+      "conflict_values": [
+        "蓝单"
+      ],
+      "snippet": "4-10-14-20-26-36-42-48蓝单:03-09-15-25-31-37-41-47绿双:06-16-22-28-32-38-44绿单:05-11-17-21-27-33-39-43-49215期:稳杀半波【蓝单】开0000中214期:稳杀半波【蓝双】开兔04错213期:稳杀半波【红双】开猴35中212期:稳杀半波【红单】开牛06中211期:稳杀半波【绿单】开马01中210期:稳杀半波【绿双】开马49中209期:稳杀半波【蓝双】开猪08中208期:稳杀半波【蓝单】开鼠19中207期:稳杀"
+    },
+    {
+      "site_id": "hw-0108",
+      "site_name": "满堂红",
+      "url": "https://znnpwd.p42g1-zqmsb-jjrsfg.xyz:16677/",
+      "issue": 214,
+      "direction": "top",
+      "expected_value": "蓝双",
+      "expected_failure_code": null,
+      "passed": true,
+      "actual_value": "蓝双",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1288,
+      "candidate_count": 1,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia06.cosds.ahsccn.com/upload/script/08/98fa16c5c4b14b2e.js#decoded-15",
+      "document_id": "script:0f12e3082513abe1f703",
+      "document_relation": "declared_neighbor_window",
+      "anchor_passed": true,
+      "keyword_passed": true,
+      "same_record": true,
+      "conflict_values": [
+        "蓝双"
+      ],
+      "snippet": "-48蓝单:03-09-15-25-31-37-41-47绿双:06-16-22-28-32-38-44绿单:05-11-17-21-27-33-39-43-49215期:稳杀半波【蓝单】开0000中214期:稳杀半波【蓝双】开兔04错213期:稳杀半波【红双】开猴35中212期:稳杀半波【红单】开牛06中211期:稳杀半波【绿单】开马01中210期:稳杀半波【绿双】开马49中209期:稳杀半波【蓝双】开猪08中208期:稳杀半波【蓝单】开鼠19中207期:稳杀半波【红双】开鼠31中206期:稳杀半"
+    },
+    {
+      "site_id": "hw-0108",
+      "site_name": "满堂红",
+      "url": "https://znnpwd.p42g1-zqmsb-jjrsfg.xyz:16677/",
+      "issue": 999,
+      "direction": "top",
+      "expected_value": null,
+      "expected_failure_code": "target_period_missing",
+      "passed": true,
+      "actual_value": null,
+      "failure_code": "target_period_missing",
+      "failure_reason": "未找到999期专属证据",
+      "document_count": 1288,
+      "candidate_count": 0,
+      "boundary_issues": [],
+      "source_url": "",
+      "document_id": "",
+      "document_relation": "",
+      "anchor_passed": false,
+      "keyword_passed": false,
+      "same_record": false,
+      "conflict_values": [],
+      "snippet": ""
+    },
+    {
+      "site_id": "hw-0111",
+      "site_name": "王中王",
+      "url": "https://dhqjbz.uxec9-jxs3h-fomubo.work:16677/",
+      "issue": 215,
+      "direction": "bottom",
+      "expected_value": "蓝双",
+      "expected_failure_code": null,
+      "passed": true,
+      "actual_value": "蓝双",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1413,
+      "candidate_count": 1,
+      "boundary_issues": [
+        213,
+        214,
+        215
+      ],
+      "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/d5293860fee6a7c1.js#decoded-31",
+      "document_id": "script:7651ba9a65a0c647f8aa",
+      "document_relation": "declared_neighbor_window",
+      "anchor_passed": true,
+      "keyword_passed": true,
+      "same_record": true,
+      "conflict_values": [
+        "蓝双"
+      ],
+      "snippet": "215期猪肖蓝波双0尾3头开?00准.advert01img{vertical-align:bottom;}点击立即注册鸿蒙娱乐城信誉老平台.down9898{padding:3px0;box-sizing:border-box;font:15px/1.75Arial,'微软雅黑';background:#fff}.down9898a{text-decoration:none;color:inherit}.down9898img{vertical-align:middle}."
+    },
+    {
+      "site_id": "hw-0111",
+      "site_name": "王中王",
+      "url": "https://dhqjbz.uxec9-jxs3h-fomubo.work:16677/",
+      "issue": 214,
+      "direction": "bottom",
+      "expected_value": "红单",
+      "expected_failure_code": null,
+      "passed": true,
+      "actual_value": "红单",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 1413,
+      "candidate_count": 1,
+      "boundary_issues": [
+        213,
+        214,
+        215
+      ],
+      "source_url": "https://xia02.cosds.ahsccn.com/upload/script/08/d5293860fee6a7c1.js#decoded-31",
+      "document_id": "script:7651ba9a65a0c647f8aa",
+      "document_relation": "declared_neighbor_window",
+      "anchor_passed": true,
+      "keyword_passed": true,
+      "same_record": true,
+      "conflict_values": [
+        "红单"
+      ],
+      "snippet": "214期羊肖红波单6尾4头开兔04准"
+    },
+    {
+      "site_id": "hw-0111",
+      "site_name": "王中王",
+      "url": "https://dhqjbz.uxec9-jxs3h-fomubo.work:16677/",
+      "issue": 999,
+      "direction": "bottom",
+      "expected_value": null,
+      "expected_failure_code": "target_period_missing",
+      "passed": true,
+      "actual_value": null,
+      "failure_code": "target_period_missing",
+      "failure_reason": "未找到999期专属证据",
+      "document_count": 1413,
+      "candidate_count": 0,
+      "boundary_issues": [],
+      "source_url": "",
+      "document_id": "",
+      "document_relation": "",
+      "anchor_passed": false,
+      "keyword_passed": false,
+      "same_record": false,
+      "conflict_values": [],
+      "snippet": ""
+    },
+    {
+      "site_id": "hw-0115",
+      "site_name": "任我发",
+      "url": "https://oifsonk.e0h72-f6bxs-juqrkd.xyz:16677/",
+      "issue": 215,
+      "direction": "top",
+      "expected_value": "绿单",
+      "expected_failure_code": null,
+      "passed": true,
+      "actual_value": "绿单",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 960,
+      "candidate_count": 1,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/69d73e816f942830.js#decoded-69",
+      "document_id": "script:a33982b55f168275c5ca",
+      "document_relation": "declared_neighbor_window",
+      "anchor_passed": true,
+      "keyword_passed": true,
+      "same_record": true,
+      "conflict_values": [
+        "绿单"
+      ],
+      "snippet": "m:1pxsolid#dcc833;line-height:2rem;padding-left:5px;}}}.dz_content08ab2dtrtd{height:35px!important;}215期【澳门任我发】570090c.com禁一肖(羊)特开:?00准禁半波(绿单)特开:?00准禁一尾(1尾)特开:?00准214期【澳门任我发】570090c.com禁一肖(马)特开:兔04准禁半波(绿双)特开:兔04准禁一尾(5尾)特开:兔04准213期【澳门任我发】570090c.com禁一肖(龙)特开:猴35准禁半波(蓝单)特开:猴35准禁一尾(2尾"
+    },
+    {
+      "site_id": "hw-0115",
+      "site_name": "任我发",
+      "url": "https://oifsonk.e0h72-f6bxs-juqrkd.xyz:16677/",
+      "issue": 214,
+      "direction": "top",
+      "expected_value": "绿双",
+      "expected_failure_code": null,
+      "passed": true,
+      "actual_value": "绿双",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 960,
+      "candidate_count": 1,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia05.cosds.ahsccn.com/upload/script/08/69d73e816f942830.js#decoded-70",
+      "document_id": "script:d2c9069d97fc574ff451",
+      "document_relation": "declared_neighbor_window",
+      "anchor_passed": true,
+      "keyword_passed": true,
+      "same_record": true,
+      "conflict_values": [
+        "绿双"
+      ],
+      "snippet": "ent08ab2dtrtd{height:35px!important;}215期【澳门任我发】570090c.com禁一肖(羊)特开:?00准禁半波(绿单)特开:?00准禁一尾(1尾)特开:?00准214期【澳门任我发】570090c.com禁一肖(马)特开:兔04准禁半波(绿双)特开:兔04准禁一尾(5尾)特开:兔04准213期【澳门任我发】570090c.com禁一肖(龙)特开:猴35准禁半波(蓝单)特开:猴35准禁一尾(2尾)特开:猴35准212期【澳门任我发】570090c.com禁一肖(猪)特开:牛06准禁半波(蓝双)特开:牛06准禁一尾(1尾"
+    },
+    {
+      "site_id": "hw-0115",
+      "site_name": "任我发",
+      "url": "https://oifsonk.e0h72-f6bxs-juqrkd.xyz:16677/",
+      "issue": 999,
+      "direction": "top",
+      "expected_value": null,
+      "expected_failure_code": "target_period_missing",
+      "passed": true,
+      "actual_value": null,
+      "failure_code": "target_period_missing",
+      "failure_reason": "未找到999期专属证据",
+      "document_count": 960,
+      "candidate_count": 0,
+      "boundary_issues": [],
+      "source_url": "",
+      "document_id": "",
+      "document_relation": "",
+      "anchor_passed": false,
+      "keyword_passed": false,
+      "same_record": false,
+      "conflict_values": [],
+      "snippet": ""
+    },
+    {
+      "site_id": "hw-0163",
+      "site_name": "汉锺离",
+      "url": "https://ozfksr.8gd3h-8yo27-ttlqhq.xyz:16677/",
+      "issue": 215,
+      "direction": "top",
+      "expected_value": "红单",
+      "expected_failure_code": null,
+      "passed": true,
+      "actual_value": "红单",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 949,
+      "candidate_count": 1,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/71bdc700fc856a02.js#decoded-34",
+      "document_id": "script:e094f57169beb93aa485",
+      "document_relation": "declared_neighbor_window",
+      "anchor_passed": true,
+      "keyword_passed": true,
+      "same_record": true,
+      "conflict_values": [
+        "红单"
+      ],
+      "snippet": "215期鼠红单4尾开000"
+    },
+    {
+      "site_id": "hw-0163",
+      "site_name": "汉锺离",
+      "url": "https://ozfksr.8gd3h-8yo27-ttlqhq.xyz:16677/",
+      "issue": 214,
+      "direction": "top",
+      "expected_value": "蓝单",
+      "expected_failure_code": null,
+      "passed": true,
+      "actual_value": "蓝单",
+      "failure_code": null,
+      "failure_reason": null,
+      "document_count": 949,
+      "candidate_count": 1,
+      "boundary_issues": [
+        215,
+        214,
+        213
+      ],
+      "source_url": "https://xia01.cosds.ahsccn.com/upload/script/08/71bdc700fc856a02.js#decoded-35",
+      "document_id": "script:31301af13673ad49cd2e",
+      "document_relation": "declared_neighbor_window",
+      "anchor_passed": true,
+      "keyword_passed": true,
+      "same_record": true,
+      "conflict_values": [
+        "蓝单"
+      ],
+      "snippet": "214期马蓝单6尾开兔04"
+    },
+    {
+      "site_id": "hw-0163",
+      "site_name": "汉锺离",
+      "url": "https://ozfksr.8gd3h-8yo27-ttlqhq.xyz:16677/",
+      "issue": 999,
+      "direction": "top",
+      "expected_value": null,
+      "expected_failure_code": "target_period_missing",
+      "passed": true,
+      "actual_value": null,
+      "failure_code": "target_period_missing",
+      "failure_reason": "未找到999期专属证据",
+      "document_count": 949,
+      "candidate_count": 0,
+      "boundary_issues": [],
+      "source_url": "",
+      "document_id": "",
+      "document_relation": "",
+      "anchor_passed": false,
+      "keyword_passed": false,
+      "same_record": false,
+      "conflict_values": [],
+      "snippet": ""
+    }
+  ],
+  "all_checks_passed": true
+}
