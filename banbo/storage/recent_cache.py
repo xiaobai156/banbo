@@ -370,6 +370,11 @@ class RecentCacheRepository:
     ) -> dict:
         payload = self.load() if base_payload is None else dict(base_payload)
         self.validate(payload)
+        if site_rows_by_id is not None and len(site_rows_by_id) == len(payload["sites"]):
+            expected_names = {str(row.get("name", "")) for row in site_rows_by_id.values()}
+            actual_names = {str(row.get("name", "")) for row in payload["sites"]}
+            if actual_names != expected_names:
+                raise CacheValidationError("缓存站点数量或集合不完整")
         updated = copy.deepcopy(payload)
         rows_by_name = {str(row["name"]): row for row in updated["sites"]}
         parser_versions = {
@@ -505,17 +510,18 @@ class RecentCacheRepository:
             updated["partial_issues"] = partial_issues
         else:
             updated.pop("partial_issues", None)
+        retained_issues = set(updated["issues"]) | set(partial_issues)
         for row in updated["sites"]:
             values = row["values"]
             row["values"] = {
                 str(issue): values[str(issue)]
-                for issue in updated["issues"]
+                for issue in retained_issues
                 if str(issue) in values
             }
             failures = row.get("failures", {})
             row["failures"] = {
                 str(issue): failures[str(issue)]
-                for issue in updated["issues"]
+                for issue in retained_issues
                 if str(issue) in failures
             }
         updated["updated_at"] = datetime.now(timezone.utc).isoformat()

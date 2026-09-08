@@ -23,7 +23,7 @@ def append_repair_successes(existing: str, runs: list[SiteRun]) -> str:
     if not successful:
         return existing
     if not existing:
-        raise ValueError("定向修复只能追加到已存在的当期成功TXT")
+        return "\n".join(f"{run.outcome.value} {run.site.name}" for run in successful) + "\n"
 
     values_by_name: dict[str, set[str]] = {}
     for line in existing.splitlines():
@@ -56,13 +56,17 @@ def append_repair_successes(existing: str, runs: list[SiteRun]) -> str:
     newline = "\r\n" if "\r\n" in existing else "\n"
     prefix = existing[: ranking.start()].rstrip("\r\n")
     suffix = existing[ranking.start() :].lstrip("\r\n")
-    return (
+    result = (
         prefix
         + newline
         + newline.join(additions)
         + newline * 2
         + suffix
     )
+    rows = [line for line in result.splitlines() if _SUCCESS_ROW.match(line)]
+    counts = Counter(_SUCCESS_ROW.match(line).group("value") for line in rows)
+    result = re.sub(r"(?ms)(^内容[ \t]+次数[ \t]+排名[ \t]*\r?\n).*\Z", lambda m: m.group(1) + "\n".join(f"{value} {count} {rank}" for rank, (value, count) in enumerate(sorted(counts.items(), key=lambda item: (-item[1], item[0])), 1)) + "\n", result)
+    return result
 
 
 def render_success_report(
