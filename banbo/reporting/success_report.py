@@ -18,47 +18,36 @@ def append_repair_successes(existing: str, runs: list[SiteRun]) -> str:
     ]
     if not successful:
         return existing
-    if not existing:
-        return render_success_report(successful[0].outcome.target_issue, successful)
+    period = successful[0].outcome.target_issue
 
-    values_by_name: dict[str, set[str]] = {}
-    for line in existing.splitlines():
-        match = _SUCCESS_ROW.match(line)
-        if match is None:
-            continue
-        values_by_name.setdefault(match.group("name"), set()).add(
-            match.group("value")
-        )
+    values_by_name = {m.group("name"): m.group("value") for line in existing.splitlines() if (m := _SUCCESS_ROW.match(line))}
 
     additions: list[str] = []
     for run in successful:
         value = run.outcome.value
-        existing_values = values_by_name.get(run.site.name)
-        if existing_values:
-            if existing_values != {value}:
+        existing_value = values_by_name.get(run.site.name)
+        if existing_value:
+            if existing_value != value:
                 raise ValueError(
                     f"成功TXT中{run.site.name}已有不同结果："
                     + ",".join(sorted(existing_values))
                 )
             continue
-        additions.append(f"{value} {run.site.name}")
-        values_by_name[run.site.name] = {value}
+        additions.append(f"{value}\t{run.site.name}")
+        values_by_name[run.site.name] = value
 
     if not additions:
         return existing
-    ranking = _RANKING_HEADER.search(existing)
-    if ranking is None:
-        return existing + "\n".join(additions) + "\n"
-    newline = "\r\n" if "\r\n" in existing else "\n"
-    prefix = existing[: ranking.start()].rstrip("\r\n")
-    suffix = existing[ranking.start() :].lstrip("\r\n")
-    result = prefix + newline + newline.join(additions) + newline * 2 + suffix
-    rows = [_SUCCESS_ROW.match(line) for line in result.splitlines()]
-    counts = Counter(match.group("value") for match in rows if match)
-    start = result.find(ranking.start()) if False else ranking.start()
-    title_end = result.find("\n", start) + 1
-    rank_lines = [f"{rank}\t{value}\t{count}" for rank, (value, count) in enumerate(sorted(counts.items(), key=lambda item: (-item[1], item[0])), 1)]
-    return result[:title_end] + "排名\t内容\t数量\n" + "\n".join(rank_lines) + "\n"
+    rows = [(value, name) for name, value in values_by_name.items()]
+    return _render_rows(period, rows)
+
+
+def _render_rows(period: int, rows: list[tuple[str, str]]) -> str:
+    lines = [f"{value}\t{name}" for value, name in rows]
+    counts = Counter(value for value, _ in rows)
+    lines += ["", f"{period}期排行", "排名\t内容\t数量"]
+    lines += [f"{rank}\t{value}\t{count}" for rank, (value, count) in enumerate(sorted(counts.items(), key=lambda item: (-item[1], item[0])), 1)]
+    return "\n".join(lines) + "\n"
 
 
 def render_success_report(
