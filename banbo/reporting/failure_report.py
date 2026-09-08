@@ -5,6 +5,7 @@ from banbo.domain.models import FailureResult
 
 from banbo.application.models import SiteRun
 from banbo.application.multi_period import MultiPeriodSiteResult
+from banbo.storage.atomic_files import commit_files
 import re
 
 
@@ -82,6 +83,12 @@ def render_failure_report(period: int, runs: list[SiteRun]) -> str:
     return "\n\n".join(blocks) + "\n"
 
 
+def write_failure_report(path: str, period: int, runs: list[SiteRun]) -> bool:
+    content = render_failure_report(period, runs)
+    commit_files({path: content or None})
+    return bool(content)
+
+
 def render_multi_failure_report(
     results: tuple[MultiPeriodSiteResult, ...],
 ) -> str:
@@ -93,3 +100,9 @@ def render_multi_failure_report(
             if isinstance(run.outcome, FailureResult):
                 blocks.append(_format_failure_line(run))
     return "\n\n".join(blocks) + ("\n" if blocks else "")
+
+
+def write_multi_failure_report(path: str, results: tuple[MultiPeriodSiteResult, ...]) -> bool:
+    content = render_multi_failure_report(results)
+    commit_files({path: content or None})
+    return bool(content)

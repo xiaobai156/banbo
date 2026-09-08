@@ -4,6 +4,8 @@ from .failure_report import (
     remove_successful_failures,
     render_failure_report,
     render_multi_failure_report,
+    write_failure_report,
+    write_multi_failure_report,
 )
 from .progress import ConsoleProgress, format_progress_line
 from .success_report import append_repair_successes, render_success_report
@@ -18,6 +20,8 @@ __all__ = [
     "failure_site_names",
     "remove_successful_failures",
     "render_multi_failure_report",
+    "write_failure_report",
+    "write_multi_failure_report",
     "append_repair_successes",
     "render_success_report",
 ]
