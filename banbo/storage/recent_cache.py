@@ -420,6 +420,13 @@ class RecentCacheRepository:
         self.validate(updated)
         return updated
 
+    # Backward-compatible names used by the original CLI and tests.
+    def update_existing_period(self, *args, **kwargs) -> dict:
+        return self.prepare_existing_period(*args, **kwargs)
+
+    def advance_complete_period(self, *args, **kwargs) -> dict:
+        return self.prepare_advance_complete_period(*args, **kwargs)
+
     def prepare_advance_complete_period(
         self,
         results: Iterable[ValidatedResult | FailureResult],
