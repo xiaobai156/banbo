@@ -41,7 +41,7 @@ def remove_successful_failures(text: str, period: int, successful_names: set[str
     if not successful_names:
         return text
     kept: list[str] = []
-    for block in text.split("\n\n"):
+    for block in re.split(r"\r?\n\s*\r?\n", text):
         first = block.splitlines()[0].strip() if block.splitlines() else ""
         match = _FAILURE_SITE.match(first)
         if match and int(match.group("period")) == period and match.group("name") in successful_names:

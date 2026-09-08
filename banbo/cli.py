@@ -58,7 +58,7 @@ def _parser() -> argparse.ArgumentParser:
 def _target_sites_from_failure_report(path: Path, period: int) -> list[str]:
     if not path.exists():
         return []
-    return list(failure_site_names(path.read_text(encoding="utf-8"), period))
+    return list(failure_site_names(path.read_text(encoding="utf-8-sig"), period))
 
 
 def _validate_runtime_configuration(sites: SiteRepository, specs: list) -> None:
@@ -207,7 +207,12 @@ def main(argv: list[str] | None = None) -> int:
     sites, specs, registry = _load_runtime()
     failure_path = args.failure_dir / f"{period}期-半波-失败.txt"
     if args.site_ids is None:
-        args.site_ids = _target_sites_from_failure_report(failure_path, period)
+        names = _target_sites_from_failure_report(failure_path, period)
+        ids_by_name = {site.name: site.site_id for site in sites.all()}
+        unknown = [name for name in names if name not in ids_by_name]
+        if unknown:
+            raise RuntimeConfigurationError("失败TXT存在未知站点：" + ",".join(unknown))
+        args.site_ids = [ids_by_name[name] for name in names]
         if not args.site_ids:
             print(f"未找到{period}期失败站点，已停止，未运行全站")
             return 0
@@ -294,6 +299,7 @@ def main(argv: list[str] | None = None) -> int:
                     )
                     commit_files(
                         {args.cache: render_json(updated_cache)},
+                        backup_paths={args.cache},
                         expected_digests=expected_digests,
                     )
             except Exception as exc:
