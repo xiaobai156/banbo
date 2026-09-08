@@ -146,6 +146,7 @@ def _prepare_cache_update(
                 site_names_by_id=names,
                 target_issue=period,
                 site_rows_by_id=cache_site_rows_by_id,
+                expected_site_count=len(sites.all()),
                 run_id=run_id,
                 base_payload=cache_snapshot.payload,
             ),

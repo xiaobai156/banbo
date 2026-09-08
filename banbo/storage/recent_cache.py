@@ -365,15 +365,16 @@ class RecentCacheRepository:
         site_names_by_id: Mapping[str, str],
         target_issue: int,
         site_rows_by_id: Mapping[str, Mapping[str, object]] | None = None,
+        expected_site_count: int | None = None,
         run_id: str | None = None,
         base_payload: Mapping[str, object] | None = None,
     ) -> dict:
         payload = self.load() if base_payload is None else dict(base_payload)
         self.validate(payload)
-        if site_rows_by_id is not None and len(site_rows_by_id) == len(payload["sites"]):
+        if site_rows_by_id is not None and expected_site_count is not None:
             expected_names = {str(row.get("name", "")) for row in site_rows_by_id.values()}
             actual_names = {str(row.get("name", "")) for row in payload["sites"]}
-            if actual_names != expected_names:
+            if len(actual_names) != expected_site_count or len(actual_names) != len(expected_names) or actual_names != expected_names:
                 raise CacheValidationError("缓存站点数量或集合不完整")
         updated = copy.deepcopy(payload)
         rows_by_name = {str(row["name"]): row for row in updated["sites"]}
