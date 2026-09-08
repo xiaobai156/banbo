@@ -20,25 +20,34 @@ def append_repair_successes(existing: str, runs: list[SiteRun]) -> str:
         return existing
     period = successful[0].outcome.target_issue
 
-    values_by_name = {m.group("name"): m.group("value") for line in existing.splitlines() if (m := _SUCCESS_ROW.match(line))}
+    header = re.search(r"(?m)^(?:\d+期排行|内容[ \t]+次数[ \t]+排名)[ \t]*\r?$", existing)
+    body = existing[:header.start()] if header else existing
+    values_by_name: dict[str, set[str]] = {}
+    for line in body.splitlines():
+        match = _SUCCESS_ROW.match(line)
+        if match:
+            values_by_name.setdefault(match.group("name"), set()).add(match.group("value"))
+    conflicts = {name: values for name, values in values_by_name.items() if len(values) > 1}
+    if conflicts:
+        raise ValueError("成功TXT存在同名冲突：" + ",".join(sorted(conflicts)))
 
     additions: list[str] = []
     for run in successful:
         value = run.outcome.value
-        existing_value = values_by_name.get(run.site.name)
-        if existing_value:
-            if existing_value != value:
+        existing_values = values_by_name.get(run.site.name)
+        if existing_values:
+            if existing_values != {value}:
                 raise ValueError(
                     f"成功TXT中{run.site.name}已有不同结果："
                     + ",".join(sorted(existing_values))
                 )
             continue
         additions.append(f"{value}\t{run.site.name}")
-        values_by_name[run.site.name] = value
+        values_by_name[run.site.name] = {value}
 
     if not additions:
         return existing
-    rows = [(value, name) for name, value in values_by_name.items()]
+    rows = [(next(iter(values)), name) for name, values in values_by_name.items()]
     return _render_rows(period, rows)
 
 
