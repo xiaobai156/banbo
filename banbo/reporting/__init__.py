@@ -8,7 +8,7 @@ from .failure_report import (
     write_multi_failure_report,
 )
 from .progress import ConsoleProgress, format_progress_line
-from .success_report import append_repair_successes, render_success_report
+from .success_report import append_repair_successes, render_success_report, write_success_report
 
 __all__ = [
     "audit_record",
@@ -24,4 +24,5 @@ __all__ = [
     "write_multi_failure_report",
     "append_repair_successes",
     "render_success_report",
+    "write_success_report",
 ]

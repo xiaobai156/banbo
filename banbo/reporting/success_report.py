@@ -6,6 +6,7 @@ import re
 from banbo.domain.models import ValidatedResult
 
 from banbo.application.models import SiteRun
+from banbo.storage.atomic_files import commit_files
 
 
 _SUCCESS_ROW = re.compile(r"^(?P<value>红单|红双|绿单|绿双|蓝单|蓝双)[ \t]+(?P<name>.+?)\s*$")
@@ -84,3 +85,9 @@ def render_success_report(
     ):
         lines.append(f"{rank}\t{value}\t{count}")
     return "\n".join(lines) + "\n"
+
+
+def write_success_report(path: str, period: int, runs: list[SiteRun]) -> bool:
+    content = render_success_report(period, runs)
+    commit_files({path: content})
+    return True

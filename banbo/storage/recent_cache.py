@@ -129,11 +129,13 @@ class RecentCacheRepository:
                 row["values"] = {}
                 row["failures"] = {}
             else:
-                for key in ("url", "pick", "second_click"):
+                for key in ("url", "pick"):
                     if existing.get(key) != default.get(key):
                         raise CacheValidationError(
                             f"缓存站点身份与正式配置不一致：{name}.{key}"
                         )
+                if bool(existing.get("second_click", False)) != bool(default.get("second_click", False)):
+                    raise CacheValidationError(f"缓存站点身份与正式配置不一致：{name}.second_click")
                 row = copy.deepcopy(dict(existing))
                 row.setdefault("failures", {})
             normalized_rows.append(row)
