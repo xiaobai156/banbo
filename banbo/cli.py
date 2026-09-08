@@ -134,11 +134,24 @@ def _prepare_cache_update(
         }
         for site in sites.all()
     }
-    site_count = len(sites.all())
-    if len(runs) != site_count:
+    if True:
         if not successful:
             return "未补充定向缓存：本轮没有成功结果", None, None
         cache_snapshot = repository.load_snapshot()
+        if period in {int(issue) for issue in cache_snapshot.payload["issues"]}:
+            return (
+                "补充已有缓存期",
+                repository.prepare_existing_period(
+                    successful,
+                    site_names_by_id=names,
+                    target_issue=period,
+                    run_id=run_id,
+                    base_payload=cache_snapshot.payload,
+                    expected_site_count=len(sites.all()),
+                    expected_site_names=names.values(),
+                ),
+                cache_snapshot.digest,
+            )
         return (
             "补充定向站点缓存",
             repository.prepare_targeted_period(
