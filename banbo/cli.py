@@ -9,6 +9,9 @@ from banbo.application import SinglePeriodRunner
 from banbo.domain import ValidatedResult
 from banbo.parsers import build_default_registry, parse_parser_specs
 from banbo.reporting import (
+    append_repair_successes,
+    failure_site_names,
+    remove_successful_failures,
     ConsoleProgress,
     append_audit_jsonl,
     render_audit_jsonl,
@@ -32,6 +35,7 @@ DEFAULT_FAILURE_DIR = Path(
     r"C:\Users\Administrator\Desktop\每天工具\爬虫合集\七类数据统一归纳失败"
 )
 DEFAULT_CACHE_PATH = BASE_DIR / "recent_10_cache.json"
+SINGLE_SUCCESS_EXTRA_NAMES: tuple[str, ...] = ()
 
 
 class RuntimeConfigurationError(ValueError):
@@ -49,6 +53,12 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--failure-dir", type=Path, default=DEFAULT_FAILURE_DIR)
     parser.add_argument("--cache", type=Path, default=DEFAULT_CACHE_PATH)
     return parser
+
+
+def _target_sites_from_failure_report(path: Path, period: int) -> list[str]:
+    if not path.exists():
+        return []
+    return list(failure_site_names(path.read_text(encoding="utf-8"), period))
 
 
 def _validate_runtime_configuration(sites: SiteRepository, specs: list) -> None:
@@ -104,6 +114,7 @@ def _period_from_args(value: int | None) -> int:
 def _prepare_cache_update(
     cache_path: Path,
     sites: SiteRepository,
+    specs,
     period: int,
     runs,
     *,
@@ -114,9 +125,38 @@ def _prepare_cache_update(
         run.outcome for run in runs if isinstance(run.outcome, ValidatedResult)
     ]
     names = {site.site_id: site.name for site in sites.all()}
-    cache_snapshot = repository.load_snapshot(
-        expected_site_count=len(sites.all()),
-        expected_site_names=names.values(),
+    cache_site_rows_by_id = {
+        site.site_id: {
+            "name": site.name,
+            "url": site.url,
+            "pick": site.direction.value,
+            "second_click": site.second_click,
+        }
+        for site in sites.all()
+    }
+    site_count = len(sites.all())
+    if len(runs) != site_count:
+        if not successful:
+            return "未补充定向缓存：本轮没有成功结果", None, None
+        cache_snapshot = repository.load_snapshot()
+        return (
+            "补充定向站点缓存",
+            repository.prepare_targeted_period(
+                successful,
+                site_names_by_id=names,
+                target_issue=period,
+                site_rows_by_id=cache_site_rows_by_id,
+                run_id=run_id,
+                base_payload=cache_snapshot.payload,
+            ),
+            cache_snapshot.digest,
+        )
+    cache_site_rows = list(cache_site_rows_by_id.values())
+    cache_snapshot = repository.load_snapshot_for_sites(
+        cache_site_rows,
+        expected_parser_versions={
+            spec.site_id: spec.parser_version for spec in specs
+        },
     )
     cache = cache_snapshot.payload
     if period in {int(issue) for issue in cache["issues"]}:
@@ -135,9 +175,6 @@ def _prepare_cache_update(
             ),
             cache_snapshot.digest,
         )
-    site_count = len(sites.all())
-    if len(runs) != site_count:
-        return "未推进缓存：必须执行完整全站任务", None, None
     success_count = len(successful)
     success_rate = success_count * 100 / site_count
     if success_count * 100 <= site_count * 85:
@@ -168,6 +205,12 @@ def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     period = _period_from_args(args.period)
     sites, specs, registry = _load_runtime()
+    failure_path = args.failure_dir / f"{period}期-半波-失败.txt"
+    if args.site_ids is None:
+        args.site_ids = _target_sites_from_failure_report(failure_path, period)
+        if not args.site_ids:
+            print(f"未找到{period}期失败站点，已停止，未运行全站")
+            return 0
     runner = SinglePeriodRunner(sites, specs, registry)
     progress = ConsoleProgress()
     try:
@@ -182,17 +225,39 @@ def main(argv: list[str] | None = None) -> int:
     run_id = uuid4().hex
     if not args.shadow:
         success_path = args.success_dir / f"{period}期-半波.txt"
-        failure_path = args.failure_dir / f"{period}期-半波-失败.txt"
         audit_path = BASE_DIR / "audit" / f"{period}.jsonl"
         previous_audit, audit_digest = read_text_snapshot(audit_path)
         operations: dict[Path, str | None] = {
-            success_path: render_success_report(period, runs),
-            failure_path: render_failure_report(period, runs) or None,
             audit_path: append_audit_jsonl(
                 previous_audit,
                 render_audit_jsonl(runs, run_id=run_id),
             ),
         }
+        expected_digests = {audit_path: audit_digest}
+        if args.site_ids is not None:
+            previous_success, success_digest = read_text_snapshot(success_path)
+            updated_success = append_repair_successes(previous_success, runs)
+            if updated_success != previous_success:
+                operations[success_path] = updated_success
+                expected_digests[success_path] = success_digest
+            previous_failure, failure_digest = read_text_snapshot(failure_path)
+            successful_names = {
+                run.site.name for run in runs
+                if isinstance(run.outcome, ValidatedResult)
+            }
+            updated_failure = remove_successful_failures(
+                previous_failure, period, successful_names
+            )
+            if updated_failure != previous_failure:
+                operations[failure_path] = updated_failure or None
+                expected_digests[failure_path] = failure_digest
+        else:
+            operations[success_path] = render_success_report(
+                period,
+                runs,
+                extra_names=SINGLE_SUCCESS_EXTRA_NAMES,
+            )
+            operations[failure_path] = render_failure_report(period, runs) or None
         operation_paths = [
             path.resolve(strict=False) for path in operations
         ]
@@ -203,7 +268,7 @@ def main(argv: list[str] | None = None) -> int:
                 raise ValueError("正式输出、审计和缓存路径不能重合")
             commit_files(
                 operations,
-                expected_digests={audit_path: audit_digest},
+                expected_digests=expected_digests,
             )
         except Exception as exc:
             print(f"提交失败：{type(exc).__name__}: {exc}")
@@ -216,6 +281,7 @@ def main(argv: list[str] | None = None) -> int:
                 cache_message, updated_cache, cache_digest = _prepare_cache_update(
                     args.cache,
                     sites,
+                    specs,
                     period,
                     runs,
                     run_id=run_id,
@@ -228,7 +294,6 @@ def main(argv: list[str] | None = None) -> int:
                     )
                     commit_files(
                         {args.cache: render_json(updated_cache)},
-                        backup_paths={args.cache},
                         expected_digests=expected_digests,
                     )
             except Exception as exc:

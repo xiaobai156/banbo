@@ -1,13 +1,11 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 from banbo.domain import FailureCode
 from banbo.domain.models import FailureResult
 
 from banbo.application.models import SiteRun
 from banbo.application.multi_period import MultiPeriodSiteResult
-from banbo.storage.atomic_files import commit_files
+import re
 
 
 _FAILURE_STAGES = {
@@ -27,6 +25,30 @@ _FAILURE_STAGES = {
     FailureCode.INTERNAL_ERROR: "抓取/解析",
     FailureCode.MULTI_PERIOD_FAILED: "多期汇总",
 }
+_FAILURE_SITE = re.compile(r"^失败 (?P<name>\S+) (?P<url>\S+) 方向: (?P<direction>top|bottom) 期数: (?P<period>\d+)")
+
+
+def failure_site_names(text: str, period: int) -> tuple[str, ...]:
+    names: list[str] = []
+    for line in text.splitlines():
+        match = _FAILURE_SITE.match(line.strip())
+        if match and int(match.group("period")) == period and match.group("name") not in names:
+            names.append(match.group("name"))
+    return tuple(names)
+
+
+def remove_successful_failures(text: str, period: int, successful_names: set[str]) -> str:
+    if not successful_names:
+        return text
+    kept: list[str] = []
+    for block in text.split("\n\n"):
+        first = block.splitlines()[0].strip() if block.splitlines() else ""
+        match = _FAILURE_SITE.match(first)
+        if match and int(match.group("period")) == period and match.group("name") in successful_names:
+            continue
+        if block.strip():
+            kept.append(block.strip("\r\n"))
+    return "\n\n".join(kept) + ("\n" if kept else "")
 
 
 def _failure_reason(failure: FailureResult) -> str:
@@ -60,17 +82,6 @@ def render_failure_report(period: int, runs: list[SiteRun]) -> str:
     return "\n\n".join(blocks) + "\n"
 
 
-def write_failure_report(
-    path: str | Path,
-    period: int,
-    runs: list[SiteRun],
-) -> bool:
-    content = render_failure_report(period, runs)
-    target = Path(path)
-    commit_files({target: content or None})
-    return bool(content)
-
-
 def render_multi_failure_report(
     results: tuple[MultiPeriodSiteResult, ...],
 ) -> str:
@@ -82,13 +93,3 @@ def render_multi_failure_report(
             if isinstance(run.outcome, FailureResult):
                 blocks.append(_format_failure_line(run))
     return "\n\n".join(blocks) + ("\n" if blocks else "")
-
-
-def write_multi_failure_report(
-    path: str | Path,
-    results: tuple[MultiPeriodSiteResult, ...],
-) -> bool:
-    content = render_multi_failure_report(results)
-    target = Path(path)
-    commit_files({target: content or None})
-    return bool(content)
