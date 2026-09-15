@@ -46,6 +46,7 @@ def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="杀半波解耦版严格入口")
     parser.add_argument("--period", type=int, help="指定单期，例如211")
     parser.add_argument("--site-id", action="append", dest="site_ids")
+    parser.add_argument("--retry-failures", action="store_true", help="仅重抓当期失败TXT中的站点")
     parser.add_argument("--max-workers", type=int, default=8)
     parser.add_argument("--no-update-cache", action="store_true")
     parser.add_argument("--shadow", action="store_true")
@@ -121,9 +122,8 @@ def _prepare_cache_update(
     run_id: str,
 ) -> tuple[str, dict | None, str | None]:
     repository = RecentCacheRepository(cache_path)
-    successful = [
-        run.outcome for run in runs if isinstance(run.outcome, ValidatedResult)
-    ]
+    outcomes = [run.outcome for run in runs]
+    successful = [outcome for outcome in outcomes if isinstance(outcome, ValidatedResult)]
     names = {site.site_id: site.name for site in sites.all()}
     cache_site_rows_by_id = {
         site.site_id: {
@@ -134,15 +134,44 @@ def _prepare_cache_update(
         }
         for site in sites.all()
     }
+    if not cache_path.exists():
+        payload = {
+            "schema": 1,
+            "description": "杀半波重复检测最近10期基准数据；由每日指定期抓取自动覆盖更新。",
+            "updated_at": None,
+            "window_size": 10,
+            "issues": [period],
+            "partial_issues": [],
+            "sites": [
+                {
+                    **row,
+                    "values": {},
+                    "failures": {},
+                }
+                for row in cache_site_rows_by_id.values()
+            ],
+            "parser_versions": {},
+        }
+        return (
+            "按指定期数建立缓存基准",
+            repository.prepare_existing_period(
+                outcomes,
+                site_names_by_id=names,
+                target_issue=period,
+                run_id=run_id,
+                base_payload=payload,
+            ),
+            None,
+        )
     if True:
-        if not successful:
-            return "未补充定向缓存：本轮没有成功结果", None, None
+        if not outcomes:
+            return "未补充定向缓存：本轮没有结果", None, None
         cache_snapshot = repository.load_snapshot()
         if period in {int(issue) for issue in cache_snapshot.payload["issues"]}:
             return (
                 "补充已有缓存期",
                 repository.prepare_existing_period(
-                    successful,
+                    outcomes,
                     site_names_by_id=names,
                     target_issue=period,
                     run_id=run_id,
@@ -220,16 +249,32 @@ def main(argv: list[str] | None = None) -> int:
     period = _period_from_args(args.period)
     sites, specs, registry = _load_runtime()
     failure_path = args.failure_dir / f"{period}期-半波-失败.txt"
-    if args.site_ids is None:
+    if args.retry_failures:
         names = _target_sites_from_failure_report(failure_path, period)
         ids_by_name = {site.name: site.site_id for site in sites.all()}
         unknown = [name for name in names if name not in ids_by_name]
         if unknown:
             raise RuntimeConfigurationError("失败TXT存在未知站点：" + ",".join(unknown))
-        args.site_ids = [ids_by_name[name] for name in names]
-        if not args.site_ids:
+        failure_ids = [ids_by_name[name] for name in names]
+        archived_ids = [
+            site_id for site_id in failure_ids if sites.get(site_id).archived
+        ]
+        if archived_ids:
+            print("已封存站点不再重试：" + ",".join(archived_ids))
+            failure_ids = [
+                site_id for site_id in failure_ids if site_id not in archived_ids
+            ]
+        if not failure_ids:
             print(f"未找到{period}期失败站点，已停止，未运行全站")
             return 0
+        if args.site_ids is None:
+            args.site_ids = failure_ids
+        else:
+            selected = list(dict.fromkeys(args.site_ids))
+            outside = [site_id for site_id in selected if site_id not in failure_ids]
+            if outside:
+                raise RuntimeConfigurationError("指定站点不在失败TXT中：" + ",".join(outside))
+            args.site_ids = selected
     runner = SinglePeriodRunner(sites, specs, registry)
     progress = ConsoleProgress()
     try:
@@ -253,7 +298,7 @@ def main(argv: list[str] | None = None) -> int:
             ),
         }
         expected_digests = {audit_path: audit_digest}
-        if args.site_ids is not None:
+        if args.retry_failures:
             previous_success, success_digest = read_text_snapshot(success_path)
             updated_success = append_repair_successes(previous_success, runs)
             if updated_success != previous_success:
@@ -280,19 +325,7 @@ def main(argv: list[str] | None = None) -> int:
         operation_paths = [
             path.resolve(strict=False) for path in operations
         ]
-        if not args.no_update_cache:
-            operation_paths.append(args.cache.resolve(strict=False))
-        try:
-            if len(operation_paths) != len(set(operation_paths)):
-                raise ValueError("正式输出、审计和缓存路径不能重合")
-            commit_files(
-                operations,
-                expected_digests=expected_digests,
-            )
-        except Exception as exc:
-            print(f"提交失败：{type(exc).__name__}: {exc}")
-            return 2
-
+        prepared_cache = None
         if args.no_update_cache:
             cache_message = "按参数跳过缓存"
         else:
@@ -306,20 +339,21 @@ def main(argv: list[str] | None = None) -> int:
                     run_id=run_id,
                 )
                 if updated_cache is not None:
-                    expected_digests = (
-                        {args.cache: cache_digest}
-                        if cache_digest is not None
-                        else None
-                    )
-                    commit_files(
-                        {args.cache: render_json(updated_cache)},
-                        backup_paths={args.cache},
-                        expected_digests=expected_digests,
-                    )
+                    prepared_cache = (updated_cache, cache_digest)
             except Exception as exc:
                 cache_message = (
                     f"缓存更新未完成：{type(exc).__name__}: {exc}"
                 )
+        if prepared_cache is not None:
+            operations[args.cache] = render_json(prepared_cache[0])
+            expected_digests[args.cache] = prepared_cache[1]
+        try:
+            if len(operation_paths + ([args.cache.resolve(strict=False)] if prepared_cache else [])) != len(set(operation_paths + ([args.cache.resolve(strict=False)] if prepared_cache else []))):
+                raise ValueError("正式输出、审计和缓存路径不能重合")
+            commit_files(operations, expected_digests=expected_digests)
+        except Exception as exc:
+            print(f"提交失败：{type(exc).__name__}: {exc}")
+            return 2
     else:
         cache_message = "影子模式：未写入正式输出和缓存"
     successes = sum(run.succeeded for run in runs)

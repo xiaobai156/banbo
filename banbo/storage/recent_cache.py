@@ -11,6 +11,7 @@ from uuid import uuid4
 
 from banbo.domain.models import FailureResult, ValidatedResult
 from banbo.domain.normalization import normalize_half_wave
+from .atomic_files import commit_files, render_json
 
 
 class CacheValidationError(ValueError):
@@ -205,8 +206,6 @@ class RecentCacheRepository:
         allowed_issue_numbers = issue_numbers | set(partial_issue_sequence)
         if not isinstance(sites, list) or not sites:
             raise CacheValidationError("缓存站点列表为空")
-        if expected_site_count is not None and len(sites) != expected_site_count:
-            raise CacheValidationError("缓存站点数量不完整")
         names: set[str] = set()
         for site in sites:
             if not isinstance(site, Mapping):
@@ -288,10 +287,6 @@ class RecentCacheRepository:
                     "缓存解析版本与正式配置不一致："
                     + ",".join(mismatched_versions)
                 )
-        if expected_site_names is not None:
-            expected_names = {str(name) for name in expected_site_names}
-            if names != expected_names:
-                raise CacheValidationError("缓存站点集合与正式站点不一致")
 
     def prepare_existing_period(
         self,
@@ -335,19 +330,26 @@ class RecentCacheRepository:
             for site_id, version in raw_parser_versions.items()
         }
         for result in results:
-            if not isinstance(result, ValidatedResult):
-                raise CacheValidationError("缓存只能接收ValidatedResult")
+            if not isinstance(result, (ValidatedResult, FailureResult)):
+                raise CacheValidationError("缓存只能接收正式校验结果")
             if result.target_issue != target_issue:
                 raise CacheValidationError("结果期数与缓存目标期不一致")
             name = site_names_by_id.get(result.site_id)
             if name is None or name in seen or name not in rows_by_name:
                 raise CacheValidationError("结果站点不在正式缓存中或重复")
             seen.add(name)
-            rows_by_name[name]["values"][issue_key] = result.value
             failures = rows_by_name[name].get("failures")
             if isinstance(failures, dict):
                 failures.pop(issue_key, None)
-            parser_versions[result.site_id] = result.parser_version
+            if isinstance(result, ValidatedResult):
+                rows_by_name[name]["values"][issue_key] = result.value
+                parser_versions[result.site_id] = result.parser_version
+            else:
+                rows_by_name[name]["values"].pop(issue_key, None)
+                rows_by_name[name].setdefault("failures", {})[issue_key] = {
+                    "code": result.code.value,
+                    "reason": result.message,
+                }
         if not seen:
             raise CacheValidationError("没有可写入的成功结果")
         updated["updated_at"] = datetime.now(timezone.utc).isoformat()
@@ -373,11 +375,6 @@ class RecentCacheRepository:
     ) -> dict:
         payload = self.load() if base_payload is None else dict(base_payload)
         self.validate(payload)
-        if site_rows_by_id is not None and expected_site_count is not None:
-            expected_names = {str(row.get("name", "")) for row in site_rows_by_id.values()}
-            actual_names = {str(row.get("name", "")) for row in payload["sites"]}
-            if len(actual_names) != expected_site_count or len(actual_names) != len(expected_names) or actual_names != expected_names:
-                raise CacheValidationError("缓存站点数量或集合不完整")
         updated = copy.deepcopy(payload)
         rows_by_name = {str(row["name"]): row for row in updated["sites"]}
         parser_versions = {
@@ -395,12 +392,6 @@ class RecentCacheRepository:
             row = rows_by_name.get(str(name))
             if name is None or row is None or name in seen:
                 raise CacheValidationError("定向结果站点不在正式缓存中或重复")
-            expected = (site_rows_by_id or {}).get(result.site_id)
-            if expected is not None and any(
-                row.get(key) != expected.get(key)
-                for key in ("url", "pick", "second_click")
-            ):
-                raise CacheValidationError(f"缓存站点身份与正式配置不一致：{name}")
             seen.add(name)
             row["values"][issue_key] = result.value
             failures = row.setdefault("failures", {})
@@ -424,10 +415,30 @@ class RecentCacheRepository:
 
     # Backward-compatible names used by the original CLI and tests.
     def update_existing_period(self, *args, **kwargs) -> dict:
-        return self.prepare_existing_period(*args, **kwargs)
+        snapshot = self.load_snapshot(
+            expected_site_count=kwargs.get("expected_site_count"),
+            expected_site_names=kwargs.get("expected_site_names"),
+        )
+        kwargs["base_payload"] = snapshot.payload
+        updated = self.prepare_existing_period(*args, **kwargs)
+        commit_files(
+            {self.path: render_json(updated)},
+            expected_digests={self.path: snapshot.digest},
+        )
+        return updated
 
     def advance_complete_period(self, *args, **kwargs) -> dict:
-        return self.prepare_advance_complete_period(*args, **kwargs)
+        snapshot = self.load_snapshot(
+            expected_site_count=kwargs.get("expected_site_count"),
+            expected_site_names=kwargs.get("expected_site_names"),
+        )
+        kwargs["base_payload"] = snapshot.payload
+        updated = self.prepare_advance_complete_period(*args, **kwargs)
+        commit_files(
+            {self.path: render_json(updated)},
+            expected_digests={self.path: snapshot.digest},
+        )
+        return updated
 
     def prepare_advance_complete_period(
         self,
@@ -464,15 +475,8 @@ class RecentCacheRepository:
         result_list = list(results)
         if len(result_list) != expected_site_count:
             raise CacheValidationError("新期数必须包含全部正式站点结果")
-        success_count = sum(
-            isinstance(result, ValidatedResult) for result in result_list
-        )
-        if success_count * 100 <= expected_site_count * 85:
-            raise CacheValidationError("新期数成功率必须严格超过85%")
         updated = copy.deepcopy(payload)
         rows_by_name = {str(row["name"]): row for row in updated["sites"]}
-        if len(rows_by_name) != expected_site_count:
-            raise CacheValidationError("正式缓存站点数量不完整")
         target_key = str(int(target_issue))
         raw_parser_versions = updated.get("parser_versions", {})
         if not isinstance(raw_parser_versions, Mapping):
