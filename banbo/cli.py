@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 from pathlib import Path
 from uuid import uuid4
@@ -123,7 +124,6 @@ def _prepare_cache_update(
 ) -> tuple[str, dict | None, str | None]:
     repository = RecentCacheRepository(cache_path)
     outcomes = [run.outcome for run in runs]
-    successful = [outcome for outcome in outcomes if isinstance(outcome, ValidatedResult)]
     names = {site.site_id: site.name for site in sites.all()}
     cache_site_rows_by_id = {
         site.site_id: {
@@ -140,7 +140,7 @@ def _prepare_cache_update(
             "description": "杀半波重复检测最近10期基准数据；由每日指定期抓取自动覆盖更新。",
             "updated_at": None,
             "window_size": 10,
-            "issues": [period],
+            "issues": list(range(period, period - 10, -1)),
             "partial_issues": [],
             "sites": [
                 {
@@ -163,82 +163,46 @@ def _prepare_cache_update(
             ),
             None,
         )
-    if True:
-        if not outcomes:
-            return "未补充定向缓存：本轮没有结果", None, None
-        cache_snapshot = repository.load_snapshot()
-        if period in {int(issue) for issue in cache_snapshot.payload["issues"]}:
-            return (
-                "补充已有缓存期",
-                repository.prepare_existing_period(
-                    outcomes,
-                    site_names_by_id=names,
-                    target_issue=period,
-                    run_id=run_id,
-                    base_payload=cache_snapshot.payload,
-                    expected_site_count=len(sites.all()),
-                    expected_site_names=names.values(),
-                ),
-                cache_snapshot.digest,
-            )
-        return (
-            "补充定向站点缓存",
-            repository.prepare_targeted_period(
-                successful,
-                site_names_by_id=names,
-                target_issue=period,
-                site_rows_by_id=cache_site_rows_by_id,
-                expected_site_count=len(sites.all()),
-                run_id=run_id,
-                base_payload=cache_snapshot.payload,
-            ),
-            cache_snapshot.digest,
-        )
-    cache_site_rows = list(cache_site_rows_by_id.values())
-    cache_snapshot = repository.load_snapshot_for_sites(
-        cache_site_rows,
-        expected_parser_versions={
-            spec.site_id: spec.parser_version for spec in specs
-        },
-    )
-    cache = cache_snapshot.payload
-    if period in {int(issue) for issue in cache["issues"]}:
-        if not successful:
-            return "未补充缓存：本轮没有成功结果", None, None
-        return (
-            "补充已有缓存期",
-            repository.prepare_existing_period(
-                successful,
-                site_names_by_id=names,
-                target_issue=period,
-                run_id=run_id,
-                base_payload=cache,
-                expected_site_count=len(sites.all()),
-                expected_site_names=names.values(),
-            ),
-            cache_snapshot.digest,
-        )
-    success_count = len(successful)
-    success_rate = success_count * 100 / site_count
-    if success_count * 100 <= site_count * 85:
-        return (
-            "未推进缓存："
-            f"成功率{success_rate:.2f}%未超过85%"
-            f"（{success_count}/{site_count}）",
-            None,
-            None,
-        )
+    if not outcomes:
+        return "未补充定向缓存：本轮没有结果", None, None
+
+    cache_snapshot = repository.load_snapshot()
+    cache = copy.deepcopy(cache_snapshot.payload)
+    issues = list(range(period, period - 10, -1))
+    allowed = {str(issue) for issue in issues}
+    cache["issues"] = issues
+    cache["partial_issues"] = []
+    for row in cache["sites"]:
+        row["values"] = {
+            str(issue): value
+            for issue, value in row.get("values", {}).items()
+            if str(issue) in allowed
+        }
+        row["failures"] = {
+            str(issue): failure
+            for issue, failure in row.get("failures", {}).items()
+            if str(issue) in allowed
+        }
+
+    rows_by_name = {str(row["name"]): row for row in cache["sites"]}
+    for outcome in outcomes:
+        name = names.get(outcome.site_id)
+        if name is None or name in rows_by_name:
+            continue
+        row = copy.deepcopy(cache_site_rows_by_id[outcome.site_id])
+        row["values"] = {}
+        row["failures"] = {}
+        cache["sites"].append(row)
+        rows_by_name[name] = row
+
     return (
-        f"推进缓存新期：成功率{success_rate:.2f}%"
-        f"（{success_count}/{site_count}）",
-        repository.prepare_advance_complete_period(
-            [run.outcome for run in runs],
+        "按指定期数建立缓存基准",
+        repository.prepare_existing_period(
+            outcomes,
             site_names_by_id=names,
             target_issue=period,
-            expected_site_count=site_count,
             run_id=run_id,
             base_payload=cache,
-            expected_site_names=names.values(),
         ),
         cache_snapshot.digest,
     )

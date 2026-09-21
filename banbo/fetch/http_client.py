@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import time
+import re
 from dataclasses import dataclass
 from threading import BoundedSemaphore, Lock, local
 from typing import Protocol
@@ -221,7 +222,17 @@ class HttpClient:
         # Some target sites declare ISO-8859-1 even though their page bytes are
         # UTF-8.  Prefer a strict UTF-8 decode, then honor the reported legacy
         # encoding when the bytes are not valid UTF-8.
-        candidates = ["utf-8", encoding, "gb18030", "big5"]
+        declared = re.search(
+            rb"charset\s*=\s*[\"']?([A-Za-z0-9._-]+)",
+            content[:8192],
+            re.IGNORECASE,
+        )
+        declared_encoding = (
+            declared.group(1).decode("ascii", errors="ignore")
+            if declared
+            else None
+        )
+        candidates = [declared_encoding, "utf-8", encoding, "gb18030", "big5"]
         for candidate in candidates:
             if not candidate:
                 continue
