@@ -56,11 +56,21 @@ def _load_candidate(path: Path) -> tuple[str, dict[int, str]]:
 def main(argv: list[str] | None = None) -> int:
     args = _parse().parse_args(argv)
     candidate_name, candidate_values = _load_candidate(args.candidate)
-    sites, _, _ = _load_runtime()
-    cache = RecentCacheRepository(args.cache).load(
-        expected_site_count=len(sites.all()),
-        expected_site_names=(site.name for site in sites.all()),
-    )
+    sites, specs, _ = _load_runtime()
+    cache = RecentCacheRepository(args.cache).load_snapshot_for_sites(
+        (
+            {
+                "name": site.name,
+                "url": site.url,
+                "pick": site.direction.value,
+                "second_click": site.second_click,
+            }
+            for site in sites.all()
+        ),
+        expected_parser_versions={
+            spec.site_id: spec.parser_version for spec in specs
+        },
+    ).payload
     existing = {
         site["name"]: site["values"]
         for site in cache["sites"]
@@ -87,7 +97,7 @@ def main(argv: list[str] | None = None) -> int:
         ],
     }
     output = BASE_DIR / "evidence" / "duplicate_check_latest.json"
-    atomic_write_json(output, report, backup=False)
+    atomic_write_json(output, report)
     if not findings:
         print("未发现连续3期以上重复，可进入后续专属验证。")
         return 0

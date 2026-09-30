@@ -1,5 +1,157 @@
 {
   "schema_version": 1,
+  "entry_script_links": [
+    "hw-0003",
+    "hw-0002",
+    "hw-0006",
+    "hw-0007",
+    "hw-0009",
+    "hw-0010",
+    "hw-0012",
+    "hw-0013",
+    "hw-0017",
+    "hw-0027",
+    "hw-0029",
+    "hw-0031",
+    "hw-0032",
+    "hw-0039",
+    "hw-0040",
+    "hw-0043",
+    "hw-0044",
+    "hw-0055",
+    "hw-0058",
+    "hw-0060",
+    "hw-0063",
+    "hw-0066",
+    "hw-0068",
+    "hw-0069",
+    "hw-0074",
+    "hw-0075",
+    "hw-0077",
+    "hw-0081",
+    "hw-0093",
+    "hw-0095",
+    "hw-0096",
+    "hw-0125",
+    "hw-0126",
+    "hw-0127",
+    "hw-0128",
+    "hw-0129",
+    "hw-0132",
+    "hw-0133",
+    "hw-0134",
+    "hw-0136",
+    "hw-0137",
+    "hw-0138",
+    "hw-0139",
+    "hw-0140",
+    "hw-0142",
+    "hw-0143",
+    "hw-0145",
+    "hw-0146",
+    "hw-0148",
+    "hw-0149",
+    "hw-0150",
+    "hw-0151",
+    "hw-0152",
+    "hw-0153",
+    "hw-0155",
+    "hw-0156",
+    "hw-0157",
+    "hw-0158",
+    "hw-0159",
+    "hw-0160",
+    "hw-0161",
+    "hw-0162",
+    "hw-0202",
+    "hw-0203",
+    "hw-0011",
+    "hw-0014",
+    "hw-0015",
+    "hw-0024",
+    "hw-0053",
+    "hw-0056",
+    "hw-0057",
+    "hw-0064",
+    "hw-0065",
+    "hw-0080",
+    "hw-0107",
+    "hw-0001",
+    "hw-0004",
+    "hw-0008",
+    "hw-0016",
+    "hw-0018",
+    "hw-0019",
+    "hw-0020",
+    "hw-0022",
+    "hw-0023",
+    "hw-0026",
+    "hw-0028",
+    "hw-0030",
+    "hw-0033",
+    "hw-0034",
+    "hw-0035",
+    "hw-0036",
+    "hw-0037",
+    "hw-0041",
+    "hw-0042",
+    "hw-0045",
+    "hw-0046",
+    "hw-0047",
+    "hw-0048",
+    "hw-0049",
+    "hw-0050",
+    "hw-0051",
+    "hw-0052",
+    "hw-0054",
+    "hw-0059",
+    "hw-0061",
+    "hw-0062",
+    "hw-0067",
+    "hw-0070",
+    "hw-0071",
+    "hw-0072",
+    "hw-0073",
+    "hw-0076",
+    "hw-0082",
+    "hw-0083",
+    "hw-0084",
+    "hw-0085",
+    "hw-0086",
+    "hw-0087",
+    "hw-0088",
+    "hw-0089",
+    "hw-0090",
+    "hw-0091",
+    "hw-0092",
+    "hw-0094",
+    "hw-0100",
+    "hw-0101",
+    "hw-0102",
+    "hw-0103",
+    "hw-0104",
+    "hw-0105",
+    "hw-0106",
+    "hw-0108",
+    "hw-0109",
+    "hw-0110",
+    "hw-0111",
+    "hw-0112",
+    "hw-0113",
+    "hw-0114",
+    "hw-0115",
+    "hw-0116",
+    "hw-0118",
+    "hw-0119",
+    "hw-0121",
+    "hw-0123",
+    "hw-0135",
+    "hw-0141",
+    "hw-0144",
+    "hw-0147",
+    "hw-0154",
+    "hw-0163"
+  ],
   "specs": [
     {
       "site_id": "hw-0001",
@@ -26,7 +178,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -54,7 +220,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -84,7 +264,21 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -140,7 +334,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -168,7 +376,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -196,7 +418,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -224,7 +460,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -252,7 +502,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -279,7 +543,21 @@
       "topic_id_pattern": null,
       "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -307,7 +585,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -335,7 +627,21 @@
       "parser_version": "2",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -362,13 +668,27 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0015",
-      "parser_id": "hw-0015:title_neighbor:v1",
-      "strategy": "title_neighbor",
+      "parser_id": "hw-0015:decoded_sibling:v3",
+      "strategy": "decoded_sibling",
       "direction": "bottom",
       "anchors": [
         "不再回忆"
@@ -383,13 +703,27 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 20,
+      "after_documents": 21,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "3",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -417,7 +751,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -444,7 +792,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -474,7 +836,21 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -504,7 +880,21 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -562,7 +952,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -589,7 +993,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -640,14 +1058,28 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0027",
-      "parser_id": "hw-0027:anchor_segment:v1",
+      "parser_id": "hw-0027:anchor_segment:v2",
       "strategy": "anchor_segment",
-      "direction": "bottom",
+      "direction": "top",
       "anchors": [
         "马首是瞻"
       ],
@@ -665,10 +1097,24 @@
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
-      "parser_version": "1",
+      "parser_version": "2",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -695,7 +1141,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -723,12 +1183,26 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0030",
-      "parser_id": "hw-0030:nearest_document:v1",
+      "parser_id": "hw-0030:nearest_document:v2",
       "strategy": "nearest_document",
       "direction": "top",
       "anchors": [
@@ -748,12 +1222,27 @@
       "after_documents": 12,
       "target_only": true,
       "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "1",
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "2",
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "verify_ssl": false,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -781,14 +1270,28 @@
       "parser_version": "2",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0032",
-      "parser_id": "hw-0032:title_neighbor:v1",
+      "parser_id": "hw-0032:title_neighbor:v2",
       "strategy": "title_neighbor",
-      "direction": "bottom",
+      "direction": "top",
       "anchors": [
         "频果报论坛",
         "绝杀半波"
@@ -803,9 +1306,23 @@
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
-      "parser_version": "1",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -833,7 +1350,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -861,7 +1392,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -893,7 +1438,21 @@
         ],
         "compact": true,
         "anchor_mode": "all",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -923,7 +1482,21 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -950,7 +1523,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1006,7 +1593,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1034,7 +1635,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1061,7 +1676,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1088,7 +1717,21 @@
       "topic_id_pattern": null,
       "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1116,7 +1759,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1144,7 +1801,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1171,7 +1842,21 @@
       "topic_id_pattern": null,
       "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1201,7 +1886,21 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1228,7 +1927,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1258,7 +1971,21 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1285,7 +2012,21 @@
       "topic_id_pattern": null,
       "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1312,12 +2053,26 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0055",
-      "parser_id": "hw-0055:title_neighbor:v1",
+      "parser_id": "hw-0055:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "top",
       "anchors": [
@@ -1336,17 +2091,31 @@
       "after_documents": 32,
       "target_only": true,
       "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "1",
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0056",
-      "parser_id": "hw-0056:title_neighbor:v1",
+      "parser_id": "hw-0056:title_neighbor:v3",
       "strategy": "title_neighbor",
-      "direction": "bottom",
+      "direction": "top",
       "anchors": [
         "麻醉坑穴"
       ],
@@ -1364,9 +2133,24 @@
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "3",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "include_anchor_document": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1394,7 +2178,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1422,7 +2220,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1450,7 +2262,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1477,12 +2303,26 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0063",
-      "parser_id": "hw-0063:title_neighbor:v1",
+      "parser_id": "hw-0063:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "top",
       "anchors": [
@@ -1501,10 +2341,24 @@
       "after_documents": 8,
       "target_only": true,
       "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "1",
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1532,7 +2386,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1559,7 +2427,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1587,7 +2469,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1615,12 +2511,26 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0068",
-      "parser_id": "hw-0068:title_neighbor:v1",
+      "parser_id": "hw-0068:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "bottom",
       "anchors": [
@@ -1639,10 +2549,24 @@
       "after_documents": 32,
       "target_only": true,
       "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "1",
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1669,7 +2593,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1696,7 +2634,21 @@
       "topic_id_pattern": null,
       "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1723,7 +2675,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1750,7 +2716,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1778,7 +2758,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1806,14 +2800,28 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0076",
-      "parser_id": "hw-0076:nearest_document:v1",
+      "parser_id": "hw-0076:nearest_document:v2",
       "strategy": "nearest_document",
-      "direction": "bottom",
+      "direction": "top",
       "anchors": [
         "各抒己见"
       ],
@@ -1832,17 +2840,31 @@
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "2",
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0077",
-      "parser_id": "hw-0077:title_neighbor:v1",
-      "strategy": "title_neighbor",
+      "parser_id": "hw-0077:article_sibling_segment:v3",
+      "strategy": "article_sibling_segment",
       "direction": "bottom",
       "anchors": [
         "远赴相思"
@@ -1857,13 +2879,32 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 4,
+      "after_documents": 0,
       "target_only": true,
       "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "1",
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "3",
       "options": {
-        "window_size": 3
+        "end_markers": [
+          "上一篇",
+          "下一篇"
+        ],
+        "end_marker_document_span": 2,
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -1926,8 +2967,8 @@
     },
     {
       "site_id": "hw-0080",
-      "parser_id": "hw-0080:title_neighbor:v1",
-      "strategy": "title_neighbor",
+      "parser_id": "hw-0080:article_sibling_segment:v5",
+      "strategy": "article_sibling_segment",
       "direction": "bottom",
       "anchors": [
         "北船余香"
@@ -1942,18 +2983,38 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 10,
+      "after_documents": 0,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "5",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "end_markers": [
+          "上一篇",
+          "下一篇"
+        ],
+        "end_marker_document_span": 2,
+        "end_marker_keep_prefix": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0081",
-      "parser_id": "hw-0081:title_neighbor:v1",
+      "parser_id": "hw-0081:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "top",
       "anchors": [
@@ -1972,10 +3033,24 @@
       "after_documents": 8,
       "target_only": true,
       "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "1",
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2002,7 +3077,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2029,12 +3118,26 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0085",
-      "parser_id": "hw-0085:title_neighbor:v1",
+      "parser_id": "hw-0085:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "top",
       "anchors": [
@@ -2050,18 +3153,32 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 6,
+      "after_documents": 7,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0086",
-      "parser_id": "hw-0086:title_neighbor:v1",
+      "parser_id": "hw-0086:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "top",
       "anchors": [
@@ -2081,9 +3198,24 @@
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "include_anchor_document": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2114,12 +3246,26 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0088",
-      "parser_id": "hw-0088:title_neighbor:v1",
+      "parser_id": "hw-0088:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "bottom",
       "anchors": [
@@ -2135,13 +3281,27 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 2,
+      "after_documents": 3,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2171,13 +3331,27 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0093",
-      "parser_id": "hw-0093:title_neighbor:v1",
-      "strategy": "title_neighbor",
+      "parser_id": "hw-0093:article_sibling_segment:v4",
+      "strategy": "article_sibling_segment",
       "direction": "bottom",
       "anchors": [
         "勇往直前",
@@ -2190,13 +3364,29 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 6,
+      "after_documents": 0,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
-      "parser_version": "1",
+      "parser_version": "4",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "end_markers": ["站长宣言"],
+        "end_marker_keep_prefix": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2223,7 +3413,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2251,7 +3455,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2279,7 +3497,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2327,7 +3559,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2360,7 +3606,21 @@
         ],
         "compact": true,
         "anchor_mode": "all",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2387,7 +3647,21 @@
       "topic_id_pattern": null,
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2415,7 +3689,21 @@
         "compact": true,
         "anchor_mode": "all",
         "skip_keyword_check": true,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2447,7 +3735,21 @@
         "anchor_same_document": true,
         "skip_keyword_check": true,
         "combine_fragments": true,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2478,7 +3780,21 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": true,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2508,7 +3824,21 @@
       "options": {
         "candidate_side": "both",
         "require_target_in_anchor": false,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2538,7 +3868,21 @@
           "{issue}期[^期]{0,160}?(?P<value>[红绿蓝](?:波)?[单双])[^期]{0,40}?(?:开|准|中|错|√|对|发)"
         ],
         "compact": true,
-        "anchor_mode": "any"
+        "anchor_mode": "any",
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2596,7 +3940,21 @@
         "compact": true,
         "anchor_mode": "any",
         "skip_keyword_check": true,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2625,7 +3983,21 @@
           "{issue}期[^期]{0,160}?(?P<value>[红绿蓝](?:波)?[单双])[^期]{0,40}?(?:开|准|中|错|√|对|发)"
         ],
         "compact": true,
-        "anchor_mode": "all"
+        "anchor_mode": "all",
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2652,7 +4024,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2680,7 +4066,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2707,14 +4107,28 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0128",
-      "parser_id": "hw-0128:nearest_document:v1",
-      "strategy": "nearest_document",
-      "direction": "bottom",
+      "parser_id": "hw-0128:article_sibling_segment:v3",
+      "strategy": "article_sibling_segment",
+      "direction": "top",
       "anchors": [
         "心灯照字"
       ],
@@ -2728,16 +4142,33 @@
       ],
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝]\\s*(?:波\\s*)?[单双])",
-      "before_documents": 64,
-      "after_documents": 64,
+      "before_documents": 0,
+      "after_documents": 0,
       "target_only": true,
       "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "1",
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "3",
       "options": {
-        "candidate_side": "both",
-        "require_target_in_anchor": false,
-        "window_size": 3
+        "end_markers": [
+          "上一篇",
+          "下一篇"
+        ],
+        "end_marker_document_span": 2,
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2764,7 +4195,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2851,7 +4296,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2878,7 +4337,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2910,7 +4383,21 @@
         ],
         "compact": true,
         "anchor_mode": "all",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2937,7 +4424,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2965,7 +4466,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -2993,7 +4508,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3021,7 +4550,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3049,12 +4592,26 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0141",
-      "parser_id": "hw-0141:article_sibling_segment:v2",
+      "parser_id": "hw-0141:article_sibling_segment:v5",
       "strategy": "article_sibling_segment",
       "direction": "bottom",
       "anchors": [
@@ -3075,13 +4632,29 @@
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "2",
+      "parser_version": "5",
       "options": {
+        "split_on_issue_reset": true,
         "end_markers": [
           "上一篇",
           "下一篇"
         ],
-        "window_size": 3
+        "end_marker_document_span": 2,
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3109,7 +4682,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3137,7 +4724,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3164,12 +4765,26 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0146",
-      "parser_id": "hw-0146:title_neighbor:v1",
+      "parser_id": "hw-0146:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "top",
       "anchors": [
@@ -3179,21 +4794,36 @@
       "keywords": [
         "杀半波"
       ],
-      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "issue_pattern": "(?P<issue>\\d{3})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
       "after_documents": 2,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
-      "parser_version": "1",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "include_anchor_document": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0148",
-      "parser_id": "hw-0148:title_neighbor:v1",
+      "parser_id": "hw-0148:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "bottom",
       "anchors": [
@@ -3209,13 +4839,27 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 16,
+      "after_documents": 32,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
-      "parser_version": "1",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3242,7 +4886,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3270,12 +4928,26 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0151",
-      "parser_id": "hw-0151:title_neighbor:v1",
+      "parser_id": "hw-0151:title_neighbor:v3",
       "strategy": "title_neighbor",
       "direction": "bottom",
       "anchors": [
@@ -3288,13 +4960,27 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 10,
+      "after_documents": 12,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
-      "parser_version": "1",
+      "parser_version": "3",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3318,7 +5004,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3345,7 +5045,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3373,12 +5087,26 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0155",
-      "parser_id": "hw-0155:title_neighbor:v1",
+      "parser_id": "hw-0155:title_neighbor:v2",
       "strategy": "title_neighbor",
       "direction": "top",
       "anchors": [
@@ -3397,10 +5125,24 @@
       "after_documents": 8,
       "target_only": true,
       "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "1",
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3428,13 +5170,27 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0157",
-      "parser_id": "hw-0157:title_neighbor:v1",
-      "strategy": "title_neighbor",
+      "parser_id": "hw-0157:article_sibling_segment:v2",
+      "strategy": "article_sibling_segment",
       "direction": "bottom",
       "anchors": [
         "斗转星移",
@@ -3447,13 +5203,32 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 14,
+      "after_documents": 0,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
-      "parser_version": "1",
+      "parser_version": "2",
       "options": {
-        "window_size": 3
+        "end_markers": [
+          "上一篇",
+          "下一篇"
+        ],
+        "end_marker_document_span": 2,
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3480,14 +5255,28 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "site_id": "hw-0159",
-      "parser_id": "hw-0159:title_neighbor:v1",
-      "strategy": "title_neighbor",
-      "direction": "bottom",
+      "parser_id": "hw-0159:article_sibling_segment:v4",
+      "strategy": "article_sibling_segment",
+      "direction": "top",
       "anchors": [
         "切中时弊",
         "作者:",
@@ -3500,13 +5289,33 @@
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
-      "after_documents": 36,
+      "after_documents": 0,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
-      "parser_version": "1",
+      "parser_version": "4",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "end_markers": [
+          "推荐",
+          "澳彩"
+        ],
+        "end_marker_document_span": 1,
+        "allow_missing_end_marker": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3533,7 +5342,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3561,7 +5384,21 @@
       "parser_version": "1",
       "options": {
         "max_issues": 13,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3585,7 +5422,21 @@
       "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
       "parser_version": "1",
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3595,10 +5446,10 @@
       "after_documents": 0,
       "target_only": true,
       "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "1",
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "2",
       "site_id": "hw-0003",
-      "parser_id": "hw-0003:regex_line:v1",
+      "parser_id": "hw-0003:regex_line:v2",
       "strategy": "regex_line",
       "direction": "top",
       "anchors": [
@@ -3611,8 +5462,22 @@
         "patterns": [
           "{issue}期[^期]{0,80}稳杀\\(半\\)波[^期]{0,60}(?P<value>[红绿蓝](?:波)?[单双])"
         ],
-        "compact": true,
-        "anchor_mode": "any"
+        "compact": false,
+        "anchor_mode": "any",
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3639,34 +5504,59 @@
           "(?:第)?{issue}期[^期]{0,80}绝杀半波[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
         ],
         "compact": true,
-        "anchor_mode": "any"
+        "anchor_mode": "any",
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
-      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "issue_pattern": "(?P<issue>\\d{3})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
-      "before_documents": 0,
-      "after_documents": 0,
+      "before_documents": 1,
+      "after_documents": 2,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "4",
       "site_id": "hw-0022",
-      "parser_id": "hw-0022:regex_line:v1",
-      "strategy": "regex_line",
+      "parser_id": "hw-0022:title_neighbor:v4",
+      "strategy": "title_neighbor",
       "direction": "top",
       "anchors": [
-        "+++杀"
+        "凌杂米盐"
       ],
       "keywords": [
-        "+++杀"
+        "+++"
       ],
       "options": {
-        "patterns": [
-          "{issue}期[^期]{0,80}\\+\\+\\+杀[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
-        ],
-        "compact": true,
-        "anchor_mode": "any"
+        "window_size": 3,
+        "include_anchor_document": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3694,7 +5584,21 @@
         ],
         "compact": true,
         "anchor_mode": "all",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3723,7 +5627,21 @@
         ],
         "compact": true,
         "anchor_mode": "all",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3750,7 +5668,21 @@
           "{issue}期绝杀半波->[^期]{0,30}(?P<value>[红绿蓝](?:波)?[单双])"
         ],
         "compact": true,
-        "anchor_mode": "any"
+        "anchor_mode": "any",
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3778,20 +5710,34 @@
         ],
         "compact": true,
         "anchor_mode": "all",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "issue_pattern": "(?P<issue>\\d{1,4})期",
-      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "value_pattern": "绝杀半波[^期]{0,24}(?P<value>[红绿蓝]\\s*(?:波\\s*)?[单双])",
       "before_documents": 0,
-      "after_documents": 4,
+      "after_documents": 32,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "4",
       "site_id": "hw-0059",
-      "parser_id": "hw-0059:title_neighbor:v1",
+      "parser_id": "hw-0059:title_neighbor:v4",
       "strategy": "title_neighbor",
       "direction": "bottom",
       "anchors": [
@@ -3805,7 +5751,21 @@
         "必杀半波"
       ],
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3833,7 +5793,21 @@
           "{issue}期[^期]{0,90}杀半波[^期]{0,60}(?P<value>[红绿蓝](?:波)?[单双])"
         ],
         "compact": true,
-        "anchor_mode": "all"
+        "anchor_mode": "all",
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3861,7 +5835,21 @@
         "compact": true,
         "anchor_mode": "all",
         "skip_keyword_check": true,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3888,7 +5876,21 @@
           "{issue}期[^期]{0,80}杀1半波[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
         ],
         "compact": true,
-        "anchor_mode": "any"
+        "anchor_mode": "any",
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3917,7 +5919,21 @@
         ],
         "compact": true,
         "anchor_mode": "all",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3946,7 +5962,21 @@
         ],
         "compact": true,
         "anchor_mode": "all",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -3957,10 +5987,10 @@
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "2",
+      "parser_version": "3",
       "site_id": "hw-0091",
-      "parser_id": "hw-0091:decoded_sibling:v2",
-      "strategy": "decoded_sibling",
+      "parser_id": "hw-0091:combined_sibling:v3",
+      "strategy": "combined_sibling",
       "direction": "top",
       "anchors": [
         "降世魔童",
@@ -3973,10 +6003,24 @@
         "patterns": [
           "(?<!\\d){issue}期[^期红绿蓝]{0,40}(?P<value>[红绿蓝](?:波)?[单双])"
         ],
-        "compact": true,
+        "compact": false,
         "anchor_mode": "all",
         "window_size": 3,
-        "skip_keyword_check": true
+        "skip_keyword_check": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4059,34 +6103,59 @@
         "compact": true,
         "anchor_mode": "all",
         "skip_keyword_check": true,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
-      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "issue_pattern": "(?:发表于[^期]{0,60})?(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
-      "before_documents": 5,
-      "after_documents": 5,
+      "before_documents": 1,
+      "after_documents": 2,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "1",
+      "parser_version": "4",
       "site_id": "hw-0104",
-      "parser_id": "hw-0104:regex_line:v1",
-      "strategy": "regex_line",
+      "parser_id": "hw-0104:title_neighbor:v4",
+      "strategy": "title_neighbor",
       "direction": "top",
       "anchors": [
-        "4头双"
+        "嗜此不疲"
       ],
       "keywords": [
         "杀"
       ],
       "options": {
-        "patterns": [
-          "{issue}期[^期]{0,80}杀[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
-        ],
-        "compact": true,
-        "anchor_mode": "any"
+        "window_size": 3,
+        "include_anchor_document": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4097,20 +6166,34 @@
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "2",
+      "parser_version": "4",
       "site_id": "hw-0106",
-      "parser_id": "hw-0106:decoded_sibling:v2",
+      "parser_id": "hw-0106:decoded_sibling:v4",
       "strategy": "decoded_sibling",
       "direction": "top",
       "anchors": [
-        "4头单"
+        "半波半头"
       ],
       "keywords": [
         "杀"
       ],
       "options": {
         "anchor_mode": "any",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4137,7 +6220,21 @@
         "必杀半波"
       ],
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4150,8 +6247,8 @@
       "topic_id_pattern": null,
       "parser_version": "2",
       "site_id": "hw-0109",
-      "parser_id": "hw-0109:decoded_sibling:v2",
-      "strategy": "decoded_sibling",
+      "parser_id": "hw-0109:combined_sibling:v2",
+      "strategy": "combined_sibling",
       "direction": "top",
       "anchors": [
         "澳门赤兔",
@@ -4167,11 +6264,26 @@
         "compact": true,
         "anchor_mode": "all",
         "window_size": 3,
-        "skip_keyword_check": true
+        "skip_keyword_check": true,
+        "max_response_bytes": 9437184,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
-      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "issue_pattern": "(?P<issue>\\d{1,3})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
       "after_documents": 0,
@@ -4190,26 +6302,39 @@
       "keywords": [
         "禁半波"
       ],
-      "issue_pattern": "(?P<issue>\\d{1,3})期",
       "options": {
         "compact": true,
         "anchor_mode": "all",
         "skip_keyword_check": true,
         "combine_fragments": true,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "issue_pattern": "(?P<issue>\\d{1,4})期",
-      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "value_pattern": "(?P<value>[红绿蓝]\\s*(?:波\\s*)?[单双])",
       "before_documents": 0,
       "after_documents": 1,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "2",
+      "parser_version": "3",
       "site_id": "hw-0112",
-      "parser_id": "hw-0112:decoded_sibling:v2",
+      "parser_id": "hw-0112:decoded_sibling:v3",
       "strategy": "decoded_sibling",
       "direction": "top",
       "anchors": [
@@ -4223,7 +6348,21 @@
         "必杀半波"
       ],
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4253,11 +6392,25 @@
         "compact": true,
         "anchor_mode": "all",
         "window_size": 3,
-        "skip_keyword_check": true
+        "skip_keyword_check": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
-      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "issue_pattern": "(?P<issue>\\d{1,3})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
       "after_documents": 0,
@@ -4276,7 +6429,6 @@
       "keywords": [
         "禁特区"
       ],
-      "issue_pattern": "(?P<issue>\\d{1,3})期",
       "options": {
         "patterns": [
           "(?P<_issue>\\d{1,3})期[^期]{0,100}(?:禁|绝杀)半波[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
@@ -4285,20 +6437,34 @@
         "anchor_mode": "all",
         "skip_keyword_check": true,
         "combine_fragments": true,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
       "issue_pattern": "(?P<issue>\\d{1,4})期",
-      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "value_pattern": "(?P<value>[红绿蓝]\\s*(?:波)?\\s*[单双])",
       "before_documents": 0,
       "after_documents": 0,
       "target_only": true,
       "record_id_pattern": null,
       "topic_id_pattern": null,
-      "parser_version": "3",
+      "parser_version": "4",
       "site_id": "hw-0119",
-      "parser_id": "hw-0119:combined_sibling:v3",
+      "parser_id": "hw-0119:combined_sibling:v4",
       "strategy": "combined_sibling",
       "direction": "top",
       "anchors": [
@@ -4309,12 +6475,26 @@
       ],
       "options": {
         "patterns": [
-          "(?<!\\d){issue}期[^期红绿蓝]{0,40}(?P<value>[红绿蓝](?:波)?[单双])"
+          "(?<!\\d){issue}期[^期红绿蓝]{0,40}(?P<value>[红绿蓝]\\s*(?:波)?\\s*[单双])"
         ],
         "compact": false,
         "anchor_mode": "all",
         "window_size": 3,
-        "skip_keyword_check": true
+        "skip_keyword_check": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4371,7 +6551,21 @@
         ],
         "compact": true,
         "anchor_mode": "all",
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4450,7 +6644,21 @@
         "绝杀半波"
       ],
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4473,7 +6681,21 @@
         "精杀半波"
       ],
       "options": {
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4500,11 +6722,25 @@
           "{issue}期[^期]{0,100}绝杀半波[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
         ],
         "compact": true,
-        "anchor_mode": "all"
+        "anchor_mode": "all",
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
-      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "issue_pattern": "(?P<issue>\\d{1,3})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
       "after_documents": 0,
@@ -4523,13 +6759,26 @@
       "keywords": [
         "杀半波"
       ],
-      "issue_pattern": "(?P<issue>\\d{1,3})期",
       "options": {
         "compact": true,
         "anchor_mode": "all",
         "skip_keyword_check": true,
         "combine_fragments": true,
-        "window_size": 3
+        "window_size": 3,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
       }
     },
     {
@@ -4537,8 +6786,12 @@
       "parser_id": "hw-0164:history_block:v1",
       "strategy": "history_block",
       "direction": "top",
-      "anchors": ["绿树成荫"],
-      "keywords": ["绿树成荫"],
+      "anchors": [
+        "绿树成荫"
+      ],
+      "keywords": [
+        "绿树成荫"
+      ],
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
@@ -4563,8 +6816,12 @@
       "parser_id": "hw-0165:history_block:v1",
       "strategy": "history_block",
       "direction": "top",
-      "anchors": ["熙熙攘攘"],
-      "keywords": ["熙熙攘攘"],
+      "anchors": [
+        "熙熙攘攘"
+      ],
+      "keywords": [
+        "熙熙攘攘"
+      ],
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
@@ -4589,8 +6846,12 @@
       "parser_id": "hw-0166:history_block:v1",
       "strategy": "history_block",
       "direction": "top",
-      "anchors": ["叛逆时代"],
-      "keywords": ["叛逆时代"],
+      "anchors": [
+        "叛逆时代"
+      ],
+      "keywords": [
+        "叛逆时代"
+      ],
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
@@ -4615,8 +6876,12 @@
       "parser_id": "hw-0167:history_block:v1",
       "strategy": "history_block",
       "direction": "top",
-      "anchors": ["六合宝典"],
-      "keywords": ["六合宝典"],
+      "anchors": [
+        "六合宝典"
+      ],
+      "keywords": [
+        "六合宝典"
+      ],
       "issue_pattern": "(?P<issue>\\d{1,4})期",
       "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
       "before_documents": 0,
@@ -4634,6 +6899,1019 @@
           "next_text": "下一页",
           "max_pages": 9
         }
+      }
+    },
+    {
+      "site_id": "hw-0168",
+      "parser_id": "hw-0168:regex_line:v1",
+      "strategy": "regex_line",
+      "direction": "top",
+      "anchors": [
+        "雨夜未眠",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": null,
+      "topic_id_pattern": "/Article/ar_content/id/(?P<topic_id>\\d+)/tid/82\\.html",
+      "parser_version": "1",
+      "options": {
+        "patterns": [
+          "{issue}期[^期]{0,100}雨夜未眠[^期]{0,80}杀半波[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
+        ],
+        "compact": true,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0169",
+      "parser_id": "hw-0169:regex_line:v1",
+      "strategy": "regex_line",
+      "direction": "top",
+      "anchors": [
+        "半生狂客",
+        "暴杀半波"
+      ],
+      "keywords": [
+        "暴杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": null,
+      "topic_id_pattern": "/Article/ar_content/id/(?P<topic_id>\\d+)/tid/82\\.html",
+      "parser_version": "1",
+      "options": {
+        "patterns": [
+          "{issue}期[^期]{0,100}暴杀半波[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
+        ],
+        "compact": true,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0170",
+      "parser_id": "hw-0170:regex_line:v1",
+      "strategy": "regex_line",
+      "direction": "top",
+      "anchors": [
+        "西公",
+        "必杀半波"
+      ],
+      "keywords": [
+        "必杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": null,
+      "topic_id_pattern": "/Article/ar_content/id/(?P<topic_id>\\d+)/tid/82\\.html",
+      "parser_version": "1",
+      "options": {
+        "patterns": [
+          "{issue}期[^期]{0,100}必杀半波[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
+        ],
+        "compact": true,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0171",
+      "parser_id": "hw-0171:regex_line:v1",
+      "strategy": "regex_line",
+      "direction": "top",
+      "anchors": [
+        "管家婆",
+        "白姐杀半波不开"
+      ],
+      "keywords": [
+        "白姐杀半波不开"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": null,
+      "topic_id_pattern": "/Article/ar_content/id/(?P<topic_id>\\d+)/tid/5\\.html",
+      "parser_version": "1",
+      "options": {
+        "patterns": [
+          "{issue}期[^期]{0,100}白姐杀半波不开[^期]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
+        ],
+        "compact": true,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0172",
+      "parser_id": "hw-0172:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "白姐最准",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>219)/tid/3\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0173",
+      "parser_id": "hw-0173:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "金多宝信息網",
+        "絕殺半波"
+      ],
+      "keywords": [
+        "絕殺半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>155)/tid/7\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0174",
+      "parser_id": "hw-0174:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "赛玛荟独家",
+        "杀"
+      ],
+      "keywords": [
+        "杀"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>144)/tid/8\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0175",
+      "parser_id": "hw-0175:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "曾女士",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>310)/tid/20\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0176",
+      "parser_id": "hw-0176:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "彩坛至尊",
+        "杀"
+      ],
+      "keywords": [
+        "杀"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>436)/tid/29\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0177",
+      "parser_id": "hw-0177:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "天顺",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>515)/tid/34\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0178",
+      "parser_id": "hw-0178:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "凤凰马经",
+        "杀"
+      ],
+      "keywords": [
+        "杀"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>552)/tid/36\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0179",
+      "parser_id": "hw-0179:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "劫后重生",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>697)/tid/47\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0180",
+      "parser_id": "hw-0180:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "特玛禁半波",
+        "禁半波"
+      ],
+      "keywords": [
+        "禁半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>813)/tid/58\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0181",
+      "parser_id": "hw-0181:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "至尊",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>862)/tid/64\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0182",
+      "parser_id": "hw-0182:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "飞天雪地至尊",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>1608)/tid/83\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0183",
+      "parser_id": "hw-0183:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "独波大侠灵感",
+        "必杀半波"
+      ],
+      "keywords": [
+        "必杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>1605)/tid/83\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0184",
+      "parser_id": "hw-0184:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "落幕韵峰实力",
+        "精杀半波"
+      ],
+      "keywords": [
+        "精杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>1602)/tid/83\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0185",
+      "parser_id": "hw-0185:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "鬼谷子必中",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>165)/tid/6\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0186",
+      "parser_id": "hw-0186:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "澳门彩票",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>128)/tid/9\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0187",
+      "parser_id": "hw-0187:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "澳门賽馬會原创",
+        "杀"
+      ],
+      "keywords": [
+        "杀"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>264)/tid/17\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0188",
+      "parser_id": "hw-0188:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "百大姐信息中心",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>328)/tid/21\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0189",
+      "parser_id": "hw-0189:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "⑥合赌圣",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>401)/tid/26\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0190",
+      "parser_id": "hw-0190:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "任我發最高心水",
+        "绝杀"
+      ],
+      "keywords": [
+        "绝杀"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>413)/tid/27\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0191",
+      "parser_id": "hw-0191:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "广东十虎",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>449)/tid/30\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0192",
+      "parser_id": "hw-0192:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "博发世家",
+        "杀"
+      ],
+      "keywords": [
+        "杀"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>498)/tid/33\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0193",
+      "parser_id": "hw-0193:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "赛玛会",
+        "杀"
+      ],
+      "keywords": [
+        "杀"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>594)/tid/39\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0194",
+      "parser_id": "hw-0194:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "金明世家",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>599)/tid/40\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0195",
+      "parser_id": "hw-0195:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "澳门好彩",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>658)/tid/44\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0196",
+      "parser_id": "hw-0196:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "葡京赌侠",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>779)/tid/55\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0197",
+      "parser_id": "hw-0197:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "鹰枪灭庄至尊",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>1607)/tid/83\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0198",
+      "parser_id": "hw-0198:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "小火柴★至尊",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>1606)/tid/83\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0199",
+      "parser_id": "hw-0199:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "大亭轩→总结",
+        "杀半波"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>1604)/tid/83\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0200",
+      "parser_id": "hw-0200:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "巴扎嘿",
+        "专杀半波"
+      ],
+      "keywords": [
+        "专杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>1603)/tid/83\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0201",
+      "parser_id": "hw-0201:history_block:v1",
+      "strategy": "history_block",
+      "direction": "top",
+      "anchors": [
+        "蓝月亮",
+        "最强精准杀半个波"
+      ],
+      "keywords": [
+        "最强精准杀半个波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": "/Article/ar_content/id/(?P<record_id>472)/tid/31\\.html",
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_segment_chars": 500,
+        "anchor_mode": "all"
+      }
+    },
+    {
+      "site_id": "hw-0202",
+      "parser_id": "hw-0202:combined_sibling:v1",
+      "strategy": "combined_sibling",
+      "direction": "top",
+      "anchors": [
+        "虚室生白",
+        "综合绝杀"
+      ],
+      "keywords": [
+        "杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": null,
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "1",
+      "options": {
+        "patterns": [
+          "(?<!\\d){issue}期[^期红绿蓝]{0,80}(?P<value>[红绿蓝](?:波)?[单双])"
+        ],
+        "compact": false,
+        "anchor_mode": "all",
+        "window_size": 3,
+        "skip_keyword_check": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
+      }
+    },
+    {
+      "site_id": "hw-0203",
+      "parser_id": "hw-0203:combined_sibling:v1",
+      "strategy": "combined_sibling",
+      "direction": "top",
+      "anchors": [
+        "赛博菩萨",
+        "绝杀料",
+        "绝杀半波"
+      ],
+      "keywords": [
+        "绝杀半波"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?\\s*[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": null,
+      "topic_id_pattern": "/topic/(?P<topic_id>\\d+)\\.html",
+      "parser_version": "1",
+      "options": {
+        "patterns": [
+          "(?<!\\d){issue}期[^期红绿蓝]{0,80}(?P<value>[红绿蓝](?:波)?\\s*[单双])"
+        ],
+        "compact": false,
+        "anchor_mode": "all",
+        "window_size": 3,
+        "skip_keyword_check": true,
+        "allowed_external_hosts": [
+          "xia01.cosds.ahsccn.com",
+          "xia02.cosds.ahsccn.com",
+          "xia03.cosds.ahsccn.com",
+          "xia04.cosds.ahsccn.com",
+          "xia05.cosds.ahsccn.com",
+          "xia06.cosds.ahsccn.com",
+          "xia01.cosds.aohjifv.com",
+          "xia02.cosds.aohjifv.com",
+          "xia03.cosds.aohjifv.com",
+          "xia04.cosds.aohjifv.com",
+          "xia05.cosds.aohjifv.com",
+          "xia06.cosds.aohjifv.com"
+        ]
+      }
+    },
+    {
+      "site_id": "hw-0204",
+      "parser_id": "hw-0204:anchor_segment:v1",
+      "strategy": "anchor_segment",
+      "direction": "bottom",
+      "anchors": [
+        "码友书阳"
+      ],
+      "keywords": [
+        "杀"
+      ],
+      "issue_pattern": "(?P<issue>\\d{1,4})期",
+      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
+      "before_documents": 0,
+      "after_documents": 0,
+      "target_only": true,
+      "record_id_pattern": null,
+      "topic_id_pattern": null,
+      "parser_version": "1",
+      "options": {
+        "window_size": 3,
+        "max_issues": 40,
+        "max_chars": 1200,
+        "allowed_external_hosts": [],
+        "additional_requests": [
+          {
+            "source": "script",
+            "url": "/bbs/byg.js"
+          }
+        ]
       }
     },
     {

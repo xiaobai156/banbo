@@ -28,6 +28,9 @@ def audit_record(run: SiteRun, *, run_id: str) -> dict[str, object]:
         "document_source": evidence.document_source.value if evidence else None,
         "source_url": evidence.source_url if evidence else None,
         "article_id": evidence.record_id if evidence else None,
+        "linked_article_id": (
+            evidence.linked_record_id if evidence else None
+        ),
         "block_id": evidence.block_id if evidence else None,
         "block_start": evidence.block_start if evidence else None,
         "block_end": evidence.block_end if evidence else None,

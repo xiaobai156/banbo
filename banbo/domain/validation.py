@@ -105,6 +105,7 @@ def validate_evidence(
         "declared_neighbor_window",
         "declared_nearest_document",
         "declared_split_document",
+        "declared_entry_script",
     }
     if any(item.document_relation not in allowed_relations for item in target_evidence):
         return _failure(
@@ -118,6 +119,7 @@ def validate_evidence(
     if any(
         item.expected_record_id is not None
         and item.record_id != item.expected_record_id
+        and item.linked_record_id != item.expected_record_id
         for item in target_evidence
     ):
         return _failure(

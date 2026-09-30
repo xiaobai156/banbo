@@ -125,6 +125,7 @@ class HttpClient:
         headers: dict[str, str] | None = None,
         cache=None,
         per_host_limit: int = 2,
+        insecure_hosts: tuple[str, ...] = (),
     ) -> None:
         self._transport = transport or RequestsTransport()
         self._timeout = timeout
@@ -137,6 +138,7 @@ class HttpClient:
 
         self._cache = cache or RequestCache()
         self._per_host_limit = max(1, per_host_limit)
+        self._insecure_hosts = {host.casefold() for host in insecure_hosts}
         self._host_limiters: dict[str, BoundedSemaphore] = {}
         self._host_limiters_lock = Lock()
 
@@ -175,7 +177,11 @@ class HttpClient:
                     raw = self._transport.request(
                         url,
                         timeout=self._timeout,
-                        verify_ssl=self._verify_ssl,
+                        verify_ssl=(
+                            self._verify_ssl
+                            and (urlparse(url).hostname or "").casefold()
+                            not in self._insecure_hosts
+                        ),
                         headers=self._headers,
                     )
                     self._validate_response(url, raw, required_origin)

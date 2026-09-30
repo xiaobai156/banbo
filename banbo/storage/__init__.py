@@ -8,14 +8,12 @@ from .atomic_files import (
     read_text_snapshot,
     render_json,
 )
-from .audit_store import AuditLogRepository
 from .recent_cache import CacheSnapshot, CacheValidationError, RecentCacheRepository
 from .site_repository import SiteRecord, SiteRepository
 
 __all__ = [
     "CacheValidationError",
     "CacheSnapshot",
-    "AuditLogRepository",
     "RecentCacheRepository",
     "SiteRecord",
     "SiteRepository",

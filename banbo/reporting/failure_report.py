@@ -41,15 +41,26 @@ def failure_site_names(text: str, period: int) -> tuple[str, ...]:
 def remove_successful_failures(text: str, period: int, successful_names: set[str]) -> str:
     if not successful_names:
         return text
-    kept: list[str] = []
-    for block in re.split(r"\r?\n\s*\r?\n", text):
-        first = block.splitlines()[0].strip() if block.splitlines() else ""
-        match = _FAILURE_SITE.match(first)
-        if match and int(match.group("period")) == period and match.group("name") in successful_names:
-            continue
-        if block.strip():
-            kept.append(block.strip("\r\n"))
-    return "\n\n".join(kept) + ("\n" if kept else "")
+    records: list[list[str]] = []
+    prefix: list[str] = []
+    current: list[str] | None = None
+    for line in text.splitlines():
+        if _FAILURE_SITE.match(line.strip()):
+            if current is not None:
+                records.append(current)
+            current = [line]
+        elif current is None:
+            prefix.append(line)
+        else:
+            current.append(line)
+    if current is not None:
+        records.append(current)
+    kept = prefix[:]
+    for record in records:
+        match = _FAILURE_SITE.match(record[0].strip())
+        if not match or int(match.group("period")) != period or match.group("name") not in successful_names:
+            kept.extend(record)
+    return "\n".join(kept).rstrip("\r\n") + ("\n" if kept else "")
 
 
 def _failure_reason(failure: FailureResult) -> str:

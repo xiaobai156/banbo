@@ -4,6 +4,11 @@
   "required": ["schema_version", "specs"],
   "properties": {
     "schema_version": {"const": 1},
+    "entry_script_links": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
     "specs": {
       "type": "array",
       "items": {

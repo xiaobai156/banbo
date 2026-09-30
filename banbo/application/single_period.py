@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import time
-from dataclasses import dataclass
+from collections.abc import Callable, Mapping, Sequence
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Callable, Mapping, Sequence
+from contextlib import nullcontext
+from dataclasses import dataclass
+from functools import partial
 
 from banbo.domain import (
     Document,
+    DocumentSource,
     FailureCode,
     FailureResult,
     SiteSpec,
@@ -17,6 +20,7 @@ from banbo.fetch import (
     ArticleListSpec,
     DiscoveryOptions,
     DocumentDiscoverer,
+    DocumentRequest,
     DynamicSourceError,
     DynamicSourceSpec,
     FetchError,
@@ -48,14 +52,56 @@ def default_document_provider(
     site: SiteRecord,
     parser_spec: ParserSpec,
     target_issue: int,
+    *,
+    _client: HttpClient | None = None,
 ) -> FetchedDocuments:
+    external_hosts = tuple(
+            str(host).strip()
+            for host in parser_spec.options.get(
+                "allowed_external_hosts",
+                tuple(
+                    f"xia0{index}.cosds.ahsccn.com" for index in range(1, 7)
+                ),
+            )
+            if str(host).strip()
+        )
     options = DiscoveryOptions(
-        allowed_external_hosts=tuple(
-            f"xia0{index}.cosds.ahsccn.com" for index in range(1, 7)
-        ),
+        allowed_external_hosts=external_hosts,
         script_path_markers=("/upload/script/", "/template/tags/", "/tags/"),
+        link_external_scripts_to_entry=(
+            parser_spec.link_external_scripts_to_entry
+        ),
+        additional_requests=tuple(
+            DocumentRequest(
+                source=DocumentSource(str(item["source"]).strip().lower()),
+                url=str(item["url"]).strip(),
+            )
+            for item in parser_spec.options.get("additional_requests", ())
+        ),
     )
-    with HttpClient(timeout=20, retries=2) as client:
+    response_limit = parser_spec.options.get("max_response_bytes")
+    verify_ssl = bool(parser_spec.options.get("verify_ssl", True))
+    client_context = (
+        nullcontext(_client)
+        if (
+            _client is not None
+            and response_limit is None
+            and verify_ssl
+            and not parser_spec.options.get("allowed_external_hosts")
+        )
+        else HttpClient(
+            timeout=20,
+            retries=2,
+            verify_ssl=verify_ssl,
+            insecure_hosts=external_hosts,
+            **(
+                {}
+                if response_limit is None
+                else {"max_response_bytes": int(response_limit)}
+            ),
+        )
+    )
+    with client_context as client:
         source_options = parser_spec.options.get("source")
         if isinstance(source_options, Mapping):
             source_kind = str(source_options.get("kind", "")).strip()
@@ -108,12 +154,17 @@ def default_document_provider(
                 expected_record_id=dynamic_document.record_id,
                 request_url=site.url,
             )
+        record_id_pattern = (
+            parser_spec.record_id_pattern or parser_spec.topic_id_pattern
+        )
         documents = DocumentDiscoverer(client).discover(
             site.url,
             options=options,
+            record_id_pattern=record_id_pattern,
         )
         return FetchedDocuments(
             documents=documents,
+            expected_record_id=(documents[0].record_id if documents else None),
             request_url=site.url,
         )
 
@@ -161,6 +212,14 @@ class SinglePeriodRunner:
         self._document_provider = document_provider
 
     def run_site(self, site_id: str, target_issue: int) -> SiteRun:
+        return self._run_site(site_id, target_issue, self._document_provider)
+
+    def _run_site(
+        self,
+        site_id: str,
+        target_issue: int,
+        document_provider: DocumentProvider,
+    ) -> SiteRun:
         site = self._sites.get(site_id)
         started = time.perf_counter()
         parser_spec = self._specs.get(site_id)
@@ -173,7 +232,7 @@ class SinglePeriodRunner:
             )
             return SiteRun(site, outcome, elapsed_ms=self._elapsed(started))
         try:
-            fetched = self._document_provider(site, parser_spec, target_issue)
+            fetched = document_provider(site, parser_spec, target_issue)
             site_spec = build_site_spec(
                 site,
                 parser_spec,
@@ -245,7 +304,11 @@ class SinglePeriodRunner:
         selected = list(
             site_ids
             if site_ids is not None
-            else [site.site_id for site in self._sites.all()]
+            else [
+                site.site_id
+                for site in self._sites.all()
+                if not site.archived
+            ]
         )
         if not selected:
             return []
@@ -259,13 +322,38 @@ class SinglePeriodRunner:
             raise ValueError(
                 "未知站点：" + ",".join(str(site_id) for site_id in unknown_site_ids)
             )
+        archived_site_ids = [
+            site_id for site_id in selected if self._sites.get(site_id).archived
+        ]
+        if archived_site_ids:
+            raise ValueError(
+                "站点已封存，不再抓取：" + ",".join(archived_site_ids)
+            )
         results: dict[str, SiteRun] = {}
         started = time.perf_counter()
         completed = 0
         succeeded = 0
-        with ThreadPoolExecutor(max_workers=max(1, max_workers)) as executor:
+        use_shared_client = self._document_provider is default_document_provider
+        client_context = (
+            HttpClient(timeout=20, retries=2)
+            if use_shared_client
+            else nullcontext()
+        )
+        with client_context as shared_client, ThreadPoolExecutor(
+            max_workers=max(1, max_workers)
+        ) as executor:
+            provider = (
+                partial(default_document_provider, _client=shared_client)
+                if use_shared_client
+                else self._document_provider
+            )
             futures = {
-                executor.submit(self.run_site, site_id, target_issue): site_id
+                executor.submit(
+                    self._run_site,
+                    site_id,
+                    target_issue,
+                    provider,
+                ): site_id
                 for site_id in selected
             }
             for future in as_completed(futures):

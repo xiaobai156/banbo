@@ -10,6 +10,7 @@ _Value = TypeVar("_Value")
 class RequestCache(Generic[_Value]):
     def __init__(self) -> None:
         self._values: dict[Hashable, _Value] = {}
+        self._errors: dict[Hashable, BaseException] = {}
         self._inflight: dict[Hashable, Event] = {}
         self._lock = Lock()
 
@@ -22,6 +23,8 @@ class RequestCache(Generic[_Value]):
             with self._lock:
                 if key in self._values:
                     return self._values[key]
+                if key in self._errors:
+                    raise self._errors[key]
                 event = self._inflight.get(key)
                 if event is None:
                     event = Event()
@@ -35,8 +38,9 @@ class RequestCache(Generic[_Value]):
 
         try:
             value = factory()
-        except BaseException:
+        except BaseException as exc:
             with self._lock:
+                self._errors[key] = exc
                 self._inflight.pop(key, None)
                 event.set()
             raise
@@ -50,3 +54,4 @@ class RequestCache(Generic[_Value]):
     def clear(self) -> None:
         with self._lock:
             self._values.clear()
+            self._errors.clear()

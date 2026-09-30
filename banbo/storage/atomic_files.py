@@ -117,13 +117,11 @@ def atomic_write_text(
     path: str | Path,
     content: str,
     *,
-    backup: bool = True,
     lock_timeout: float = 10.0,
     expected_digest: str | None | object = _UNSET,
 ) -> None:
     commit_files(
         {Path(path): content},
-        backup_paths={Path(path)} if backup else set(),
         lock_timeout=lock_timeout,
         expected_digests=(
             {Path(path): expected_digest}
@@ -140,7 +138,6 @@ def render_json(payload: object) -> str:
 def commit_files(
     operations: Mapping[str | Path, str | None],
     *,
-    backup_paths: set[str | Path] | None = None,
     expected_digests: Mapping[str | Path, str | None] | None = None,
     lock_timeout: float = 10.0,
     replace_func: Callable[[str | Path, str | Path], None] = os.replace,
@@ -149,7 +146,6 @@ def commit_files(
     if not normalized:
         return
     targets = sorted(normalized, key=lambda path: str(path).casefold())
-    backup_targets = {Path(path) for path in (backup_paths or set())}
     expected = {
         Path(path): digest for path, digest in (expected_digests or {}).items()
     }
@@ -196,10 +192,6 @@ def commit_files(
                         os.fsync(handle.fileno())
                     temporary_files[target] = temporary
 
-            for target in backup_targets & set(targets):
-                if target.exists():
-                    shutil.copy2(target, target.with_suffix(target.suffix + ".bak"))
-
             for target in targets:
                 content = normalized[target]
                 if content is None:
@@ -236,14 +228,12 @@ def atomic_write_json(
     path: str | Path,
     payload: object,
     *,
-    backup: bool = True,
     lock_timeout: float = 10.0,
     expected_digest: str | None | object = _UNSET,
 ) -> None:
     atomic_write_text(
         path,
         render_json(payload),
-        backup=backup,
         lock_timeout=lock_timeout,
         expected_digest=expected_digest,
     )

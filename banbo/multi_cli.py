@@ -51,6 +51,7 @@ def main(argv: list[str] | None = None) -> int:
         runner,
         periods,
         site_ids=args.site_ids,
+        max_workers=args.max_workers,
     )
     run_id = uuid4().hex
     runs_by_period: dict[int, list] = {period: [] for period in periods}

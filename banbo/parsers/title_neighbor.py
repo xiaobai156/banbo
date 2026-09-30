@@ -5,6 +5,7 @@ from typing import Sequence
 
 from banbo.domain.models import Document, ParseEvidence, SiteSpec
 from banbo.domain.normalization import normalize_text
+from banbo.domain import documents_share_record
 
 from .history_block import HistoryBlockParser
 from .protocol import ParserSpec
@@ -47,6 +48,9 @@ class TitleNeighborParser:
             if site.direction.value == "bottom"
             else anchor_indexes[:3]
         )
+        include_anchor_document = bool(
+            self._spec.options.get("include_anchor_document", False)
+        )
         scoped: dict[str, Document] = {}
         anchors_by_document: dict[str, list[Document]] = {}
         before = max(0, self._spec.before_documents)
@@ -56,7 +60,10 @@ class TitleNeighborParser:
             start = max(0, anchor_index - before)
             stop = min(len(documents), anchor_index + after + 1)
             for document in documents[start:stop]:
-                if document.document_id == anchor_document.document_id:
+                if (
+                    document.document_id == anchor_document.document_id
+                    and not include_anchor_document
+                ):
                     continue
                 scoped[document.document_id] = document
                 anchors_by_document.setdefault(
@@ -119,11 +126,8 @@ class TitleNeighborParser:
         anchor: Document,
         site: SiteSpec,
     ) -> bool:
-        if site.expected_record_id is not None:
-            return (
-                candidate.record_id == site.expected_record_id
-                and anchor.record_id == site.expected_record_id
-            )
-        if candidate.record_id is None and anchor.record_id is None:
-            return True
-        return candidate.record_id == anchor.record_id
+        return documents_share_record(
+            candidate,
+            anchor,
+            site.expected_record_id,
+        )

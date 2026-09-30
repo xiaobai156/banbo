@@ -10,7 +10,7 @@ from banbo.storage.atomic_files import commit_files
 
 
 _SUCCESS_ROW = re.compile(r"^(?P<value>红单|红双|绿单|绿双|蓝单|蓝双)[ \t]+(?P<name>.+?)\s*$")
-_RANKING_HEADER = re.compile(r"(?m)^\d+期排行[ \t]*\r?$")
+_RANKING_HEADER = re.compile(r"(?m)^(?P<period>\d+)期排行[ \t]*\r?$")
 
 
 def append_repair_successes(existing: str, runs: list[SiteRun]) -> str:
@@ -21,7 +21,9 @@ def append_repair_successes(existing: str, runs: list[SiteRun]) -> str:
         return existing
     period = successful[0].outcome.target_issue
 
-    header = re.search(r"(?m)^(?:\d+期排行|内容[ \t]+次数[ \t]+排名)[ \t]*\r?$", existing)
+    header = re.search(r"(?m)^(?:(?P<period>\d+)期排行|内容[ \t]+次数[ \t]+排名)[ \t]*\r?$", existing)
+    if header and header.group("period") and int(header.group("period")) != period:
+        raise ValueError(f"成功TXT期号与目标期不一致：{header.group('period')} != {period}")
     body = existing[:header.start()] if header else existing
     values_by_name: dict[str, set[str]] = {}
     for line in body.splitlines():
@@ -48,8 +50,10 @@ def append_repair_successes(existing: str, runs: list[SiteRun]) -> str:
 
     if not additions:
         return existing
+    body = body.rstrip("\r\n") + "\n" + "\n".join(additions) + "\n"
     rows = [(next(iter(values)), name) for name, values in values_by_name.items()]
-    return _render_rows(period, rows)
+    ranking = _render_rows(period, rows).split("\n\n", 1)[1]
+    return body + "\n" + ranking
 
 
 def _render_rows(period: int, rows: list[tuple[str, str]]) -> str:

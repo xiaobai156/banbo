@@ -10,9 +10,10 @@ from banbo.domain.models import (
     SiteSpec,
 )
 from banbo.domain.normalization import normalize_half_wave, normalize_text
+from banbo.domain import document_matches_record
 
 from .protocol import ParserSpec
-from .boundary import select_directional_window
+from .boundary import document_group_key, select_directional_windows
 from .text import html_to_text
 
 
@@ -122,19 +123,23 @@ class HistoryBlockParser:
                     )
 
         candidates.sort(key=lambda item: item.order)
-        boundary, boundary_issues = select_directional_window(
+        boundaries = select_directional_windows(
             candidates,
             issue_of=lambda candidate: candidate.issue,
+            group_of=lambda candidate: document_group_key(candidate.document),
             direction=site.direction,
         )
         target_candidates = [
-            candidate for candidate in boundary if candidate.issue == target_issue
+            (candidate, boundary_issues)
+            for boundary, boundary_issues in boundaries
+            for candidate in boundary
+            if candidate.issue == target_issue
         ]
         if not target_candidates:
             return ()
 
         conflict_values = tuple(
-            sorted({candidate.value for candidate in target_candidates})
+            sorted({candidate.value for candidate, _ in target_candidates})
         )
         return tuple(
             ParseEvidence(
@@ -151,8 +156,10 @@ class HistoryBlockParser:
                 anchor_passed=True,
                 keyword_passed=True,
                 same_record=(
-                    site.expected_record_id is None
-                    or candidate.document.record_id == site.expected_record_id
+                    document_matches_record(
+                        candidate.document,
+                        site.expected_record_id,
+                    )
                 ),
                 record_id=candidate.document.record_id,
                 expected_record_id=site.expected_record_id,
@@ -163,5 +170,5 @@ class HistoryBlockParser:
                 conflict_values=conflict_values,
                 boundary_issues=boundary_issues,
             )
-            for candidate in target_candidates
+            for candidate, boundary_issues in target_candidates
         )

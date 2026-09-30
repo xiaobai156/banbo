@@ -9,6 +9,7 @@ from banbo.domain.models import (
     ParseEvidence,
     SiteSpec,
 )
+from banbo.domain import document_matches_record
 
 from .history_block import HistoryBlockParser
 from .protocol import ParserSpec
@@ -36,7 +37,10 @@ class DynamicApiParser:
                 DocumentSource.API,
                 DocumentSource.BROWSER,
             }
-            and document.record_id == site.expected_record_id
+            and document_matches_record(
+                document,
+                site.expected_record_id,
+            )
         )
         if not scoped:
             return ()

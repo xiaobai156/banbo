@@ -52,6 +52,8 @@ class Document:
     content: str
     record_id: str | None = None
     fetched_at: str = ""
+    linked_record_id: str | None = None
+    record_relation: str = "direct"
 
 
 @dataclass(frozen=True)
@@ -70,6 +72,7 @@ class ParseEvidence:
     keyword_passed: bool
     same_record: bool
     record_id: str | None = None
+    linked_record_id: str | None = None
     expected_record_id: str | None = None
     anchors: tuple[str, ...] = ()
     keywords: tuple[str, ...] = ()

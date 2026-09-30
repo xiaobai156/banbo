@@ -11,12 +11,15 @@ from .models import (
     ValidatedResult,
     ValidationOutcome,
 )
+from .record_identity import document_matches_record, documents_share_record
 from .validation import validate_evidence
 
 __all__ = [
     "Direction",
     "Document",
     "DocumentSource",
+    "document_matches_record",
+    "documents_share_record",
     "FailureCode",
     "FailureResult",
     "ParseEvidence",

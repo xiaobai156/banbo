@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 import re
+from html import escape
 from collections import defaultdict
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Sequence
 
 from banbo.domain.models import Document, ParseEvidence, SiteSpec
 from banbo.domain.normalization import normalize_half_wave, normalize_text
+from banbo.domain import document_matches_record
 
 from .boundary import select_directional_window
 from .protocol import ParserSpec
@@ -51,23 +53,28 @@ class ArticleSiblingSegmentParser:
 
         candidates = self._collect_candidates(site, article)
         candidates.sort(key=lambda item: item.order)
-        boundary, boundary_issues = select_directional_window(
-            candidates,
-            issue_of=lambda candidate: candidate.issue,
-            direction=site.direction,
-            window_size=int(self._spec.options.get("window_size", 3)),
-        )
-        target_candidates = tuple(
-            candidate
-            for candidate in boundary
-            if candidate.issue == target_issue
-        )
+        target_candidates: list[tuple[_Candidate, tuple[int, ...]]] = []
+        for candidate_block in self._candidate_blocks(candidates):
+            boundary, boundary_issues = select_directional_window(
+                candidate_block,
+                issue_of=lambda item: item.issue,
+                direction=site.direction,
+                window_size=int(self._spec.options.get("window_size", 3)),
+            )
+            target_candidates.extend(
+                (candidate, boundary_issues)
+                for candidate in boundary
+                if candidate.issue == target_issue
+            )
+        target_candidates = tuple(target_candidates)
         if not target_candidates:
             return ()
 
         anchors = self._spec.anchors or site.anchors
         conflict_values = tuple(
-            sorted({candidate.value for candidate in target_candidates})
+            sorted(
+                {candidate.value for candidate, _ in target_candidates}
+            )
         )
         return tuple(
             ParseEvidence(
@@ -84,10 +91,13 @@ class ArticleSiblingSegmentParser:
                 anchor_passed=True,
                 keyword_passed=True,
                 same_record=(
-                    site.expected_record_id is None
-                    or candidate.document.record_id == site.expected_record_id
+                    document_matches_record(
+                        candidate.document,
+                        site.expected_record_id,
+                    )
                 ),
                 record_id=candidate.document.record_id,
+                linked_record_id=candidate.document.linked_record_id,
                 expected_record_id=site.expected_record_id,
                 anchors=anchors,
                 keywords=candidate.keywords,
@@ -95,10 +105,36 @@ class ArticleSiblingSegmentParser:
                 candidate_count=len(target_candidates),
                 conflict_values=conflict_values,
                 boundary_issues=boundary_issues,
-                document_relation="declared_neighbor_window",
+                parser_id=self._spec.parser_id,
+                source_url=candidate.document.source_url,
+                block_id=f"article:{self._parent_source(candidate.document)}",
+                block_start=article[0].order,
+                block_end=article[-1].order,
+                document_relation=(
+                    "declared_entry_script"
+                    if candidate.document.record_relation
+                    == "declared_entry_script"
+                    else "declared_neighbor_window"
+                ),
             )
-            for candidate in target_candidates
+            for candidate, boundary_issues in target_candidates
         )
+
+    def _candidate_blocks(
+        self,
+        candidates: Sequence[_Candidate],
+    ) -> tuple[tuple[_Candidate, ...], ...]:
+        if not self._spec.options.get("split_on_issue_reset", False):
+            return (tuple(candidates),) if candidates else ()
+
+        blocks: list[list[_Candidate]] = [[]]
+        previous_issue: int | None = None
+        for candidate in candidates:
+            if previous_issue is not None and candidate.issue < previous_issue:
+                blocks.append([])
+            blocks[-1].append(candidate)
+            previous_issue = candidate.issue
+        return tuple(tuple(block) for block in blocks if block)
 
     def _find_article(
         self,
@@ -115,6 +151,13 @@ class ArticleSiblingSegmentParser:
             self._spec.options.get("anchor_mode", site.anchor_mode)
         ).casefold()
         end_markers = tuple(self._spec.options.get("end_markers", ()))
+        end_marker_document_span = max(
+            1,
+            int(self._spec.options.get("end_marker_document_span", 1)),
+        )
+        allow_missing_end_marker = bool(
+            self._spec.options.get("allow_missing_end_marker", False)
+        )
         matches: list[tuple[Document, ...]] = []
 
         for siblings in groups.values():
@@ -139,18 +182,36 @@ class ArticleSiblingSegmentParser:
                 continue
 
             start = min(start_indexes)
-            end = next(
-                (
-                    index
-                    for index in range(start + 1, len(ordered))
-                    if self._contains_all_markers(
-                        ordered[index], end_markers
-                    )
-                ),
-                None,
-            )
+            end = None
+            for index in range(start + 1, len(ordered)):
+                marker_offset = self._marker_boundary_offset(
+                    ordered[index:index + end_marker_document_span],
+                    end_markers,
+                )
+                if marker_offset is not None:
+                    end = index + marker_offset
+                    break
+            if end is None and allow_missing_end_marker:
+                # 站点把当前期数据放在同源脚本最后一组片段里时，结束标记可能整体
+                # 消失；此时只允许把归属同一脚本组的片段作为文章尾部边界。
+                end = len(ordered)
             if end is not None:
-                matches.append(ordered[start:end])
+                article = ordered[start:end]
+                if (
+                    end < len(ordered)
+                    and self._spec.options.get("end_marker_keep_prefix", False)
+                ):
+                    # The last row and the footer can share one script fragment.
+                    # Keep only text before the footer, never its following data.
+                    text = html_to_text(ordered[end].content)
+                    offsets = [text.find(str(marker)) for marker in end_markers]
+                    offsets = [offset for offset in offsets if offset >= 0]
+                    if not offsets:
+                        continue
+                    prefix = text[:min(offsets)]
+                    if prefix.strip():
+                        article += (replace(ordered[end], content=escape(prefix)),)
+                matches.append(article)
 
         return matches[0] if len(matches) == 1 else None
 
@@ -234,14 +295,29 @@ class ArticleSiblingSegmentParser:
         return candidates
 
     @staticmethod
-    def _contains_all_markers(
-        document: Document,
+    def _marker_boundary_offset(
+        documents: Sequence[Document],
         markers: tuple[object, ...],
-    ) -> bool:
+    ) -> int | None:
         if not markers:
-            return False
-        text = normalize_text(html_to_text(document.content))
-        return all(normalize_text(str(marker)) in text for marker in markers)
+            return None
+        normalized_markers = tuple(
+            normalize_text(str(marker)) for marker in markers
+        )
+        texts = tuple(
+            normalize_text(html_to_text(document.content))
+            for document in documents
+        )
+        if not all(
+            any(marker in text for text in texts)
+            for marker in normalized_markers
+        ):
+            return None
+        return next(
+            index
+            for index, text in enumerate(texts)
+            if any(marker in text for marker in normalized_markers)
+        )
 
     @staticmethod
     def _parent_source(document: Document) -> str:

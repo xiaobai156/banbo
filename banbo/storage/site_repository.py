@@ -17,6 +17,8 @@ class SiteRecord:
     direction: Direction
     second_click: bool = False
     shared_url_group: str | None = None
+    archived: bool = False
+    archived_reason: str | None = None
 
 
 class SiteRepository:
@@ -48,6 +50,12 @@ class SiteRepository:
                         None
                         if item.get("shared_url_group") is None
                         else str(item["shared_url_group"]).strip() or None
+                    ),
+                    archived=bool(item.get("archived", False)),
+                    archived_reason=(
+                        None
+                        if item.get("archived_reason") is None
+                        else str(item["archived_reason"]).strip() or None
                     ),
                 )
             )

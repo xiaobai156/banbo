@@ -34,6 +34,20 @@ def parse_parser_specs(payload: object) -> tuple[ParserSpec, ...]:
     raw_specs = payload.get("specs")
     if not isinstance(raw_specs, list):
         raise ParserSpecError("parser_specs.specs 必须是数组")
+    raw_entry_script_links = payload.get("entry_script_links", [])
+    if not isinstance(raw_entry_script_links, list):
+        raise ParserSpecError("parser_specs.entry_script_links 必须是数组")
+    entry_script_links = tuple(
+        str(site_id).strip() for site_id in raw_entry_script_links
+    )
+    if any(not site_id for site_id in entry_script_links):
+        raise ParserSpecError(
+            "parser_specs.entry_script_links 不能包含空值"
+        )
+    if len(entry_script_links) != len(set(entry_script_links)):
+        raise ParserSpecError(
+            "parser_specs.entry_script_links 不能包含重复站点"
+        )
 
     specs: list[ParserSpec] = []
     seen_site_ids: set[str] = set()
@@ -111,6 +125,45 @@ def parse_parser_specs(payload: object) -> tuple[ParserSpec, ...]:
             raise ParserSpecError(
                 f"specs[{index}].options.window_size 必须固定为3"
             )
+        max_response_bytes = options.get("max_response_bytes")
+        if (
+            max_response_bytes is not None
+            and (
+                not isinstance(max_response_bytes, int)
+                or isinstance(max_response_bytes, bool)
+                or max_response_bytes <= 0
+            )
+        ):
+            raise ParserSpecError(
+                f"specs[{index}].options.max_response_bytes 必须是正整数"
+            )
+        additional_requests = options.get("additional_requests")
+        if additional_requests is not None:
+            if (
+                not isinstance(additional_requests, list)
+                or not additional_requests
+            ):
+                raise ParserSpecError(
+                    f"specs[{index}].options.additional_requests 必须是非空数组"
+                )
+            for position, entry in enumerate(additional_requests):
+                if not isinstance(entry, dict):
+                    raise ParserSpecError(
+                        f"specs[{index}].options.additional_requests[{position}]"
+                        " 必须是对象"
+                    )
+                source = str(entry.get("source", "")).strip().lower()
+                url = str(entry.get("url", "")).strip()
+                if source not in {"script", "iframe", "api"}:
+                    raise ParserSpecError(
+                        f"specs[{index}].options.additional_requests[{position}]"
+                        ".source 必须是script、iframe或api"
+                    )
+                if not url:
+                    raise ParserSpecError(
+                        f"specs[{index}].options.additional_requests[{position}]"
+                        ".url 不能为空"
+                    )
         if strategy == "article_sibling_segment":
             end_markers = options.get("end_markers")
             if (
@@ -205,6 +258,17 @@ def parse_parser_specs(payload: object) -> tuple[ParserSpec, ...]:
                     else str(item["topic_id_pattern"])
                 ),
                 options=dict(options),
+                link_external_scripts_to_entry=(
+                    site_id in entry_script_links
+                ),
             )
+        )
+    unknown_entry_links = sorted(
+        set(entry_script_links) - seen_site_ids
+    )
+    if unknown_entry_links:
+        raise ParserSpecError(
+            "entry_script_links包含未知站点："
+            + ",".join(unknown_entry_links)
         )
     return tuple(specs)

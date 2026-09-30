@@ -23,6 +23,7 @@ class ParserSpec:
     record_id_pattern: str | None = None
     topic_id_pattern: str | None = None
     options: Mapping[str, object] = field(default_factory=dict)
+    link_external_scripts_to_entry: bool = False
 
 
 class SiteParser(Protocol):

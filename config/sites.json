@@ -187,7 +187,7 @@
       "site_id": "hw-0027",
       "name": "马首是瞻",
       "url": "https://aq14f.2gdkh-2qrjm-hxaxji.xyz/topic/192044.html",
-      "direction": "bottom",
+      "direction": "top",
       "second_click": false
     },
     {
@@ -222,7 +222,7 @@
       "site_id": "hw-0032",
       "name": "可想而知",
       "url": "https://kulipur.l5paz-a0o8v-uozmmd.xyz:16677/topic/435511.html",
-      "direction": "bottom",
+      "direction": "top",
       "second_click": false
     },
     {
@@ -390,7 +390,7 @@
       "site_id": "hw-0056",
       "name": "麻醉坑穴",
       "url": "https://e7rzi6.vkzoy-tj5wf-umxqmx.work/topic/617732.html",
-      "direction": "bottom",
+      "direction": "top",
       "second_click": false
     },
     {
@@ -530,7 +530,7 @@
       "site_id": "hw-0076",
       "name": "各抒己见",
       "url": "https://dtnjpph.1p0w8-q5dks-oxbahg.xyz:16677/topic/450455.html",
-      "direction": "bottom",
+      "direction": "top",
       "second_click": false
     },
     {
@@ -594,7 +594,9 @@
       "name": "神机",
       "url": "https://wxaxdfc.523mo-z7mla-owjdon.xyz:16677/",
       "direction": "top",
-      "second_click": false
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：258期网站未出值，不再抓取"
     },
     {
       "site_id": "hw-0086",
@@ -676,7 +678,7 @@
     {
       "site_id": "hw-0097",
       "name": "天机老人",
-      "url": "https://mm.737799b.com:1888/art_gsb/8161",
+      "url": "https://mm.737799b.com:1888/art_gsb/8161/",
       "direction": "top",
       "second_click": false
     },
@@ -894,7 +896,7 @@
       "site_id": "hw-0128",
       "name": "心灯照字",
       "url": "https://yqjfwqsc.1dayz-aetgp-kbjidr.xyz:16677/topic/682025.html",
-      "direction": "bottom",
+      "direction": "top",
       "second_click": false
     },
     {
@@ -1111,7 +1113,7 @@
       "site_id": "hw-0159",
       "name": "切中时弊",
       "url": "https://ryfbdty.p4a53-f1hew-diwcrg.xyz:16677/topic/224165.html",
-      "direction": "bottom",
+      "direction": "top",
       "second_click": false
     },
     {
@@ -1175,9 +1177,268 @@
       "shared_url_group": "a-ttss-vip-list-79"
     },
     {
+      "site_id": "hw-0168",
+      "name": "雨夜未眠",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1542/tid/82.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0169",
+      "name": "半生狂客",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1520/tid/82.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0170",
+      "name": "西公",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1489/tid/82.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0171",
+      "name": "管家婆",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/176/tid/5.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0172",
+      "name": "白姐最准",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/219/tid/3.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0173",
+      "name": "金多宝信息网",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/155/tid/7.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0174",
+      "name": "赛玛荟独家",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/144/tid/8.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0175",
+      "name": "曾女士",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/310/tid/20.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0176",
+      "name": "彩坛至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/436/tid/29.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0177",
+      "name": "天顺",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/515/tid/34.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0178",
+      "name": "凤凰马经",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/552/tid/36.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0179",
+      "name": "劫后重生",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/697/tid/47.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0180",
+      "name": "特玛禁半波",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/813/tid/58.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0181",
+      "name": "至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/862/tid/64.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0182",
+      "name": "飞天雪地至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1608/tid/83.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0183",
+      "name": "独波大侠灵感",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1605/tid/83.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0184",
+      "name": "落幕韵力量峰",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1602/tid/83.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0185",
+      "name": "鬼谷子必中",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/165/tid/6.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0186",
+      "name": "澳门彩票",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/128/tid/9.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0187",
+      "name": "澳门赛马会原创",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/264/tid/17.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0188",
+      "name": "百大姐信息中心",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/328/tid/21.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0189",
+      "name": "⑥合赌圣",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/401/tid/26.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0190",
+      "name": "任我發最高心水",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/413/tid/27.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0191",
+      "name": "广东十虎",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/449/tid/30.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0192",
+      "name": "博发世家",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/498/tid/33.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0193",
+      "name": "赛玛会",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/594/tid/39.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0194",
+      "name": "金明世家",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/599/tid/40.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0195",
+      "name": "澳门好彩",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/658/tid/44.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0196",
+      "name": "葡京赌侠",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/779/tid/55.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0197",
+      "name": "鹰枪灭庄至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1607/tid/83.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0198",
+      "name": "小火柴★至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1606/tid/83.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0199",
+      "name": "大亭轩→总结",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1604/tid/83.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0200",
+      "name": "巴扎嘿",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1603/tid/83.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0201",
+      "name": "蓝月亮最强精准",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/472/tid/31.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0202",
+      "name": "虚室生白",
+      "url": "https://rjqiolk.fpr58-a6ldz-okyczd.work:17477/topic/682104.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0203",
+      "name": "赛博菩萨",
+      "url": "https://jtrmhar.cwdc3-r5vqn-qzqasa.work:17455/topic/741188.html",
+      "direction": "top",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0204",
+      "name": "码友书阳",
+      "url": "https://62139c.com/",
+      "direction": "bottom",
+      "second_click": false
+    },
+    {
       "site_id": "hw-0205",
       "name": "天地空间",
-      "url": "https://www.www144344.com/read.php?tid=1903",
+      "url": "http://38.177.253.132:31882/read.php?tid=1903",
       "direction": "bottom",
       "second_click": false
     }

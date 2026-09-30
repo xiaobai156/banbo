@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import Sequence
 
 from banbo.domain import FailureCode, FailureResult
 
@@ -48,10 +48,15 @@ def run_periods(
     periods: Sequence[int],
     *,
     site_ids: Sequence[str] | None = None,
+    max_workers: int = 8,
 ) -> tuple[MultiPeriodSiteResult, ...]:
     by_site: dict[str, list[SiteRun]] = {}
     for period in periods:
-        for run in runner.run_many(period, site_ids=site_ids):
+        for run in runner.run_many(
+            period,
+            site_ids=site_ids,
+            max_workers=max_workers,
+        ):
             by_site.setdefault(run.site.site_id, []).append(run)
     return tuple(
         MultiPeriodSiteResult(site_id, tuple(runs))

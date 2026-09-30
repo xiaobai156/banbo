@@ -21,6 +21,7 @@ class DiscoveryOptions:
     render_browser: bool = False
     allowed_external_hosts: tuple[str, ...] = ()
     script_path_markers: tuple[str, ...] = ()
+    link_external_scripts_to_entry: bool = False
 
 
 @dataclass(frozen=True)
@@ -138,6 +139,8 @@ class DocumentDiscoverer:
             source_url: str,
             content: str,
             record_id: str | None = None,
+            linked_record_id: str | None = None,
+            record_relation: str = "direct",
         ) -> None:
             fingerprint = hashlib.sha256(
                 content.encode("utf-8", errors="replace")
@@ -153,6 +156,8 @@ class DocumentDiscoverer:
                     order=len(documents),
                     content=content,
                     record_id=record_id,
+                    linked_record_id=linked_record_id,
+                    record_relation=record_relation,
                 )
             )
 
@@ -161,8 +166,17 @@ class DocumentDiscoverer:
             source_url: str,
             content: str,
             record_id: str | None = None,
+            linked_record_id: str | None = None,
+            record_relation: str = "direct",
         ) -> None:
-            append_document(source, source_url, content, record_id)
+            append_document(
+                source,
+                source_url,
+                content,
+                record_id,
+                linked_record_id,
+                record_relation,
+            )
             for index, decoded in enumerate(
                 decode_embedded_text(content),
                 start=1,
@@ -172,6 +186,8 @@ class DocumentDiscoverer:
                     f"{source_url}#decoded-{index}",
                     decoded,
                     record_id,
+                    linked_record_id,
+                    record_relation,
                 )
 
         append_with_decoded(
@@ -190,6 +206,7 @@ class DocumentDiscoverer:
                 continue
             if reference.source == DocumentSource.IFRAME and not options.fetch_iframes:
                 continue
+            linked_external_script = False
             if reference.inline:
                 inline_index += 1
                 source_url = f"{page.final_url}#inline-script-{inline_index}"
@@ -202,6 +219,11 @@ class DocumentDiscoverer:
                 }
                 source_host = (urlparse(source_url).hostname or "").casefold()
                 allowed_external = source_host in allowed_hosts
+                linked_external_script = (
+                    reference.source == DocumentSource.SCRIPT
+                    and not same_origin
+                    and allowed_external
+                )
                 if not options.allow_cross_origin and not (
                     same_origin or allowed_external
                 ):
@@ -229,10 +251,26 @@ class DocumentDiscoverer:
                 reference.source,
                 source_url,
                 content,
+                None
+                if record_id_pattern is None
+                else extract_record_id(source_url, record_id_pattern),
                 (
-                    None
-                    if record_id_pattern is None
-                    else extract_record_id(source_url, record_id_pattern)
+                    entry_record_id
+                    if (
+                        options.link_external_scripts_to_entry
+                        and linked_external_script
+                        and entry_record_id is not None
+                    )
+                    else None
+                ),
+                (
+                    "declared_entry_script"
+                    if (
+                        options.link_external_scripts_to_entry
+                        and linked_external_script
+                        and entry_record_id is not None
+                    )
+                    else "direct"
                 ),
             )
 

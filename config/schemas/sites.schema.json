@@ -14,7 +14,10 @@
           "name": {"type": "string", "minLength": 1},
           "url": {"type": "string", "format": "uri"},
           "direction": {"enum": ["top", "bottom"]},
-          "second_click": {"type": "boolean"}
+          "second_click": {"type": "boolean"},
+          "shared_url_group": {"type": ["string", "null"]},
+          "archived": {"type": "boolean"},
+          "archived_reason": {"type": ["string", "null"]}
         },
         "additionalProperties": false
       }

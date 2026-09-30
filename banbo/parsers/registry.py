@@ -89,6 +89,9 @@ class ParserRegistry:
                 )
             block_start = max(0, item.source_offset)
             block_end = block_start + len(item.snippet)
+            document_relation = item.document_relation
+            if document.record_relation != "direct":
+                document_relation = document.record_relation
             enriched.append(
                 replace(
                     item,
@@ -99,6 +102,8 @@ class ParserRegistry:
                     block_id=f"{document.document_id}:{block_start}:{block_end}",
                     block_start=block_start,
                     block_end=block_end,
+                    document_relation=document_relation,
+                    linked_record_id=document.linked_record_id,
                 )
             )
         return tuple(enriched)
@@ -108,14 +113,12 @@ def build_default_registry() -> ParserRegistry:
     from .anchor_segment import AnchorSegmentParser
     from .article_sibling_segment import ArticleSiblingSegmentParser
     from .combined_sibling import CombinedSiblingParser
-    from .dynamic_api import DynamicApiParser
     from .decoded_sibling import DecodedSiblingParser
+    from .dynamic_api import DynamicApiParser
     from .history_block import HistoryBlockParser
     from .nearest_document import NearestDocumentParser
-    from .scoped_line import ScopedLineParser
     from .regex_line import RegexLineParser
-    from .split_document import SplitDocumentParser
-    from .table import TableParser
+    from .scoped_line import ScopedLineParser
     from .title_neighbor import TitleNeighborParser
 
     registry = ParserRegistry()
@@ -129,8 +132,6 @@ def build_default_registry() -> ParserRegistry:
     registry.register_strategy("scoped_line", ScopedLineParser)
     registry.register_strategy("regex_line", RegexLineParser)
     registry.register_strategy("title_neighbor", TitleNeighborParser)
-    registry.register_strategy("split_document", SplitDocumentParser)
-    registry.register_strategy("table", TableParser)
     registry.register_strategy("dynamic_api", DynamicApiParser)
     registry.register_strategy("decoded_sibling", DecodedSiblingParser)
     return registry

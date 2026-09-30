@@ -8,9 +8,10 @@ from typing import Sequence
 
 from banbo.domain.models import Document, ParseEvidence, SiteSpec
 from banbo.domain.normalization import normalize_half_wave
+from banbo.domain import document_matches_record
 
 from .protocol import ParserSpec
-from .boundary import select_directional_window
+from .boundary import document_group_key, select_directional_windows
 from .text import html_to_text
 
 
@@ -98,17 +99,23 @@ class RegexLineParser:
         candidates.sort(key=lambda item: (item.document.order, item.offset))
         if not candidates:
             return ()
-        boundary, boundary_issues = select_directional_window(
+        boundaries = select_directional_windows(
             candidates,
             issue_of=lambda candidate: candidate.issue,
+            group_of=lambda candidate: document_group_key(candidate.document),
             direction=site.direction,
         )
         target_candidates = tuple(
-            candidate for candidate in boundary if candidate.issue == target_issue
+            (candidate, boundary_issues)
+            for boundary, boundary_issues in boundaries
+            for candidate in boundary
+            if candidate.issue == target_issue
         )
         if not target_candidates:
             return ()
-        conflict_values = tuple(sorted({item.value for item in target_candidates}))
+        conflict_values = tuple(
+            sorted({item.value for item, _ in target_candidates})
+        )
         return tuple(
             ParseEvidence(
                 site_id=site.site_id,
@@ -124,8 +131,10 @@ class RegexLineParser:
                 anchor_passed=True,
                 keyword_passed=item.keyword_passed,
                 same_record=(
-                    site.expected_record_id is None
-                    or item.document.record_id == site.expected_record_id
+                    document_matches_record(
+                        item.document,
+                        site.expected_record_id,
+                    )
                 ),
                 record_id=item.document.record_id,
                 expected_record_id=site.expected_record_id,
@@ -136,7 +145,7 @@ class RegexLineParser:
                 conflict_values=conflict_values,
                 boundary_issues=boundary_issues,
             )
-            for item in target_candidates
+            for item, boundary_issues in target_candidates
         )
 
     @staticmethod

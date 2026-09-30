@@ -7,6 +7,7 @@ from dataclasses import replace
 from typing import Sequence
 
 from banbo.domain.models import Document, ParseEvidence, SiteSpec
+from banbo.domain import documents_share_record
 from .history_block import HistoryBlockParser
 from .protocol import ParserSpec
 from .regex_line import RegexLineParser
@@ -277,14 +278,11 @@ class CombinedSiblingParser:
         anchor: Document,
         site: SiteSpec,
     ) -> bool:
-        if site.expected_record_id is not None:
-            return (
-                candidate.record_id == site.expected_record_id
-                and anchor.record_id == site.expected_record_id
-            )
-        if candidate.record_id is None and anchor.record_id is None:
-            return True
-        return candidate.record_id == anchor.record_id
+        return documents_share_record(
+            candidate,
+            anchor,
+            site.expected_record_id,
+        )
 
     @staticmethod
     def _parent_source(document: Document) -> str:

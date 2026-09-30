@@ -82,6 +82,8 @@ class AnchorSegmentParser:
                     order=document.order * 1000 + segment_index,
                     content=content,
                     record_id=document.record_id,
+                    linked_record_id=document.linked_record_id,
+                    record_relation=document.record_relation,
                     fetched_at=document.fetched_at,
                 )
                 synthetic_documents.append(synthetic)
