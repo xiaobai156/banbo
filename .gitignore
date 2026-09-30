@@ -1,0 +1,15 @@
+# 机器运行产物：不入库（历史上 Initial commit 误入，已在 chore 提交中移出索引）
+__pycache__/
+*.py[cod]
+*.cover
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+
+# AGENTS 禁止生成的备份文件
+*.bak
+
+# 诊断临时日志（evidence/ 下的只读诊断脚本仍可入库，日志不入库）
+evidence/*.log
