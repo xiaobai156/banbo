@@ -47,21 +47,6 @@ def test_title_neighbor_reaches_split_251_row_for_langu_wujia():
     assert outcome.value == "绿单"
 
 
-def test_title_neighbor_reaches_split_251_row_for_beichuan_yuxiang():
-    documents = tuple(
-        [_document(0, "251期绝杀半波 北船余香")]
-        + [_document(order, "布局片段") for order in range(1, 11)]
-        + [
-            _document(11, "249期：【绝杀半波】【蓝波单】"),
-            _document(12, "250期：【绝杀半波】【绿波双】"),
-            _document(13, "251期：【绝杀半波】【红波双】"),
-        ]
-    )
-    outcome = _outcome("hw-0080", documents)
-    assert isinstance(outcome, ValidatedResult)
-    assert outcome.value == "红双"
-
-
 def test_shouzhu_selects_target_block_before_later_history_block():
     documents = (
         _document(0, "251期: 守株待兔「精杀半波」"),

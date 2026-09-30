@@ -116,7 +116,6 @@
     "hw-0082",
     "hw-0083",
     "hw-0084",
-    "hw-0085",
     "hw-0086",
     "hw-0087",
     "hw-0088",
@@ -3117,47 +3116,6 @@
       "record_id_pattern": null,
       "topic_id_pattern": null,
       "parser_version": "1",
-      "options": {
-        "window_size": 3,
-        "allowed_external_hosts": [
-          "xia01.cosds.ahsccn.com",
-          "xia02.cosds.ahsccn.com",
-          "xia03.cosds.ahsccn.com",
-          "xia04.cosds.ahsccn.com",
-          "xia05.cosds.ahsccn.com",
-          "xia06.cosds.ahsccn.com",
-          "xia01.cosds.aohjifv.com",
-          "xia02.cosds.aohjifv.com",
-          "xia03.cosds.aohjifv.com",
-          "xia04.cosds.aohjifv.com",
-          "xia05.cosds.aohjifv.com",
-          "xia06.cosds.aohjifv.com"
-        ]
-      }
-    },
-    {
-      "site_id": "hw-0085",
-      "parser_id": "hw-0085:title_neighbor:v2",
-      "strategy": "title_neighbor",
-      "direction": "top",
-      "anchors": [
-        "神机图-组合20码"
-      ],
-      "keywords": [
-        "绝杀半波",
-        "杀半波",
-        "稳杀半波",
-        "精杀半波",
-        "必杀半波"
-      ],
-      "issue_pattern": "(?P<issue>\\d{1,4})期",
-      "value_pattern": "(?P<value>[红绿蓝](?:波)?[单双])",
-      "before_documents": 0,
-      "after_documents": 7,
-      "target_only": true,
-      "record_id_pattern": null,
-      "topic_id_pattern": null,
-      "parser_version": "2",
       "options": {
         "window_size": 3,
         "allowed_external_hosts": [
