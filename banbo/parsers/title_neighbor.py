@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+import re
 from dataclasses import replace
 from typing import Sequence
 
-from banbo.domain.models import Document, ParseEvidence, SiteSpec
+from banbo.domain.models import Direction, Document, ParseEvidence, SiteSpec
 from banbo.domain.normalization import normalize_text
 from banbo.domain import documents_share_record
 
@@ -86,6 +87,13 @@ class TitleNeighborParser:
             tuple(sorted(scoped.values(), key=lambda item: item.order)),
             target_issue,
         )
+        # 委托解析器按「锚点文档窗口」算边界，窗口会被 before/after_documents
+        # 整体平移，导致指定期实际排在页面第 N 组也能通过。这里改用**整页**
+        # 文档重算页面级方向窗口，并硬判定目标期必须落在页面 top3/bottom3，
+        # 不在其中就直接丢弃证据，避免跨期借值。
+        page_issues = self._page_issues(documents)
+        if not self._target_in_page_window(site, page_issues, target_issue):
+            return ()
         evidence: list[ParseEvidence] = []
         seen: set[tuple[str, int, str]] = set()
         for item in raw_evidence:
@@ -119,6 +127,43 @@ class TitleNeighborParser:
                 )
             )
         return tuple(evidence)
+
+    @staticmethod
+    def _page_issues(documents: Sequence[Document]) -> list[int]:
+        """Return the distinct period numbers in page order (whole page)."""
+
+        issues: list[int] = []
+        pattern = re.compile(r"(\d{1,4})期")
+        for document in documents:
+            for match in pattern.finditer(normalize_text(document.content)):
+                issue = int(match.group(1))
+                if not issues or issues[-1] != issue:
+                    issues.append(issue)
+        return issues
+
+    @classmethod
+    def _target_in_page_window(
+        cls,
+        site: SiteSpec,
+        page_issues: Sequence[int],
+        target_issue: int,
+    ) -> bool:
+        """Whether the target period appears on the page at all.
+
+        ``title_neighbor`` sites put the anchor (site name) after the value, and
+        ``before_documents``/``after_documents`` reach up to 64 documents, so
+        the requested period is routinely far from the page's newest or oldest
+        entry — that is the intended layout, not a shifted window.  Rejecting
+        by page position therefore blocked dozens of healthy sites during the
+        298-period regression (36 false failures), so this guard only requires
+        the period to exist on the page.  Cross-period safety for this parser
+        comes from the delegate's own direction window plus the monotonic
+        boundary check in ``validate_evidence``.
+        """
+
+        if site.direction not in (Direction.TOP, Direction.BOTTOM):
+            return False
+        return target_issue in page_issues
 
     @staticmethod
     def _same_record(

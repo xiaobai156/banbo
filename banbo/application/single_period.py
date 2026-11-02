@@ -18,6 +18,7 @@ from banbo.domain import (
 from banbo.fetch import (
     ArticleListResolutionError,
     ArticleListSpec,
+    BrowserClient,
     DiscoveryOptions,
     DocumentDiscoverer,
     DocumentRequest,
@@ -68,6 +69,10 @@ def default_document_provider(
     options = DiscoveryOptions(
         allowed_external_hosts=external_hosts,
         script_path_markers=("/upload/script/", "/template/tags/", "/tags/"),
+        # 站点配置里显式开启 render_browser 时，用浏览器渲染后再解析：
+        # 有些站点的当期数据是 JS 动态插入的（何仙姑 300 期、四舅黄宾虹黄），
+        # HTTP 只抓脚本拿不到，必须渲染。
+        render_browser=bool(parser_spec.options.get("render_browser", False)),
         link_external_scripts_to_entry=(
             parser_spec.link_external_scripts_to_entry
         ),
@@ -121,7 +126,14 @@ def default_document_provider(
                     parser_spec.record_id_pattern
                     or parser_spec.topic_id_pattern
                 )
-                documents = DocumentDiscoverer(client).discover(
+                documents = DocumentDiscoverer(
+                    client,
+                    browser_client=(
+                        BrowserClient(verify_ssl=verify_ssl)
+                        if options.render_browser
+                        else None
+                    ),
+                ).discover(
                     resolved.article_url,
                     options=options,
                     record_id_pattern=record_pattern,
@@ -157,7 +169,15 @@ def default_document_provider(
         record_id_pattern = (
             parser_spec.record_id_pattern or parser_spec.topic_id_pattern
         )
-        documents = DocumentDiscoverer(client).discover(
+        discoverer = DocumentDiscoverer(
+            client,
+            browser_client=(
+                BrowserClient(verify_ssl=verify_ssl)
+                if options.render_browser
+                else None
+            ),
+        )
+        documents = discoverer.discover(
             site.url,
             options=options,
             record_id_pattern=record_id_pattern,

@@ -342,14 +342,27 @@ class RecentCacheRepository:
             if isinstance(failures, dict):
                 failures.pop(issue_key, None)
             if isinstance(result, ValidatedResult):
+                existing_value = rows_by_name[name]["values"].get(issue_key)
+                if (
+                    existing_value is not None
+                    and existing_value != result.value
+                ):
+                    raise CacheValidationError(
+                        f"缓存同期已有不同结果，拒绝覆盖：{name}."
+                        f"{issue_key} {existing_value} -> {result.value}"
+                    )
                 rows_by_name[name]["values"][issue_key] = result.value
                 parser_versions[result.site_id] = result.parser_version
             else:
-                rows_by_name[name]["values"].pop(issue_key, None)
-                rows_by_name[name].setdefault("failures", {})[issue_key] = {
-                    "code": result.code.value,
-                    "reason": result.message,
-                }
+                # 失败不得抹掉同期已有的成功值：一次网络抖动不应该把已经
+                # 定稿的数据删掉（原来 pop 会让 298 的成功值消失）。缓存
+                # 不变量禁止同一期既有成功又有失败，所以已有成功值时直接
+                # 保留成功值、不写失败记录；没有成功值时才记录失败。
+                if rows_by_name[name]["values"].get(issue_key) is None:
+                    rows_by_name[name].setdefault("failures", {})[issue_key] = {
+                        "code": result.code.value,
+                        "reason": result.message,
+                    }
         if not seen:
             raise CacheValidationError("没有可写入的成功结果")
         updated["updated_at"] = datetime.now(timezone.utc).isoformat()

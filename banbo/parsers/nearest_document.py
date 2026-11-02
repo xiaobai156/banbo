@@ -60,9 +60,7 @@ class NearestDocumentParser:
         )
 
         delegate_options = dict(self._spec.options)
-        delegate_options.update(
-            {"skip_document_anchor": True, "target_only_scope": True}
-        )
+        delegate_options.update({"skip_document_anchor": True})
         delegate = HistoryBlockParser(
             replace(
                 self._spec,
@@ -70,6 +68,17 @@ class NearestDocumentParser:
                 options=delegate_options,
             )
         )
+        # 先显式算出页面级方向窗口，再把它下传给每个候选文档。窗口只算一次，
+        # 不再为取窗口而重复解析整页，也不会因为目标期没命中而整份消失。
+        # page_window_strict 默认开：窗口外的候选直接丢弃，禁止退回单文档的
+        # 退化边界（否则页面第 10 组的旧期也能通过校验）。关闭它等于放弃这道
+        # 护栏，只应给「每个文档就是一份独立表」的站点用。
+        page_window_strict = bool(
+            self._spec.options.get("page_window_strict", True)
+        )
+        page_window = delegate.page_window_issues(site, tuple(documents))
+        if not page_window:
+            return ()
         collected: list[tuple[int, int, ParseEvidence, Document]] = []
         for anchor_index in anchor_indexes:
             anchor_document = documents[anchor_index]
@@ -86,25 +95,37 @@ class NearestDocumentParser:
                 document = documents[document_index]
                 evidence = delegate.parse(site, (document,), target_issue)
                 for item in evidence:
+                    # 页面级窗口必须覆盖该候选。窗口外的目标期说明它不在页面
+                    # top/bottom 前 N 组里，属于旧期，直接丢弃。关闭开关时保留
+                    # 候选自身边界，等价于退回旧行为。
+                    if page_window_strict and item.target_issue not in page_window:
+                        continue
+                    boundary = (
+                        page_window if page_window_strict else item.boundary_issues
+                    )
                     collected.append(
                         (
                             abs(document_index - anchor_index),
                             anchor_index,
-                            item,
+                            replace(item, boundary_issues=boundary),
                             anchor_document,
                         )
                     )
         if not collected:
             return ()
 
-        nearest_distance = min(item[0] for item in collected)
-        nearest = [item for item in collected if item[0] == nearest_distance]
+        # 同期冲突必须上抛给统一校验裁决：把同一目标期的全部候选交给校验层，
+        # 由它按 SAME_PERIOD_CONFLICT 判失败。委托的 history_block 只返回目标期
+        # 证据，所以这里就是全部候选，旧实现里「最近距离」的兜底分支不可达。
+        pool = [
+            item for item in collected if item[2].target_issue == target_issue
+        ]
         conflict_values = tuple(
-            sorted({item[2].value for item in nearest})
+            sorted({item[2].value for item in pool})
         )
         evidence: list[ParseEvidence] = []
         seen: set[tuple[str, int, str]] = set()
-        for _, _, item, anchor_document in nearest:
+        for _, _, item, anchor_document in pool:
             key = (item.document_id, item.source_offset, item.value)
             if key in seen:
                 continue
@@ -132,7 +153,7 @@ class NearestDocumentParser:
                         else "declared_nearest_document"
                     ),
                     anchors=anchors,
-                    candidate_count=len(nearest),
+                    candidate_count=len(pool),
                     conflict_values=conflict_values,
                 )
             )

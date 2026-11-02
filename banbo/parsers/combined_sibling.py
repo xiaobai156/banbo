@@ -100,6 +100,8 @@ class CombinedSiblingParser:
                 combined_offset = self._to_combined_offset(
                     item.source_offset, delegate_offsets
                 )
+                if combined_offset is None:
+                    continue
                 mapped = self._map_offset(combined_offset, ranges)
                 if mapped is None:
                     continue
@@ -207,39 +209,72 @@ class CombinedSiblingParser:
         combined: str,
         compact: bool,
     ) -> tuple[str, tuple[int, ...]]:
-        """Remove fragment markers between text tokens, retain numeric guards."""
+        """Keep fragment markers except where a history row legitimately spans them.
+
+        Markers used to be stripped between any two text tokens so that
+        ``马`` + ``蓝单`` read as one history row.  That also erased the boundary
+        between a period and the next fragment's value, so slicing the current
+        period's segment swallowed the following fragment's value — a real
+        cross-period borrow (hw-0105: ``296期`` took ``绿双`` from the next
+        fragment).  The marker is now dropped only when the following fragment
+        continues the same row, i.e. it does not itself start a new period and
+        the preceding fragment did not already end a value.  A marker that
+        separates a period from a value on either side is preserved so the
+        segment builder stops there.
+        """
+
         if not compact:
             return combined, tuple(range(len(combined)))
+        marker = "\u2063"
+        period_pattern = re.compile(r"\d{1,4}\s*期")
+        value_pattern = re.compile(r"[红绿蓝]\s*(?:波\s*)?[单双]")
         output: list[str] = []
         offsets: list[int] = []
-        marker = "\u2063"
         for index, char in enumerate(combined):
-            if char == marker:
-                previous = combined[index - 1] if index else ""
-                following = (
-                    combined[index + 1] if index + 1 < len(combined) else ""
-                )
-                # A marker between digits protects separate values such as
-                # ``开兔04`` + ``213期``.  Markers between text tokens are
-                # removed so ``马`` + ``蓝单`` remains one history row.
-                if previous.isdigit() and following.isdigit():
-                    output.append(char)
-                    offsets.append(index)
+            if char != marker:
+                output.append(char)
+                offsets.append(index)
                 continue
-            output.append(char)
-            offsets.append(index)
+            previous = combined[index - 1] if index else ""
+            following = combined[index + 1] if index + 1 < len(combined) else ""
+            # 数字夹数字：保护 ``开兔04`` + ``213期`` 这类相邻数字被粘成一个期号。
+            if previous.isdigit() and following.isdigit():
+                output.append(char)
+                offsets.append(index)
+                continue
+            head = combined[max(0, index - 40): index]
+            tail = combined[index + 1: index + 41]
+            # 片段前面已经有值、后面又开始新的一期：属于两期之间的边界，保留。
+            if value_pattern.search(head) and period_pattern.search(tail):
+                output.append(char)
+                offsets.append(index)
+                continue
+            # 片段后面紧跟一个新期号：保留边界，避免把下一期算进本期。
+            if period_pattern.match(tail.lstrip()):
+                output.append(char)
+                offsets.append(index)
+                continue
+            # 片段前面还没有值、后面却以值开头：本期会把下一片段的值吃掉，保留边界。
+            if not value_pattern.search(head) and value_pattern.match(tail.lstrip()):
+                output.append(char)
+                offsets.append(index)
+                continue
+            continue
         return "".join(output), tuple(offsets)
 
     @staticmethod
     def _to_combined_offset(
         offset: int,
         delegate_offsets: Sequence[int],
-    ) -> int:
+    ) -> int | None:
         if not delegate_offsets:
             return offset
-        if offset < len(delegate_offsets):
+        if 0 <= offset < len(delegate_offsets):
             return delegate_offsets[offset]
-        return delegate_offsets[-1] + 1
+        # 越界偏移不能回退到最后一个片段的末尾：那会把上一个片段的期号
+        # 和下一个片段的值拼成同一行（例如 296期 + 绿双 被算成 296=绿双），
+        # 属于跨片段/跨期借值。返回 None 让调用方丢弃该候选。
+        return None
 
     @staticmethod
     def _map_offset(

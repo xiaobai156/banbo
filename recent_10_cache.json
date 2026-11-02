@@ -1,1161 +1,3028 @@
 {
   "schema": 1,
-  "description": "杀半波重复检测最近10期基准数据；由每日指定期抓取自动覆盖更新。",
-  "updated_at": "2026-08-05T17:07:39.8653331+00:00",
+  "description": "杀半波重复检测最近10期基准数据；按清空前JSON缓存站点清单从216—225期完整数据重建。",
+  "updated_at": "2026-11-02T10:50:35.005957+00:00",
   "window_size": 10,
   "issues": [
-    211,
-    210,
-    209,
-    208,
-    207,
-    206,
-    205,
-    204,
-    203,
-    202
+    306,
+    305,
+    304,
+    303,
+    302,
+    301,
+    300,
+    299,
+    298,
+    297
   ],
   "sites": [
     {
       "name": "曲湮浮安",
-      "url": "https://qwpapph.el7s4-pbxnj-aemcbt.work:16677/topic/554809.html",
+      "url": "https://fcgjgjid.w2io3-ne9v9-kfcwxa.work:17466/topic/554809.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "红单",
+        "299": "蓝双",
+        "300": "绿双",
+        "301": "红单",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "绿双",
+        "305": "红单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "真龙天子",
       "url": "https://e7rzi6.t5ti5-at6k5-fugxpa.work/topic/206536.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "红双",
+        "300": "红双",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "蓝单",
+        "304": "红双",
+        "305": "绿双",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "土地公",
       "url": "https://sepfsazm.th2pfx-4s7mu-aafjnm.xyz:16677/topic/680720.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿双",
+        "299": "蓝单",
+        "300": "红单",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "片言一字",
       "url": "https://sepfsazm.th2pfx-4s7mu-aafjnm.xyz:16677/topic/680713.html",
-      "pick": "bottom",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "红单",
+        "299": "蓝单",
+        "300": "蓝双",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "浪费衬衫",
       "url": "https://qvuuqqs.8imf7-hteuh-ylwuqv.xyz/#/users/4032",
       "pick": "top",
       "second_click": true,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红单",
+        "301": "绿双",
+        "302": "红单",
+        "303": "红单",
+        "304": "蓝双",
+        "305": "绿单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "梨花飞雪",
       "url": "https://otmglgaa.uf9twc-9v7sa-ccysbk.xyz:16677/topic/247269.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "红单",
+        "303": "红双",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "我把我灌",
       "url": "https://otmglgaa.uf9twc-9v7sa-ccysbk.xyz:16677/topic/247253.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "红单",
+        "303": "红双",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "咔啦嘟熊",
       "url": "https://otmglgaa.uf9twc-9v7sa-ccysbk.xyz:16677/topic/247346.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "红单",
+        "303": "红双",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "无迹可求",
       "url": "https://vkrquo.xfbmz-7znxx-miaoej.xyz:16677/topic/220527.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "红单",
+        "299": "蓝双",
+        "300": "蓝单",
+        "301": "绿单",
+        "302": "绿双",
+        "303": "红双",
+        "304": "红单",
+        "305": "蓝单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "人走茶凉",
       "url": "https://vkrquo.xfbmz-7znxx-miaoej.xyz:16677/topic/157553.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "红单",
+        "300": "蓝单",
+        "301": "绿单",
+        "303": "绿双",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "红单"
+      },
+      "failures": {
+        "302": {
+          "code": "target_period_missing",
+          "reason": "未找到302期专属证据"
+        }
+      }
     },
     {
       "name": "龙行虎变",
       "url": "https://vbxl5.gvgsf-5zmzm-ojxowu.xyz/topic/453439.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝单",
+        "299": "绿单",
+        "300": "红双",
+        "301": "蓝双",
+        "302": "绿单",
+        "303": "蓝单",
+        "304": "绿单",
+        "305": "蓝双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "仲孙凛和",
       "url": "https://3ghqx.evs71-kia2b-gshsdc.xyz/topic/217028.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "红单",
+        "299": "绿单",
+        "300": "红双",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "蓝双",
+        "305": "绿双",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "亘古还今",
       "url": "https://x5meek.vh7fu-ehvdi-tpwoqt.work/topic/430710.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "红单",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "红双",
+        "304": "红单",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "感恩戴德",
       "url": "https://myvvqq.g25n3-cpae1-psslpy.work/topic/485604.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "红双",
+        "300": "红单",
+        "301": "绿单",
+        "302": "绿双",
+        "303": "红双",
+        "304": "蓝双",
+        "305": "绿单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "不再回忆",
       "url": "https://kjqba.ipvrs-9mw2c-wdnuvo.work/topic/172512.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿双",
+        "299": "绿单",
+        "300": "红单",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "红双",
+        "304": "绿双",
+        "305": "蓝单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "智能半波",
-      "url": "https://jjlachsn.4fk3e-i2rpf-vgknlh.work:16677/topic/653510.html",
+      "url": "https://yotdqivt.eu612-mw400-kssyci.cyou:17455/topic/653510.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "红双",
+        "300": "红单",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "蓝单",
+        "305": "蓝双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "繁华恶梦",
-      "url": "https://jogavu.6bl6s-ilo1w-yfnvvl.work:16677/topic/678628.html",
+      "url": "https://dzdsqxrw.1mppg-x8rsf-cxwlxc.cyou:17455/topic/678628.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "蓝单",
+        "301": "绿单",
+        "302": "绿双",
+        "303": "红单",
+        "304": "红双",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "念卿抚琴",
       "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314214.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿双",
+        "299": "红单",
+        "300": "绿双",
+        "301": "红单",
+        "302": "蓝双",
+        "303": "绿单",
+        "304": "红双",
+        "305": "蓝单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "冷言冷语",
       "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314313.html",
-      "pick": "bottom",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿单",
+        "299": "红双",
+        "300": "绿单",
+        "301": "蓝双",
+        "302": "红双",
+        "303": "绿单",
+        "304": "红双",
+        "305": "绿单",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "力拔山河",
       "url": "https://cykiiyt.4hxms-k65ek-jsvqzm.xyz:16677/topic/314297.html",
-      "pick": "bottom",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "绿单",
+        "300": "红单",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "绿单",
+        "305": "蓝双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "两只老虎",
       "url": "https://111.246004.com:9066/Article.Aspx?ListId=247&id=53525",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "蓝单",
+        "300": "绿双",
+        "301": "红单",
+        "302": "蓝双",
+        "303": "红双",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "凌杂米盐",
       "url": "https://sadoleu.rznla-fgwyr-nzqalp.xyz:16677/topic/656863.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿双",
+        "299": "红双",
+        "300": "绿双",
+        "301": "绿单",
+        "302": "红双",
+        "303": "绿双",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "威尊命贱",
       "url": "https://eqyyanu.4rfyf-h2bx5-oxsbom.xyz:16677/topic/465507.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿单",
+        "299": "蓝单",
+        "300": "绿单",
+        "301": "红单",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "红单",
+        "305": "蓝单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "至交契友",
       "url": "https://4m6dz.r1wvw-qncts-admwen.xyz/topic/225395.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿单",
+        "299": "蓝单",
+        "300": "红单",
+        "301": "绿单",
+        "302": "绿双",
+        "303": "绿单",
+        "304": "蓝单",
+        "305": "红单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "六合宝典",
       "url": "https://77.575363b.com:1888/art_zhuanqu/7646.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红单",
+        "301": "绿双",
+        "302": "蓝单",
+        "303": "绿双",
+        "304": "红双",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "颠勺大师",
-      "url": "https://kqfmnjht.ip6et-0zvu7-gpqkrf.work:16677/topic/239834.html",
+      "url": "https://scgufrwx.1vk5h-cwdg6-mtflir.work:17477/topic/239834.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "红单",
+        "299": "蓝双",
+        "300": "红单",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "绿单",
+        "305": "绿双",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "马首是瞻",
       "url": "https://aq14f.2gdkh-2qrjm-hxaxji.xyz/topic/192044.html",
-      "pick": "bottom",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "红单",
+        "299": "蓝单",
+        "300": "绿单",
+        "301": "红单",
+        "302": "蓝双",
+        "303": "绿双",
+        "304": "红双",
+        "305": "绿双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "网站37",
       "url": "https://gxixcfq.4hxms-k65ek-jsvqzm.xyz:16677/topic/276928.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "蓝单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "红双",
+        "302": "蓝单",
+        "303": "绿双",
+        "304": "红双",
+        "305": "蓝单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "摸爬滚打",
       "url": "https://fhrtnoy.10cus-ki4mn-mlcyap.xyz:16677/topic/447367.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "绿单",
+        "299": "蓝单",
+        "300": "绿单",
+        "301": "红单",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "绿双",
+        "305": "蓝双",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "枪打天下",
       "url": "https://zopeuze.1fjlt-g1hbj-hykofq.xyz:16677/topic/448452.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "蓝双",
+        "299": "绿双",
+        "300": "红单",
+        "301": "蓝双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "蓝双",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "狼心狗行",
       "url": "https://vhgswwe.7rdnv-4uc7h-yshpkm.xyz:16677/topic/447932.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "红单",
+        "300": "红双",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "绿单",
+        "305": "绿双",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "可想而知",
       "url": "https://kulipur.l5paz-a0o8v-uozmmd.xyz:16677/topic/435511.html",
-      "pick": "bottom",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "绿单",
+        "299": "红单",
+        "300": "红双",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "红单",
+        "305": "红双",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "车载斗量",
       "url": "https://narnesm.in79o-is98f-mncjoh.xyz:16677/topic/462942.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "蓝单",
+        "299": "红单",
+        "300": "绿单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "红单",
+        "304": "绿单",
+        "305": "蓝双",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "就是财富",
       "url": "https://narnesm.in79o-is98f-mncjoh.xyz:16677/topic/438166.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "蓝双",
+        "299": "绿单",
+        "300": "红单",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "红双",
+        "304": "绿双",
+        "305": "蓝单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "水秀山明",
       "url": "https://pcfwjde.22zu6-81144-kdlkyf.xyz:16677/topic/436703.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "红单",
+        "302": "绿单",
+        "303": "蓝单",
+        "304": "蓝双",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "不痒不痛",
       "url": "https://fptnapl.o7l2d-gr6ew-tvgvep.xyz:16677/topic/349657.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {},
+      "failures": {}
     },
     {
       "name": "聪明能干",
       "url": "https://rmrcjqk.6ln2t-46k8t-kuthoe.xyz:16677/topic/267374.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "红双",
+        "299": "红单",
+        "300": "蓝双",
+        "301": "红双",
+        "302": "绿单",
+        "303": "绿双",
+        "304": "红单",
+        "305": "蓝双",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "走马观花",
       "url": "https://cpvqejp.avdja-la48l-xnsdva.xyz:16677/topic/336889.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "红双",
+        "302": "绿双",
+        "303": "蓝单",
+        "304": "红单",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "果不其然",
       "url": "https://cxmdjok.8wtwc-boven-glylvt.xyz:16677/topic/437748.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "蓝单",
+        "300": "蓝双",
+        "301": "红单",
+        "302": "红双",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "蓝单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "日积月累",
       "url": "https://flirclg.d9n5a-2i9au-ezvqgb.xyz:16677/topic/479148.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "红双",
+        "301": "红单",
+        "302": "蓝单",
+        "303": "红双",
+        "304": "红单",
+        "305": "蓝单",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "龙聚天下",
-      "url": "https://wupxrz.v38cs-r7pwj-ozxbae.work:16633/topic/453085.html",
+      "url": "https://tesbkhmy.yliud-xzdvd-yecjvp.work:17477/topic/453085.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "红单",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "蓝双",
+        "304": "蓝单",
+        "305": "红双",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "老奇人",
-      "url": "https://wupxrz.v38cs-r7pwj-ozxbae.work:16633/topic/585898.html",
+      "url": "https://cpvwjooq.fzxix-lay8j-eqaatt.cyou:17488/topic/585898.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "绿单",
+        "301": "蓝单",
+        "302": "红单",
+        "303": "红双",
+        "304": "蓝单",
+        "305": "蓝双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "无力回天",
       "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/495302.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红双",
+        "299": "红单",
+        "300": "蓝双",
+        "301": "绿单",
+        "302": "蓝双",
+        "303": "蓝单",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "侯宝林侯",
       "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/792953.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "蓝双",
+        "300": "绿单",
+        "301": "红双",
+        "302": "蓝单",
+        "303": "红单",
+        "304": "绿双",
+        "305": "红双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "雷锋第二版",
       "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/227254.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "绿双",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "绿单",
+        "303": "蓝单",
+        "304": "红单",
+        "305": "绿单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "雷锋第一版",
       "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/205678.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "绿双",
+        "302": "蓝双",
+        "303": "红双",
+        "304": "红单",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "金牌谜语",
-      "url": "https://fszatrw.xhwqs-gffny-zzdfsq.work:16677/topic/273119.html",
+      "url": "https://scgufrwx.1vk5h-cwdg6-mtflir.work:17477/topic/273119.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "蓝双",
+        "300": "蓝单",
+        "301": "绿单",
+        "302": "红单",
+        "303": "红双",
+        "304": "蓝双",
+        "305": "蓝单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "甜酸苦辣",
       "url": "https://jldzuea.0xkqd-q7ng5-boerfb.xyz:16677/topic/455527.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿单",
+        "299": "蓝单",
+        "300": "蓝双",
+        "301": "红双",
+        "302": "红单",
+        "303": "绿单",
+        "304": "蓝单",
+        "305": "蓝双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "锦衣师卫",
-      "url": "https://whsbrmz.qclrc-4mk42-vnxbyg.work:16677/topic/248015.html",
-      "pick": "bottom",
+      "url": "https://solnxusu.3e3ux-nfe96-ktnvgy.cyou:17466/topic/248015.html",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿单",
+        "299": "蓝单",
+        "300": "红双",
+        "301": "绿双",
+        "302": "蓝双",
+        "303": "红双",
+        "304": "绿双",
+        "305": "蓝双",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "一清二白",
       "url": "https://itctnet.v1gae-gdh9n-ifqlce.xyz:16677/topic/287374.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "蓝双",
+        "299": "蓝单",
+        "300": "红双",
+        "301": "红单",
+        "302": "蓝单",
+        "303": "蓝双",
+        "304": "红双",
+        "305": "红单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "水果奶奶",
       "url": "https://ixvtdglw.6vjj7-nn2ip-kqudzz.xyz:16633/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "红双",
+        "299": "红单",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "绿单",
+        "303": "蓝单",
+        "304": "红单",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "刘半仙",
       "url": "https://smnwgqcm.vkk2k-rpbnk-qtocig.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝双",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "蓝双",
+        "303": "绿双",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "以以把第一版",
       "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/205339.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "绿单",
+        "303": "蓝单",
+        "304": "蓝双",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "是是非非",
       "url": "https://bucgnuda.sbsrh-yvu62-jrtrcm.xyz:16633/topic/256275.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "红单",
+        "303": "红双",
+        "304": "绿单",
+        "305": "绿双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "百事通",
       "url": "https://bucgnuda.sbsrh-yvu62-jrtrcm.xyz:16633/topic/256807.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "红双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "红单",
+        "303": "红双",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "麻醉坑穴",
       "url": "https://e7rzi6.vkzoy-tj5wf-umxqmx.work/topic/617732.html",
-      "pick": "bottom",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "蓝单",
+        "302": "绿单",
+        "303": "绿单",
+        "304": "红单",
+        "305": "蓝单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "古井无波",
       "url": "https://xxn08n.a5vqo-qeg9n-shammd.work/topic/207229.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "蓝单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "绿双",
+        "303": "蓝单",
+        "304": "蓝单",
+        "305": "蓝双",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "高谈大论",
       "url": "https://kjqba.s8hvq-ssvup-eladiw.xyz/topic/216094.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "红双",
+        "300": "绿双",
+        "301": "绿单",
+        "302": "蓝单",
+        "303": "红双",
+        "304": "蓝单",
+        "305": "红双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "浪女无家",
       "url": "https://riyigxyt.e0tnb-692ww-xpgxma.xyz:16677/topic/445602.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "红双",
+        "299": "蓝单",
+        "300": "红单",
+        "301": "红双",
+        "302": "红单",
+        "303": "绿单",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "同心一德",
       "url": "https://gboqrz.95k9b-ipxmw-nrfzlt.work/topic/227461.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿双",
+        "299": "红双",
+        "300": "红单",
+        "301": "蓝单",
+        "302": "绿单",
+        "303": "红单",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "火烧火燎",
       "url": "https://qzpwvvvb.a3qgk-l2h5k-opahdg.xyz:16677/topic/254748.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "蓝单",
+        "300": "蓝双",
+        "301": "红单",
+        "302": "红双",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "蓝单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "蔡庆杀半波",
       "url": "https://qzpwvvvb.a3qgk-l2h5k-opahdg.xyz:16677/topic/254822.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红单",
+        "301": "绿单",
+        "302": "蓝双",
+        "303": "红单",
+        "304": "绿单",
+        "305": "蓝双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "三仙财富",
       "url": "https://zuxrvs.e3bs4-882rq-pzqtze.xyz/topic/767339.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "蓝单",
+        "299": "蓝双",
+        "300": "绿双",
+        "301": "绿单",
+        "302": "红单",
+        "303": "红双",
+        "304": "蓝双",
+        "305": "蓝单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "声动梁尘",
       "url": "https://t59nd.syfu4-2t30y-wvhqtb.xyz/topic/244735.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿双",
+        "299": "红双",
+        "300": "蓝双",
+        "301": "绿单",
+        "302": "红单",
+        "303": "蓝单",
+        "304": "绿单",
+        "305": "红单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "豕分蛇断",
       "url": "https://t59nd.syfu4-2t30y-wvhqtb.xyz/topic/236725.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿双",
+        "299": "绿单",
+        "300": "红双",
+        "301": "红单",
+        "302": "蓝双",
+        "303": "蓝单",
+        "304": "绿单",
+        "305": "红双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "不能做人",
       "url": "https://tcwsqrno.ril3o-7ghui-hiepuc.work:16633/topic/205692.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "红单",
+        "299": "蓝单",
+        "300": "蓝双",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "大梁皇帝",
-      "url": "https://qwpapph.el7s4-pbxnj-aemcbt.work:16677/topic/557462.html",
+      "url": "https://jwhhbxpt.6tv4v-7ohwq-wvbwba.work:17455/topic/557462.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "红双",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "蓝单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "赛马会",
       "url": "https://ugtzszfp.ldpiz-8xhrd-wpkjkn.xyz:16677/topic/589493.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "绿双",
+        "300": "绿双",
+        "301": "红单",
+        "302": "红双",
+        "303": "绿双",
+        "304": "红单",
+        "305": "蓝单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "钱能通神",
       "url": "https://wcgizxbj.3ty7h-vgx9b-jymfyw.xyz:16677/topic/249391.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "绿双",
+        "300": "绿单",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "红双",
+        "304": "红单",
+        "305": "绿单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "公证处",
       "url": "https://uhaxnrzx.q76gf-deec8-zqckeo.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "蓝双",
+        "299": "红双",
+        "300": "红单",
+        "301": "蓝双",
+        "302": "绿单",
+        "303": "绿双",
+        "304": "蓝单",
+        "305": "红单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "蓝月亮",
       "url": "https://zuymmv.k9lew-qbswr-jmnakh.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "红单",
+        "299": "绿单",
+        "300": "绿双",
+        "301": "蓝单",
+        "302": "绿双",
+        "303": "绿单",
+        "304": "红双",
+        "305": "蓝单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "持之以恒",
       "url": "https://fllxjy.m5jln-8kxct-vzvvzq.xyz:16677/topic/312219.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "红双",
+        "300": "红单",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "红单",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "滥杀无辜",
       "url": "https://klnizc.u0jd0-wv6xw-vkufqf.xyz:16677/topic/282338.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "蓝单",
+        "300": "绿单",
+        "301": "蓝双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "绿双",
+        "305": "蓝双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "完事五一",
       "url": "https://xuknerw.fu5qv-a7f7o-nxmebt.work:16633/topic/553701.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "红双",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "绿单",
+        "302": "蓝双",
+        "303": "绿双",
+        "304": "蓝双",
+        "305": "蓝单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "出口成章",
       "url": "https://vmfvzmh.7jh1y-qgjk8-lavfxb.work:16677/topic/782063.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "蓝单",
+        "300": "蓝双",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红双",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "各抒己见",
       "url": "https://dtnjpph.1p0w8-q5dks-oxbahg.xyz:16677/topic/450455.html",
-      "pick": "bottom",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿双",
+        "299": "绿单",
+        "300": "红单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "蓝双",
+        "304": "绿单",
+        "305": "绿双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "远赴相思",
       "url": "https://sgxozo.4b5jw-x2zou-ukbybu.xyz:16677/topic/267719.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "绿双",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "绿双",
+        "304": "红双",
+        "305": "红单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "财富榜啊了",
       "url": "https://qvuuqqs.8imf7-hteuh-ylwuqv.xyz/#/users/11993",
       "pick": "top",
       "second_click": true,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝单",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "红单",
+        "303": "绿单",
+        "304": "红单",
+        "305": "蓝单",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "熊错了",
       "url": "https://qvuuqqs.8imf7-hteuh-ylwuqv.xyz/#/users/11968",
       "pick": "top",
       "second_click": true,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿双",
+        "299": "红双",
+        "300": "蓝双",
+        "301": "红双",
+        "302": "绿双",
+        "303": "红双",
+        "304": "绿单",
+        "305": "红单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "北船余香",
       "url": "https://mfhfepu.ow55j-i5hbb-icetss.xyz/topic/768616.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "红双",
+        "299": "红单",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "绿双",
+        "303": "绿单",
+        "304": "红单",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "白虎",
       "url": "https://mkhomxq.gqmpb-vuxji-pfnheu.work:16677/topic/510810.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿单",
+        "299": "红双",
+        "300": "绿双",
+        "301": "绿单",
+        "302": "红单",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "红双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "高山清水",
       "url": "https://ykeejph.z9koz-18xjn-pvglgy.xyz:16677/topic/682103.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "红单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "绿双",
+        "302": "红单",
+        "303": "绿双",
+        "304": "红单",
+        "305": "绿双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "恋恋不舍",
       "url": "https://ykeejph.z9koz-18xjn-pvglgy.xyz:16677/topic/682117.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "蓝双",
+        "299": "红双",
+        "300": "绿双",
+        "301": "绿单",
+        "302": "红单",
+        "303": "红单",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "两全其美",
       "url": "https://uixhmfb.1fxgs-oj4yy-fzfkdw.work:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
-    },
-    {
-      "name": "神机",
-      "url": "https://wxaxdfc.523mo-z7mla-owjdon.xyz:16677/",
-      "pick": "top",
-      "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "红单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "红单",
+        "302": "绿单",
+        "303": "蓝双",
+        "304": "红单",
+        "305": "绿双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "赏心悦目",
       "url": "https://zamcrqr.fm9cq-0fw8z-rmobjv.xyz:16677/topic/457674.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "红双",
+        "299": "绿双",
+        "300": "蓝单",
+        "301": "绿单",
+        "302": "红双",
+        "303": "蓝双",
+        "304": "红单",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "贼眉鼠眼",
       "url": "https://ligubwb.088f5-qeep5-dzoswv.xyz:16677/topic/446752.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "蓝单",
+        "301": "红双",
+        "302": "红单",
+        "303": "蓝双",
+        "304": "红双",
+        "305": "红双",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "天上地下",
       "url": "https://eqnwieh.cql9m-h1s6c-jefajg.xyz:16677/",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝双",
+        "299": "蓝单",
+        "300": "蓝双",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "蓝单",
+        "304": "蓝双",
+        "305": "红双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "鸿运",
       "url": "https://neciezht.h6r8g-z9l98-usthpy.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "红双",
+        "299": "绿双",
+        "300": "绿单",
+        "301": "红单",
+        "302": "红单",
+        "303": "蓝单",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "此曲已终",
       "url": "https://buvwlreg.drr11-soh5x-jcaafg.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝单",
+        "299": "绿单",
+        "300": "红单",
+        "301": "蓝单",
+        "302": "绿双",
+        "304": "红双"
+      },
+      "failures": {
+        "303": {
+          "code": "target_period_missing",
+          "reason": "未找到303期专属证据"
+        },
+        "305": {
+          "code": "target_period_missing",
+          "reason": "未找到305期专属证据"
+        },
+        "306": {
+          "code": "target_period_missing",
+          "reason": "未找到306期专属证据"
+        }
+      }
     },
     {
       "name": "魔童",
       "url": "https://bloynnbb.gzgli-koeq8-deouwc.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "红双",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "蓝单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "魔童第二",
       "url": "https://bloynnbb.gzgli-koeq8-deouwc.xyz:16677/topic/698764.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "蓝双",
+        "302": "绿双",
+        "303": "红双",
+        "304": "蓝单",
+        "305": "红单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "勇往直前",
       "url": "https://bzdolgna.0115r-u1nk5-zioots.xyz:16677/topic/459941.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "蓝单",
+        "299": "绿单",
+        "300": "红单",
+        "301": "红双",
+        "302": "蓝双",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "红单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "彩民书籍",
       "url": "https://ymqmvj.7md3q-rm157-wcvhte.work:16677/topic/567179.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {},
+      "failures": {}
     },
     {
       "name": "半推半就",
       "url": "https://buvwlreg.drr11-soh5x-jcaafg.xyz:16677/topic/543270.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "蓝单",
+        "300": "红单",
+        "301": "蓝双",
+        "302": "绿双",
+        "303": "蓝双",
+        "304": "红双",
+        "305": "绿单",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "抬眉见雪",
       "url": "https://cwdcaqzn.7mj0h-75k3q-cbuvqb.work:16677/topic/206911.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "红单",
+        "299": "蓝单",
+        "300": "绿双",
+        "301": "红双",
+        "302": "蓝单",
+        "303": "绿双",
+        "304": "红单",
+        "305": "蓝双",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "天机老人",
-      "url": "https://mm.737799b.com:1888/art_gsb/8161",
+      "url": "https://mm.737799b.com:1888/art_gsb/8161/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红双",
+        "299": "蓝单",
+        "300": "绿单",
+        "301": "红双",
+        "302": "蓝双",
+        "303": "蓝双",
+        "304": "蓝单",
+        "305": "蓝单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "桂东仔",
       "url": "https://aa.838797b.com:1888/art_zhuanqu/115.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "红双",
+        "299": "绿单",
+        "300": "红双",
+        "301": "红单",
+        "302": "蓝单",
+        "303": "蓝单",
+        "304": "红单",
+        "305": "蓝双",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "烟雨墨痕",
       "url": "https://fbgbfg.www27521c.com:8443/gsb/am81.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "红单",
+        "299": "红双",
+        "300": "红单",
+        "301": "绿单",
+        "302": "红双",
+        "303": "红单",
+        "304": "蓝双",
+        "305": "红单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "丢六度路",
       "url": "https://fhktrabu.zbfrm-uzct1-pmycbu.xyz:16677/topic/469067.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "蓝单",
+        "299": "红单",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "红单",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "贪生怕死",
       "url": "https://fjjxlve.eclrc-7oqku-atxhrs.xyz:16677/topic/445667.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "蓝双",
+        "299": "绿双",
+        "300": "红单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "蓝单",
+        "305": "蓝双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "七上八下",
       "url": "https://wmdhoki.6su07-7lpw6-gudkzl.xyz:16677/topic/727532.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红单",
+        "299": "红双",
+        "300": "绿双",
+        "301": "绿单",
+        "302": "红单",
+        "303": "红双",
+        "304": "蓝双",
+        "305": "蓝单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "开心果",
       "url": "https://ykkpjdgv.d1ju4-kbfjr-zexdzd.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {},
+      "failures": {}
     },
     {
       "name": "嗜此不疲",
       "url": "https://ylogqyol.5cn5d-gjibo-wiycut.xyz:16677/topic/328416.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "绿单",
+        "302": "红双",
+        "303": "绿双",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "白蛇传",
       "url": "https://ocnrhq.du156-vb27w-tmhsed.xyz:16677/",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {},
+      "failures": {}
     },
     {
       "name": "二肖四码",
       "url": "https://eudkyp.luqv0-yf46s-xrnpkz.xyz:16677/topic/324148.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "红单",
+        "302": "红单",
+        "303": "红双",
+        "304": "蓝双",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "澳彩传奇",
       "url": "https://rqvvaxwq.w30m7-xd23l-ebrbbj.xyz/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "红单",
+        "303": "蓝单",
+        "304": "蓝单",
+        "305": "蓝双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "满堂红",
       "url": "https://znnpwd.p42g1-zqmsb-jjrsfg.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "绿单",
+        "299": "红双",
+        "300": "红单",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "蓝双",
+        "304": "蓝单",
+        "305": "红双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "赤兔",
       "url": "https://zwpwuwq.fxnb4-uer1b-uftjcw.work:16677/#am",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿双",
+        "299": "绿单",
+        "300": "红单",
+        "301": "红双",
+        "302": "绿双",
+        "303": "绿单",
+        "304": "红单",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "铁算盘",
       "url": "https://tgjqwnvl.2hyb0-ocfse-borngs.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "红双",
+        "300": "红单",
+        "301": "蓝双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "王中王",
-      "url": "https://dhqjbz.uxec9-jxs3h-fomubo.work:16677/",
+      "url": "https://ebmdfahe.2xx6e-sgmgw-bkeblr.work:16677/",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "红单",
+        "299": "蓝单",
+        "300": "绿双",
+        "301": "红单",
+        "302": "蓝双",
+        "303": "蓝单",
+        "304": "绿单",
+        "305": "红双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "好彩网",
       "url": "https://qhfsrngx.x9mcp-vrrqh-dzqfro.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "红单",
+        "300": "红双",
+        "301": "红单",
+        "302": "蓝单",
+        "303": "红单",
+        "304": "蓝单",
+        "305": "蓝双",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "玄机阁",
       "url": "https://aqlvuvz.kkr58-ayern-biiohi.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "蓝双",
+        "299": "红单",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "红双",
+        "303": "绿单",
+        "304": "红单",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "码头诗",
       "url": "https://nrbzrzm.zxt0w-ug0p0-uktgvy.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {},
+      "failures": {}
     },
     {
       "name": "任我发",
       "url": "https://oifsonk.e0h72-f6bxs-juqrkd.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝单",
+        "299": "蓝双",
+        "300": "红单",
+        "301": "红双",
+        "302": "绿双",
+        "303": "绿单",
+        "304": "红双",
+        "305": "红单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "青龙阁",
       "url": "https://jlfmmv.39r0v-b8894-seqcii.xyz:16677/",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "绿单",
+        "300": "绿双",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "绿单",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "独家原创",
       "url": "https://mm.737799b.com:1888/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "蓝双",
+        "299": "蓝单",
+        "300": "蓝双",
+        "301": "红双",
+        "302": "红双",
+        "303": "蓝双",
+        "304": "绿双",
+        "305": "绿双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "流合",
-      "url": "https://pvxiftuf.yumkw-u4s81-hpytyz.work:16677/",
+      "url": "https://qprrntjm.fxpja-gdu7n-nysuyo.work:17466/topic/500599.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {},
+      "failures": {}
     },
     {
       "name": "何仙姑",
       "url": "https://fjjxlve.eclrc-7oqku-atxhrs.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "蓝单",
+        "299": "绿单",
+        "300": "红单",
+        "301": "绿单",
+        "302": "绿双",
+        "303": "红双",
+        "304": "蓝双",
+        "305": "蓝单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "全网最准",
       "url": "https://88.62782d.com:1888/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "蓝单",
+        "299": "绿单",
+        "300": "红双",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红双",
+        "304": "蓝单",
+        "305": "蓝单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "崇左女王",
       "url": "https://yaaxgud.xg0eu-qjubd-yneksw.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "蓝单",
+        "299": "红单",
+        "300": "红双",
+        "301": "红单",
+        "302": "绿单",
+        "303": "蓝单",
+        "304": "蓝双",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "不疯不野",
       "url": "https://2.www39169b.com:888/gsbl/s12.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "红双",
+        "300": "绿单",
+        "301": "红双",
+        "302": "绿双",
+        "303": "蓝单",
+        "304": "绿单",
+        "305": "红双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "人定胜天",
       "url": "https://qdufkx.sjb5z-pi4k6-jlhnig.xyz:16677/topic/798099.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "绿双",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "绿双",
+        "303": "蓝双",
+        "304": "红双",
+        "305": "绿双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "百进不出",
       "url": "https://bb.62782b.com:1888/bbs/7984",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "红双",
+        "299": "绿单",
+        "300": "蓝双",
+        "301": "绿双",
+        "302": "蓝双",
+        "303": "绿单",
+        "304": "绿单",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "欲擒故纵",
       "url": "https://kxhnibht.49x6o-xyonh-swqkpv.xyz:16677/topic/263500.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝双",
+        "299": "红单",
+        "300": "蓝单",
+        "302": "绿双",
+        "303": "红单",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "蓝双"
+      },
+      "failures": {
+        "301": {
+          "code": "target_period_missing",
+          "reason": "未找到301期专属证据"
+        }
+      }
     },
     {
       "name": "手工教授",
       "url": "https://wrbavfzg.e0fjk-5tc7b-mqquzq.work:16677/topic/390576.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {},
+      "failures": {}
     },
     {
       "name": "长亭旧雪",
       "url": "https://yqjfwqsc.1dayz-aetgp-kbjidr.xyz:16677/topic/682032.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "蓝双",
+        "299": "红单",
+        "300": "红双",
+        "301": "绿单",
+        "302": "绿双",
+        "303": "蓝双",
+        "304": "蓝单",
+        "305": "红单",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "心灯照字",
       "url": "https://yqjfwqsc.1dayz-aetgp-kbjidr.xyz:16677/topic/682025.html",
-      "pick": "bottom",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {},
+      "failures": {}
     },
     {
       "name": "私相授受",
       "url": "https://yqjfwqsc.1dayz-aetgp-kbjidr.xyz:16677/topic/677638.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿双",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "红单",
+        "303": "红双",
+        "304": "绿单",
+        "305": "蓝双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "逍遥法外",
       "url": "https://993345.com/gsb.aspx?id=029",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "红单",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "绿双",
+        "303": "绿单",
+        "304": "蓝单",
+        "305": "红单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "行尸走肉",
       "url": "https://993345.com/gsb1.aspx?id=1614",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "红单",
+        "299": "蓝单",
+        "300": "绿双",
+        "301": "蓝双",
+        "302": "红单",
+        "303": "绿双",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "发硎新试",
       "url": "https://gjyzpnkx.1r42a-pilbo-hfynxw.xyz:16677/topic/680684.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝双",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "入木三分",
       "url": "https://ykeejph.z9koz-18xjn-pvglgy.xyz:16677/topic/682095.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝单",
+        "299": "红单",
+        "300": "绿双",
+        "301": "蓝单",
+        "302": "红单",
+        "303": "绿双",
+        "304": "红单",
+        "305": "绿双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "不言不语",
       "url": "https://msbqxti.zhx2n-7v5x3-ivdpud.xyz:16677/topic/678152.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "红双",
+        "300": "红单",
+        "301": "蓝单",
+        "302": "绿单",
+        "303": "红单",
+        "304": "蓝单",
+        "305": "红单",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "宇文凌霄",
       "url": "https://msbqxti.zhx2n-7v5x3-ivdpud.xyz:16677/topic/682739.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "绿单",
+        "299": "红双",
+        "300": "红单",
+        "301": "红双",
+        "302": "绿单",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "红双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "饭碗主人",
       "url": "https://shuqhbq.654o7-lyreu-rzcudi.xyz:16677/topic/280943.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝双",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "红单",
+        "303": "蓝双",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "怡然自乐",
       "url": "https://xoxtpupt.bvptr-i3mv8-pbjxin.work:17455/topic/456578.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "红单",
+        "300": "红双",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "红双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "低调的堆",
       "url": "https://izohrvun.cukiv-d0q06-rjqwno.work:16677/topic/205516.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "蓝双",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "红双",
+        "302": "蓝双",
+        "303": "绿双",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "优雅公园",
       "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626066.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "红双",
+        "300": "绿单",
+        "301": "红单",
+        "302": "红双",
+        "303": "绿单",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "囫囵吞枣",
       "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/625995.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "蓝单",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "红单",
+        "302": "绿单",
+        "303": "绿双",
+        "304": "蓝双",
+        "305": "蓝单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "守株待兔",
       "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626099.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "绿双",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "红双",
+        "303": "蓝单",
+        "304": "绿单",
+        "305": "绿双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "一帆风顺",
       "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626028.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "绿双",
+        "304": "绿单",
+        "305": "红单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "风波亭里",
       "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/625514.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "蓝单",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "红双",
+        "302": "蓝双",
+        "303": "绿双",
+        "304": "红双",
+        "305": "蓝双",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "疾走如风",
       "url": "https://pjaliv.o53jc-9p80e-xxbelu.xyz:16677/topic/626098.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "绿双",
+        "299": "红双",
+        "300": "蓝双",
+        "301": "绿单",
+        "302": "绿双",
+        "303": "红双",
+        "304": "绿单",
+        "305": "蓝单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "起死回生",
       "url": "https://kxhnibht.49x6o-xyonh-swqkpv.xyz:16677/topic/263562.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "红双",
+        "301": "红单",
+        "302": "蓝双",
+        "303": "蓝单",
+        "304": "绿单",
+        "305": "红双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "浅若夏沫",
       "url": "https://sadoleu.rznla-fgwyr-nzqalp.xyz:16677/topic/287645.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿双",
+        "299": "红双",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "绿双",
+        "303": "红双",
+        "304": "绿单",
+        "305": "红单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "踏雪",
-      "url": "https://ntvjzt.gau41-qu6jy-sotyug.work:16677/topic/309381.html",
+      "url": "https://ujzmwwma.51jhh-hwqtp-txnodx.xyz:17477/topic/309381.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝双",
+        "299": "绿双",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "蓝双",
+        "305": "红单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "孤岛危机",
-      "url": "https://dhqjbz.uxec9-jxs3h-fomubo.work:16677/topic/250668.html",
+      "url": "https://ujzmwwma.51jhh-hwqtp-txnodx.xyz:17477/topic/250668.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "蓝双",
+        "299": "蓝单",
+        "300": "绿单",
+        "301": "红单",
+        "302": "红双",
+        "303": "蓝双",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "王者九点网",
       "url": "https://dvglkfp.mueyy-uiuci-vtqiod.work:16677/topic/401344.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "蓝单",
+        "299": "红单",
+        "300": "红双",
+        "301": "蓝双",
+        "302": "绿双",
+        "303": "红双",
+        "304": "蓝双",
+        "305": "蓝单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "一叶报秋",
       "url": "https://myvvqq.s5ted-33ykj-wzpmmi.work/topic/461347.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "红双",
+        "303": "红单",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "以以把第二版",
       "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/453549.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝单",
+        "298": "红单",
+        "299": "绿双",
+        "300": "绿单",
+        "301": "蓝单",
+        "302": "红双",
+        "303": "红单",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "以以把第三版",
       "url": "https://myvvqq.30dok-2s9fd-bibfmg.work/topic/225467.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "绿双",
+        "300": "红单",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红单",
+        "304": "绿单",
+        "305": "红双",
+        "306": "蓝双"
+      },
+      "failures": {}
     },
     {
       "name": "测试脚本",
       "url": "https://bbuueerm.pxcma-jyfok-mvduyw.xyz:16633/topic/455280.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "绿单",
+        "299": "红单",
+        "300": "蓝双",
+        "301": "绿单",
+        "302": "红单",
+        "303": "蓝双",
+        "304": "红单",
+        "305": "蓝双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "被发徒跣",
       "url": "https://xuknerw.fu5qv-a7f7o-nxmebt.work:16633/topic/272861.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "绿单",
+        "299": "蓝单",
+        "300": "绿单",
+        "301": "蓝双",
+        "302": "绿双",
+        "303": "红单",
+        "304": "红双",
+        "305": "绿双",
+        "306": "蓝单"
+      },
+      "failures": {}
     },
     {
       "name": "老鼠报",
       "url": "https://hnzbrzl.2n783-iuaof-dczvqm.xyz/topic/764810.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "红单",
+        "299": "红双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "绿单",
+        "303": "绿单",
+        "304": "绿双",
+        "305": "红双",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "超然绝俗",
       "url": "https://cmytbvkv.wf5r4-blal7-rwlkrd.xyz:16677/topic/224335.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "红双",
+        "300": "红单",
+        "301": "绿单",
+        "302": "绿双",
+        "303": "蓝单",
+        "304": "红单",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "斗转星移",
       "url": "https://sgxozo.4b5jw-x2zou-ukbybu.xyz:16677/topic/481107.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "绿单",
+        "299": "红单",
+        "300": "红双",
+        "301": "红双",
+        "302": "蓝双",
+        "303": "蓝单",
+        "304": "蓝双",
+        "305": "红双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "破釜沈舟",
       "url": "https://thjbggpr.vx4fc-7o9fm-yopnxv.work:16677/topic/212221.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "蓝双",
+        "299": "红单",
+        "300": "蓝双",
+        "301": "红双",
+        "302": "蓝单",
+        "303": "蓝双",
+        "304": "绿双",
+        "305": "蓝双",
+        "306": "红单"
+      },
+      "failures": {}
     },
     {
       "name": "切中时弊",
       "url": "https://ryfbdty.p4a53-f1hew-diwcrg.xyz:16677/topic/224165.html",
-      "pick": "bottom",
+      "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "蓝双",
+        "298": "红双",
+        "299": "红双",
+        "300": "绿双",
+        "301": "蓝单",
+        "302": "红单",
+        "303": "红单",
+        "304": "绿单",
+        "305": "蓝单",
+        "306": "绿单"
+      },
+      "failures": {}
     },
     {
       "name": "清清爽爽",
       "url": "https://oifsonk.e0h72-f6bxs-juqrkd.xyz:16677/topic/450976.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "绿单",
+        "299": "蓝双",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "红双",
+        "303": "绿单",
+        "304": "绿双",
+        "305": "蓝单",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "大圆满",
       "url": "https://rgtnfweg.4qnp3-wmf88-gaewaj.xyz:16677/topic/544490.html",
       "pick": "bottom",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "绿双",
+        "298": "绿单",
+        "299": "红单",
+        "300": "红双",
+        "301": "蓝双",
+        "302": "绿双",
+        "303": "蓝双",
+        "304": "绿单",
+        "305": "蓝单",
+        "306": "红双"
+      },
+      "failures": {}
     },
     {
       "name": "沙漠之舟",
       "url": "https://pbihleo.n2t9e-qcqhn-arwwct.xyz:16677/topic/463118.html",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "蓝双",
+        "299": "绿双",
+        "300": "红单",
+        "301": "蓝单",
+        "302": "绿单",
+        "303": "红双",
+        "304": "红单",
+        "305": "蓝单",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "汉锺离",
       "url": "https://ozfksr.8gd3h-8yo27-ttlqhq.xyz:16677/",
       "pick": "top",
       "second_click": false,
-      "values": {}
+      "values": {
+        "297": "红双",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "绿双",
+        "302": "蓝单",
+        "303": "红双",
+        "304": "蓝双",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
     },
     {
       "name": "绿树成荫",
@@ -1163,8 +3030,16 @@
       "pick": "top",
       "second_click": false,
       "values": {
-        "211": "蓝单",
-        "209": "绿双"
+        "297": "红单",
+        "298": "蓝双",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "蓝双",
+        "302": "红单",
+        "303": "绿双",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "蓝双"
       },
       "failures": {}
     },
@@ -1173,7 +3048,18 @@
       "url": "https://a.ttss.vip/list.aspx?id=79&page=1",
       "pick": "top",
       "second_click": false,
-      "values": {},
+      "values": {
+        "297": "绿单",
+        "298": "绿双",
+        "299": "绿单",
+        "300": "红单",
+        "301": "蓝双",
+        "302": "红单",
+        "303": "蓝单",
+        "304": "红双",
+        "305": "红单",
+        "306": "绿单"
+      },
       "failures": {}
     },
     {
@@ -1182,11 +3068,16 @@
       "pick": "top",
       "second_click": false,
       "values": {
-        "211": "绿双",
-        "209": "蓝双",
-        "207": "绿双",
-        "206": "红单",
-        "205": "绿双"
+        "297": "绿单",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "红双",
+        "302": "蓝单",
+        "303": "蓝单",
+        "304": "红单",
+        "305": "绿单",
+        "306": "蓝双"
       },
       "failures": {}
     },
@@ -1196,21 +3087,977 @@
       "pick": "top",
       "second_click": false,
       "values": {
-        "210": "蓝单",
-        "209": "红单",
-        "207": "绿单",
-        "205": "绿单",
-        "204": "蓝单",
-        "203": "绿单",
-        "202": "红单"
+        "297": "蓝单",
+        "298": "绿双",
+        "299": "蓝双",
+        "300": "蓝双",
+        "301": "红单",
+        "302": "红单",
+        "303": "绿单",
+        "304": "蓝双",
+        "305": "蓝单",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "雨夜未眠",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1542/tid/82.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "绿双",
+        "298": "红单",
+        "299": "蓝双",
+        "300": "绿单",
+        "301": "绿双",
+        "302": "红单",
+        "303": "蓝单",
+        "304": "红双",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "半生狂客",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1520/tid/82.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红双",
+        "298": "红双",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "红单",
+        "302": "绿单",
+        "303": "红单",
+        "304": "蓝双",
+        "305": "红双",
+        "306": "蓝单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "西公",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1489/tid/82.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "绿单",
+        "298": "绿单",
+        "299": "红双",
+        "300": "蓝双",
+        "301": "红单",
+        "302": "蓝双",
+        "303": "蓝单",
+        "304": "绿单",
+        "305": "红单",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "管家婆",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/176/tid/5.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红双",
+        "298": "蓝单",
+        "299": "蓝单",
+        "300": "红双",
+        "301": "蓝双",
+        "302": "红双",
+        "303": "蓝双",
+        "304": "蓝双",
+        "305": "蓝双",
+        "306": "绿单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "白姐最准",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/219/tid/3.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝双",
+        "298": "红单",
+        "299": "蓝双",
+        "300": "绿单",
+        "301": "绿双",
+        "302": "红单",
+        "303": "绿单",
+        "304": "绿双",
+        "305": "绿双",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "金多宝信息网",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/155/tid/7.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝双",
+        "298": "蓝单",
+        "299": "蓝单",
+        "300": "红双",
+        "301": "红双",
+        "302": "绿单",
+        "303": "绿单",
+        "304": "红单",
+        "305": "蓝单",
+        "306": "蓝双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "赛玛荟独家",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/144/tid/8.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "绿双",
+        "298": "绿双",
+        "299": "绿双",
+        "300": "绿双",
+        "301": "红双",
+        "302": "红双",
+        "303": "红单",
+        "304": "蓝双",
+        "305": "绿单",
+        "306": "蓝双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "曾女士",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/310/tid/20.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红单",
+        "298": "蓝双",
+        "299": "红双",
+        "300": "绿单",
+        "301": "蓝单",
+        "302": "绿单",
+        "303": "绿双",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "红双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "彩坛至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/436/tid/29.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红单",
+        "298": "绿单",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "蓝单",
+        "302": "绿双",
+        "303": "蓝单",
+        "304": "红单",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "天顺",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/515/tid/34.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝双",
+        "298": "蓝双",
+        "299": "蓝双",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "红双",
+        "303": "绿双",
+        "304": "红双",
+        "305": "绿单",
+        "306": "红单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "凤凰马经",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/552/tid/36.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝双",
+        "298": "红单",
+        "299": "红单",
+        "300": "蓝双",
+        "301": "蓝双",
+        "302": "蓝双",
+        "303": "蓝单",
+        "304": "红单",
+        "305": "红单",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "劫后重生",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/697/tid/47.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "绿双",
+        "298": "蓝双",
+        "299": "绿单",
+        "300": "蓝单",
+        "301": "红双",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "蓝单",
+        "305": "红双",
+        "306": "蓝双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "特玛禁半波",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/813/tid/58.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "绿单",
+        "298": "红单",
+        "299": "绿单",
+        "300": "绿单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "蓝单",
+        "304": "绿单",
+        "305": "红双",
+        "306": "红单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/862/tid/64.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝双",
+        "298": "蓝单",
+        "299": "红单",
+        "300": "蓝单",
+        "301": "红单",
+        "302": "蓝双",
+        "303": "蓝双",
+        "304": "蓝单",
+        "305": "绿双",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "飞天雪地至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1608/tid/83.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝双",
+        "298": "红双",
+        "299": "绿单",
+        "300": "红双",
+        "301": "绿单",
+        "302": "红双",
+        "303": "绿单",
+        "304": "绿单",
+        "305": "红双",
+        "306": "红双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "独波大侠灵感",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1605/tid/83.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝单",
+        "298": "绿双",
+        "299": "红单",
+        "300": "蓝双",
+        "301": "蓝双",
+        "302": "红双",
+        "303": "绿双",
+        "304": "红双",
+        "305": "绿双",
+        "306": "红双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "落幕韵力量峰",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1602/tid/83.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "红单",
+        "300": "红双",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "蓝双",
+        "304": "红单",
+        "305": "蓝双",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "鬼谷子必中",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/165/tid/6.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝单",
+        "298": "红双",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "蓝单",
+        "303": "绿单",
+        "304": "绿双",
+        "305": "红双",
+        "306": "红双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "澳门彩票",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/128/tid/9.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "绿双",
+        "300": "绿双",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "红单",
+        "304": "绿单",
+        "305": "红单",
+        "306": "绿单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "澳门赛马会原创",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/264/tid/17.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "绿双",
+        "298": "红单",
+        "299": "蓝单",
+        "300": "蓝双",
+        "301": "绿双",
+        "302": "蓝双",
+        "303": "蓝双",
+        "304": "蓝单",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "百大姐信息中心",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/328/tid/21.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红双",
+        "298": "红单",
+        "299": "绿单",
+        "300": "绿双",
+        "301": "绿单",
+        "302": "蓝双",
+        "303": "红单",
+        "304": "红双",
+        "305": "红双",
+        "306": "绿单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "⑥合赌圣",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/401/tid/26.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "绿双",
+        "298": "红单",
+        "299": "红单",
+        "300": "蓝双",
+        "301": "绿单",
+        "302": "绿双",
+        "303": "蓝单",
+        "304": "蓝双",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "任我發最高心水",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/413/tid/27.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝单",
+        "298": "绿单",
+        "299": "红双",
+        "300": "蓝单",
+        "301": "绿单",
+        "302": "蓝单",
+        "303": "红双",
+        "304": "绿单",
+        "305": "红双",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "广东十虎",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/449/tid/30.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红双",
+        "298": "红单",
+        "299": "蓝双",
+        "300": "红双",
+        "301": "绿单",
+        "302": "蓝双",
+        "303": "蓝单",
+        "304": "红双",
+        "305": "红双",
+        "306": "绿单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "博发世家",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/498/tid/33.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红双",
+        "298": "蓝双",
+        "299": "蓝双",
+        "300": "绿单",
+        "301": "绿双",
+        "302": "红双",
+        "303": "绿单",
+        "304": "红双",
+        "305": "绿双",
+        "306": "红双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "赛玛会",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/594/tid/39.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝双",
+        "298": "红单",
+        "299": "蓝双",
+        "300": "绿双",
+        "301": "红单",
+        "302": "红单",
+        "303": "蓝单",
+        "304": "蓝双",
+        "305": "绿单",
+        "306": "蓝单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "金明世家",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/599/tid/40.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红双",
+        "298": "绿双",
+        "299": "红双",
+        "300": "红双",
+        "301": "红单",
+        "302": "绿双",
+        "303": "绿双",
+        "304": "蓝单",
+        "305": "绿双",
+        "306": "绿单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "澳门好彩",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/658/tid/44.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝单",
+        "298": "红双",
+        "299": "红单",
+        "300": "蓝单",
+        "301": "蓝双",
+        "302": "蓝单",
+        "303": "红单",
+        "304": "蓝单",
+        "305": "绿双",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "葡京赌侠",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/779/tid/55.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝单",
+        "298": "蓝单",
+        "299": "红双",
+        "300": "绿单",
+        "301": "红双",
+        "302": "蓝单",
+        "303": "蓝双",
+        "304": "绿双",
+        "305": "绿单",
+        "306": "红双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "鹰枪灭庄至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1607/tid/83.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "绿双",
+        "298": "绿双",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "蓝单",
+        "302": "蓝双",
+        "303": "红单",
+        "304": "红双",
+        "305": "红双",
+        "306": "蓝双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "小火柴★至尊",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1606/tid/83.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红双",
+        "298": "绿双",
+        "299": "绿双",
+        "300": "绿单",
+        "301": "绿双",
+        "302": "绿单",
+        "303": "红双",
+        "304": "绿双",
+        "305": "绿双",
+        "306": "红单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "大亭轩→总结",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1604/tid/83.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红单",
+        "298": "蓝双",
+        "299": "绿双",
+        "300": "蓝双",
+        "301": "绿双",
+        "302": "绿双",
+        "303": "绿单",
+        "304": "绿双",
+        "305": "蓝单",
+        "306": "绿单"
+      },
+      "failures": {}
+    },
+    {
+      "name": "巴扎嘿",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/1603/tid/83.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "红单",
+        "300": "绿双",
+        "301": "蓝双",
+        "302": "绿双",
+        "303": "绿单",
+        "304": "红单",
+        "305": "绿单",
+        "306": "蓝双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "蓝月亮最强精准",
+      "url": "https://4.48kk49.com:1888/Article/ar_content/id/472/tid/31.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝单",
+        "298": "红双",
+        "299": "蓝单",
+        "300": "红双",
+        "301": "绿双",
+        "302": "红双",
+        "303": "红双",
+        "304": "红单",
+        "305": "绿单",
+        "306": "蓝双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "虚室生白",
+      "url": "https://rjqiolk.fpr58-a6ldz-okyczd.work:17477/topic/682104.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "红单",
+        "298": "红双",
+        "299": "绿双",
+        "300": "红单",
+        "301": "蓝双",
+        "302": "绿单",
+        "303": "红单",
+        "305": "绿单",
+        "306": "蓝双"
+      },
+      "failures": {
+        "304": {
+          "code": "target_period_missing",
+          "reason": "未找到304期专属证据"
+        }
+      }
+    },
+    {
+      "name": "赛博菩萨",
+      "url": "https://jtrmhar.cwdc3-r5vqn-qzqasa.work:17455/topic/741188.html",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "297": "蓝单",
+        "298": "蓝双",
+        "299": "绿双",
+        "300": "绿单",
+        "301": "红单",
+        "302": "红双",
+        "303": "蓝双",
+        "304": "蓝单",
+        "305": "绿单",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "码友书阳",
+      "url": "https://62139c.com/",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {
+        "297": "蓝双",
+        "298": "红双",
+        "299": "蓝单",
+        "300": "绿单",
+        "301": "蓝双",
+        "302": "绿单",
+        "303": "红双",
+        "304": "蓝双",
+        "305": "蓝双",
+        "306": "绿双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "天地空间",
+      "url": "http://38.177.253.132:31882/read.php?tid=1903",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {},
+      "failures": {}
+    },
+    {
+      "name": "残雪清寒",
+      "url": "https://wwlhc.com/thread-67256-1-1.html",
+      "pick": "bottom",
+      "second_click": false,
+      "values": {
+        "299": "蓝双",
+        "300": "红双",
+        "301": "红双",
+        "302": "红双",
+        "303": "红双",
+        "304": "红双",
+        "305": "红双",
+        "306": "红双"
+      },
+      "failures": {}
+    },
+    {
+      "name": "四舅黄宾虹黄半波",
+      "url": "https://ghegvfr.5n8r1-kurkd-esielp.cyou:17455/",
+      "pick": "top",
+      "second_click": false,
+      "values": {
+        "298": "蓝双",
+        "299": "红双",
+        "300": "蓝双",
+        "301": "红单",
+        "302": "蓝单",
+        "303": "绿双",
+        "304": "蓝双",
+        "305": "红单",
+        "306": "蓝单"
       },
       "failures": {}
     }
   ],
   "parser_versions": {
+    "hw-0001": "1",
+    "hw-0002": "1",
+    "hw-0003": "2",
+    "hw-0004": "1",
+    "hw-0005": "1",
+    "hw-0006": "1",
+    "hw-0007": "1",
+    "hw-0008": "1",
+    "hw-0009": "1",
+    "hw-0010": "1",
+    "hw-0011": "2",
+    "hw-0012": "1",
+    "hw-0013": "2",
+    "hw-0014": "1",
+    "hw-0015": "3",
+    "hw-0016": "1",
+    "hw-0017": "1",
+    "hw-0018": "1",
+    "hw-0019": "1",
+    "hw-0020": "1",
+    "hw-0021": "1",
+    "hw-0022": "4",
+    "hw-0023": "1",
+    "hw-0024": "1",
+    "hw-0025": "1",
+    "hw-0026": "1",
+    "hw-0027": "2",
+    "hw-0028": "1",
+    "hw-0029": "1",
+    "hw-0030": "2",
+    "hw-0031": "2",
+    "hw-0032": "2",
+    "hw-0033": "1",
+    "hw-0034": "1",
+    "hw-0035": "2",
+    "hw-0036": "1",
+    "hw-0037": "1",
+    "hw-0038": "1",
+    "hw-0039": "1",
+    "hw-0040": "1",
+    "hw-0041": "1",
+    "hw-0042": "3",
+    "hw-0043": "1",
+    "hw-0044": "1",
+    "hw-0045": "2",
+    "hw-0046": "2",
+    "hw-0047": "2",
+    "hw-0048": "1",
+    "hw-0049": "1",
+    "hw-0050": "2",
+    "hw-0051": "2",
+    "hw-0052": "2",
+    "hw-0053": "2",
+    "hw-0054": "1",
+    "hw-0055": "2",
+    "hw-0056": "3",
+    "hw-0057": "1",
+    "hw-0058": "1",
+    "hw-0059": "4",
+    "hw-0060": "1",
+    "hw-0061": "1",
+    "hw-0062": "1",
+    "hw-0063": "2",
+    "hw-0064": "1",
+    "hw-0065": "1",
+    "hw-0066": "1",
+    "hw-0067": "1",
+    "hw-0068": "2",
+    "hw-0069": "1",
+    "hw-0070": "1",
+    "hw-0071": "2",
+    "hw-0072": "1",
+    "hw-0073": "1",
+    "hw-0074": "1",
+    "hw-0075": "1",
+    "hw-0076": "2",
+    "hw-0077": "3",
+    "hw-0078": "1",
+    "hw-0079": "1",
+    "hw-0080": "5",
+    "hw-0081": "2",
+    "hw-0082": "1",
+    "hw-0083": "1",
+    "hw-0084": "1",
+    "hw-0086": "2",
+    "hw-0087": "1",
+    "hw-0088": "3",
+    "hw-0089": "2",
+    "hw-0090": "2",
+    "hw-0091": "3",
+    "hw-0092": "1",
+    "hw-0093": "4",
+    "hw-0094": "1",
+    "hw-0095": "1",
+    "hw-0096": "1",
+    "hw-0097": "1",
+    "hw-0098": "1",
+    "hw-0099": "1",
+    "hw-0100": "1",
+    "hw-0101": "2",
+    "hw-0102": "1",
+    "hw-0103": "1",
+    "hw-0105": "1",
+    "hw-0106": "4",
+    "hw-0107": "2",
+    "hw-0108": "1",
+    "hw-0109": "2",
+    "hw-0110": "2",
+    "hw-0111": "1",
+    "hw-0112": "3",
+    "hw-0113": "2",
+    "hw-0114": "2",
+    "hw-0115": "1",
+    "hw-0116": "1",
+    "hw-0117": "1",
+    "hw-0118": "1",
+    "hw-0119": "4",
+    "hw-0120": "1",
+    "hw-0121": "2",
+    "hw-0122": "1",
+    "hw-0123": "2",
+    "hw-0124": "1",
+    "hw-0125": "1",
+    "hw-0126": "1",
+    "hw-0127": "1",
+    "hw-0128": "3",
+    "hw-0129": "1",
+    "hw-0130": "1",
+    "hw-0131": "1",
+    "hw-0132": "1",
+    "hw-0133": "1",
+    "hw-0134": "2",
+    "hw-0135": "1",
+    "hw-0136": "1",
+    "hw-0137": "1",
+    "hw-0138": "1",
+    "hw-0139": "1",
+    "hw-0140": "1",
+    "hw-0141": "5",
+    "hw-0142": "1",
+    "hw-0143": "1",
+    "hw-0144": "1",
+    "hw-0145": "1",
+    "hw-0146": "2",
+    "hw-0147": "1",
+    "hw-0148": "2",
+    "hw-0149": "1",
+    "hw-0150": "1",
+    "hw-0151": "3",
+    "hw-0152": "1",
+    "hw-0153": "1",
+    "hw-0154": "1",
+    "hw-0155": "2",
+    "hw-0156": "1",
+    "hw-0157": "2",
+    "hw-0158": "2",
+    "hw-0159": "4",
+    "hw-0160": "1",
+    "hw-0161": "2",
+    "hw-0162": "1",
+    "hw-0163": "1",
     "hw-0164": "1",
     "hw-0165": "1",
     "hw-0166": "1",
-    "hw-0167": "1"
-  }
+    "hw-0167": "1",
+    "hw-0168": "1",
+    "hw-0169": "1",
+    "hw-0170": "1",
+    "hw-0171": "1",
+    "hw-0172": "1",
+    "hw-0173": "1",
+    "hw-0174": "1",
+    "hw-0175": "1",
+    "hw-0176": "1",
+    "hw-0177": "1",
+    "hw-0178": "1",
+    "hw-0179": "1",
+    "hw-0180": "1",
+    "hw-0181": "1",
+    "hw-0182": "1",
+    "hw-0183": "1",
+    "hw-0184": "1",
+    "hw-0185": "1",
+    "hw-0186": "1",
+    "hw-0187": "1",
+    "hw-0188": "1",
+    "hw-0189": "1",
+    "hw-0190": "1",
+    "hw-0191": "1",
+    "hw-0192": "1",
+    "hw-0193": "1",
+    "hw-0194": "1",
+    "hw-0195": "1",
+    "hw-0196": "1",
+    "hw-0197": "1",
+    "hw-0198": "1",
+    "hw-0199": "1",
+    "hw-0200": "1",
+    "hw-0201": "1",
+    "hw-0104": "4",
+    "hw-0202": "1",
+    "hw-0203": "1",
+    "hw-0204": "1",
+    "hw-0205": "1",
+    "hw-0206": "1",
+    "hw-0207": "1"
+  },
+  "last_run_id": "474fb2f0de6f475493f72f88db668cce"
 }

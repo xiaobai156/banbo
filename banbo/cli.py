@@ -168,21 +168,10 @@ def _prepare_cache_update(
 
     cache_snapshot = repository.load_snapshot()
     cache = copy.deepcopy(cache_snapshot.payload)
-    issues = list(range(period, period - 10, -1))
-    allowed = {str(issue) for issue in issues}
-    cache["issues"] = issues
-    cache["partial_issues"] = []
-    for row in cache["sites"]:
-        row["values"] = {
-            str(issue): value
-            for issue, value in row.get("values", {}).items()
-            if str(issue) in allowed
-        }
-        row["failures"] = {
-            str(issue): failure
-            for issue, failure in row.get("failures", {}).items()
-            if str(issue) in allowed
-        }
+    # 不在此处改写缓存窗口。旧实现把 issues 直接换成「本次请求期往前 10 期」
+    # 并过滤掉窗口外的 values/failures，导致补跑较早期数时静默删除较新期的
+    # 历史值（例如补 297 会删掉 298 的全部值），且绕过了存储层「新期数必须
+    # 走完整单期流程」的闸门。窗口推进与越界拒绝统一交给存储层判定。
 
     rows_by_name = {str(row["name"]): row for row in cache["sites"]}
     for outcome in outcomes:
@@ -195,16 +184,39 @@ def _prepare_cache_update(
         cache["sites"].append(row)
         rows_by_name[name] = row
 
+    existing_issues = {int(issue) for issue in cache["issues"]}
+    active_ids = [site.site_id for site in sites.all() if not site.archived]
+    if period in existing_issues:
+        # 窗口内已存在的期数：定向补写，不允许动窗口。
+        return (
+            "按指定期数建立缓存基准",
+            repository.prepare_existing_period(
+                outcomes,
+                site_names_by_id=names,
+                target_issue=period,
+                run_id=run_id,
+                base_payload=cache,
+            ),
+            cache_snapshot.digest,
+        )
+    if period > max(existing_issues) and len(outcomes) == len(active_ids):
+        # 比缓存最新期更大的完整单期结果：推进窗口。
+        return (
+            "推进缓存窗口",
+            repository.prepare_advance_complete_period(
+                outcomes,
+                site_names_by_id=names,
+                target_issue=period,
+                expected_site_count=len(active_ids),
+                run_id=run_id,
+                base_payload=cache,
+            ),
+            cache_snapshot.digest,
+        )
     return (
-        "按指定期数建立缓存基准",
-        repository.prepare_existing_period(
-            outcomes,
-            site_names_by_id=names,
-            target_issue=period,
-            run_id=run_id,
-            base_payload=cache,
-        ),
-        cache_snapshot.digest,
+        "未补充定向缓存：期数不在窗口内且不是完整新期",
+        None,
+        None,
     )
 
 

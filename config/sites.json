@@ -251,7 +251,9 @@
       "name": "不痒不痛",
       "url": "https://fptnapl.o7l2d-gr6ew-tvgvep.xyz:16677/topic/349657.html",
       "direction": "top",
-      "second_click": false
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：281期缓存近10期与他站逐期完全一致（重复站）"
     },
     {
       "site_id": "hw-0037",
@@ -650,7 +652,9 @@
       "name": "彩民书籍",
       "url": "https://ymqmvj.7md3q-rm157-wcvhte.work:16677/topic/567179.html",
       "direction": "top",
-      "second_click": false
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：281期缓存近10期与他站逐期完全一致（重复站）"
     },
     {
       "site_id": "hw-0095",
@@ -713,7 +717,9 @@
       "name": "开心果",
       "url": "https://ykkpjdgv.d1ju4-kbfjr-zexdzd.xyz:16677/",
       "direction": "top",
-      "second_click": false
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：281期缓存近10期与他站逐期完全一致（重复站）"
     },
     {
       "site_id": "hw-0104",
@@ -727,7 +733,9 @@
       "name": "白蛇传",
       "url": "https://ocnrhq.du156-vb27w-tmhsed.xyz:16677/",
       "direction": "bottom",
-      "second_click": false
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：281期缓存近10期与他站逐期完全一致（重复站）"
     },
     {
       "site_id": "hw-0106",
@@ -790,7 +798,9 @@
       "name": "码头诗",
       "url": "https://nrbzrzm.zxt0w-ug0p0-uktgvy.xyz:16677/",
       "direction": "top",
-      "second_click": false
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：281期缓存近10期与他站逐期完全一致（重复站）"
     },
     {
       "site_id": "hw-0115",
@@ -816,9 +826,11 @@
     {
       "site_id": "hw-0118",
       "name": "流合",
-      "url": "https://pvxiftuf.yumkw-u4s81-hpytyz.work:16677/",
+      "url": "https://qprrntjm.fxpja-gdu7n-nysuyo.work:17466/topic/500599.html",
       "direction": "top",
-      "second_click": false
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：新地址仅能取到『必杀半波』单篇，历史 289-291 与缓存不符，无法证明站点身份"
     },
     {
       "site_id": "hw-0119",
@@ -874,7 +886,9 @@
       "name": "手工教授",
       "url": "https://wrbavfzg.e0fjk-5tc7b-mqquzq.work:16677/topic/390576.html",
       "direction": "top",
-      "second_click": false
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：281期缓存近10期与他站逐期完全一致（重复站）"
     },
     {
       "site_id": "hw-0127",
@@ -888,7 +902,9 @@
       "name": "心灯照字",
       "url": "https://yqjfwqsc.1dayz-aetgp-kbjidr.xyz:16677/topic/682025.html",
       "direction": "top",
-      "second_click": false
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：281期缓存近10期与他站逐期完全一致（重复站）"
     },
     {
       "site_id": "hw-0129",
@@ -1431,6 +1447,22 @@
       "name": "天地空间",
       "url": "http://38.177.253.132:31882/read.php?tid=1903",
       "direction": "bottom",
+      "second_click": false,
+      "archived": true,
+      "archived_reason": "用户指定封存：站方全站停更在292期，293-296连续4期无数据"
+    },
+    {
+      "site_id": "hw-0206",
+      "name": "残雪清寒",
+      "url": "https://wwlhc.com/thread-67256-1-1.html",
+      "direction": "bottom",
+      "second_click": false
+    },
+    {
+      "site_id": "hw-0207",
+      "name": "四舅黄宾虹黄半波",
+      "url": "https://ghegvfr.5n8r1-kurkd-esielp.cyou:17455/",
+      "direction": "top",
       "second_click": false
     }
   ]
