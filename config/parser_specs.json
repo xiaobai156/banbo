@@ -7004,7 +7004,7 @@
         "anchor_mode": "all",
         "window_size": 3,
         "skip_keyword_check": true,
-        "max_response_bytes": 9437184,
+        "max_response_bytes": 33554432,
         "allowed_external_hosts": [
           "xia01.cosds.ahsccn.com",
           "xia02.cosds.ahsccn.com",
