@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterable, Mapping
 from datetime import datetime, timezone
 from uuid import uuid4
 
@@ -62,6 +63,28 @@ def render_audit_jsonl(
         + "\n"
         for run in runs
     )
+
+
+def render_reconcile_jsonl(
+    entries: Iterable[Mapping[str, object]],
+    *,
+    run_id: str,
+) -> str:
+    """Journal of values corrected in place (accept / cache align).
+
+    Written to its own file so the per-run audit record shape stays stable for
+    existing readers, and so "what the old value was" survives the correction.
+    """
+
+    lines: list[str] = []
+    for entry in entries:
+        record = {
+            "run_id": run_id,
+            "recorded_at": datetime.now(timezone.utc).isoformat(),
+            **dict(entry),
+        }
+        lines.append(json.dumps(record, ensure_ascii=False) + "\n")
+    return "".join(lines)
 
 
 def append_audit_jsonl(existing: str, addition: str) -> str:

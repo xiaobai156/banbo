@@ -298,7 +298,16 @@ class RecentCacheRepository:
         base_payload: Mapping[str, object] | None = None,
         expected_site_count: int | None = None,
         expected_site_names: Iterable[str] | None = None,
+        accept_values: Mapping[str, str] | None = None,
     ) -> dict:
+        """Write one period of verified results into an existing window.
+
+        ``accept_values`` maps ``site_id`` to a value the operator has already
+        reconciled with the official TXT: a different cached value is then
+        realigned instead of raising, and a failed site with no cached value
+        picks the final value back up instead of recording a failure.  Without
+        it the old "refuse to overwrite" guard stays in force.
+        """
         expected_names = (
             None
             if expected_site_names is None
@@ -319,6 +328,10 @@ class RecentCacheRepository:
         issue_key = str(int(target_issue))
         if int(target_issue) not in {int(item) for item in payload["issues"]}:
             raise CacheValidationError("新期数必须走完整单期流程，不能局部补写")
+        accept = {
+            str(site_id): str(value)
+            for site_id, value in (accept_values or {}).items()
+        }
         updated = copy.deepcopy(payload)
         rows_by_name = {str(row["name"]): row for row in updated["sites"]}
         seen: set[str] = set()
@@ -341,11 +354,13 @@ class RecentCacheRepository:
             failures = rows_by_name[name].get("failures")
             if isinstance(failures, dict):
                 failures.pop(issue_key, None)
+            accepted = accept.get(result.site_id)
             if isinstance(result, ValidatedResult):
                 existing_value = rows_by_name[name]["values"].get(issue_key)
                 if (
                     existing_value is not None
                     and existing_value != result.value
+                    and accepted != result.value
                 ):
                     raise CacheValidationError(
                         f"缓存同期已有不同结果，拒绝覆盖：{name}."
@@ -358,7 +373,12 @@ class RecentCacheRepository:
                 # 定稿的数据删掉（原来 pop 会让 298 的成功值消失）。缓存
                 # 不变量禁止同一期既有成功又有失败，所以已有成功值时直接
                 # 保留成功值、不写失败记录；没有成功值时才记录失败。
-                if rows_by_name[name]["values"].get(issue_key) is None:
+                # 例外：本期定稿值在成功TXT 里、缓存却缺这一期时，把定稿值
+                # 补回缓存（accept_values），避免三个文件各说各话。
+                current_value = rows_by_name[name]["values"].get(issue_key)
+                if current_value is None and accepted is not None:
+                    rows_by_name[name]["values"][issue_key] = accepted
+                elif current_value is None:
                     rows_by_name[name].setdefault("failures", {})[issue_key] = {
                         "code": result.code.value,
                         "reason": result.message,
@@ -463,6 +483,7 @@ class RecentCacheRepository:
         run_id: str | None = None,
         base_payload: Mapping[str, object] | None = None,
         expected_site_names: Iterable[str] | None = None,
+        accept_values: Mapping[str, str] | None = None,
     ) -> dict:
         expected_names = (
             None
@@ -517,11 +538,18 @@ class RecentCacheRepository:
                 failures.pop(target_key, None)
                 parser_versions[result.site_id] = result.parser_version
             else:
-                row["values"].pop(target_key, None)
-                failures[target_key] = {
-                    "code": result.code.value,
-                    "reason": result.message,
-                }
+                # 本期定稿值已在成功TXT 里（保留站点）：把定稿值写进新期，
+                # 不写缓存失败，避免三个文件各说各话。
+                accepted = (accept_values or {}).get(result.site_id)
+                if accepted is not None:
+                    row["values"][target_key] = str(accepted)
+                    failures.pop(target_key, None)
+                else:
+                    row["values"].pop(target_key, None)
+                    failures[target_key] = {
+                        "code": result.code.value,
+                        "reason": result.message,
+                    }
         if len(seen) != expected_site_count:
             raise CacheValidationError("结果站点集合不完整")
         window_size = int(updated["window_size"])

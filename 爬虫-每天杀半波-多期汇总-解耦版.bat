@@ -25,6 +25,6 @@ title banbo decoupled multi-period crawler
 %PY_CMD% -m banbo.multi_cli --periods %PERIODS%
 set "EXIT_CODE=%ERRORLEVEL%"
 echo.
-echo 多期完成。未更新 recent_10_cache.json。
+echo 多期结束（有失败返回非 0 退出码）。多期只验证、不写缓存、不做裁决；要缓存对齐或 --accept-verified 裁决请回单期入口。
 pause
 exit /b %EXIT_CODE%

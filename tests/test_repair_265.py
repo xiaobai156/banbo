@@ -38,13 +38,67 @@ def test_tiandi_space_bottom_265_uses_latest_three_records(tmp_path):
         def __init__(self, result):
             self.outcome = result
 
+    # 建缓存基准必须全站结果（子集跑不再允许种下部分基准）。
+    # hw-0205 已封存，不进正式站点集合，所以这里用全部在用站点的占位结果
+    # 凑齐全站，只为验证窗口形状。
+    runs = []
+    for other in sites.all():
+        if other.archived:
+            continue
+        runs.append(
+            Run(
+                ValidatedResult(
+                    site_id=other.site_id,
+                    site_name=other.name,
+                    target_issue=265,
+                    value="红单",
+                    direction=other.direction,
+                    evidence=outcome.evidence,
+                    parser_version="test-265",
+                )
+            )
+        )
+
     payload = _prepare_cache_update(
         tmp_path / "recent_10_cache.json",
         sites,
         specs,
         265,
-        [Run(outcome)],
+        runs,
         run_id="test-265",
     )[1]
     assert payload["window_size"] == 10
     assert payload["issues"] == list(range(265, 255, -1))
+
+
+def test_partial_run_refuses_to_create_a_cache_baseline(tmp_path):
+    sites, specs, _ = _load_runtime()
+    site_record = sites.get("hw-0205")
+    outcome = ValidatedResult(
+        site_id=site_record.site_id,
+        site_name=site_record.name,
+        target_issue=265,
+        value="红单",
+        direction=site_record.direction,
+        evidence=None,  # 本用例只关心缓存闸门
+        parser_version="test-265",
+    )
+
+    class Run:
+        def __init__(self, result):
+            self.outcome = result
+
+    try:
+        _prepare_cache_update(
+            tmp_path / "recent_10_cache.json",
+            sites,
+            specs,
+            265,
+            [Run(outcome)],
+            run_id="test-265-partial",
+        )
+    except ValueError as exc:
+        assert "建基准必须跑全站" in str(exc)
+    else:
+        raise AssertionError("子集跑不应该建立缓存基准")
+    assert not (tmp_path / "recent_10_cache.json").exists()
